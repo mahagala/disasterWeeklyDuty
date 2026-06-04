@@ -640,6 +640,28 @@ function setupEventListeners() {
       filterAndDisplayData();
     }
   });
+
+  // 滾動導覽按鈕邏輯
+  const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
+  const scrollToBottomBtn = document.getElementById("scroll-to-bottom-btn");
+  
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+  
+  if (scrollToBottomBtn) {
+    scrollToBottomBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth"
+      });
+    });
+  }
 }
 
 // --- 多重 CORS 代理網路抓取工具 ---

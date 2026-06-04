@@ -1160,3 +1160,65 @@ body {
     text-align: left;
   }
 }
+
+/* --- Floating Scroll Navigation Widget --- */
+.scroll-nav-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(17, 24, 39, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 6px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-nav-widget:hover {
+  opacity: 1;
+}
+
+.scroll-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.scroll-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.scroll-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .scroll-nav-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+  .scroll-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
