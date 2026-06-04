@@ -33,6 +33,7 @@ let currentFilteredDisasters = []; // 儲存目前過濾後的災害物件 (用�
 
 // --- 國家代碼與名稱中英對照表 (ISO3 / 常見英文名稱) ---
 const COUNTRY_MAP = {
+  // ISO-3 Codes
   "TWN": "台灣", "CHN": "中國", "JPN": "日本", "KOR": "韓國", "USA": "美國",
   "PHL": "菲律賓", "VNM": "越南", "THA": "泰國", "IDN": "印尼", "MYS": "馬來西亞",
   "IND": "印度", "TUR": "土耳其", "ITA": "義大利", "TON": "東加", "RUS": "俄羅斯",
@@ -43,8 +44,70 @@ const COUNTRY_MAP = {
   "BGD": "孟加拉", "BTN": "不丹", "MMR": "緬甸", "NPL": "尼泊爾", "PAK": "巴基斯坦",
   "ISL": "冰島", "ECU": "厄瓜多", "COL": "哥倫比亞", "PNG": "巴布亞紐幾內亞",
   "SLB": "索羅門群島", "VUT": "萬那杜", "FJI": "斐濟", "MAR": "摩洛哥",
-  "East Pacific": "東太平洋", "West Pacific": "西太平洋", "South Asia": "南亞",
-  "Europe": "歐洲", "World": "全球", "Global": "全球"
+  "UKR": "烏克蘭", "AFG": "阿富汗", "NGA": "奈及利亞", "KEN": "肯亞", 
+  "SOM": "索馬利亞", "SDN": "蘇丹",
+  
+  // English Names (Uppercase)
+  "TAIWAN": "台灣",
+  "CHINA": "中國",
+  "JAPAN": "日本",
+  "KOREA": "韓國",
+  "SOUTH KOREA": "韓國",
+  "UNITED STATES": "美國",
+  "PHILIPPINES": "菲律賓",
+  "VIETNAM": "越南",
+  "THAILAND": "泰國",
+  "INDONESIA": "印尼",
+  "MALAYSIA": "馬來西亞",
+  "INDIA": "印度",
+  "TURKEY": "土耳其",
+  "TÜRKIYE": "土耳其",
+  "ITALY": "義大利",
+  "TONGA": "東加",
+  "RUSSIA": "俄羅斯",
+  "PERU": "秘魯",
+  "ANGOLA": "安哥拉",
+  "AUSTRALIA": "澳洲",
+  "NEW ZEALAND": "紐西蘭",
+  "CANADA": "加拿大",
+  "MEXICO": "墨西哥",
+  "BRAZIL": "巴西",
+  "CHILE": "智利",
+  "UNITED KINGDOM": "英國",
+  "FRANCE": "法國",
+  "GERMANY": "德國",
+  "SPAIN": "西班牙",
+  "GREECE": "希臘",
+  "CYPRUS": "塞浦路斯",
+  "SOUTH AFRICA": "南非",
+  "UGANDA": "烏干達",
+  "CONGO": "剛果共和國",
+  "DR CONGO": "剛果民主共和國",
+  "DEMOCRATIC REPUBLIC OF THE CONGO": "剛果民主共和國",
+  "GABON": "加彭",
+  "BANGLADESH": "孟加拉",
+  "BHUTAN": "不丹",
+  "MYANMAR": "緬甸",
+  "NEPAL": "尼泊爾",
+  "PAKISTAN": "巴基斯坦",
+  "ICELAND": "冰島",
+  "ECUADOR": "厄瓜多",
+  "COLOMBIA": "哥聯比亞",
+  "PAPUA NEW GUINEA": "巴布亞紐幾內亞",
+  "SOLOMON ISLANDS": "索羅門群島",
+  "VANUATU": "萬那杜",
+  "FIJI": "斐濟",
+  "MOROCCO": "摩洛哥",
+  "UKRAINE": "烏克蘭",
+  "AFGHANISTAN": "阿富汗",
+  "NIGERIA": "奈及利亞",
+  "KENYA": "肯亞",
+  "SOMALIA": "索馬利亞",
+  "SUDAN": "蘇丹",
+  
+  // Regions
+  "EAST PACIFIC": "東太平洋", "WEST PACIFIC": "西太平洋", "SOUTH ASIA": "南亞",
+  "EUROPE": "歐洲", "WORLD": "全球", "GLOBAL": "全球"
 };
 
 // --- 災害類別對照表 ---
@@ -567,10 +630,14 @@ async function loadData(forceReload = false) {
   const fetchLoader = document.getElementById("fetch-loader");
   const fetchBtnSpan = document.querySelector("#fetch-btn span");
   const offlineBadge = document.getElementById("offline-badge");
+  const syncGlobe = document.getElementById("sync-globe");
 
   // 顯示 Loading 動態
   fetchLoader.style.display = "inline-block";
   fetchBtnSpan.textContent = "資料同步中...";
+  if (syncGlobe) {
+    syncGlobe.classList.remove("hidden");
+  }
   document.getElementById("disaster-table-body").innerHTML = `
     <tr>
       <td colspan="5" class="table-loading">
@@ -673,6 +740,9 @@ async function loadData(forceReload = false) {
   // 隱藏 Loading 動態
   fetchLoader.style.display = "none";
   fetchBtnSpan.textContent = "立即同步與更新";
+  if (syncGlobe) {
+    syncGlobe.classList.add("hidden");
+  }
 
   // 若完全失敗，則載入本地模擬的 mockData.js 以防使用者看到空白畫面
   if (successSources === 0 && typeof mockDisasters !== "undefined") {
@@ -1024,7 +1094,7 @@ async function enrichLocationsWithGeocoding() {
 // 國家名稱翻譯
 function translateCountry(rawCountry) {
   if (!rawCountry) return "未知地點";
-  const trimmed = rawCountry.trim();
+  const trimmed = rawCountry.trim().toUpperCase();
   
   // 1. 直接查表對照
   if (COUNTRY_MAP[trimmed]) return COUNTRY_MAP[trimmed];
@@ -1036,14 +1106,15 @@ function translateCountry(rawCountry) {
                   .join("、");
   }
 
-  // 3. 常規模糊配對
+  // 3. 常規模糊配對 (使用獨立單字邊界，避免 "Indonesia" 因包含 "IND" 誤判為 "印度")
   for (let key in COUNTRY_MAP) {
-    if (trimmed.toLowerCase().includes(key.toLowerCase())) {
+    const regex = new RegExp('\\b' + key + '\\b', 'i');
+    if (regex.test(trimmed)) {
       return COUNTRY_MAP[key];
     }
   }
 
-  return trimmed; // 找不到則回傳英文原名
+  return rawCountry.trim(); // 找不到則回傳英文原名
 }
 
 // 類別翻譯
@@ -1341,9 +1412,19 @@ function filterAndDisplayData() {
     // 2. 篩選警報等級
     if (alertLevelVal !== "all" && d.alertlevel !== alertLevelVal) return false;
 
-    // 3. 篩選時間區段
+    // 3. 篩選時間區段 (比對最新通報時間與災害實際結束時間)
     const itemDate = new Date(d.pubDate);
     if (isNaN(itemDate.getTime())) return false; // 無效日期過濾掉
+
+    // 如果災害有明確的結束日期 (todate)，且該結束日期小於篩選的起始時間 (startDate)，
+    // 代表此災害事件在篩選時間之前就已經完全結束了，直接過濾掉（不屬於過去 7/14/30 天的活躍災害）
+    if (d.todate) {
+      const itemToDate = new Date(d.todate);
+      if (!isNaN(itemToDate.getTime()) && startDate && itemToDate < startDate) {
+        return false;
+      }
+    }
+
     if (startDate && itemDate < startDate) return false;
     if (endDate && itemDate > endDate) return false;
 
