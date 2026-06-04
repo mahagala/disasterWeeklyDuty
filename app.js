@@ -189,13 +189,14 @@ function cleanId(id) {
 
 // 輔助函數：將各來源的多樣化災害類型字串映射到標準化代碼 (EQ, FL, TC, VO, WF, DR, OTHER)
 function getStandardCategoryGroup(type) {
-  const t = type ? type.trim() : "";
-  if (t === "EQ" || t === "Earthquake") return "EQ";
-  if (t === "FL" || t === "Flood") return "FL";
-  if (t === "TC" || t === "Tropical Cyclone" || t === "Severe Weather") return "TC";
-  if (t === "VO" || t === "Volcano") return "VO";
-  if (t === "WF" || t === "Wild fire" || t === "Wildfire") return "WF";
-  if (t === "DR" || t === "Drought" || t === "Droughts") return "DR";
+  const info = getCategoryInfo(type);
+  const name = info.name;
+  if (name === "風災" || name === "強烈天氣") return "TC";
+  if (name === "洪災") return "FL";
+  if (name === "地震") return "EQ";
+  if (name === "火山") return "VO";
+  if (name === "野火") return "WF";
+  if (name === "乾旱") return "DR";
   return "OTHER";
 }
 
