@@ -2013,7 +2013,7 @@ function exportToCSV() {
   }
 
   // 欄位標題
-  const headers = ["日期", "國家", "詳細地點", "經度", "緯度", "災害類別", "警報等級", "災害說明說明", "官方連結"];
+  const headers = ["日期", "國家", "詳細地點", "經度", "緯度", "災害類別", "警報等級", "災害說明", "災害說明(英文)", "官方連結"];
   
   const csvRows = [headers.join(",")];
 
@@ -2030,6 +2030,13 @@ function exportToCSV() {
     const category = getCategoryInfo(d.type).name;
     const level = d.alertlevel || "None";
     const desc = translateSimplifiedToTraditional(d.aiChineseDescription || generateChineseDescription(d)).replace(/"/g, '""'); // CSV 跳脫雙引號
+    
+    // 獲取原始英文災害說明：若有 description 且與 title 不同，則合併；否則只用 title
+    let descEnRaw = d.description && d.description !== d.title ? `${d.title} | ${d.description}` : d.title || "";
+    // 去除 HTML/XML 標籤並整理格式
+    descEnRaw = descEnRaw.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    const descEn = descEnRaw.replace(/"/g, '""'); // CSV 跳脫雙引號
+    
     const link = d.link;
 
     const row = [
@@ -2041,6 +2048,7 @@ function exportToCSV() {
       `"${category}"`,
       `"${level}"`,
       `"${desc}"`,
+      `"${descEn}"`,
       `"${link}"`
     ];
     csvRows.push(row.join(","));
