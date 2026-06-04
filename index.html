@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>坡洪組國際災情值周用全球災害資訊整合平台 - Slopeland & Hydrology Division Global Disaster Info Hub</title>
+  <!-- Google Fonts Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="ncdr-logo-container">
+          <img src="ncdr_logo.png" alt="國家災害防救科技中心 NCDR" class="ncdr-logo">
+        </div>
+        <div class="brand-divider"></div>
+        <div class="brand-text">
+          <h1>坡洪組國際災情值周用全球災害資訊整合平台</h1>
+          <p>Slopeland & Hydrology Division Global Disaster Info Hub</p>
+        </div>
+      </div>
+
+      <!-- Live Clock & Status Indicators -->
+      <div class="header-widgets">
+        <div class="clock-widget">
+          <span class="clock-label">本地時間</span>
+          <span id="live-clock">--:--:--</span>
+        </div>
+        <div class="source-statuses">
+          <div class="status-indicator" id="status-gdacs">
+            <span class="dot"></span> GDACS
+          </div>
+          <div class="status-indicator" id="status-ercc">
+            <span class="dot"></span> ERCC
+          </div>
+          <div class="status-indicator" id="status-usgs">
+            <span class="dot"></span> USGS
+          </div>
+          <div class="status-indicator" id="status-reliefweb">
+            <span class="dot"></span> ReliefWeb
+          </div>
+        </div>
+        <button class="settings-btn" id="open-settings-btn" title="系統設定">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-content">
+    <!-- Top Grid: Stats & Map -->
+    <section class="dashboard-grid">
+      <!-- Left Sidebar: Controls & Stats -->
+      <aside class="sidebar-panel">
+        <!-- Control Card -->
+        <div class="glass-card control-card">
+          <h3><span class="icon">🔍</span> 資料篩選與控制</h3>
+          
+          <!-- Date Filter -->
+          <div class="filter-group">
+            <label for="time-range">時間區段</label>
+            <select id="time-range" class="form-select">
+              <option value="7">過去 7 天 (預設)</option>
+              <option value="14">過去 14 天</option>
+              <option value="30">過去 30 天</option>
+              <option value="custom">自訂時間範圍</option>
+            </select>
+          </div>
+
+          <div class="filter-group custom-date-inputs hidden" id="custom-date-container">
+            <div class="date-row">
+              <div>
+                <label for="start-date">開始日期</label>
+                <input type="date" id="start-date" class="form-input">
+              </div>
+              <div>
+                <label for="end-date">結束日期</label>
+                <input type="date" id="end-date" class="form-input">
+              </div>
+            </div>
+          </div>
+
+          <!-- Feed Source Filter -->
+          <div class="filter-group">
+            <label>資料來源</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="source-gdacs-chk" checked>
+                <span>GDACS 全球警報</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="source-ercc-chk" checked>
+                <span>ERCC 每日地圖</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="source-usgs-chk" checked>
+                <span>USGS 地震監測</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="source-reliefweb-chk" checked>
+                <span>ReliefWeb 危機報告</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Alert Level Filter -->
+          <div class="filter-group">
+            <label for="alert-level">警報等級</label>
+            <select id="alert-level" class="form-select">
+              <option value="all">全部等級</option>
+              <option value="Red">紅色警報 (嚴重)</option>
+              <option value="Orange">橙色警報 (中度)</option>
+              <option value="Green">綠色警報 (輕度)</option>
+            </select>
+          </div>
+
+          <div class="action-buttons">
+            <button class="primary-btn" id="fetch-btn">
+              <svg class="btn-icon spinning" id="fetch-loader" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none; width:16px; height:16px; margin-right:6px;">
+                <circle cx="12" cy="12" r="10" stroke-dasharray="16 8"></circle>
+              </svg>
+              <span>立即同步與更新</span>
+            </button>
+            <button class="secondary-btn" id="export-csv-btn" title="匯出 CSV">
+              <span>匯出報表</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Statistics Card -->
+        <div class="glass-card stats-card">
+          <h3><span class="icon">📊</span> 災害統計分析</h3>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-value" id="stat-total-count">0</span>
+              <span class="stat-label">監測災害總數</span>
+            </div>
+            <div class="stat-item danger">
+              <span class="stat-value" id="stat-red-count">0</span>
+              <span class="stat-label">紅色警戒事件</span>
+            </div>
+            <div class="stat-item warning">
+              <span class="stat-value" id="stat-orange-count">0</span>
+              <span class="stat-label">橙色中度警戒</span>
+            </div>
+            <div class="stat-item normal">
+              <span class="stat-value" id="stat-green-count">0</span>
+              <span class="stat-label">輕度警戒事件</span>
+            </div>
+          </div>
+          
+          <div class="category-breakdown">
+            <h4>類別分佈</h4>
+            <div class="progress-bar-list" id="category-bars">
+              <!-- Dynamically populated -->
+              <div class="no-data-text">無資料</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Map Display Container -->
+      <article class="map-panel glass-card">
+        <div class="panel-header">
+          <h3><span class="icon">🗺️</span> 全球即時災害分佈圖</h3>
+          <div class="map-legend">
+            <span class="legend-item"><span class="legend-dot red"></span>紅色警戒</span>
+            <span class="legend-item"><span class="legend-dot orange"></span>橙色警戒</span>
+            <span class="legend-item"><span class="legend-dot green"></span>綠色警戒</span>
+            <span class="legend-item"><span class="legend-dot blue"></span>ERCC/其他</span>
+          </div>
+        </div>
+        <div class="map-wrapper">
+          <div id="disaster-map"></div>
+          <!-- Offline Notice Overlay -->
+          <div class="offline-badge hidden" id="offline-badge">
+            <span class="badge-dot"></span> 離線/快取模式 (使用備用數據)
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Bottom Section: The Table -->
+    <section class="table-section glass-card">
+      <div class="table-header">
+        <div class="table-title">
+          <h3><span class="icon">📋</span> 災害彙整報表 (過去七天或指定區間)</h3>
+          <p id="table-summary-text">正在加載災害數據...</p>
+        </div>
+        <div class="search-box">
+          <input type="text" id="table-search" placeholder="搜尋國家、地點、事件說明...">
+          <span class="search-icon">🔍</span>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="disaster-table" id="disaster-table">
+          <thead>
+            <tr>
+              <th style="width: 10%;">日期</th>
+              <th style="width: 18%;">地點</th>
+              <th style="width: 10%;">類別</th>
+              <th style="width: 44%;">災害說明</th>
+              <th style="width: 18%;">文獻連結</th>
+            </tr>
+          </thead>
+          <tbody id="disaster-table-body">
+            <!-- Dynamically populated rows -->
+            <tr>
+              <td colspan="5" class="table-loading">
+                <div class="spinner"></div>
+                <p>資料讀取中，請稍候...</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Info -->
+  <footer class="main-footer">
+    <p>© 2026 坡洪組國際災情值周用全球災害資訊整合平台. 本平台使用公眾 RSS 資訊，經解析、經緯度逆向地理編碼及本地翻譯規則處理。</p>
+  </footer>
+
+  <!-- Settings Dialog (Modal) -->
+  <div class="modal-overlay hidden" id="settings-modal">
+    <div class="modal-card glass-card">
+      <div class="modal-header">
+        <h2>⚙️ 系統進階設定</h2>
+        <button class="close-btn" id="close-settings-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">本平台內建智慧型繁體中文翻譯與模版解析規則。如果您未來取得 Google Gemini API Key，可於下方設定以啟用 AI 驅動的**災情深度摘要**與**實時相關新聞連結檢索**功能。</p>
+        
+        <div class="settings-group">
+          <label for="gemini-key-input">Google Gemini API Key (可選)</label>
+          <input type="password" id="gemini-key-input" class="form-input" placeholder="AI Studio API Key (AIzaSy...)">
+          <small class="helper-text">密鑰會以安全方式儲存於您本機瀏覽器的 LocalStorage 中，不會上傳到任何第三方伺服器。</small>
+        </div>
+
+        <div class="settings-group">
+          <label>CORS 跨域代理設定 (優先順序嘗試)</label>
+          <textarea id="cors-proxies-input" class="form-textarea" rows="3" placeholder="代理 URL，每行一個"></textarea>
+          <small class="helper-text">由於瀏覽器安全性限制，從外部 RSS 讀取需要 CORS 代理。本平台已預設配置了多個公共代理。</small>
+        </div>
+
+        <div class="settings-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="nominatim-geocoding-chk" checked>
+            <span>啟用 OSM Nominatim 逆向地理編碼</span>
+          </label>
+          <small class="helper-text">利用 OpenStreetMap 免費服務根據經緯度查詢詳細的中文縣市、州省與地名名稱。若關閉則僅會進行國家簡碼查表。</small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="secondary-btn" id="reset-settings-btn">恢復預設值</button>
+        <button class="primary-btn" id="save-settings-btn">儲存設定</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Popup Card (Optional Detailed Info) -->
+  <div class="modal-overlay hidden" id="detail-modal">
+    <div class="modal-card glass-card detail-modal-card">
+      <div class="modal-header">
+        <h2 id="detail-title">災害事件詳情</h2>
+        <button class="close-btn" id="close-detail-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="detail-body">
+        <!-- Content dynamically injected -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Mock Data -->
+  <script src="mockData.js"></script>
+  <!-- Main Application JS -->
+  <script src="app.js"></script>
+</body>
+</html>
