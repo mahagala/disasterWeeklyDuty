@@ -401,33 +401,43 @@ function getCountryIso2(country) {
   return null;
 }
 
-// 獲取國旗圖片 HTML (解決 Windows 無法顯示國旗 emoji 的問題)
+// 獲取國旗圖片 HTML (解決 Windows 無法顯示國旗 emoji 的問題，支持多個國家)
 function getCountryFlagImgHtml(country) {
   if (!country) return "";
-  const iso2 = getCountryIso2(country);
-  if (iso2) {
-    return `<img src="https://flagcdn.com/w20/${iso2}.png" alt="${country}" class="flag-icon" style="height: 12px; width: auto; vertical-align: middle; margin-right: 6px; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);">`;
-  }
-  return "";
+  
+  const separators = /[,、]|\band\b/i;
+  const parts = country.split(separators).map(c => c.trim()).filter(c => c !== "");
+  
+  return parts.map(part => {
+    const iso2 = getCountryIso2(part);
+    if (iso2) {
+      return `<img src="https://flagcdn.com/w20/${iso2}.png" alt="${part}" class="flag-icon" style="height: 12px; width: auto; vertical-align: middle; margin-right: 4px; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);">`;
+    }
+    return "";
+  }).join("");
 }
 
-// 獲取國旗 Emojis
+// 獲取國旗 Emojis (支持多個國家)
 function getCountryFlag(country) {
   if (!country) return "";
-  const trimmed = country.trim().toUpperCase();
   
-  if (FLAG_MAP[trimmed]) return FLAG_MAP[trimmed];
+  const separators = /[,、]|\band\b/i;
+  const parts = country.split(separators).map(c => c.trim()).filter(c => c !== "");
   
-  const translated = translateCountry(country);
-  if (FLAG_MAP[translated]) return FLAG_MAP[translated];
-  
-  for (let key in FLAG_MAP) {
-    if (trimmed.includes(key.toUpperCase()) || translated.includes(key)) {
-      return FLAG_MAP[key];
+  return parts.map(part => {
+    const trimmed = part.toUpperCase();
+    if (FLAG_MAP[trimmed]) return FLAG_MAP[trimmed];
+    
+    const translated = translateCountry(part);
+    if (FLAG_MAP[translated]) return FLAG_MAP[translated];
+    
+    for (let key in FLAG_MAP) {
+      if (trimmed.includes(key.toUpperCase()) || translated.includes(key)) {
+        return FLAG_MAP[key];
+      }
     }
-  }
-  
-  return ""; 
+    return "";
+  }).join("");
 }
 
 // 獲取國家所屬大洲
