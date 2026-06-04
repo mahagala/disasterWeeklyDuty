@@ -93,7 +93,7 @@ const COUNTRY_MAP = {
   "PAKISTAN": "巴基斯坦",
   "ICELAND": "冰島",
   "ECUADOR": "厄瓜多",
-  "COLOMBIA": "哥聯比亞",
+  "COLOMBIA": "哥倫比亞",
   "PAPUA NEW GUINEA": "巴布亞紐幾內亞",
   "SOLOMON ISLANDS": "索羅門群島",
   "VANUATU": "萬那杜",
@@ -1335,6 +1335,19 @@ function getCategoryEnglishKeyword(type) {
   return type || "disaster";
 }
 
+// 輔助函數：將分類對照回適合搜尋的英文單數名稱 (用於連結標題)
+function getCategoryEnglishSingular(type) {
+  const info = getCategoryInfo(type);
+  const name = info.name;
+  if (name === "風災" || name === "強烈天氣") return "Storm";
+  if (name === "洪災") return "Flood";
+  if (name === "地震") return "Earthquake";
+  if (name === "火山") return "Volcano";
+  if (name === "野火") return "Wildfire";
+  if (name === "乾旱") return "Drought";
+  return "Disaster";
+}
+
 function generateReferenceLinks(disaster) {
   const links = [];
   
@@ -1356,15 +1369,23 @@ function generateReferenceLinks(disaster) {
   const typeInfo = getCategoryInfo(disaster.type);
   const catCn = typeInfo.name;
   const catEn = getCategoryEnglishKeyword(disaster.type);
+  const catEnSingular = getCategoryEnglishSingular(disaster.type);
 
-  // 建立中英雙語複合查詢，並加上當前年份 2026 以過濾過期新聞
-  const rawQuery = `(${countryCn} ${catCn} 2026) OR (${countryEn} ${catEn} 2026)`;
-  const queryText = encodeURIComponent(rawQuery);
+  // 中文查詢：國家中文名 + 災害中文名 + 當前年份
+  const queryCn = encodeURIComponent(`${countryCn} ${catCn} 2026`);
+  // 英文查詢：國家英文名 + 災害英文關鍵字組 + 當前年份
+  const queryEn = encodeURIComponent(`${countryEn} (${catEn}) 2026`);
 
-  // Google News 即時搜尋連結
+  // Google News 中文即時搜尋連結
   links.push({
-    title: `Google 新聞搜尋 (${typeInfo.name})`,
-    url: `https://news.google.com/search?q=${queryText}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant`
+    title: `Google 新聞 (${typeInfo.name})`,
+    url: `https://news.google.com/search?q=${queryCn}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant`
+  });
+
+  // Google News 英文即時搜尋連結
+  links.push({
+    title: `Google News (${catEnSingular})`,
+    url: `https://news.google.com/search?q=${queryEn}&hl=en-US&gl=US&ceid=US:en`
   });
 
   // Watchers.news 即時科學/災害新聞
