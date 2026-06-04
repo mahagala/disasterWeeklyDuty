@@ -181,6 +181,12 @@ function xmlGetVal(el, localName) {
   return null;
 }
 
+// 輔助函數：清理 ID，確保只包含英數字與底線，避開 HTML id 中特殊字元（如冒號、斜線等）引起的瀏覽器解析或錨點定位問題
+function cleanId(id) {
+  if (!id) return "";
+  return id.replace(/[^a-zA-Z0-9_]/g, "_");
+}
+
 // --- 國旗對照表 ---
 const FLAG_MAP = {
   "TWN": "🇹🇼", "台灣": "🇹🇼", "TAIWAN": "🇹🇼",
@@ -840,7 +846,7 @@ function parseGdacsRSS(xmlText) {
       }
 
       results.push({
-        id: id || `GDACS_${Date.now()}_${Math.random()}`,
+        id: cleanId(id || `GDACS_${Date.now()}_${Math.random()}`),
         title,
         description,
         link,
@@ -900,7 +906,7 @@ function parseErccRSS(xmlText) {
       }
 
       results.push({
-        id: id || `ERCC_${Date.now()}_${Math.random()}`,
+        id: cleanId(id || `ERCC_${Date.now()}_${Math.random()}`),
         title,
         description,
         link,
@@ -958,7 +964,7 @@ function parseUsgsAtom(xmlText) {
       else if (magnitude >= 5.5) alertlevel = "Orange";
 
       results.push({
-        id: id || `USGS_${Date.now()}_${Math.random()}`,
+        id: cleanId(id || `USGS_${Date.now()}_${Math.random()}`),
         title,
         description: summary.replace(/<\/?[^>]+(>|$)/g, "").trim(),
         link,
@@ -986,7 +992,7 @@ function parseReliefWebAPI(jsonText) {
     if (!data.data) return results;
 
     data.data.forEach(item => {
-      const id = `ReliefWeb_${item.id}`;
+      const id = cleanId(`ReliefWeb_${item.id}`);
       const title = item.fields.title || "";
       const link = item.fields.url || "";
       const pubDate = item.fields.date.created || "";
