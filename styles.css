@@ -1,4 +1,4 @@
-/* --- Core Variables & Design System --- */
+﻿/* --- Core Variables & Design System --- */
 :root {
   --font-title: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif;
@@ -428,6 +428,12 @@ body {
 .secondary-btn:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+.secondary-btn.active {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--primary);
+  color: #a5b4fc;
 }
 
 /* Spinning Loader Icon Animation */

@@ -215,9 +215,14 @@
           <h3><span class="icon">📋</span> 災害彙整報表 (過去七天或指定區間)</h3>
           <p id="table-summary-text">正在加載災害數據...</p>
         </div>
-        <div class="search-box">
-          <input type="text" id="table-search" placeholder="搜尋國家、地點、事件說明...">
-          <span class="search-icon">🔍</span>
+        <div class="table-controls" style="display: flex; align-items: center; gap: 12px;">
+          <button id="toggle-translation-btn" class="secondary-btn" style="padding: 6px 12px; font-size: 12px; height: 36px;" title="切換為英文原文或中文翻譯說明">
+            <span>🌐</span> <span id="toggle-translation-text">切換英文原文</span>
+          </button>
+          <div class="search-box">
+            <input type="text" id="table-search" placeholder="搜尋國家、地點、事件說明...">
+            <span class="search-icon">🔍</span>
+          </div>
         </div>
       </div>
 

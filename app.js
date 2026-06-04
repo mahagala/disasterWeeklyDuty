@@ -30,6 +30,7 @@ let map = null;             // Leaflet 地圖實例
 let markersGroup = null;    // Leaflet 標記群組
 let geocodeCache = {};      // 經緯度地理編碼快取 (減少 API 請求)
 let currentFilteredDisasters = []; // 儲存目前過濾後的災害物件 (用於地理編碼增強時的表格獨立更新)
+let showOriginalEnglish = false; // 是否顯示英文原文
 
 // --- 國家代碼與名稱中英對照表 (ISO3 / 常見英文名稱) ---
 const COUNTRY_MAP = {
@@ -537,6 +538,23 @@ function setupEventListeners() {
   
   // 表格搜尋框
   document.getElementById("table-search").addEventListener("input", filterAndDisplayData);
+
+  // 切換中英文原文按鈕
+  const toggleBtn = document.getElementById("toggle-translation-btn");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      showOriginalEnglish = !showOriginalEnglish;
+      const btnText = document.getElementById("toggle-translation-text");
+      if (showOriginalEnglish) {
+        if (btnText) btnText.textContent = "切換中文翻譯";
+        toggleBtn.classList.add("active");
+      } else {
+        if (btnText) btnText.textContent = "切換英文原文";
+        toggleBtn.classList.remove("active");
+      }
+      renderTableOnly();
+    });
+  }
 
   // 匯出 CSV 按鈕
   document.getElementById("export-csv-btn").addEventListener("click", exportToCSV);
@@ -1320,7 +1338,9 @@ async function tryGeminiTranslation(disaster, descContainer) {
     
     // 建立一個輕量的加載提示
     const originalText = descContainer.innerHTML;
-    descContainer.innerHTML = `<span class="spinner" style="width:12px; height:12px; display:inline-block; margin-right:6px; vertical-align:middle;"></span>正在利用 Gemini AI 翻譯中...`;
+    if (!showOriginalEnglish) {
+      descContainer.innerHTML = `<span class="spinner" style="width:12px; height:12px; display:inline-block; margin-right:6px; vertical-align:middle;"></span>正在利用 Gemini AI 翻譯中...`;
+    }
 
     // 準備 Prompt
     const prompt = `你是一個專業的全球災害監測與人道救援專家。請將以下全球災害資訊（英文）摘要並翻譯成精煉、流暢的繁體中文，格式需適合放在網頁表格的「災害說明」欄位。
@@ -1351,12 +1371,14 @@ async function tryGeminiTranslation(disaster, descContainer) {
     const resultText = resData.candidates[0].content.parts[0].text.trim();
     
     // 更新網頁上的文字
-    descContainer.innerHTML = `
-      ${disaster.alertlevel && disaster.alertlevel !== "None" ? 
-        `<span class="desc-alert-badge ${disaster.alertlevel.toLowerCase()}">${disaster.alertlevel} Alert</span>` : ''}
-      <span class="desc-text">${resultText}</span>
-      <span class="desc-ai-generated">✦ AI 智慧生成繁中摘要</span>
-    `;
+    if (!showOriginalEnglish) {
+      descContainer.innerHTML = `
+        ${disaster.alertlevel && disaster.alertlevel !== "None" ? 
+          `<span class="desc-alert-badge ${disaster.alertlevel.toLowerCase()}">${disaster.alertlevel} Alert</span>` : ''}
+        <span class="desc-text">${resultText}</span>
+        <span class="desc-ai-generated">✦ AI 智慧生成繁中摘要</span>
+      `;
+    }
 
     // 同步把此 AI 翻譯結果存入記憶體快取中
     disaster.aiChineseDescription = resultText;
@@ -1565,12 +1587,25 @@ function renderTable(disasters) {
     locCell.className = "location-cell";
     locCell.setAttribute("data-label", "地點");
     
-    const countryCn = translateCountry(d.country);
+    const countryName = showOriginalEnglish ? (d.country || "Unknown Country") : translateCountry(d.country);
     const flagImg = getCountryFlagImgHtml(d.country);
-    const continent = getCountryContinent(d.country);
+    
+    let continent = getCountryContinent(d.country);
+    if (showOriginalEnglish) {
+      const continentEnMap = {
+        "亞洲": "Asia",
+        "歐洲": "Europe",
+        "北美洲": "North America",
+        "南美洲": "South America",
+        "非洲": "Africa",
+        "大洋洲": "Oceania",
+        "其它地區": "Other"
+      };
+      continent = continentEnMap[continent] || continent;
+    }
     
     // 格式為：國旗 洲 國名 (無括弧)
-    const countryLabel = flagImg ? `${flagImg} ${continent} ${countryCn}` : `${continent} ${countryCn}`;
+    const countryLabel = flagImg ? `${flagImg} ${continent} ${countryName}` : `${continent} ${countryName}`;
     
     const dmsLat = convertDecimalToDMS(d.lat, true);
     const dmsLng = convertDecimalToDMS(d.lng, false);
@@ -1610,7 +1645,14 @@ function renderTable(disasters) {
 
     const fallbackDescText = generateChineseDescription(d);
     
-    if (d.aiChineseDescription) {
+    if (showOriginalEnglish) {
+      const origText = d.description && d.description !== d.title ?
+        `<strong>${d.title}</strong><br>${d.description}` : d.title;
+      descCell.innerHTML = `
+        ${alertBadge}
+        <span class="desc-text">${origText}</span>
+      `;
+    } else if (d.aiChineseDescription) {
       descCell.innerHTML = `
         ${alertBadge}
         <span class="desc-text">${d.aiChineseDescription}</span>
