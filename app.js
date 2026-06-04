@@ -472,7 +472,11 @@ function initClock() {
   const clockEl = document.getElementById("live-clock");
   const updateClock = () => {
     const now = new Date();
-    clockEl.textContent = now.toLocaleTimeString('zh-TW', { hour12: false });
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const date = String(now.getDate()).padStart(2, '0');
+    const timeStr = now.toLocaleTimeString('zh-TW', { hour12: false });
+    clockEl.textContent = `${year}-${month}-${date} ${timeStr}`;
   };
   updateClock();
   setInterval(updateClock, 1000);
