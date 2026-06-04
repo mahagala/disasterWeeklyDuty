@@ -1322,6 +1322,19 @@ function formatDateRange(fromStr, toStr, pubStr) {
 }
 
 // --- 雙向文獻檢索連結生成 (Search Grounding & Official Link) ---
+// 輔助函數：將分類對照回適合搜尋的英文關鍵字
+function getCategoryEnglishKeyword(type) {
+  const info = getCategoryInfo(type);
+  const name = info.name;
+  if (name === "風災" || name === "強烈天氣") return "cyclone OR storm OR typhoon OR hurricane";
+  if (name === "洪災") return "flood OR flooding";
+  if (name === "地震") return "earthquake";
+  if (name === "火山") return "volcano OR eruption";
+  if (name === "野火") return "wildfire OR forest fire";
+  if (name === "乾旱") return "drought";
+  return type || "disaster";
+}
+
 function generateReferenceLinks(disaster) {
   const links = [];
   
@@ -1338,9 +1351,15 @@ function generateReferenceLinks(disaster) {
   });
 
   // 2. 自動生成相關的第三方與即時新聞檢索連結 (解決無 Gemini API 搜尋之痛點)
-  const countryName = translateCountry(disaster.country);
+  const countryCn = translateCountry(disaster.country);
+  const countryEn = disaster.country || "";
   const typeInfo = getCategoryInfo(disaster.type);
-  const queryText = encodeURIComponent(`${countryName} ${typeInfo.name} 2026`);
+  const catCn = typeInfo.name;
+  const catEn = getCategoryEnglishKeyword(disaster.type);
+
+  // 建立中英雙語複合查詢，並加上當前年份 2026 以過濾過期新聞
+  const rawQuery = `(${countryCn} ${catCn} 2026) OR (${countryEn} ${catEn} 2026)`;
+  const queryText = encodeURIComponent(rawQuery);
 
   // Google News 即時搜尋連結
   links.push({
