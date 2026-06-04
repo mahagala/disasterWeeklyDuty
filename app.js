@@ -460,6 +460,7 @@ function getCountryContinent(country) {
 
 // --- 初始化程序 ---
 document.addEventListener("DOMContentLoaded", () => {
+  initOpenCC();
   initClock();
   initSettings();
   initMap();
@@ -1104,7 +1105,67 @@ function convertDecimalToDMS(deg, isLat) {
   return `${degrees}°${minutes}'${seconds}"${direction}`;
 }
 
-// 動態呼叫 OSM Nominatim 取得詳細中文地名 (含節流與快取)
+// --- 繁體中文簡繁轉換引擎 ---
+let openccConverter = null;
+
+// 初始化 OpenCC 轉換器 (嘗試從 window.OpenCC 取得)
+function initOpenCC() {
+  if (window.OpenCC && window.OpenCC.Converter) {
+    try {
+      openccConverter = window.OpenCC.Converter({ from: 'cn', to: 'tw' });
+      console.log("OpenCC 簡繁轉換器載入成功");
+    } catch (e) {
+      console.error("OpenCC 轉換器初始化失敗", e);
+    }
+  }
+}
+
+// 內建基礎簡繁轉換對照表 (用於離線或 CDN 載入失敗時的 Fallback)
+const BASIC_S2T_MAP = {
+  '尔': '爾', '达': '達', '贝': '貝', '亚': '亞', '伦': '倫', '罗': '羅', '兰': '蘭', '萨': '薩',
+  '维': '維', '纳': '納', '鲁': '魯', '乌': '烏', '齐': '齊', '宾': '賓', '约': '約', '叙': '敘',
+  '门': '門', '几': '幾', '内': '內', '顿': '頓', '华': '華', '纽': '紐', '旧': '舊', '矶': '磯',
+  '圣': '聖', '马': '馬', '诺': '諾', '时': '時', '奥': '奧', '腊': '臘', '麦': '麥', '爱': '愛',
+  '岛': '島', '卢': '盧', '冈': '岡', '庄': '莊', '东': '東', '西': '西', '南': '南', '北': '北',
+  '边': '邊', '湾': '灣', '桥': '橋', '园': '園', '场': '場', '厂': '廠', '库': '庫', '关': '關',
+  '岭': '嶺', '峰': '峰', '气': '氣', '温': '溫', '热': '熱', '湿': '濕', '干': '乾', '灾': '災',
+  '难': '難', '险': '險', '会': '會', '图': '圖', '报': '報', '响': '響', '应': '應', '队': '隊',
+  '备': '備', '库': '庫', '点': '點', '线': '線', '体': '體', '动': '動', '资': '資', '数': '數',
+  '据': '據', '证': '證', '视': '視', '频': '頻', '乐': '樂', '杂': '雜', '志': '誌', '态': '態',
+  '变': '變', '减': '減', '员': '員', '伍': '伍', '装': '裝', '发': '發', '与': '與', '产': '產',
+  '业': '業', '无': '無', '专': '專', '阶': '階', '级': '級', '铁': '鐵', '开': '開', '连': '連',
+  '结': '結', '调': '調', '查': '查', '办': '辦', '公': '公', '务': '務', '计': '計', '算': '算',
+  '机': '機', '脑': '腦', '网': '網', '络': '絡', '通': '通', '传': '傳', '输': '輸', '导': '導',
+  '航': '航', '卫': '衛', '星': '星', '间': '間', '面': '面', '测': '測', '绘': '繪', '格': '格',
+  '栏': '欄', '标': '標', '题': '題', '容': '容', '详': '詳', '细': '細', '简': '簡', '说': '說',
+  '明': '明', '注': '注', '释': '釋', '参': '參', '考': '考', '献': '獻', '链': '鏈', '接': '接',
+  '址': '址', '联': '聯', '系': '系', '统': '統', '平': '平', '台': '台', '功': '功', '能': '能',
+  '设': '設', '置': '置', '控': '控', '制': '制', '板': '板', '过': '過', '滤': '濾', '选': '選',
+  '择': '擇', '讫': '訖', '量': '量', '总': '總', '划': '劃', '邦': '邦', '都': '都', '府': '府',
+  '里': '里', '克': '克', '圭': '圭', '瓜': '瓜', '多': '多', '那': '那', '玻': '玻', '利': '利',
+  '秘': '秘', '智': '智', '廷': '廷', '极': '極', '洲': '洲', '洋': '洋', '区': '區', '县': '縣',
+  '镇': '鎮', '乡': '鄉', '省': '省', '市': '市', '州': '州'
+};
+
+// 簡體字轉正體繁體字
+function translateSimplifiedToTraditional(str) {
+  if (!str) return "";
+  
+  // 1. 如果 OpenCC 載入成功，使用 OpenCC 進行專業轉換
+  if (openccConverter) {
+    return openccConverter(str);
+  }
+  
+  // 2. Fallback: 使用內建字典進行字元替換
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    result += BASIC_S2T_MAP[char] || char;
+  }
+  return result;
+}
+
+// 動態呼叫 OSM Nominatim 取得詳細地名 (含簡繁轉換、中英對照、節流與快取)
 async function enrichLocationsWithGeocoding() {
   const itemsToGeocode = allDisasters.filter(d => d.lat !== null && d.lng !== null && !d.chineseLocationDetail);
   if (itemsToGeocode.length === 0) return;
@@ -1115,48 +1176,89 @@ async function enrichLocationsWithGeocoding() {
     const item = itemsToGeocode[i];
     const cacheKey = `${item.lat.toFixed(3)},${item.lng.toFixed(3)}`;
     
-    if (geocodeCache[cacheKey]) {
-      item.chineseLocationDetail = geocodeCache[cacheKey];
+    // 檢查快取
+    const cachedVal = geocodeCache[cacheKey];
+    if (cachedVal) {
+      if (typeof cachedVal === "string") {
+        // 升級舊的字串快取
+        item.chineseLocationDetail = translateSimplifiedToTraditional(cachedVal);
+        item.englishLocationDetail = cachedVal;
+      } else {
+        item.chineseLocationDetail = translateSimplifiedToTraditional(cachedVal.zh);
+        item.englishLocationDetail = cachedVal.en;
+      }
       continue;
     }
 
     // 遵守 Nominatim API 政策：每秒至多 1 次請求
     await new Promise(resolve => setTimeout(resolve, 1000));
 
+    let formattedLocZh = "";
+    let formattedLocEn = "";
+
+    // 1. 查詢中文 (zh-TW)
     try {
-      // 逆向地理編碼 API
-      const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${item.lat}&lon=${item.lng}&zoom=8&accept-language=zh-TW`;
-      const response = await fetch(url, {
+      const urlZh = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${item.lat}&lon=${item.lng}&zoom=8&accept-language=zh-TW`;
+      const responseZh = await fetch(urlZh, {
         headers: {
           'User-Agent': 'DisasterReportHub/1.0 (johnson@gemini.local)'
         }
       });
-      
-      if (response.ok) {
-        const data = await response.json();
-        if (data.address) {
-          const addr = data.address;
+      if (responseZh.ok) {
+        const dataZh = await responseZh.json();
+        if (dataZh.address) {
+          const addr = dataZh.address;
           const county = addr.county || addr.city || addr.state || "";
           const region = addr.suburb || addr.town || addr.village || "";
-          
-          let formattedLoc = "";
-          if (county) formattedLoc += county;
-          if (region) formattedLoc += " " + region;
-          
-          if (formattedLoc.trim() !== "") {
-            geocodeCache[cacheKey] = formattedLoc.trim();
-            item.chineseLocationDetail = formattedLoc.trim();
-            
-            // 寫入快取 LocalStorage
-            localStorage.setItem("geocode_cache", JSON.stringify(geocodeCache));
-            
-            // 每次成功解析就小幅度重新整理表格，增加流暢度
-            renderTableOnly();
-          }
+          if (county) formattedLocZh += county;
+          if (region) formattedLocZh += " " + region;
+          formattedLocZh = formattedLocZh.trim();
         }
       }
     } catch (e) {
-      console.warn("地理逆向編碼查詢失敗:", e);
+      console.warn("地理中文逆編碼失敗:", e);
+    }
+
+    // 2. 為了在切換英文模式時也能顯示英文地名，多發送一次 en 請求
+    await new Promise(resolve => setTimeout(resolve, 1000)); // 遵守 rate limit
+
+    try {
+      const urlEn = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${item.lat}&lon=${item.lng}&zoom=8&accept-language=en`;
+      const responseEn = await fetch(urlEn, {
+        headers: {
+          'User-Agent': 'DisasterReportHub/1.0 (johnson@gemini.local)'
+        }
+      });
+      if (responseEn.ok) {
+        const dataEn = await responseEn.json();
+        if (dataEn.address) {
+          const addr = dataEn.address;
+          const county = addr.county || addr.city || addr.state || "";
+          const region = addr.suburb || addr.town || addr.village || "";
+          if (county) formattedLocEn += county;
+          if (region) formattedLocEn += " " + region;
+          formattedLocEn = formattedLocEn.trim();
+        }
+      }
+    } catch (e) {
+      console.warn("地理英文逆編碼失敗:", e);
+    }
+
+    // 3. 儲存快取與更新欄位
+    if (formattedLocZh || formattedLocEn) {
+      const cacheVal = {
+        zh: translateSimplifiedToTraditional(formattedLocZh || formattedLocEn),
+        en: formattedLocEn || formattedLocZh
+      };
+      geocodeCache[cacheKey] = cacheVal;
+      item.chineseLocationDetail = cacheVal.zh;
+      item.englishLocationDetail = cacheVal.en;
+      
+      // 寫入快取 LocalStorage
+      localStorage.setItem("geocode_cache", JSON.stringify(geocodeCache));
+      
+      // 每次成功解析就小幅度重新整理表格，增加流暢度
+      renderTableOnly();
     }
   }
 }
@@ -1715,7 +1817,13 @@ function renderTable(disasters) {
     const dmsLng = convertDecimalToDMS(d.lng, false);
     
     // Nominatim 逆編碼獲得的詳細地址 (如果存在)
-    const detailLocStr = d.chineseLocationDetail ? `<div class="loc-details">${d.chineseLocationDetail}</div>` : '';
+    let detailLocText = "";
+    if (showOriginalEnglish) {
+      detailLocText = d.englishLocationDetail || "";
+    } else {
+      detailLocText = translateSimplifiedToTraditional(d.chineseLocationDetail || "");
+    }
+    const detailLocStr = detailLocText ? `<div class="loc-details">${detailLocText}</div>` : '';
     
     let mapUrl = "#";
     if (d.lat !== null && d.lng !== null) {
@@ -1759,13 +1867,13 @@ function renderTable(disasters) {
     } else if (d.aiChineseDescription) {
       descCell.innerHTML = `
         ${alertBadge}
-        <span class="desc-text">${d.aiChineseDescription}</span>
+        <span class="desc-text">${translateSimplifiedToTraditional(d.aiChineseDescription)}</span>
         <span class="desc-ai-generated">✦ AI 智慧生成繁中摘要</span>
       `;
     } else {
       descCell.innerHTML = `
         ${alertBadge}
-        <span class="desc-text">${fallbackDescText}</span>
+        <span class="desc-text">${translateSimplifiedToTraditional(fallbackDescText)}</span>
       `;
       // 嘗試調用 Gemini 翻譯 (如果 API Key 設定的話會在後台跑並動態更新)
       tryGeminiTranslation(d, descCell);
@@ -1906,12 +2014,12 @@ function exportToCSV() {
     const continent = getCountryContinent(d.country);
     const countryCn = translateCountry(d.country);
     const country = flag ? `${flag} ${continent} ${countryCn}` : `${continent} ${countryCn}`;
-    const details = d.chineseLocationDetail || "";
+    const details = translateSimplifiedToTraditional(d.chineseLocationDetail || "");
     const lat = d.lat || "";
     const lng = d.lng || "";
     const category = getCategoryInfo(d.type).name;
     const level = d.alertlevel || "None";
-    const desc = (d.aiChineseDescription || generateChineseDescription(d)).replace(/"/g, '""'); // CSV 跳脫雙引號
+    const desc = translateSimplifiedToTraditional(d.aiChineseDescription || generateChineseDescription(d)).replace(/"/g, '""'); // CSV 跳脫雙引號
     const link = d.link;
 
     const row = [
