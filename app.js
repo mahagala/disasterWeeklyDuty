@@ -187,6 +187,18 @@ function cleanId(id) {
   return id.replace(/[^a-zA-Z0-9_]/g, "_");
 }
 
+// 輔助函數：將各來源的多樣化災害類型字串映射到標準化代碼 (EQ, FL, TC, VO, WF, DR, OTHER)
+function getStandardCategoryGroup(type) {
+  const t = type ? type.trim() : "";
+  if (t === "EQ" || t === "Earthquake") return "EQ";
+  if (t === "FL" || t === "Flood") return "FL";
+  if (t === "TC" || t === "Tropical Cyclone" || t === "Severe Weather") return "TC";
+  if (t === "VO" || t === "Volcano") return "VO";
+  if (t === "WF" || t === "Wild fire" || t === "Wildfire") return "WF";
+  if (t === "DR" || t === "Drought" || t === "Droughts") return "DR";
+  return "OTHER";
+}
+
 // --- 國旗對照表 ---
 const FLAG_MAP = {
   "TWN": "🇹🇼", "台灣": "🇹🇼", "TAIWAN": "🇹🇼",
@@ -541,6 +553,15 @@ function setupEventListeners() {
   document.getElementById("source-ercc-chk").addEventListener("change", filterAndDisplayData);
   document.getElementById("source-usgs-chk").addEventListener("change", filterAndDisplayData);
   document.getElementById("source-reliefweb-chk").addEventListener("change", filterAndDisplayData);
+
+  // 災害類別篩選連動
+  document.getElementById("cat-tc-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("cat-fl-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("cat-eq-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("cat-vo-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("cat-wf-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("cat-dr-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("cat-other-chk").addEventListener("change", filterAndDisplayData);
   
   // 表格搜尋框
   document.getElementById("table-search").addEventListener("input", filterAndDisplayData);
@@ -1436,6 +1457,16 @@ function filterAndDisplayData() {
     if (d.source === "ERCC" && !erccChk) return false;
     if (d.source === "USGS" && !usgsChk) return false;
     if (d.source === "ReliefWeb" && !reliefwebChk) return false;
+
+    // 1.5 篩選災害類別
+    const stdGroup = getStandardCategoryGroup(d.type);
+    if (stdGroup === "TC" && !document.getElementById("cat-tc-chk").checked) return false;
+    if (stdGroup === "FL" && !document.getElementById("cat-fl-chk").checked) return false;
+    if (stdGroup === "EQ" && !document.getElementById("cat-eq-chk").checked) return false;
+    if (stdGroup === "VO" && !document.getElementById("cat-vo-chk").checked) return false;
+    if (stdGroup === "WF" && !document.getElementById("cat-wf-chk").checked) return false;
+    if (stdGroup === "DR" && !document.getElementById("cat-dr-chk").checked) return false;
+    if (stdGroup === "OTHER" && !document.getElementById("cat-other-chk").checked) return false;
 
     // 2. 篩選警報等級
     if (alertLevelVal !== "all" && d.alertlevel !== alertLevelVal) return false;
