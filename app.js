@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 坡洪組國際災情值周用全球災害資訊整合平台 - Core Application Logic
  */
 
@@ -12,10 +12,13 @@ const CONFIG = {
   ],
   // 災害資料來源 feeds
   feeds: {
-    gdacs: "https://www.gdacs.org/xml/rss_7d.xml",
+    gdacs7d: "https://www.gdacs.org/xml/rss_7d.xml",
+    gdacsEq3m: "https://www.gdacs.org/xml/rss_eq_3m.xml",
+    gdacsTc3m: "https://www.gdacs.org/xml/rss_tc_3m.xml",
+    gdacsFl3m: "https://www.gdacs.org/xml/rss_fl_3m.xml",
     ercc: "https://erccportal.jrc.ec.europa.eu/API/ERCC/Maps/GetLatestDailyMapRss",
-    usgs: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.atom",
-    reliefweb: "https://api.reliefweb.int/v1/reports?limit=20&preset=latest"
+    usgs: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.atom", // 擴展至過去 30 天
+    reliefweb: "https://api.reliefweb.int/v1/reports?limit=150&preset=latest" // 擴展至 150 篇以覆蓋更久歷史
   },
   // 逆向地理編碼 OSM Nominatim 啟用狀態
   enableNominatim: true
@@ -586,15 +589,37 @@ async function loadData(forceReload = false) {
   allDisasters = [];
   let successSources = 0;
 
-  // 1. 下載 GDACS
+  // 1. 下載 GDACS (並行下載 7天總覽, 3個月地震, 3個月風災, 3個月洪災)
   try {
-    const gdacsXml = await fetchWithProxy(CONFIG.feeds.gdacs);
-    const parsedGdacs = parseGdacsRSS(gdacsXml);
-    allDisasters.push(...parsedGdacs);
-    updateSourceStatus("gdacs", "active");
-    successSources++;
+    const gdacsFeeds = [
+      CONFIG.feeds.gdacs7d,
+      CONFIG.feeds.gdacsEq3m,
+      CONFIG.feeds.gdacsTc3m,
+      CONFIG.feeds.gdacsFl3m
+    ];
+    
+    // 使用 Promise.allSettled 並行抓取所有 GDACS 訂閱源
+    const promises = gdacsFeeds.map(url => fetchWithProxy(url).then(xml => parseGdacsRSS(xml)));
+    const results = await Promise.allSettled(promises);
+    
+    let gdacsSuccessCount = 0;
+    results.forEach((result, idx) => {
+      if (result.status === "fulfilled" && result.value) {
+        allDisasters.push(...result.value);
+        gdacsSuccessCount++;
+      } else {
+        console.warn(`GDACS 訂閱源 ${gdacsFeeds[idx]} 載入失敗:`, result.reason);
+      }
+    });
+
+    if (gdacsSuccessCount > 0) {
+      updateSourceStatus("gdacs", "active");
+      successSources++;
+    } else {
+      updateSourceStatus("gdacs", "error");
+    }
   } catch (err) {
-    console.error("GDACS 載入失敗:", err);
+    console.error("GDACS 處理發生錯誤:", err);
     updateSourceStatus("gdacs", "error");
   }
 
@@ -632,6 +657,17 @@ async function loadData(forceReload = false) {
   } catch (err) {
     console.error("ReliefWeb 載入失敗:", err);
     updateSourceStatus("reliefweb", "error");
+  }
+
+  // 對 allDisasters 進行去重 (根據 id 屬性)，防止多個訂閱源中包含重複的事件
+  if (allDisasters.length > 0) {
+    const uniqueMap = new Map();
+    allDisasters.forEach(d => {
+      if (!uniqueMap.has(d.id)) {
+        uniqueMap.set(d.id, d);
+      }
+    });
+    allDisasters = Array.from(uniqueMap.values());
   }
 
   // 隱藏 Loading 動態
