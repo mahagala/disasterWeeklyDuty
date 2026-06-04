@@ -1,5 +1,5 @@
 ﻿/**
- * 坡洪組國際災情值周用全球災害資訊整合平台 - Core Application Logic
+ * 坡洪組國際災情值週用全球災害資訊整合平台 - Core Application Logic
  */
 
 // --- 系統配置 ---
