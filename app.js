@@ -2355,28 +2355,39 @@ function showToast(message) {
 
 // --- 簡報圖卡生成器邏輯實作 ---
 
-// 根據可視寬度自動縮放簡報畫布，防止橫向捲動
+// 根據可用空間自動雙向縮放簡報畫布，防止橫向與縱向溢出捲動
 function resizeSlideCanvas() {
+  const modalBody = document.querySelector(".slide-modal-body");
   const container = document.querySelector(".slide-canvas-container");
   const scaler = document.getElementById("slide-canvas-scaler");
   const canvas = document.getElementById("slide-canvas");
-  if (!container || !scaler || !canvas) return;
+  if (!modalBody || !container || !scaler || !canvas) return;
 
-  const availableWidth = container.clientWidth - 16; // 減去微小邊距
+  // 1. 取得 modal-body 內部實際可視高寬
+  const bodyW = modalBody.clientWidth;
+  const bodyH = modalBody.clientHeight;
+
+  // 2. 側邊欄固定寬 340px，間距 24px，左右內距與邊界補償約 56px
+  const availableWidth = bodyW - 340 - 24 - 56;
+  // 上下內距與提示文字 tip 佔用空間補償約 64px
+  const availableHeight = bodyH - 64;
+
   const baseWidth = 1200;
+  const baseHeight = 675;
 
-  if (availableWidth < baseWidth) {
-    const scale = availableWidth / baseWidth;
-    canvas.style.transform = `scale(${scale})`;
-    
-    // 同步修改 scaler 的排版寬高，以防父容器以 1200x675 排版導致溢出橫向捲動
-    scaler.style.width = `${baseWidth * scale}px`;
-    scaler.style.height = `${675 * scale}px`;
-  } else {
-    canvas.style.transform = "none";
-    scaler.style.width = `${baseWidth}px`;
-    scaler.style.height = "675px";
-  }
+  // 3. 計算寬度比與高度比
+  const scaleW = availableWidth / baseWidth;
+  const scaleH = availableHeight / baseHeight;
+
+  // 4. 取得兩軸最小的縮放比例，且上限為 1.0 (不放大)
+  const scale = Math.max(0.1, Math.min(scaleW, scaleH, 1.0));
+
+  // 5. 套用縮放
+  canvas.style.transform = `scale(${scale})`;
+  
+  // 6. 同步修改 scaler 的 Layout 排版寬高，以防瀏覽器產生橫向與縱向捲動條
+  scaler.style.width = `${baseWidth * scale}px`;
+  scaler.style.height = `${baseHeight * scale}px`;
 }
 
 // 開啟簡報圖卡生成器 Modal

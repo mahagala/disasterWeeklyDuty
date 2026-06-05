@@ -1490,16 +1490,16 @@ mark {
 .slide-modal-body {
   flex: 1;
   padding: 24px;
-  overflow-y: auto;
+  overflow: hidden;
   min-height: 0;
 }
 
 .slide-workspace {
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: minmax(0, 1fr) 340px;
   gap: 24px;
   height: 100%;
-  align-items: start;
+  align-items: center;
 }
 
 .slide-canvas-container {
@@ -1689,6 +1689,8 @@ mark {
   flex-direction: column;
   gap: 16px;
   height: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .slide-sidebar-controls h3 {
@@ -1711,7 +1713,7 @@ mark {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 380px;
+  min-height: 0;
   padding-right: 4px;
 }
 
