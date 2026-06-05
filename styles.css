@@ -1210,6 +1210,20 @@ body {
   transform: scale(0.95);
 }
 
+/* 浮動中英文切換鍵專屬樣式 */
+.scroll-btn.lang-toggle-btn {
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 當處於英文原文模式時的點亮狀態 (Glow Effect) */
+.scroll-btn.lang-toggle-btn.active {
+  background: var(--primary) !important;
+  color: white !important;
+  box-shadow: 0 0 12px var(--primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 @media (max-width: 768px) {
   .scroll-nav-widget {
     bottom: 16px;

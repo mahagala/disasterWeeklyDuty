@@ -582,21 +582,30 @@ function setupEventListeners() {
   // 表格搜尋框
   document.getElementById("table-search").addEventListener("input", filterAndDisplayData);
 
-  // 切換中英文原文按鈕
+  // 切換中英文原文按鈕 (同步表格上方按鈕與右下角懸浮按鈕)
   const toggleBtn = document.getElementById("toggle-translation-btn");
+  const floatingToggleBtn = document.getElementById("floating-toggle-translation-btn");
+  
+  const handleToggleTranslation = () => {
+    showOriginalEnglish = !showOriginalEnglish;
+    const btnText = document.getElementById("toggle-translation-text");
+    if (showOriginalEnglish) {
+      if (btnText) btnText.textContent = "切換中文翻譯";
+      if (toggleBtn) toggleBtn.classList.add("active");
+      if (floatingToggleBtn) floatingToggleBtn.classList.add("active");
+    } else {
+      if (btnText) btnText.textContent = "切換英文原文";
+      if (toggleBtn) toggleBtn.classList.remove("active");
+      if (floatingToggleBtn) floatingToggleBtn.classList.remove("active");
+    }
+    renderTableOnly();
+  };
+
   if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      showOriginalEnglish = !showOriginalEnglish;
-      const btnText = document.getElementById("toggle-translation-text");
-      if (showOriginalEnglish) {
-        if (btnText) btnText.textContent = "切換中文翻譯";
-        toggleBtn.classList.add("active");
-      } else {
-        if (btnText) btnText.textContent = "切換英文原文";
-        toggleBtn.classList.remove("active");
-      }
-      renderTableOnly();
-    });
+    toggleBtn.addEventListener("click", handleToggleTranslation);
+  }
+  if (floatingToggleBtn) {
+    floatingToggleBtn.addEventListener("click", handleToggleTranslation);
   }
 
   // 匯出 CSV 按鈕
