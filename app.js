@@ -2614,19 +2614,14 @@ function getCanvasXY(lat, lng) {
   if (lat === null || lat === undefined || isNaN(lat)) lat = 0;
   if (lng === null || lng === undefined || isNaN(lng)) lng = 0;
 
-  // 151KB world_map.svg viewBox 為 0 0 2000 857
-  // 經緯度投影轉換
-  const svgX = (lng + 180) * (2000 / 360);
-  const svgY = (85 - lat) * (2000 / 360); // 縱向等比例 scale
+  // 使用擬合出的精確等距柱狀投影 (Equirectangular) 轉換係數
+  // 151KB world_map.svg 原始視窗座標 2000x857
+  const svgX = 5.238862 * lng + 1009.237873;
+  const svgY = -6.453995 * lat + 490.858392;
   
-  // 畫布顯示尺寸與偏移量
-  const mapW = 1100;
-  const mapH = 471.35;
-  const leftOffset = 50;
-  const topOffset = 120;
-  
-  const x = (svgX / 2000) * mapW + leftOffset;
-  const y = (svgY / 857) * mapH + topOffset;
+  // 畫布顯示尺寸與偏移量 (地圖實際大小 1100x471.35, 偏移左50, 上120)
+  const x = (svgX / 2000) * 1100 + 50;
+  const y = (svgY / 857) * 471.35 + 120;
   
   return { x, y };
 }
