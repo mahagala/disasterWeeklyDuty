@@ -2358,8 +2358,9 @@ function showToast(message) {
 // 根據可視寬度自動縮放簡報畫布，防止橫向捲動
 function resizeSlideCanvas() {
   const container = document.querySelector(".slide-canvas-container");
+  const scaler = document.getElementById("slide-canvas-scaler");
   const canvas = document.getElementById("slide-canvas");
-  if (!container || !canvas) return;
+  if (!container || !scaler || !canvas) return;
 
   const availableWidth = container.clientWidth - 16; // 減去微小邊距
   const baseWidth = 1200;
@@ -2367,14 +2368,14 @@ function resizeSlideCanvas() {
   if (availableWidth < baseWidth) {
     const scale = availableWidth / baseWidth;
     canvas.style.transform = `scale(${scale})`;
-    canvas.style.transformOrigin = "top center";
     
-    // 計算縮放後的畫布實際佔用高度，並動態設定容器高度以防溢出或空白
-    const scaledHeight = 675 * scale;
-    container.style.height = `${scaledHeight + 40}px`;
+    // 同步修改 scaler 的排版寬高，以防父容器以 1200x675 排版導致溢出橫向捲動
+    scaler.style.width = `${baseWidth * scale}px`;
+    scaler.style.height = `${675 * scale}px`;
   } else {
     canvas.style.transform = "none";
-    container.style.height = "auto";
+    scaler.style.width = `${baseWidth}px`;
+    scaler.style.height = "675px";
   }
 }
 
@@ -2727,21 +2728,40 @@ function makeCardDraggable(cardEl) {
 
 // 下載投影片圖卡為高解析度 PNG
 function downloadSlidePNG() {
-  const canvasContainer = document.getElementById("slide-canvas");
-  if (!canvasContainer) return;
+  const canvas = document.getElementById("slide-canvas");
+  const scaler = document.getElementById("slide-canvas-scaler");
+  if (!canvas) return;
 
   showToast("正在生成高解析度簡報圖卡，請稍候...");
 
+  // 暫時移除縮放以確保 html2canvas 擷取到原始 1200x675 尺寸的完美像素
+  const prevTransform = canvas.style.transform;
+  const prevScalerW = scaler ? scaler.style.width : "";
+  const prevScalerH = scaler ? scaler.style.height : "";
+  
+  canvas.style.transform = "none";
+  if (scaler) {
+    scaler.style.width = "1200px";
+    scaler.style.height = "675px";
+  }
+
   // 將 scale 設為 1.6 (1200 * 1.6 = 1920, 675 * 1.6 = 1080)
   // 以便匯出符合 PPT 標準寬幅 1080p 的超清晰圖片
-  html2canvas(canvasContainer, {
+  html2canvas(canvas, {
     scale: 1.6,
     useCORS: true,
     allowTaint: false,
     logging: true,
     backgroundColor: "#f8fafc"
-  }).then(canvas => {
-    const url = canvas.toDataURL("image/png");
+  }).then(canvasEl => {
+    // 恢復縮放
+    canvas.style.transform = prevTransform;
+    if (scaler) {
+      scaler.style.width = prevScalerW;
+      scaler.style.height = prevScalerH;
+    }
+
+    const url = canvasEl.toDataURL("image/png");
     const titleText = document.getElementById("slide-title-text").textContent.trim();
     
     const a = document.createElement("a");
@@ -2753,6 +2773,12 @@ function downloadSlidePNG() {
     showToast("簡報圖卡下載成功！");
   }).catch(err => {
     console.error("生成圖卡失敗:", err);
+    // 恢復縮放
+    canvas.style.transform = prevTransform;
+    if (scaler) {
+      scaler.style.width = prevScalerW;
+      scaler.style.height = prevScalerH;
+    }
     alert("簡報圖卡生成失敗，可能是圖檔快取或瀏覽器限制，請重試或聯繫開發同仁。");
   });
 }

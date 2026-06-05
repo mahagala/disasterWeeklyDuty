@@ -1503,9 +1503,21 @@ mark {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* 16:9 Presentation Canvas Scaler Wrapper */
+.slide-canvas-scaler {
+  position: relative;
+  width: 1200px;
+  height: 675px;
+  overflow: visible;
+  display: block;
+}
+
 /* 16:9 Presentation Canvas */
 .slide-canvas {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
   width: 1200px;
   height: 675px;
   background: #f8fafc; /* Clean light background for presentations */
