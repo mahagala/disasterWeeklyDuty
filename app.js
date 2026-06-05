@@ -2614,10 +2614,15 @@ function getCanvasXY(lat, lng) {
   if (lat === null || lat === undefined || isNaN(lat)) lat = 0;
   if (lng === null || lng === undefined || isNaN(lng)) lng = 0;
 
-  // 使用擬合出的精確等距柱狀投影 (Equirectangular) 轉換係數
+  // 紐西蘭在地圖上被向左平移了約 15.38 度，在此進行區域性經度補償
+  if (lng > 160 && lat < -30) {
+    lng -= 15.38;
+  }
+
+  // 使用擬合出的精確等距柱狀投影 (Equirectangular) 轉換係數 (以離島中心點擬合以消除質心噪聲)
   // 151KB world_map.svg 原始視窗座標 2000x857
-  const svgX = 5.238862 * lng + 1009.237873;
-  const svgY = -6.453995 * lat + 490.858392;
+  const svgX = 5.571924 * lng + 989.252408;
+  const svgY = -6.344521 * lat + 501.417600;
   
   // 畫布顯示尺寸與偏移量 (地圖實際大小 1100x471.35, 偏移左50, 上120)
   const x = (svgX / 2000) * 1100 + 50;
