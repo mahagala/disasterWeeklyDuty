@@ -1350,4 +1350,99 @@ body {
   }
 }
 
+/* --- 搜尋關鍵字高亮標記 --- */
+mark {
+  background: rgba(234, 179, 8, 0.3) !important; /* Premium semi-transparent amber/yellow */
+  color: #fef08a !important; /* Soft bright yellow text */
+  padding: 0 3px;
+  border-radius: 3px;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+/* --- 表格操作複製按鈕 --- */
+.action-cell {
+  text-align: center;
+}
+.copy-row-btn {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #a5b4fc !important;
+  border: 1px solid rgba(99, 102, 241, 0.3) !important;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+.copy-row-btn:hover {
+  background: var(--primary) !important;
+  color: white !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
+}
+.copy-row-btn:active {
+  transform: translateY(1px);
+}
+
+/* --- Toast 訊息提示視窗 --- */
+.toast-container {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.toast-notification {
+  background: rgba(17, 12, 28, 0.85); /* Deep dark theme background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #f8fafc;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: auto;
+}
+.toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Leaflet 地圖自訂全球視野按鈕 --- */
+.leaflet-reset-view-btn {
+  font-size: 16px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(30, 30, 40, 0.8) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease;
+}
+.leaflet-reset-view-btn:hover {
+  background: rgba(40, 40, 60, 0.9) !important;
+  color: #a5b4fc !important;
+}
+
 

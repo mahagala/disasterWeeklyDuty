@@ -503,13 +503,54 @@ function initMap() {
   }).setView([20, 0], 2);
 
   // 載入 CartoDB Dark Matter 暗色系地圖瓦片 (非常有科技感且能突出彩色標記)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  const darkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 20
-  }).addTo(map);
+  });
+
+  // 載入 Esri World Imagery 衛星影像瓦片
+  const esriSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+    maxZoom: 18
+  });
+
+  // 預設添加科技暗色圖層
+  darkMatter.addTo(map);
+
+  // 圖層選擇器
+  const baseMaps = {
+    "科技暗色 / Dark Map": darkMatter,
+    "衛星影像 / Satellite": esriSatellite
+  };
+  
+  L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
 
   markersGroup = L.layerGroup().addTo(map);
+
+  // 自訂「重設為全球視野」按鈕
+  L.Control.ResetView = L.Control.extend({
+    options: {
+      position: 'topleft'
+    },
+    onAdd: function (mapInstance) {
+      const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-reset-view');
+      const button = L.DomUtil.create('a', 'leaflet-reset-view-btn', container);
+      button.innerHTML = '🌐';
+      button.href = '#';
+      button.title = showOriginalEnglish ? 'Reset View to Global' : '重設為全球視野';
+      
+      L.DomEvent.on(button, 'click', function (e) {
+        L.DomEvent.stopPropagation(e);
+        L.DomEvent.preventDefault(e);
+        mapInstance.setView([20, 0], 2);
+      });
+      
+      return container;
+    }
+  });
+  
+  new L.Control.ResetView().addTo(map);
 }
 
 // --- 設定管理 (API Key 與 CORS Proxy) ---
@@ -564,7 +605,10 @@ function setupEventListeners() {
   });
 
   // 其他篩選器連動
-  document.getElementById("alert-level").addEventListener("change", filterAndDisplayData);
+  document.getElementById("alert-red-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("alert-orange-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("alert-green-chk").addEventListener("change", filterAndDisplayData);
+  document.getElementById("alert-none-chk").addEventListener("change", filterAndDisplayData);
   document.getElementById("source-gdacs-chk").addEventListener("change", filterAndDisplayData);
   document.getElementById("source-ercc-chk").addEventListener("change", filterAndDisplayData);
   document.getElementById("source-usgs-chk").addEventListener("change", filterAndDisplayData);
@@ -1587,10 +1631,12 @@ async function tryGeminiTranslation(disaster, descContainer) {
     
     // 更新網頁上的文字
     if (!showOriginalEnglish) {
+      const searchVal = document.getElementById("table-search").value.trim();
+      const highlightedResultText = highlightText(resultText, searchVal);
       descContainer.innerHTML = `
         ${disaster.alertlevel && disaster.alertlevel !== "None" ? 
-          `<span class="desc-alert-badge ${disaster.alertlevel.toLowerCase()}">${disaster.alertlevel} Alert</span>` : ''}
-        <span class="desc-text">${resultText}</span>
+          `<span class="desc-alert-badge ${disaster.alertlevel.toLowerCase()}">${disaster.alertlevel === 'Red' ? '紅色警戒' : disaster.alertlevel === 'Orange' ? '橙色警戒' : '綠色警報'}</span>` : ''}
+        <span class="desc-text">${highlightedResultText}</span>
         <span class="desc-ai-generated">✦ AI 智慧生成繁中摘要</span>
       `;
     }
@@ -1610,7 +1656,10 @@ async function tryGeminiTranslation(disaster, descContainer) {
 
 function filterAndDisplayData() {
   const timeRangeVal = document.getElementById("time-range").value;
-  const alertLevelVal = document.getElementById("alert-level").value;
+  const alertRedChk = document.getElementById("alert-red-chk").checked;
+  const alertOrangeChk = document.getElementById("alert-orange-chk").checked;
+  const alertGreenChk = document.getElementById("alert-green-chk").checked;
+  const alertNoneChk = document.getElementById("alert-none-chk").checked;
   const searchVal = document.getElementById("table-search").value.trim().toLowerCase();
 
   const gdacsChk = document.getElementById("source-gdacs-chk").checked;
@@ -1657,7 +1706,10 @@ function filterAndDisplayData() {
     if (stdGroup === "OTHER" && !document.getElementById("cat-other-chk").checked) return false;
 
     // 2. 篩選警報等級
-    if (alertLevelVal !== "all" && d.alertlevel !== alertLevelVal) return false;
+    if (d.alertlevel === "Red" && !alertRedChk) return false;
+    if (d.alertlevel === "Orange" && !alertOrangeChk) return false;
+    if (d.alertlevel === "Green" && !alertGreenChk) return false;
+    if ((!d.alertlevel || d.alertlevel === "None") && !alertNoneChk) return false;
 
     // 3. 篩選時間區段 (比對最新通報時間與災害實際結束時間)
     const itemDate = new Date(d.pubDate);
@@ -1767,16 +1819,27 @@ function renderMapMarkers(disasters) {
   });
 }
 
+// --- 搜尋關鍵字高亮標記輔助函數 ---
+function highlightText(text, keyword) {
+  if (text === null || text === undefined) return "";
+  const textStr = String(text);
+  if (!keyword) return textStr;
+  const escapedKeyword = keyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  const regex = new RegExp(`(${escapedKeyword})`, 'gi');
+  return textStr.replace(regex, '<mark>$1</mark>');
+}
+
 // --- 渲染數據表格 ---
 function renderTable(disasters) {
   const tableBody = document.getElementById("disaster-table-body");
   const summaryText = document.getElementById("table-summary-text");
+  const searchVal = document.getElementById("table-search").value.trim();
 
   if (disasters.length === 0) {
     summaryText.textContent = "找到 0 筆符合條件的災害事件。";
     tableBody.innerHTML = `
       <tr>
-        <td colspan="5" class="table-empty">
+        <td colspan="6" class="table-empty">
           <div class="table-empty-icon">📂</div>
           <p>沒有找到符合目前篩選條件的災害事件。</p>
         </td>
@@ -1829,8 +1892,11 @@ function renderTable(disasters) {
       continent = continentEnMap[continent] || continent;
     }
     
+    // 高亮國家/地點關鍵字
+    const highlightedCountryName = highlightText(countryName, searchVal);
+    
     // 格式為：國旗 洲 國名 (無括弧)
-    const countryLabel = flagImg ? `${flagImg} ${continent} ${countryName}` : `${continent} ${countryName}`;
+    const countryLabel = flagImg ? `${flagImg} ${continent} ${highlightedCountryName}` : `${continent} ${highlightedCountryName}`;
     
     const dmsLat = convertDecimalToDMS(d.lat, true);
     const dmsLng = convertDecimalToDMS(d.lng, false);
@@ -1842,7 +1908,8 @@ function renderTable(disasters) {
     } else {
       detailLocText = translateSimplifiedToTraditional(d.chineseLocationDetail || "");
     }
-    const detailLocStr = detailLocText ? `<div class="loc-details">${detailLocText}</div>` : '';
+    const highlightedDetailLocText = highlightText(detailLocText, searchVal);
+    const detailLocStr = highlightedDetailLocText ? `<div class="loc-details">${highlightedDetailLocText}</div>` : '';
     
     let mapUrl = "#";
     if (d.lat !== null && d.lng !== null) {
@@ -1877,22 +1944,28 @@ function renderTable(disasters) {
     const fallbackDescText = generateChineseDescription(d);
     
     if (showOriginalEnglish) {
+      const highlightedTitle = highlightText(d.title, searchVal);
+      const highlightedDesc = highlightText(d.description, searchVal);
       const origText = d.description && d.description !== d.title ?
-        `<strong>${d.title}</strong><br>${d.description}` : d.title;
+        `<strong>${highlightedTitle}</strong><br>${highlightedDesc}` : highlightedTitle;
       descCell.innerHTML = `
         ${alertBadge}
         <span class="desc-text">${origText}</span>
       `;
     } else if (d.aiChineseDescription) {
+      const rawChineseDesc = translateSimplifiedToTraditional(d.aiChineseDescription);
+      const highlightedChineseDesc = highlightText(rawChineseDesc, searchVal);
       descCell.innerHTML = `
         ${alertBadge}
-        <span class="desc-text">${translateSimplifiedToTraditional(d.aiChineseDescription)}</span>
+        <span class="desc-text">${highlightedChineseDesc}</span>
         <span class="desc-ai-generated">✦ AI 智慧生成繁中摘要</span>
       `;
     } else {
+      const rawFallbackDescText = translateSimplifiedToTraditional(fallbackDescText);
+      const highlightedFallbackDesc = highlightText(rawFallbackDescText, searchVal);
       descCell.innerHTML = `
         ${alertBadge}
-        <span class="desc-text">${translateSimplifiedToTraditional(fallbackDescText)}</span>
+        <span class="desc-text">${highlightedFallbackDesc}</span>
       `;
       // 嘗試調用 Gemini 翻譯 (如果 API Key 設定的話會在後台跑並動態更新)
       tryGeminiTranslation(d, descCell);
@@ -1915,6 +1988,23 @@ function renderTable(disasters) {
     });
     refsCell.appendChild(list);
     tr.appendChild(refsCell);
+
+    // 6. 操作欄位 (一鍵複製)
+    const actionCell = document.createElement("td");
+    actionCell.className = "action-cell";
+    actionCell.setAttribute("data-label", "操作");
+    
+    const copyBtn = document.createElement("button");
+    copyBtn.className = "copy-row-btn";
+    copyBtn.title = showOriginalEnglish ? "Copy summary" : "複製災情摘要";
+    copyBtn.innerHTML = `📋 複製`;
+    copyBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // 阻止地圖定位
+      copyDisasterSummary(d);
+    });
+    
+    actionCell.appendChild(copyBtn);
+    tr.appendChild(actionCell);
 
     tableBody.appendChild(tr);
   });
@@ -2074,4 +2164,99 @@ function exportToCSV() {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+}
+
+// --- 一鍵複製災情摘要 ---
+function copyDisasterSummary(d) {
+  const countryName = showOriginalEnglish ? (d.country || "Unknown Country") : translateCountry(d.country);
+  const catInfo = getCategoryInfo(d.type);
+  const dateStr = formatDateRange(d.fromdate, d.todate, d.pubDate);
+  
+  let alertText = "";
+  if (d.alertlevel && d.alertlevel !== "None") {
+    if (showOriginalEnglish) {
+      alertText = `${d.alertlevel} Alert`;
+    } else {
+      alertText = d.alertlevel === 'Red' ? '紅色警戒' : d.alertlevel === 'Orange' ? '橙色警戒' : '綠色警報';
+    }
+  } else {
+    alertText = showOriginalEnglish ? "Green/No Alert" : "綠色/無警報";
+  }
+  
+  let detailLocText = "";
+  if (showOriginalEnglish) {
+    detailLocText = d.englishLocationDetail || "";
+  } else {
+    detailLocText = translateSimplifiedToTraditional(d.chineseLocationDetail || "");
+  }
+  
+  const dmsLat = convertDecimalToDMS(d.lat, true);
+  const dmsLng = convertDecimalToDMS(d.lng, false);
+  
+  let descText = "";
+  if (showOriginalEnglish) {
+    descText = d.description && d.description !== d.title ?
+      `${d.title} - ${d.description}` : d.title;
+  } else if (d.aiChineseDescription) {
+    descText = translateSimplifiedToTraditional(d.aiChineseDescription);
+  } else {
+    descText = translateSimplifiedToTraditional(generateChineseDescription(d));
+  }
+  
+  // 移除可能存在的 HTML 標籤
+  descText = descText.replace(/<\/?[^>]+(>|$)/g, "");
+  
+  const refLinks = generateReferenceLinks(d);
+  const refUrls = refLinks.map(ref => ref.url);
+  
+  let copyText = "";
+  if (showOriginalEnglish) {
+    copyText = `【${countryName} - ${catInfo.name}】(${alertText})\n` +
+               `- Time: ${dateStr}\n` +
+               `- Location: ${countryName} ${detailLocText} (${dmsLat}, ${dmsLng})\n` +
+               `- Description: ${descText}\n` +
+               `- Reference: ${refUrls.join(' | ')}`;
+  } else {
+    copyText = `【${countryName} - ${catInfo.name}】(${alertText})\n` +
+               `- 時間：${dateStr}\n` +
+               `- 地點：${countryName} ${detailLocText} (${dmsLat}, ${dmsLng})\n` +
+               `- 說明：${descText}\n` +
+               `- 參考連結：${refUrls.join(' | ')}`;
+  }
+  
+  navigator.clipboard.writeText(copyText).then(() => {
+    showToast(showOriginalEnglish ? "Disaster summary copied to clipboard!" : "已複製災情摘要至剪貼簿！");
+  }).catch(err => {
+    console.error("複製失敗:", err);
+    showToast(showOriginalEnglish ? "Failed to copy!" : "複製失敗，請手動複製。");
+  });
+}
+
+// --- 顯示 Toast 訊息提示 ---
+function showToast(message) {
+  let container = document.getElementById("toast-container");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "toast-container";
+    container.className = "toast-container";
+    document.body.appendChild(container);
+  }
+  
+  const toast = document.createElement("div");
+  toast.className = "toast-notification";
+  toast.innerHTML = `<span>🔔</span> <span>${message}</span>`;
+  
+  container.appendChild(toast);
+  
+  // 強制重繪以觸發動畫
+  toast.offsetHeight;
+  
+  toast.classList.add("show");
+  
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 3000);
 }
