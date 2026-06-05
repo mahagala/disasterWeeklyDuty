@@ -2170,7 +2170,10 @@ function exportToCSV() {
 function copyDisasterSummary(d) {
   const countryName = showOriginalEnglish ? (d.country || "Unknown Country") : translateCountry(d.country);
   const catInfo = getCategoryInfo(d.type);
-  const dateStr = formatDateRange(d.fromdate, d.todate, d.pubDate);
+  let dateStr = formatDateRange(d.fromdate, d.todate, d.pubDate);
+  
+  // 依照用戶 PPT 格式優化日期顯示 (例如 03/25 ~ 03/27 ➔ 3/25-3/27)
+  dateStr = dateStr.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
   
   let alertText = "";
   if (d.alertlevel && d.alertlevel !== "None") {
@@ -2192,11 +2195,22 @@ function copyDisasterSummary(d) {
   
   const dmsLat = convertDecimalToDMS(d.lat, true);
   const dmsLng = convertDecimalToDMS(d.lng, false);
+  const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lng}` : "";
   
+  // 組合成與 PPT 相符的「地點」儲存格內容
+  let locCellContent = countryName;
+  if (detailLocText) {
+    locCellContent += `\n${detailLocText}`;
+  }
+  if (d.lat !== null && d.lng !== null) {
+    locCellContent += `\n${dmsLat} ${dmsLng}`;
+    locCellContent += `\n${mapUrl}`;
+  }
+
   let descText = "";
   if (showOriginalEnglish) {
     descText = d.description && d.description !== d.title ?
-      `${d.title} - ${d.description}` : d.title;
+      `${d.title}\n${d.description}` : d.title;
   } else if (d.aiChineseDescription) {
     descText = translateSimplifiedToTraditional(d.aiChineseDescription);
   } else {
@@ -2207,29 +2221,74 @@ function copyDisasterSummary(d) {
   descText = descText.replace(/<\/?[^>]+(>|$)/g, "");
   
   const refLinks = generateReferenceLinks(d);
-  const refUrls = refLinks.map(ref => ref.url);
-  
-  let copyText = "";
-  if (showOriginalEnglish) {
-    copyText = `【${countryName} - ${catInfo.name}】(${alertText})\n` +
-               `- Time: ${dateStr}\n` +
-               `- Location: ${countryName} ${detailLocText} (${dmsLat}, ${dmsLng})\n` +
-               `- Description: ${descText}\n` +
-               `- Reference: ${refUrls.join(' | ')}`;
-  } else {
-    copyText = `【${countryName} - ${catInfo.name}】(${alertText})\n` +
-               `- 時間：${dateStr}\n` +
-               `- 地點：${countryName} ${detailLocText} (${dmsLat}, ${dmsLng})\n` +
-               `- 說明：${descText}\n` +
-               `- 參考連結：${refUrls.join(' | ')}`;
+  const refUrls = refLinks.map(ref => ref.url).join("\n");
+
+  // TSV 單元格防破格處理輔助函數
+  const formatCellForTSV = (val) => {
+    if (val === null || val === undefined) return "";
+    let str = String(val).trim();
+    str = str.replace(/"/g, '""'); // CSV/TSV 標準：雙引號轉為兩個雙引號
+    if (str.includes('\n') || str.includes('\r') || str.includes('\t') || str.includes('"')) {
+      str = `"${str}"`;
+    }
+    return str;
+  };
+
+  // 1. 純文字格式 (TSV) - 支援本機文字檔或 Excel 直貼
+  const plainText = [
+    formatCellForTSV(dateStr),
+    formatCellForTSV(locCellContent),
+    formatCellForTSV(catInfo.name),
+    formatCellForTSV(descText),
+    formatCellForTSV(refUrls)
+  ].join("\t");
+
+  // 2. HTML 格式 (Table) - 支援 MS Word 與 PPT 表格「直接貼入多格」
+  const toHtmlTd = (val) => {
+    if (val === null || val === undefined) return "<td></td>";
+    let str = String(val).trim();
+    // 轉義 HTML 字元以防注入與破格
+    str = str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+    // 將換行符轉為 <br>
+    str = str.replace(/\n/g, "<br>");
+    return `<td>${str}</td>`;
+  };
+
+  const htmlText = `<table><tr>` +
+    toHtmlTd(dateStr) +
+    toHtmlTd(locCellContent) +
+    toHtmlTd(catInfo.name) +
+    toHtmlTd(descText) +
+    toHtmlTd(refUrls) +
+    `</tr></table>`;
+
+  // 執行複製：優先寫入富文字 (HTML) 與純文字雙重格式，若瀏覽器不支援則 fallback 至純文字
+  try {
+    const textBlob = new Blob([plainText], { type: "text/plain" });
+    const htmlBlob = new Blob([htmlText], { type: "text/html" });
+    const clipboardItem = new ClipboardItem({
+      "text/plain": textBlob,
+      "text/html": htmlBlob
+    });
+    navigator.clipboard.write([clipboardItem]).then(() => {
+      showToast(showOriginalEnglish ? "Copied in PPT Table format!" : "已複製 PPT 表格格式（選取第一個格子貼上即可）！");
+    }).catch(err => {
+      // Fallback
+      navigator.clipboard.writeText(plainText).then(() => {
+        showToast(showOriginalEnglish ? "Copied in TSV format!" : "已複製表格文字格式（支援 PPT 直貼）！");
+      });
+    });
+  } catch (e) {
+    // Fallback
+    navigator.clipboard.writeText(plainText).then(() => {
+      showToast(showOriginalEnglish ? "Copied in TSV format!" : "已複製表格文字格式（支援 PPT 直貼）！");
+    });
   }
-  
-  navigator.clipboard.writeText(copyText).then(() => {
-    showToast(showOriginalEnglish ? "Disaster summary copied to clipboard!" : "已複製災情摘要至剪貼簿！");
-  }).catch(err => {
-    console.error("複製失敗:", err);
-    showToast(showOriginalEnglish ? "Failed to copy!" : "複製失敗，請手動複製。");
-  });
 }
 
 // --- 顯示 Toast 訊息提示 ---
