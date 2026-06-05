@@ -440,6 +440,22 @@ function getCountryFlag(country) {
   }).join("");
 }
 
+// 獲取國旗圖片 HTML (針對簡報圖卡優化，支援跨網域 CORS 讀取以防 Windows 系統無法顯示國旗 emoji 且能導出)
+function getCountryFlagImgHtmlForSlide(country) {
+  if (!country) return "";
+  
+  const separators = /[,、]|\band\b/i;
+  const parts = country.split(separators).map(c => c.trim()).filter(c => c !== "");
+  
+  return parts.map(part => {
+    const iso2 = getCountryIso2(part);
+    if (iso2) {
+      return `<img src="https://flagcdn.com/w40/${iso2}.png" alt="${part}" crossorigin="anonymous" style="height: 16px; width: auto; vertical-align: middle; border: 1px solid rgba(0,0,0,0.15); border-radius: 2px;">`;
+    }
+    return "";
+  }).join("");
+}
+
 // 獲取國家所屬大洲
 function getCountryContinent(country) {
   if (!country) return "其它地區";
@@ -2469,7 +2485,7 @@ function updateSlideCanvas() {
     const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
     const countryName = translateCountry(d.country);
     const catName = getCategoryInfo(d.type).name;
-    const flagEmoji = getCountryFlag(d.country);
+    const flagHtml = getCountryFlagImgHtmlForSlide(d.country);
     
     let descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
     // 移除可能存在的 HTML 標籤
@@ -2488,7 +2504,7 @@ function updateSlideCanvas() {
     card.innerHTML = `
       <div class="slide-card-header">
         <span>${shortDate} ${countryName} ${catName}</span>
-        <span style="font-size: 16px; margin-left: 6px;">${flagEmoji}</span>
+        <span style="display: inline-flex; align-items: center; gap: 4px;">${flagHtml}</span>
       </div>
       <div class="slide-card-body">${descText}</div>
     `;
