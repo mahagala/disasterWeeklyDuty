@@ -1641,7 +1641,7 @@ mark {
 
 .slide-card-header {
   background: #e0f7fa; /* Light cyan background */
-  color: #006064; /* Deep cyan text */
+  color: #000000 !important; /* Force black text */
   padding: 8px 12px;
   font-size: 14pt !important;
   font-weight: bold !important;
@@ -1662,7 +1662,7 @@ mark {
 
 .slide-card-body {
   background: white;
-  color: #334155;
+  color: #000000 !important; /* Force black text */
   padding: 10px 12px;
   font-size: 12pt !important;
   font-weight: bold !important;
