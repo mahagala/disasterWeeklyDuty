@@ -2533,7 +2533,10 @@ function updateSlideCanvas() {
     card.innerHTML = `
       <div class="slide-card-header">
         <span class="slide-card-title-text" style="outline: none;">${shortDate} ${countryName} ${catName}</span>
-        <span style="display: inline-flex; align-items: center; gap: 4px;">${flagHtml}</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px;">
+          ${flagHtml}
+          <button class="slide-card-copy-btn" title="複製單張卡片為圖片" style="background: none; border: none; color: #006064; cursor: pointer; padding: 2px; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; outline: none; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">📋</button>
+        </span>
       </div>
       <div class="slide-card-body" style="outline: none;">${descText}</div>
     `;
@@ -2543,6 +2546,14 @@ function updateSlideCanvas() {
     // 雙擊與編輯事件綁定
     const titleTextEl = card.querySelector(".slide-card-title-text");
     const bodyTextEl = card.querySelector(".slide-card-body");
+    const copyBtn = card.querySelector(".slide-card-copy-btn");
+
+    if (copyBtn) {
+      copyBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // 阻止事件冒泡以防觸發卡片拖曳
+        copyCardAsImage(card);
+      });
+    }
 
     const enableEdit = (el) => {
       el.setAttribute("contenteditable", "true");
@@ -2780,5 +2791,42 @@ function downloadSlidePNG() {
       scaler.style.height = prevScalerH;
     }
     alert("簡報圖卡生成失敗，可能是圖檔快取或瀏覽器限制，請重試或聯繫開發同仁。");
+  });
+}
+
+// 複製單張災情資訊卡為透明 PNG 圖片至剪貼簿
+function copyCardAsImage(cardEl) {
+  if (!cardEl) return;
+
+  const copyBtn = cardEl.querySelector(".slide-card-copy-btn");
+  if (copyBtn) copyBtn.style.visibility = "hidden"; // 暫時隱藏複製圖示以防出現在照片中
+
+  showToast("正在複製卡片，請稍候...");
+
+  html2canvas(cardEl, {
+    scale: 2.0, // 高解析度
+    useCORS: true,
+    allowTaint: false,
+    backgroundColor: null // 透明背景 (去背)
+  }).then(canvas => {
+    if (copyBtn) copyBtn.style.visibility = "visible"; // 還原按鈕顯示
+
+    canvas.toBlob(async (blob) => {
+      try {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "image/png": blob
+          })
+        ]);
+        showToast("已成功將資訊卡複製至剪貼簿，可直接在 PPT 中貼上 (Ctrl+V)！");
+      } catch (err) {
+        console.error("複製卡片至剪貼簿失敗:", err);
+        alert("複製卡片至剪貼簿失敗，可能受限於瀏覽器安全政策，請改用簡報圖卡下載功能！");
+      }
+    }, "image/png");
+  }).catch(err => {
+    console.error("生成卡片圖片失敗:", err);
+    if (copyBtn) copyBtn.style.visibility = "visible";
+    alert("複製卡片失敗，請重試！");
   });
 }
