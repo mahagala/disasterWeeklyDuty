@@ -683,6 +683,21 @@ function setupEventListeners() {
     if (e.target === settingsModal) settingsModal.classList.add("hidden");
   });
 
+  // 說明書視窗開關
+  const helpModal = document.getElementById("help-modal");
+  const openHelpBtn = document.getElementById("open-help-btn");
+  if (openHelpBtn && helpModal) {
+    openHelpBtn.addEventListener("click", () => {
+      helpModal.classList.remove("hidden");
+    });
+    document.getElementById("close-help-btn").addEventListener("click", () => {
+      helpModal.classList.add("hidden");
+    });
+    helpModal.addEventListener("click", (e) => {
+      if (e.target === helpModal) helpModal.classList.add("hidden");
+    });
+  }
+
   // 詳情視窗關閉
   const detailModal = document.getElementById("detail-modal");
   document.getElementById("close-detail-btn").addEventListener("click", () => {

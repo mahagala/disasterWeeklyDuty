@@ -52,6 +52,13 @@
             <span class="dot"></span> ReliefWeb
           </div>
         </div>
+        <button class="help-btn" id="open-help-btn" title="使用說明書">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </button>
         <button class="settings-btn" id="open-settings-btn" title="系統設定">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
             <circle cx="12" cy="12" r="3"></circle>
@@ -320,6 +327,65 @@
   <footer class="main-footer">
     <p>© 2026 坡洪組國際災情值週用全球災害資訊整合平台. 本平台使用公眾 RSS 資訊，經解析、經緯度逆向地理編碼及本地翻譯規則處理。</p>
   </footer>
+
+  <!-- Help Dialog (Modal) -->
+  <div class="modal-overlay hidden" id="help-modal">
+    <div class="modal-card glass-card help-modal-card">
+      <div class="modal-header">
+        <h2>📖 全球災害資訊整合平台 - 使用說明</h2>
+        <button class="close-btn" id="close-help-btn">&times;</button>
+      </div>
+      <div class="modal-body help-modal-body">
+        <div class="help-content">
+          <h3>📌 整合平台概述</h3>
+          <p>本平台專為 NCDR 坡洪組值週同仁設計，自動整合多個國際災害與人道監測數據，提供實時篩選、地圖視覺化、一鍵複製至簡報表格，以及 16:9 簡報圖卡一鍵生成等功能，協助同仁快速、省時地完成每週工作匯報。</p>
+
+          <div class="help-grid">
+            <div class="help-card">
+              <h4>🌐 國際數據來源</h4>
+              <ul>
+                <li><strong>GDACS</strong>：全球風災、洪災、強震、火山、野火及乾旱預警。</li>
+                <li><strong>ERCC</strong>：歐洲及全球大型人道救援事件與分析日報。</li>
+                <li><strong>USGS</strong>：全球即時地震監測。</li>
+                <li><strong>ReliefWeb</strong>：聯合國全球危機與救援進展報告。</li>
+              </ul>
+            </div>
+
+            <div class="help-card">
+              <h4>⚡ 核心省工功能 (一鍵複製)</h4>
+              <ul>
+                <li><strong>直貼 PPT 表格</strong>：點擊災害表格右側的 <strong>「📋 複製」</strong>，在 PPT 表格的「日期」儲存格按 <strong>`Ctrl+V`</strong>，即可橫向自動填滿 5 個格子，完全不跑版。</li>
+                <li><strong>單張小卡片複製</strong>：在圖卡生成器中，點擊小卡片上的 <strong>`📋` 按鈕</strong>，即可單獨複製該張卡片為「去背透明圖片」，直接在 PPT 中貼上使用。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <h4>🎨 16:9 簡報圖卡生成器使用指引</h4>
+            <ol>
+              <li>點擊控制面板的 <strong>「🎨 簡報圖卡」</strong> 開啟 16:9 全螢幕互動編輯器。</li>
+              <li>右側可自由勾選要加入的災害事件（最美觀排版建議 3-5 筆，最大限制 5 筆）。</li>
+              <li><strong>自由拖曳與智慧連線</strong>：按住卡片「青色標題區」即可任意拖曳。連線會自動以曲線（Cubic Bezier）貼合卡片邊框，隨拖曳移動實時重繪，不穿透卡片。</li>
+              <li><strong>雙擊直接編輯文字</strong>：可雙擊簡報大標題或卡片內文字，直接修改文字內容。</li>
+              <li><strong>下載 1080p 大圖</strong>：點擊「💾 下載簡報圖卡 (PNG)」自動導出符合 PPT 比例的 1080p 清晰圖檔。已修復底圖縮放與平移，且自動補償紐西蘭的偏移。</li>
+            </ol>
+          </div>
+
+          <div class="help-section">
+            <h4>❓ 常見問題排查</h4>
+            <p><strong>Q1: 部署到線上版 (GitHub Pages) 後，GDACS 顯示紅色連線失敗？</strong><br>
+            說明：因線上安全限制，部分跨域代理被阻擋。請在瀏覽器中安裝擴充功能 <a href="https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffbjicikbagmonpehd" target="_blank">Allow CORS</a>，並點選為 <strong>ON</strong> 即可 100% 穩定直連。</p>
+            
+            <p><strong>Q2: Windows 電腦上國旗顯示為英文代碼？</strong><br>
+            說明：Windows 預設不顯示國旗 Emoji。本平台已全面改採 flagcdn 的實體國旗圖片，保證在所有系統上均能彩色正常顯示。</p>
+
+            <p><strong>Q3: 填寫的 Gemini API 金鑰安全嗎？</strong><br>
+            說明：API 金鑰完全保存在同仁各自本機瀏覽器的 LocalStorage 中，網頁在 GitHub 上公開也是 100% 安全的，請放心填寫。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Settings Dialog (Modal) -->
   <div class="modal-overlay hidden" id="settings-modal">
