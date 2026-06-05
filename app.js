@@ -726,6 +726,22 @@ function setupEventListeners() {
       });
     });
   }
+
+  // 簡報圖卡生成器事件綁定
+  const generateSlideBtn = document.getElementById("generate-slide-btn");
+  if (generateSlideBtn) {
+    generateSlideBtn.addEventListener("click", openSlideGenerator);
+  }
+  const closeSlideBtn = document.getElementById("close-slide-generator-btn");
+  if (closeSlideBtn) {
+    closeSlideBtn.addEventListener("click", () => {
+      document.getElementById("slide-generator-modal").classList.add("hidden");
+    });
+  }
+  const downloadSlideBtn = document.getElementById("download-slide-btn");
+  if (downloadSlideBtn) {
+    downloadSlideBtn.addEventListener("click", downloadSlidePNG);
+  }
 }
 
 // --- 多重 CORS 代理網路抓取工具 ---
@@ -2318,4 +2334,341 @@ function showToast(message) {
       toast.remove();
     }, 300);
   }, 3000);
+}
+
+// --- 簡報圖卡生成器邏輯實作 ---
+
+// 開啟簡報圖卡生成器 Modal
+function openSlideGenerator() {
+  if (!currentFilteredDisasters || currentFilteredDisasters.length === 0) {
+    alert("目前沒有任何篩選出的災情，無法生成圖卡。請調整篩選器！");
+    return;
+  }
+
+  // 1. 計算日期區間文字
+  const timeRangeVal = document.getElementById("time-range").value;
+  let startStr = "";
+  let endStr = "";
+  if (timeRangeVal === "custom") {
+    startStr = document.getElementById("start-date").value;
+    endStr = document.getElementById("end-date").value;
+  } else {
+    const days = parseInt(timeRangeVal);
+    const now = new Date();
+    const start = new Date();
+    start.setDate(now.getDate() - days);
+    startStr = start.toISOString().split('T')[0];
+    endStr = now.toISOString().split('T')[0];
+  }
+  
+  const formatSlideDate = (dateStr) => {
+    if (!dateStr) return "";
+    return dateStr.replace(/-/g, '.');
+  };
+  const dateText = startStr && endStr ? ` (${formatSlideDate(startStr)} ~ ${formatSlideDate(endStr)})` : "";
+  document.getElementById("slide-title-text").textContent = `重大災害回顧${dateText}`;
+
+  // 2. 渲染側邊欄勾選清單
+  const listContainer = document.getElementById("slide-disaster-list");
+  listContainer.innerHTML = "";
+  
+  currentFilteredDisasters.forEach((d, idx) => {
+    const item = document.createElement("div");
+    item.className = "slide-disaster-item";
+    
+    // 預設選取前 3 筆
+    const isChecked = idx < 3 ? "checked" : "";
+    const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
+    const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+    const countryName = translateCountry(d.country);
+    
+    item.innerHTML = `
+      <input type="checkbox" id="slide-chk-${d.id}" data-id="${d.id}" ${isChecked}>
+      <div class="slide-disaster-info">
+        <span class="title">${shortDate} ${countryName} ${getCategoryInfo(d.type).name}</span>
+        <span class="meta">
+          <span>來源: ${d.source}</span>
+          <span>警報: ${d.alertlevel === 'Red' ? '紅色' : d.alertlevel === 'Orange' ? '橙色' : d.alertlevel === 'Green' ? '綠色' : '無'}</span>
+        </span>
+      </div>
+    `;
+    
+    // 點擊整項即可切換 checkbox 狀態
+    item.addEventListener("click", (e) => {
+      if (e.target.tagName !== "INPUT") {
+        const chk = item.querySelector("input");
+        chk.checked = !chk.checked;
+        chk.dispatchEvent(new Event("change"));
+      }
+    });
+    
+    listContainer.appendChild(item);
+  });
+
+  // 監聽所有複選框的狀態變化
+  const checkboxes = listContainer.querySelectorAll("input[type='checkbox']");
+  checkboxes.forEach(chk => {
+    chk.addEventListener("change", () => {
+      // 限制最多只能勾選 5 筆
+      const checkedCount = listContainer.querySelectorAll("input[type='checkbox']:checked").length;
+      if (checkedCount > 5) {
+        chk.checked = false;
+        alert("為維持 16:9 簡報排版美觀，最多只能同時選取 5 筆災害顯示在圖卡上喔！");
+        return;
+      }
+      updateSlideCanvas();
+    });
+  });
+
+  // 3. 初次更新畫布與繪製
+  updateSlideCanvas();
+
+  // 4. 顯示 Modal
+  document.getElementById("slide-generator-modal").classList.remove("hidden");
+}
+
+// 根據勾選項目更新畫布內容
+function updateSlideCanvas() {
+  const layer = document.getElementById("slide-interactive-layer");
+  if (!layer) return;
+  layer.innerHTML = ""; // 清空舊內容
+
+  const checkedDisasters = [];
+  const listContainer = document.getElementById("slide-disaster-list");
+  const checkedBoxes = listContainer.querySelectorAll("input[type='checkbox']:checked");
+  
+  checkedBoxes.forEach(chk => {
+    const dId = chk.getAttribute("data-id");
+    const found = currentFilteredDisasters.find(d => d.id === dId);
+    if (found) checkedDisasters.push(found);
+  });
+
+  // 定義預設擺放位置 (Slot 1~5)
+  const defaultCardPositions = [
+    { left: 60, top: 120 },    // Slot 1: 左上
+    { left: 850, top: 80 },    // Slot 2: 右上
+    { left: 850, top: 430 },   // Slot 3: 右下
+    { left: 60, top: 430 },    // Slot 4: 左下
+    { left: 455, top: 80 }     // Slot 5: 中上
+  ];
+
+  checkedDisasters.forEach((d, index) => {
+    // A. 換算地圖上的 XY 畫布座標
+    const dotPos = getCanvasXY(d.lat, d.lng);
+    
+    // B. 建立發光地圖定位點
+    const dot = document.createElement("div");
+    dot.className = "slide-map-dot";
+    dot.id = `slide-dot-${d.id}`;
+    dot.style.left = `${dotPos.x}px`;
+    dot.style.top = `${dotPos.y}px`;
+    layer.appendChild(dot);
+
+    // C. 建立災情說明卡片
+    const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
+    const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+    const countryName = translateCountry(d.country);
+    const catName = getCategoryInfo(d.type).name;
+    const flagEmoji = getCountryFlag(d.country);
+    
+    let descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
+    // 移除可能存在的 HTML 標籤
+    descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
+
+    const card = document.createElement("div");
+    card.className = "slide-callout-card";
+    card.id = `slide-card-${d.id}`;
+    card.setAttribute("data-dot-id", `slide-dot-${d.id}`);
+    
+    // 根據 Slot 給予預設 Left/Top，如果同仁有拖曳過可以保留或重新排序
+    const pos = defaultCardPositions[index % defaultCardPositions.length];
+    card.style.left = `${pos.left}px`;
+    card.style.top = `${pos.top}px`;
+
+    card.innerHTML = `
+      <div class="slide-card-header">
+        <span>${shortDate} ${countryName} ${catName}</span>
+        <span style="font-size: 16px; margin-left: 6px;">${flagEmoji}</span>
+      </div>
+      <div class="slide-card-body">${descText}</div>
+    `;
+    
+    layer.appendChild(card);
+
+    // D. 綁定卡片拖動功能
+    makeCardDraggable(card);
+  });
+
+  // E. 重新繪製連接線
+  setTimeout(drawConnectingLines, 50);
+}
+
+// 經緯度對應至 1200x675 簡報畫布 (底圖 size 1100x471.35, offset 左50, 上120)
+function getCanvasXY(lat, lng) {
+  if (lat === null || lat === undefined || isNaN(lat)) lat = 0;
+  if (lng === null || lng === undefined || isNaN(lng)) lng = 0;
+
+  // 151KB world_map.svg viewBox 為 0 0 2000 857
+  // 經緯度投影轉換
+  const svgX = (lng + 180) * (2000 / 360);
+  const svgY = (85 - lat) * (2000 / 360); // 縱向等比例 scale
+  
+  // 畫布顯示尺寸與偏移量
+  const mapW = 1100;
+  const mapH = 471.35;
+  const leftOffset = 50;
+  const topOffset = 120;
+  
+  const x = (svgX / 2000) * mapW + leftOffset;
+  const y = (svgY / 857) * mapH + topOffset;
+  
+  return { x, y };
+}
+
+// 計算定位點到卡片矩形邊界上最近的點，確保連接線永遠指向卡片邊緣
+function getClosestPointOnCardRect(dotX, dotY, cardLeft, cardTop, cardWidth, cardHeight) {
+  const cardRight = cardLeft + cardWidth;
+  const cardBottom = cardTop + cardHeight;
+  
+  const closestX = Math.max(cardLeft, Math.min(dotX, cardRight));
+  const closestY = Math.max(cardTop, Math.min(dotY, cardBottom));
+  
+  return { x: closestX, y: closestY };
+}
+
+// 繪製連接線
+function drawConnectingLines() {
+  const svg = document.getElementById("slide-lines-svg");
+  if (!svg) return;
+  svg.innerHTML = ""; // 清空舊連接線
+
+  const cards = document.querySelectorAll(".slide-callout-card");
+  cards.forEach(card => {
+    const dotId = card.getAttribute("data-dot-id");
+    const dot = document.getElementById(dotId);
+    if (!dot) return;
+
+    const dotX = parseFloat(dot.style.left) || 0;
+    const dotY = parseFloat(dot.style.top) || 0;
+
+    const cardLeft = parseFloat(card.style.left) || 0;
+    const cardTop = parseFloat(card.style.top) || 0;
+    const cardWidth = card.offsetWidth;
+    const cardHeight = card.offsetHeight;
+
+    // 計算最佳貼合連接點
+    const target = getClosestPointOnCardRect(dotX, dotY, cardLeft, cardTop, cardWidth, cardHeight);
+
+    // 建立 SVG 直線
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", dotX);
+    line.setAttribute("y1", dotY);
+    line.setAttribute("x2", target.x);
+    line.setAttribute("y2", target.y);
+    line.setAttribute("stroke", "#06b6d4"); // 與地圖定位點一致的亮青色
+    line.setAttribute("stroke-width", "2.5");
+    line.setAttribute("opacity", "0.85");
+    svg.appendChild(line);
+  });
+}
+
+// 輕量化滑鼠與觸控卡片拖曳邏輯
+function makeCardDraggable(cardEl) {
+  const header = cardEl.querySelector(".slide-card-header");
+  if (!header) return;
+
+  let activeDrag = false;
+  let startX = 0;
+  let startY = 0;
+  let initLeft = 0;
+  let initTop = 0;
+
+  const onStart = (e) => {
+    activeDrag = true;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    
+    startX = clientX;
+    startY = clientY;
+    
+    initLeft = parseFloat(cardEl.style.left) || 0;
+    initTop = parseFloat(cardEl.style.top) || 0;
+    
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", onEnd);
+    document.addEventListener("touchmove", onMove, { passive: false });
+    document.addEventListener("touchend", onEnd);
+    
+    e.preventDefault();
+  };
+
+  const onMove = (e) => {
+    if (!activeDrag) return;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+    const dx = clientX - startX;
+    const dy = clientY - startY;
+
+    // 取得畫布目前的縮放比例 (防本機解析度或網頁縮放導致移動速度不一致)
+    const canvas = document.getElementById("slide-canvas");
+    const rect = canvas.getBoundingClientRect();
+    const scale = 1200 / rect.width;
+
+    let newLeft = initLeft + dx * scale;
+    let newTop = initTop + dy * scale;
+
+    // 限制在 1200x675 簡報範圍內
+    newLeft = Math.max(0, Math.min(1200 - cardEl.offsetWidth, newLeft));
+    newTop = Math.max(0, Math.min(675 - cardEl.offsetHeight, newTop));
+
+    cardEl.style.left = `${newLeft}px`;
+    cardEl.style.top = `${newTop}px`;
+
+    // 實時重新繪製連接線
+    drawConnectingLines();
+    e.preventDefault();
+  };
+
+  const onEnd = () => {
+    activeDrag = false;
+    document.removeEventListener("mousemove", onMove);
+    document.removeEventListener("mouseup", onEnd);
+    document.removeEventListener("touchmove", onMove);
+    document.removeEventListener("touchend", onEnd);
+  };
+
+  header.addEventListener("mousedown", onStart);
+  header.addEventListener("touchstart", onStart, { passive: false });
+}
+
+// 下載投影片圖卡為高解析度 PNG
+function downloadSlidePNG() {
+  const canvasContainer = document.getElementById("slide-canvas");
+  if (!canvasContainer) return;
+
+  showToast("正在生成高解析度簡報圖卡，請稍候...");
+
+  // 將 scale 設為 1.6 (1200 * 1.6 = 1920, 675 * 1.6 = 1080)
+  // 以便匯出符合 PPT 標準寬幅 1080p 的超清晰圖片
+  html2canvas(canvasContainer, {
+    scale: 1.6,
+    useCORS: true,
+    allowTaint: true,
+    backgroundColor: "#f8fafc"
+  }).then(canvas => {
+    const url = canvas.toDataURL("image/png");
+    const titleText = document.getElementById("slide-title-text").textContent.trim();
+    
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${titleText}.png`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast("簡報圖卡下載成功！");
+  }).catch(err => {
+    console.error("生成圖卡失敗:", err);
+    alert("簡報圖卡生成失敗，可能是圖檔快取或瀏覽器限制，請重試或聯繫開發同仁。");
+  });
 }
