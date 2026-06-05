@@ -620,6 +620,16 @@ function setupEventListeners() {
     loadData(true); // 強制重載
   });
 
+  // 資料來源點燈指示器點擊單獨更新
+  ["gdacs", "ercc", "usgs", "reliefweb"].forEach(sourceId => {
+    const el = document.getElementById(`status-${sourceId}`);
+    if (el) {
+      el.addEventListener("click", () => {
+        reloadSingleSource(sourceId);
+      });
+    }
+  });
+
   // 其他篩選器連動
   document.getElementById("alert-red-chk").addEventListener("change", filterAndDisplayData);
   document.getElementById("alert-orange-chk").addEventListener("change", filterAndDisplayData);
@@ -960,6 +970,95 @@ function updateSourceStatus(sourceId, status) {
     el.classList.add("active");
   } else if (status === "error") {
     el.classList.add("error");
+  }
+}
+
+// 單獨重新下載某個資料來源
+async function reloadSingleSource(sourceId) {
+  const sourceNameMap = {
+    gdacs: "GDACS",
+    ercc: "ERCC",
+    usgs: "USGS",
+    reliefweb: "ReliefWeb"
+  };
+  const sourceName = sourceNameMap[sourceId];
+  if (!sourceName) return;
+
+  showToast(`正在單獨重新整理 ${sourceName} 資料...`);
+  updateSourceStatus(sourceId, "loading");
+
+  let newDisasters = [];
+  let success = false;
+
+  try {
+    if (sourceId === "gdacs") {
+      const gdacsFeeds = [
+        CONFIG.feeds.gdacs7d,
+        CONFIG.feeds.gdacsEq3m,
+        CONFIG.feeds.gdacsTc3m,
+        CONFIG.feeds.gdacsFl3m
+      ];
+      const promises = gdacsFeeds.map(url => fetchWithProxy(url).then(xml => parseGdacsRSS(xml)));
+      const results = await Promise.allSettled(promises);
+      
+      let gdacsSuccessCount = 0;
+      results.forEach((result, idx) => {
+        if (result.status === "fulfilled" && result.value) {
+          newDisasters.push(...result.value);
+          gdacsSuccessCount++;
+        }
+      });
+      if (gdacsSuccessCount > 0) success = true;
+    } else if (sourceId === "ercc") {
+      const erccXml = await fetchWithProxy(CONFIG.feeds.ercc);
+      newDisasters = parseErccRSS(erccXml);
+      success = true;
+    } else if (sourceId === "usgs") {
+      const usgsAtom = await fetchWithProxy(CONFIG.feeds.usgs);
+      newDisasters = parseUsgsAtom(usgsAtom);
+      success = true;
+    } else if (sourceId === "reliefweb") {
+      const rwJsonString = await fetchWithProxy(CONFIG.feeds.reliefweb);
+      newDisasters = parseReliefWebAPI(rwJsonString);
+      success = true;
+    }
+
+    if (success) {
+      // 移除原有的該來源災害資料
+      allDisasters = allDisasters.filter(d => d.source !== sourceName);
+      
+      // 加入新獲取的資料
+      allDisasters.push(...newDisasters);
+      
+      // 去重
+      const uniqueMap = new Map();
+      allDisasters.forEach(d => {
+        if (!uniqueMap.has(d.id)) {
+          uniqueMap.set(d.id, d);
+        }
+      });
+      allDisasters = Array.from(uniqueMap.values());
+
+      updateSourceStatus(sourceId, "active");
+      
+      // 如果此時有成功的網路資料，隱藏離線標誌
+      const offlineBadge = document.getElementById("offline-badge");
+      if (offlineBadge) offlineBadge.classList.add("hidden");
+
+      showToast(`${sourceName} 資料更新成功！`);
+      filterAndDisplayData();
+      
+      if (CONFIG.enableNominatim) {
+        enrichLocationsWithGeocoding();
+      }
+    } else {
+      updateSourceStatus(sourceId, "error");
+      showToast(`${sourceName} 資料更新失敗，請稍後重試。`);
+    }
+  } catch (err) {
+    console.error(`${sourceName} 單獨重新整理失敗:`, err);
+    updateSourceStatus(sourceId, "error");
+    showToast(`${sourceName} 連線失敗，請檢查網路。`);
   }
 }
 

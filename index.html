@@ -39,16 +39,16 @@
             <span class="spinning" style="font-size: 14px; display: inline-block;">🌐</span>
             <span>資料載入中</span>
           </div>
-          <div class="status-indicator" id="status-gdacs">
+          <div class="status-indicator" id="status-gdacs" title="點擊單獨重新下載此來源">
             <span class="dot"></span> GDACS
           </div>
-          <div class="status-indicator" id="status-ercc">
+          <div class="status-indicator" id="status-ercc" title="點擊單獨重新下載此來源">
             <span class="dot"></span> ERCC
           </div>
-          <div class="status-indicator" id="status-usgs">
+          <div class="status-indicator" id="status-usgs" title="點擊單獨重新下載此來源">
             <span class="dot"></span> USGS
           </div>
-          <div class="status-indicator" id="status-reliefweb">
+          <div class="status-indicator" id="status-reliefweb" title="點擊單獨重新下載此來源">
             <span class="dot"></span> ReliefWeb
           </div>
         </div>
@@ -381,6 +381,9 @@
 
             <p><strong>Q3: 填寫的 Gemini API 金鑰安全嗎？</strong><br>
             說明：API 金鑰完全保存在同仁各自本機瀏覽器的 LocalStorage 中，網頁在 GitHub 上公開也是 100% 安全的，請放心填寫。</p>
+
+            <p><strong>Q4: 碰到某個資料來源（顯示紅燈）下載失敗時，可以單獨重新下載嗎？</strong><br>
+            說明：可以。直接用滑鼠點擊上方 Header 中該資料來源的「指示按鈕」（例如 <code>ReliefWeb</code> 點燈區），系統即會單獨重新抓取並更新該來源的資料，無需重新整理整個網頁。</p>
           </div>
         </div>
       </div>
