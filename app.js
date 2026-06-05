@@ -752,6 +752,7 @@ function setupEventListeners() {
   if (closeSlideBtn) {
     closeSlideBtn.addEventListener("click", () => {
       document.getElementById("slide-generator-modal").classList.add("hidden");
+      window.removeEventListener("resize", resizeSlideCanvas);
     });
   }
   const downloadSlideBtn = document.getElementById("download-slide-btn");
@@ -2354,6 +2355,29 @@ function showToast(message) {
 
 // --- 簡報圖卡生成器邏輯實作 ---
 
+// 根據可視寬度自動縮放簡報畫布，防止橫向捲動
+function resizeSlideCanvas() {
+  const container = document.querySelector(".slide-canvas-container");
+  const canvas = document.getElementById("slide-canvas");
+  if (!container || !canvas) return;
+
+  const availableWidth = container.clientWidth - 16; // 減去微小邊距
+  const baseWidth = 1200;
+
+  if (availableWidth < baseWidth) {
+    const scale = availableWidth / baseWidth;
+    canvas.style.transform = `scale(${scale})`;
+    canvas.style.transformOrigin = "top center";
+    
+    // 計算縮放後的畫布實際佔用高度，並動態設定容器高度以防溢出或空白
+    const scaledHeight = 675 * scale;
+    container.style.height = `${scaledHeight + 40}px`;
+  } else {
+    canvas.style.transform = "none";
+    container.style.height = "auto";
+  }
+}
+
 // 開啟簡報圖卡生成器 Modal
 function openSlideGenerator() {
   if (!currentFilteredDisasters || currentFilteredDisasters.length === 0) {
@@ -2441,6 +2465,10 @@ function openSlideGenerator() {
 
   // 4. 顯示 Modal
   document.getElementById("slide-generator-modal").classList.remove("hidden");
+
+  // 5. 執行畫布自適應縮放並綁定視窗事件
+  setTimeout(resizeSlideCanvas, 50);
+  window.addEventListener("resize", resizeSlideCanvas);
 }
 
 // 根據勾選項目更新畫布內容

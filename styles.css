@@ -567,7 +567,7 @@ body {
 .legend-dot.blue { background: var(--blue-info); box-shadow: 0 0 6px var(--blue-info); }
 
 .map-wrapper {
-  flex-1: 1;
+  flex: 1;
   position: relative;
   min-height: 400px;
   border-radius: 12px;
@@ -1621,8 +1621,8 @@ mark {
   background: #e0f7fa; /* Light cyan background */
   color: #006064; /* Deep cyan text */
   padding: 8px 12px;
-  font-size: 13.5px;
-  font-weight: bold;
+  font-size: 14pt !important;
+  font-weight: bold !important;
   border-bottom: 1.5px solid #b2ebf2;
   display: flex;
   justify-content: space-between;
@@ -1642,7 +1642,8 @@ mark {
   background: white;
   color: #334155;
   padding: 10px 12px;
-  font-size: 11px;
+  font-size: 12pt !important;
+  font-weight: bold !important;
   line-height: 1.5;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
