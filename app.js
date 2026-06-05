@@ -2245,7 +2245,7 @@ function copyDisasterSummary(d) {
 
   // 2. HTML 格式 (Table) - 支援 MS Word 與 PPT 表格「直接貼入多格」
   const toHtmlTd = (val) => {
-    if (val === null || val === undefined) return "<td></td>";
+    if (val === null || val === undefined) return `<td style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt; vertical-align: top;"></td>`;
     let str = String(val).trim();
     // 轉義 HTML 字元以防注入與破格
     str = str
@@ -2256,10 +2256,10 @@ function copyDisasterSummary(d) {
       .replace(/'/g, "&#039;");
     // 將換行符轉為 <br>
     str = str.replace(/\n/g, "<br>");
-    return `<td>${str}</td>`;
+    return `<td style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt; vertical-align: top; line-height: 1.4;">${str}</td>`;
   };
 
-  const htmlText = `<table><tr>` +
+  const htmlText = `<table style="border-collapse: collapse; font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt;"><tr style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt;">` +
     toHtmlTd(dateStr) +
     toHtmlTd(locCellContent) +
     toHtmlTd(catInfo.name) +
