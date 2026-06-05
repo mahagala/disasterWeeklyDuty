@@ -2654,7 +2654,8 @@ function downloadSlidePNG() {
   html2canvas(canvasContainer, {
     scale: 1.6,
     useCORS: true,
-    allowTaint: true,
+    allowTaint: false,
+    logging: true,
     backgroundColor: "#f8fafc"
   }).then(canvas => {
     const url = canvas.toDataURL("image/png");
