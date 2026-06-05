@@ -2503,13 +2503,52 @@ function updateSlideCanvas() {
 
     card.innerHTML = `
       <div class="slide-card-header">
-        <span>${shortDate} ${countryName} ${catName}</span>
+        <span class="slide-card-title-text" style="outline: none;">${shortDate} ${countryName} ${catName}</span>
         <span style="display: inline-flex; align-items: center; gap: 4px;">${flagHtml}</span>
       </div>
-      <div class="slide-card-body">${descText}</div>
+      <div class="slide-card-body" style="outline: none;">${descText}</div>
     `;
     
     layer.appendChild(card);
+
+    // 雙擊與編輯事件綁定
+    const titleTextEl = card.querySelector(".slide-card-title-text");
+    const bodyTextEl = card.querySelector(".slide-card-body");
+
+    const enableEdit = (el) => {
+      el.setAttribute("contenteditable", "true");
+      el.focus();
+      
+      // 移動游標至文字尾端並選取
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    };
+
+    titleTextEl.addEventListener("dblclick", (e) => {
+      enableEdit(titleTextEl);
+      e.stopPropagation(); // 阻止事件冒泡防止觸發拖拽
+    });
+    bodyTextEl.addEventListener("dblclick", (e) => {
+      enableEdit(bodyTextEl);
+      e.stopPropagation();
+    });
+
+    // 即時重新計算線條（防寬高改變）
+    titleTextEl.addEventListener("input", drawConnectingLines);
+    bodyTextEl.addEventListener("input", drawConnectingLines);
+
+    // 失去焦點關閉編輯狀態
+    titleTextEl.addEventListener("blur", () => {
+      titleTextEl.setAttribute("contenteditable", "false");
+      drawConnectingLines();
+    });
+    bodyTextEl.addEventListener("blur", () => {
+      bodyTextEl.setAttribute("contenteditable", "false");
+      drawConnectingLines();
+    });
 
     // D. 綁定卡片拖動功能
     makeCardDraggable(card);

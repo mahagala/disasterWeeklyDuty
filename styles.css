@@ -1515,6 +1515,16 @@ mark {
   /* Prevent browser text selection when dragging */
   user-select: none;
   -webkit-user-select: none;
+  font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif !important;
+}
+
+.slide-canvas * {
+  font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif !important;
+}
+
+[contenteditable="true"] {
+  user-select: text !important;
+  -webkit-user-select: text !important;
 }
 
 #slide-map-bg {
