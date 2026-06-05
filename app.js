@@ -2767,42 +2767,94 @@ function downloadSlidePNG() {
     scaler.style.height = "675px";
   }
 
-  // 將 scale 設為 1.6 (1200 * 1.6 = 1920, 675 * 1.6 = 1080)
-  // 以便匯出符合 PPT 標準寬幅 1080p 的超清晰圖片
-  html2canvas(canvas, {
-    scale: 1.6,
-    useCORS: true,
-    allowTaint: false,
-    logging: true,
-    backgroundColor: "#f8fafc"
-  }).then(canvasEl => {
-    // 恢復縮放
-    canvas.style.transform = prevTransform;
-    if (scaler) {
-      scaler.style.width = prevScalerW;
-      scaler.style.height = prevScalerH;
-    }
+  const svgEl = document.getElementById("slide-map-bg");
+  let imgEl = null;
 
-    const url = canvasEl.toDataURL("image/png");
-    const titleText = document.getElementById("slide-title-text").textContent.trim();
-    
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${titleText}.png`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    showToast("簡報圖卡下載成功！");
-  }).catch(err => {
-    console.error("生成圖卡失敗:", err);
-    // 恢復縮放
-    canvas.style.transform = prevTransform;
-    if (scaler) {
-      scaler.style.width = prevScalerW;
-      scaler.style.height = prevScalerH;
+  const proceedToCanvas = () => {
+    // 將 scale 設為 1.6 (1200 * 1.6 = 1920, 675 * 1.6 = 1080)
+    // 以便匯出符合 PPT 標準寬幅 1080p 的超清晰圖片
+    html2canvas(canvas, {
+      scale: 1.6,
+      useCORS: true,
+      allowTaint: false,
+      logging: true,
+      backgroundColor: "#f8fafc"
+    }).then(canvasEl => {
+      // 恢復縮放
+      canvas.style.transform = prevTransform;
+      if (scaler) {
+        scaler.style.width = prevScalerW;
+        scaler.style.height = prevScalerH;
+      }
+
+      // 恢復 SVG
+      if (svgEl && imgEl && imgEl.parentNode) {
+        imgEl.parentNode.replaceChild(svgEl, imgEl);
+      }
+
+      const url = canvasEl.toDataURL("image/png");
+      const titleText = document.getElementById("slide-title-text").textContent.trim();
+      
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${titleText}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast("簡報圖卡下載成功！");
+    }).catch(err => {
+      console.error("生成圖卡失敗:", err);
+      // 恢復縮放
+      canvas.style.transform = prevTransform;
+      if (scaler) {
+        scaler.style.width = prevScalerW;
+        scaler.style.height = prevScalerH;
+      }
+
+      // 恢復 SVG
+      if (svgEl && imgEl && imgEl.parentNode) {
+        imgEl.parentNode.replaceChild(svgEl, imgEl);
+      }
+      alert("簡報圖卡生成失敗，可能是圖檔快取或瀏覽器限制，請重試或聯繫開發同仁。");
+    });
+  };
+
+  if (svgEl) {
+    try {
+      // 序列化 SVG 為字串並轉為 Base64 Data URL
+      const svgString = new XMLSerializer().serializeToString(svgEl);
+      const svgBase64 = btoa(unescape(encodeURIComponent(svgString)));
+      const imgUrl = "data:image/svg+xml;base64," + svgBase64;
+      
+      // 建立暫時的 <img> 標籤並複製樣式與屬性
+      imgEl = document.createElement("img");
+      imgEl.id = "slide-map-bg";
+      imgEl.src = imgUrl;
+      imgEl.style.position = "absolute";
+      imgEl.style.width = "1100px";
+      imgEl.style.height = "471.35px";
+      imgEl.style.left = "50px";
+      imgEl.style.top = "120px";
+      imgEl.style.opacity = "0.9";
+      imgEl.style.zIndex = "1";
+      
+      imgEl.onload = proceedToCanvas;
+      imgEl.onerror = (e) => {
+        console.error("Failed to load temporary SVG image, falling back", e);
+        if (imgEl && imgEl.parentNode) {
+          imgEl.parentNode.replaceChild(svgEl, imgEl);
+        }
+        proceedToCanvas();
+      };
+      
+      svgEl.parentNode.replaceChild(imgEl, svgEl);
+    } catch (err) {
+      console.error("Error creating temporary SVG image, falling back", err);
+      proceedToCanvas();
     }
-    alert("簡報圖卡生成失敗，可能是圖檔快取或瀏覽器限制，請重試或聯繫開發同仁。");
-  });
+  } else {
+    proceedToCanvas();
+  }
 }
 
 // 複製單張災情資訊卡為透明 PNG 圖片至剪貼簿
