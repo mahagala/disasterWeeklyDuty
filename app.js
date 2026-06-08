@@ -603,10 +603,10 @@ function setupEventListeners() {
     const customContainer = document.getElementById("custom-date-container");
     if (e.target.value === "custom") {
       customContainer.classList.remove("hidden");
-      // 設定預設起訖日 (起: 7天前，迄: 今天)
+      // 設定預設起訖日 (起: 6天前，迄: 今天，共7天包含今天)
       const today = new Date();
       const sevenDaysAgo = new Date();
-      sevenDaysAgo.setDate(today.getDate() - 7);
+      sevenDaysAgo.setDate(today.getDate() - 6);
       
       document.getElementById("start-date").value = sevenDaysAgo.toISOString().split('T')[0];
       document.getElementById("end-date").value = today.toISOString().split('T')[0];
@@ -1831,7 +1831,8 @@ function filterAndDisplayData() {
   } else {
     const days = parseInt(timeRangeVal);
     startDate = new Date();
-    startDate.setDate(now.getDate() - days);
+    startDate.setDate(now.getDate() - (days - 1));
+    startDate.setHours(0, 0, 0, 0); // 起始日從當天 00:00 開始
     endDate = now;
   }
 
@@ -2523,7 +2524,7 @@ function openSlideGenerator() {
     const days = parseInt(timeRangeVal);
     const now = new Date();
     const start = new Date();
-    start.setDate(now.getDate() - days);
+    start.setDate(now.getDate() - (days - 1));
     startStr = start.toISOString().split('T')[0];
     endStr = now.toISOString().split('T')[0];
   }
