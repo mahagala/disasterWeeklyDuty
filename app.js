@@ -114,7 +114,7 @@ const COUNTRY_MAP = {
 // --- 災害類別對照表 ---
 const CATEGORY_MAP = {
   "EQ": { name: "地震", cssClass: "cat-earthquake" },
-  "FL": { name: "洪災", cssClass: "cat-flood" },
+  "FL": { name: "淹水", cssClass: "cat-flood" },
   "TC": { name: "風災", cssClass: "cat-storm" },
   "DR": { name: "乾旱", cssClass: "cat-wildfire" },
   "VO": { name: "火山", cssClass: "cat-volcano" },
@@ -124,7 +124,7 @@ const CATEGORY_MAP = {
   "Epidemic": { name: "傳染病", cssClass: "cat-epidemic" },
   "Severe Weather": { name: "強烈天氣", cssClass: "cat-storm" },
   "Tropical Cyclone": { name: "風災", cssClass: "cat-storm" },
-  "Flood": { name: "洪災", cssClass: "cat-flood" },
+  "Flood": { name: "淹水", cssClass: "cat-flood" },
   "Earthquake": { name: "地震", cssClass: "cat-earthquake" },
   "Volcano": { name: "火山", cssClass: "cat-volcano" },
   "UCPM": { name: "民防應變", cssClass: "cat-general" },
@@ -192,7 +192,7 @@ function getStandardCategoryGroup(type) {
   const info = getCategoryInfo(type);
   const name = info.name;
   if (name === "風災" || name === "強烈天氣") return "TC";
-  if (name === "洪災") return "FL";
+  if (name === "淹水") return "FL";
   if (name === "地震") return "EQ";
   if (name === "火山") return "VO";
   if (name === "野火") return "WF";
@@ -515,7 +515,8 @@ function initMap() {
   map = L.map('disaster-map', {
     zoomControl: true,
     minZoom: 1.5,
-    maxZoom: 15
+    maxZoom: 15,
+    worldCopyJump: true
   }).setView([20, 0], 2);
 
   // 載入 CartoDB Dark Matter 暗色系地圖瓦片 (非常有科技感且能突出彩色標記)
@@ -531,8 +532,8 @@ function initMap() {
     maxZoom: 18
   });
 
-  // 預設添加科技暗色圖層
-  darkMatter.addTo(map);
+  // 預設添加衛星影像圖層
+  esriSatellite.addTo(map);
 
   // 圖層選擇器
   const baseMaps = {
@@ -1538,7 +1539,7 @@ function generateChineseDescription(disaster) {
       const deaths = deathMatch ? deathMatch[1] : "0";
       const displaced = dispMatch ? dispMatch[1] : "0";
 
-      return `自 ${dateStr} 起，${countryCn}爆發洪淹災害。截至目前最新通報，此災害已造成 ${deaths} 人死亡、${displaced} 人撤離流離失所。`;
+      return `自 ${dateStr} 起，${countryCn}爆發淹水災害。截至目前最新通報，此災害已造成 ${deaths} 人死亡、${displaced} 人撤離流離失所。`;
     }
 
     // 風災 (熱帶氣旋) 範本解析
@@ -1613,7 +1614,7 @@ function translateEventEnglishToCn(evtEng) {
     "Monsoon season": "季風雨季預防",
     "Ebola": "伊波拉病毒疫情",
     "Epidemic": "傳染病爆發",
-    "Flood": "洪災",
+    "Flood": "淹水",
     "Tropical Cyclone": "熱帶氣旋"
   };
   return dict[evtEng] || evtEng;
@@ -1661,7 +1662,7 @@ function getCategoryEnglishKeyword(type) {
   const info = getCategoryInfo(type);
   const name = info.name;
   if (name === "風災" || name === "強烈天氣") return "cyclone OR storm OR typhoon OR hurricane";
-  if (name === "洪災") return "flood OR flooding";
+  if (name === "淹水") return "flood OR flooding";
   if (name === "地震") return "earthquake";
   if (name === "火山") return "volcano OR eruption";
   if (name === "野火") return "wildfire OR forest fire";
@@ -1674,7 +1675,7 @@ function getCategoryEnglishSingular(type) {
   const info = getCategoryInfo(type);
   const name = info.name;
   if (name === "風災" || name === "強烈天氣") return "Storm";
-  if (name === "洪災") return "Flood";
+  if (name === "淹水") return "Flood";
   if (name === "地震") return "Earthquake";
   if (name === "火山") return "Volcano";
   if (name === "野火") return "Wildfire";
@@ -2192,7 +2193,7 @@ function renderStats(disasters) {
     // 對照 CSS color
     let fillClass = "blue-fill";
     if (catName === "地震") fillClass = "red-fill";
-    else if (catName === "洪災") fillClass = "green-fill";
+    else if (catName === "淹水") fillClass = "green-fill";
     else if (catName === "風災") fillClass = "orange-fill";
     else if (catName === "熱浪") fillClass = "red-fill";
 
