@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 坡洪組國際災情值週用全球災害資訊整合平台 - Core Application Logic
  */
 
@@ -1860,21 +1860,37 @@ function filterAndDisplayData() {
     if (d.alertlevel === "Green" && !alertGreenChk) return false;
     if ((!d.alertlevel || d.alertlevel === "None") && !alertNoneChk) return false;
 
-    // 3. 篩選時間區段 (比對最新通報時間與災害實際結束時間)
+    // 3. 篩選時間區段 (判斷災害活動區間與篩選區間是否有重疊)
+    // 災害區間：fromdate (或 pubDate) ~ todate (或 pubDate)
+    // 篩選區間：startDate ~ endDate
+    // 重疊條件：災害結束日 >= 篩選起始日 且 災害起始日 <= 篩選結束日
     const itemDate = new Date(d.pubDate);
     if (isNaN(itemDate.getTime())) return false; // 無效日期過濾掉
 
-    // 如果災害有明確的結束日期 (todate)，且該結束日期小於篩選的起始時間 (startDate)，
-    // 代表此災害事件在篩選時間之前就已經完全結束了，直接過濾掉（不屬於過去 7/14/30 天的活躍災害）
-    if (d.todate) {
-      const itemToDate = new Date(d.todate);
-      if (!isNaN(itemToDate.getTime()) && startDate && itemToDate < startDate) {
-        return false;
-      }
+    const itemFromDate = d.fromdate ? new Date(d.fromdate) : itemDate;
+    const itemToDate = d.todate ? new Date(d.todate) : itemDate;
+    const effectiveFrom = !isNaN(itemFromDate.getTime()) ? itemFromDate : itemDate;
+
+    // 將 effectiveTo 標準化為「當日 23:59:59.999 本地時間」
+    // 避免因 UTC 時間戳解析差異（如 "2026-06-02T00:00:00Z" 等於本地 06/02 08:00）
+    // 而意外將「日期區間結束在篩選起始日當天」的事件排除在外。
+    // 例：todate = 6/2、篩選起始 = 6/2，確保 6/2 的事件一定被納入過去七天。
+    let effectiveTo = !isNaN(itemToDate.getTime()) ? itemToDate : itemDate;
+    if (!isNaN(effectiveTo.getTime())) {
+      // 取得本地日期的年/月/日，設定為當日結束時刻
+      const toEndOfDay = new Date(
+        effectiveTo.getFullYear(),
+        effectiveTo.getMonth(),
+        effectiveTo.getDate(),
+        23, 59, 59, 999
+      );
+      effectiveTo = toEndOfDay;
     }
 
-    if (startDate && itemDate < startDate) return false;
-    if (endDate && itemDate > endDate) return false;
+    // 災害完全在篩選區間之前結束 → 排除
+    if (startDate && effectiveTo < startDate) return false;
+    // 災害完全在篩選區間之後才開始 → 排除
+    if (endDate && effectiveFrom > endDate) return false;
 
     // 4. 關鍵字模糊檢索 (搜尋國家、標題、中文說明或類別)
     if (searchVal) {
