@@ -115,7 +115,7 @@ const COUNTRY_MAP = {
 const CATEGORY_MAP = {
   "EQ": { name: "地震", cssClass: "cat-earthquake" },
   "FL": { name: "淹水", cssClass: "cat-flood" },
-  "TC": { name: "風災", cssClass: "cat-storm" },
+  "TC": { name: "熱帶氣旋", cssClass: "cat-storm" },
   "DR": { name: "乾旱", cssClass: "cat-wildfire" },
   "VO": { name: "火山", cssClass: "cat-volcano" },
   "WF": { name: "野火", cssClass: "cat-wildfire" },
@@ -123,7 +123,7 @@ const CATEGORY_MAP = {
   "Heat Wave": { name: "熱浪", cssClass: "cat-heat" },
   "Epidemic": { name: "傳染病", cssClass: "cat-epidemic" },
   "Severe Weather": { name: "強烈天氣", cssClass: "cat-storm" },
-  "Tropical Cyclone": { name: "風災", cssClass: "cat-storm" },
+  "Tropical Cyclone": { name: "熱帶氣旋", cssClass: "cat-storm" },
   "Flood": { name: "淹水", cssClass: "cat-flood" },
   "Earthquake": { name: "地震", cssClass: "cat-earthquake" },
   "Volcano": { name: "火山", cssClass: "cat-volcano" },
@@ -191,7 +191,7 @@ function cleanId(id) {
 function getStandardCategoryGroup(type) {
   const info = getCategoryInfo(type);
   const name = info.name;
-  if (name === "風災" || name === "強烈天氣") return "TC";
+  if (name === "熱帶氣旋" || name === "強烈天氣") return "TC";
   if (name === "淹水") return "FL";
   if (name === "地震") return "EQ";
   if (name === "火山") return "VO";
@@ -851,7 +851,7 @@ async function loadData(forceReload = false) {
   allDisasters = [];
   let successSources = 0;
 
-  // 1. 下載 GDACS (並行下載 7天總覽, 3個月地震, 3個月風災, 3個月洪災)
+  // 1. 下載 GDACS (並行下載 7天總覽, 3個月地震, 3個月熱帶氣旋, 3個月淹水)
   try {
     const gdacsFeeds = [
       CONFIG.feeds.gdacs7d,
@@ -1661,7 +1661,7 @@ function formatDateRange(fromStr, toStr, pubStr) {
 function getCategoryEnglishKeyword(type) {
   const info = getCategoryInfo(type);
   const name = info.name;
-  if (name === "風災" || name === "強烈天氣") return "cyclone OR storm OR typhoon OR hurricane";
+  if (name === "熱帶氣旋" || name === "強烈天氣") return "cyclone OR storm OR typhoon OR hurricane";
   if (name === "淹水") return "flood OR flooding";
   if (name === "地震") return "earthquake";
   if (name === "火山") return "volcano OR eruption";
@@ -1674,7 +1674,7 @@ function getCategoryEnglishKeyword(type) {
 function getCategoryEnglishSingular(type) {
   const info = getCategoryInfo(type);
   const name = info.name;
-  if (name === "風災" || name === "強烈天氣") return "Storm";
+  if (name === "熱帶氣旋" || name === "強烈天氣") return "Storm";
   if (name === "淹水") return "Flood";
   if (name === "地震") return "Earthquake";
   if (name === "火山") return "Volcano";
@@ -2195,7 +2195,7 @@ function renderStats(disasters) {
     let fillClass = "blue-fill";
     if (catName === "地震") fillClass = "red-fill";
     else if (catName === "淹水") fillClass = "green-fill";
-    else if (catName === "風災") fillClass = "orange-fill";
+    else if (catName === "熱帶氣旋") fillClass = "orange-fill";
     else if (catName === "熱浪") fillClass = "red-fill";
 
     const barItem = document.createElement("div");
