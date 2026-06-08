@@ -1514,78 +1514,268 @@ function generateChineseDescription(disaster) {
   const countryCn = translateCountry(disaster.country);
   const catName = getCategoryInfo(disaster.type).name;
 
+  // ── 輔助：取警報等級的中文字串 ──
+  function alertCn(level) {
+    if (level === "Red") return "紅色警戒";
+    if (level === "Orange") return "橙色警戒";
+    if (level === "Green") return "綠色警報";
+    return "";
+  }
+  const alertLevel = disaster.alertlevel && disaster.alertlevel !== "None" ? alertCn(disaster.alertlevel) : "";
+
   // 1. 如果是 GDACS，進行範本規則剖析
   if (disaster.source === "GDACS") {
     const desc = disaster.description || "";
-    
-    // 地震範本解析
+    const title = disaster.title || "";
+
+    // ── 地震（EQ）──
     if (disaster.type === "EQ") {
-      const magMatch = desc.match(/Magnitude\s*([0-9.]+M?)/i);
-      const depthMatch = desc.match(/Depth:\s*([0-9.]+km)/i);
-      const popMatch = desc.match(/potentially affecting\s*([0-9.\w\s]+)\s*in/i);
-      
-      const mag = magMatch ? magMatch[1] : "未知規模";
-      const depth = depthMatch ? depthMatch[1].replace("Depth:", "") : "未知深度";
-      const pop = popMatch ? translatePopText(popMatch[1]) : "少數人口";
+      const magMatch  = desc.match(/Magnitude[\s:]+([0-9.]+M?)/i) || title.match(/M\s*([0-9.]+)/i);
+      const depthMatch = desc.match(/Depth[:\s]+([0-9.]+\s*km)/i);
+      const popMatch  = desc.match(/potentially affecting\s*([0-9.,\w\s]+?)\s*(?:people\s*in|in\s*the)/i)
+                     || desc.match(/potentially affecting\s*([0-9.,\w\s]+?)\s*in/i);
+      const deathMatch  = desc.match(/(\d+)\s*deaths?\s*(?:reported|confirmed|have been)/i)
+                       || desc.match(/deaths?[:\s]+(\d+)/i)
+                       || desc.match(/caused?\s*(\d+)\s*deaths?/i);
+      const injuryMatch = desc.match(/(\d+)\s*injur(?:ed|ies)/i)
+                       || desc.match(/injur(?:ed|ies)[:\s]+(\d+)/i);
+      const tsunamiMatch = desc.match(/[Tt]sunami\s*(?:alert|warning)?[:\s]*(\w+)/i);
+      // 震央位置：「45km NE of Istanbul」
+      const locMatch = title.match(/(\d+)\s*km\s*([NSEW]+)\s*of\s*([^,]+)/i)
+                    || desc.match(/(\d+)\s*km\s*([NSEW]+)\s*of\s*([^,\.]+)/i);
 
-      return `${dateStr}，在${countryCn}發生規模 ${mag} 地震，震源深度為 ${depth}，預計對周邊 100 公里內約 ${pop} 造成潛在影響。`;
+      const mag    = magMatch   ? magMatch[1]   : "未知規模";
+      const depth  = depthMatch ? depthMatch[1].trim() : "未知深度";
+      const pop    = popMatch   ? translatePopText(popMatch[1].trim()) : null;
+      const deaths = deathMatch ? parseInt(deathMatch[1]) : 0;
+      const injuries = injuryMatch ? parseInt(injuryMatch[1]) : 0;
+      const tsunamiYes = tsunamiMatch && !/^no$/i.test(tsunamiMatch[1]);
+
+      // 方位英翻中
+      const dirMap = { N:"北",S:"南",E:"東",W:"西",NE:"東北",NW:"西北",SE:"東南",SW:"西南",
+                       NNE:"北北東",NNW:"北北西",SSE:"南南東",SSW:"南南西",
+                       ENE:"東北東",ESE:"東南東",WNW:"西北西",WSW:"西南西" };
+      let locStr = "";
+      if (locMatch) {
+        const dir = dirMap[locMatch[2].toUpperCase()] || locMatch[2];
+        locStr = `，震央位於${locMatch[3].trim()}${dir}方向 ${locMatch[1]} 公里處`;
+      }
+
+      let casualtyStr = "";
+      if (deaths > 0 && injuries > 0) casualtyStr = `，通報 ${deaths} 人死亡、${injuries} 人受傷`;
+      else if (deaths > 0) casualtyStr = `，通報 ${deaths} 人死亡`;
+      else if (injuries > 0) casualtyStr = `，通報 ${injuries} 人受傷`;
+
+      const tsunamiStr = tsunamiYes ? "，並已發布海嘯警報，沿海居民請立即撤離" : "";
+      const popStr     = pop ? `，預計 100 公里半徑內約 ${pop} 受到潛在影響` : "";
+      const alertStr   = alertLevel ? `（${alertLevel}）` : "";
+
+      return `${dateStr}，${countryCn}發生芮氏規模 ${mag} 地震${alertStr}，震源深度 ${depth}${locStr}${popStr}${casualtyStr}${tsunamiStr}。`;
     }
-    
-    // 洪水範本解析
+
+    // ── 洪水（FL）──
     if (disaster.type === "FL") {
-      const deathMatch = desc.match(/caused\s*(\d+)\s*deaths/i);
-      const dispMatch = desc.match(/(\d+)\s*displaced/i);
-      
-      const deaths = deathMatch ? deathMatch[1] : "0";
-      const displaced = dispMatch ? dispMatch[1] : "0";
+      const deathMatch  = desc.match(/caused\s*(\d+)\s*deaths/i)
+                       || desc.match(/(\d+)\s*deaths?\s*(?:reported|confirmed)/i)
+                       || desc.match(/deaths?[:\s]+(\d+)/i);
+      const dispMatch   = desc.match(/([0-9,]+)\s*displaced/i)
+                       || desc.match(/displaced[:\s]+([0-9,]+)/i);
+      const injuryMatch = desc.match(/(\d+)\s*injur(?:ed|ies)/i);
+      const affMatch    = desc.match(/potentially affecting\s*([0-9.,\w\s]+?)\s*(?:people|in)/i)
+                       || desc.match(/affected\s*population[:\s]+([0-9.,\w\s]+)/i);
+      const homelessMatch = desc.match(/([0-9,]+)\s*(?:homeless|houses?\s*(?:damaged|destroyed))/i);
+      const regionMatch = desc.match(/(?:in|affecting)\s+([A-Z][a-z]+(?:[,\s]+and\s+[A-Z][a-z]+)*)\s+(?:states?|provinces?|regions?|districts?)/i);
 
-      return `自 ${dateStr} 起，${countryCn}爆發淹水災害。截至目前最新通報，此災害已造成 ${deaths} 人死亡、${displaced} 人撤離流離失所。`;
+      const deaths   = deathMatch  ? deathMatch[1]  : "0";
+      const disp     = dispMatch   ? dispMatch[1].replace(/,/g, "")   : null;
+      const injuries = injuryMatch ? injuryMatch[1] : null;
+      const affected = affMatch    ? translatePopText(affMatch[1].trim()) : null;
+      const homeless = homelessMatch ? homelessMatch[1].replace(/,/g, "") : null;
+      const regionStr = regionMatch ? `（${regionMatch[1]}等地）` : "";
+      const alertStr  = alertLevel ? `（${alertLevel}）` : "";
+
+      const stats = [];
+      if (parseInt(deaths) > 0) stats.push(`${deaths} 人死亡`);
+      if (injuries) stats.push(`${injuries} 人受傷`);
+      if (disp)     stats.push(`${disp} 人流離撤離`);
+      if (homeless) stats.push(`${homeless} 棟建築受損或摧毀`);
+      if (affected) stats.push(`受影響人口約 ${affected}`);
+
+      const base = `自 ${dateStr} 起，${countryCn}${regionStr}爆發嚴重淹水災害${alertStr}`;
+      if (stats.length > 0) return `${base}。截至最新通報：${stats.join("、")}。`;
+      return `${base}，災情持續蔓延，當局正積極應對中。`;
     }
 
-    // 風災 (熱帶氣旋) 範本解析
+    // ── 熱帶氣旋（TC）──
     if (disaster.type === "TC") {
       const windMatch = desc.match(/maximum wind speed of\s*(\d+\s*km\/h)/i);
-      const wind = windMatch ? windMatch[1] : "";
-      const nameMatch = disaster.title.match(/tropical cyclone\s*([\w\d\-]+)/i) || disaster.title.match(/cyclone\s*([\w\d\-]+)/i);
-      const nameStr = nameMatch ? `「${nameMatch[1]}」` : "";
+      const gustMatch = desc.match(/gusts?\s*(?:of|up to)?\s*(\d+\s*km\/h)/i);
+      const popMatch  = desc.match(/potentially affecting\s*([0-9.,\w\s]+?)\s*(?:people|in)/i)
+                     || desc.match(/affected\s*population[:\s]+([0-9.,\w\s]+)/i);
+      const nameMatch = title.match(/tropical\s*cyclone\s*([\w\d\-]+)/i)
+                     || title.match(/typhoon\s*([\w\d\-]+)/i)
+                     || title.match(/hurricane\s*([\w\d\-]+)/i)
+                     || title.match(/cyclone\s*([\w\d\-]+)/i);
+      const surgeMatch    = /storm\s*surge/i.test(desc);
+      const landfallMatch = /landfall/i.test(desc);
 
-      return `監測顯示，${dateStr} 期間熱帶風暴/氣旋 ${nameStr}持續活躍中${wind ? `（最大風速達 ${wind}）` : ""}，正波及${countryCn}等鄰近地區，請密切注意風雨威脅。`;
+      const nameStr = nameMatch ? `「${nameMatch[1].toUpperCase()}」` : "";
+      const wind    = windMatch ? windMatch[1] : null;
+      const gusts   = gustMatch ? gustMatch[1] : null;
+      const pop     = popMatch  ? translatePopText(popMatch[1].trim()) : null;
+
+      const windStr  = wind && gusts ? `最大風速 ${wind}、陣風達 ${gusts}` : wind ? `最大風速 ${wind}` : "";
+      const popStr   = pop ? `，估計受影響人口達 ${pop}` : "";
+      const alertStr = alertLevel ? `，目前警報等級為${alertLevel}` : "";
+      const extraParts = [];
+      if (surgeMatch)    extraParts.push("具風暴潮威脅");
+      if (landfallMatch) extraParts.push("預計或已登陸");
+      const extraStr = extraParts.length > 0 ? `，${extraParts.join("，")}` : "";
+
+      return `監測顯示，${dateStr} 期間熱帶氣旋/颱風 ${nameStr}持續活躍${windStr ? `（${windStr}）` : ""}，正波及${countryCn}等鄰近地區${popStr}${alertStr}${extraStr}，請密切注意風雨動態。`;
     }
 
-    // 乾旱範本解析
+    // ── 乾旱（DR）──
     if (disaster.type === "DR") {
-      const severityMatch = desc.match(/severity value\s*([0-9.]+)/i) || desc.match(/level is\s*(\w+)/i);
-      const sev = severityMatch ? "輕度至中度影響" : "警報發布";
-      return `目前在${countryCn}部分地區正遭遇持續乾旱危機，農業與水資源受到衝擊，警報等級為${disaster.alertlevel === "Green" ? "綠色警報" : "橙/紅色警戒"}。`;
+      const sevMatch = desc.match(/severity\s*(?:value|level)?[:\s]+([0-9.]+)/i)
+                    || desc.match(/level\s*is\s*(\w+)/i);
+      const popMatch = desc.match(/potentially affecting\s*([0-9.,\w\s]+?)\s*(?:people|in)/i)
+                    || desc.match(/affected\s*(?:population)?[:\s]+([0-9.,\w\s]+)/i);
+
+      const sev = sevMatch ? `乾旱嚴重程度指數：${sevMatch[1]}` : null;
+      const pop = popMatch ? translatePopText(popMatch[1].trim()) : null;
+      const alertStr = alertLevel ? `警報等級為${alertLevel}` : "警報發布中";
+
+      const parts = [`目前${countryCn}部分地區正遭遇持續乾旱危機，農業生產與水資源供應受到嚴重衝擊，${alertStr}`];
+      if (sev) parts.push(sev);
+      if (pop) parts.push(`受影響人口估計達 ${pop}`);
+      return parts.join("；") + "。";
+    }
+
+    // ── 野火（WF / FF）── （新增範本）
+    if (disaster.type === "WF" || disaster.type === "FF") {
+      const areaMatch    = desc.match(/([0-9,]+)\s*(?:hectares?|ha\b)/i)
+                        || desc.match(/burned\s*area[:\s]+([0-9,]+)/i);
+      const evacMatch    = desc.match(/([0-9,]+)\s*people\s*(?:evacuated|ordered\s*to\s*evacuate|displaced)/i)
+                        || desc.match(/evacuat\w*\s*(?:of\s*|order\s*for\s*)?([0-9,]+)/i);
+      const popMatch     = desc.match(/potentially affecting\s*([0-9.,\w\s]+?)\s*(?:people|in)/i);
+      const containMatch = desc.match(/(\d+)\s*%\s*contained/i);
+      const homesMatch   = desc.match(/([0-9,]+)\s*(?:homes?|structures?|buildings?)\s*(?:damaged|destroyed)/i);
+
+      const area    = areaMatch    ? areaMatch[1].replace(/,/g, "")    : null;
+      const evac    = evacMatch    ? evacMatch[1].replace(/,/g, "")    : null;
+      const pop     = popMatch     ? translatePopText(popMatch[1].trim()) : null;
+      const contain = containMatch ? containMatch[1] : null;
+      const homes   = homesMatch   ? homesMatch[1].replace(/,/g, "")  : null;
+      const alertStr = alertLevel ? `（${alertLevel}）` : "";
+
+      const stats = [];
+      if (area)    stats.push(`過火面積約 ${area} 公頃`);
+      if (evac)    stats.push(`${evac} 人接獲撤離命令`);
+      if (homes)   stats.push(`${homes} 棟建築受損或摧毀`);
+      if (pop)     stats.push(`受威脅人口約 ${pop}`);
+      if (contain) stats.push(`火勢控制率 ${contain}%`);
+
+      const base = `${dateStr}，${countryCn}爆發野火${alertStr}`;
+      if (stats.length > 0) return `${base}；${stats.join("、")}。`;
+      return `${base}，火情持續蔓延，請關注最新疏散資訊。`;
+    }
+
+    // ── 火山（VO）── （新增範本）
+    if (disaster.type === "VO") {
+      const veiMatch  = desc.match(/VEI[:\s]+(\d+)/i)
+                     || desc.match(/explosivity\s*index[:\s]+(\d+)/i);
+      const ashMatch  = desc.match(/ash\s*(?:cloud\s*|plume\s*)?(?:height|column)[:\s]+([0-9,]+\s*(?:m|km|ft))/i)
+                     || desc.match(/ash\s*(?:at|up to|reaching)\s+([0-9,]+\s*(?:m|km|ft))/i);
+      const evacMatch = desc.match(/([0-9,]+)\s*people\s*(?:evacuated|displaced)/i)
+                     || desc.match(/evacuat\w*[:\s]+([0-9,]+)/i);
+      const lavaMatch   = /lava\s*flow/i.test(desc);
+      const tsunamiMatch = /tsunami/i.test(desc);
+      const volcanMatch = title.match(/([A-Z][a-zA-Z]+)\s*(?:volcano|eruption)/i)
+                       || title.match(/volcano\s+(?:in\s+)?([A-Z][a-zA-Z\s]+?)(?:\s*[-,]|\s+in\b)/i);
+
+      const vei  = veiMatch  ? veiMatch[1]  : null;
+      const ash  = ashMatch  ? ashMatch[1]  : null;
+      const evac = evacMatch ? evacMatch[1].replace(/,/g, "") : null;
+      const volcanStr = volcanMatch ? `（${volcanMatch[1]}火山）` : "";
+      const alertStr  = alertLevel ? `，警報等級為${alertLevel}` : "";
+
+      const stats = [];
+      if (vei)  stats.push(`火山爆發指數 (VEI) ${vei}`);
+      if (ash)  stats.push(`火山灰柱高度達 ${ash}`);
+      if (evac) stats.push(`${evac} 人已撤離`);
+      if (lavaMatch)   stats.push("伴有熔岩流");
+      if (tsunamiMatch) stats.push("具海嘯威脅，沿岸請注意");
+
+      const base = `${dateStr}，${countryCn}發生火山噴發活動${volcanStr}${alertStr}`;
+      if (stats.length > 0) return `${base}；${stats.join("、")}。`;
+      return `${base}，請密切關注當局發布之安全警示。`;
     }
   }
 
   // 2. 如果是 ERCC (一般地圖說明)
   if (disaster.source === "ERCC") {
-    const desc = disaster.description || "";
-    // ERCC description 常為 "Western and central Europe | Recent heatwave"
+    const desc  = disaster.description || "";
+    const title = disaster.title || "";
+
+    // ERCC description 常為 "Region | Event Type"
     if (desc.includes("|")) {
       const parts = desc.split("|").map(p => p.trim());
       const region = translateCountry(parts[0]);
-      const event = translateEventEnglishToCn(parts[1]);
-      return `歐盟應急響應協調中心 (ERCC) 發布每日最新形勢地圖：監測顯示${region}近期正受到【${event}】事件影響，歐盟已啟動人道應變或 civil protection 資訊整合。`;
+      const event  = translateEventEnglishToCn(parts[1]);
+      // 嘗試從標題額外取得更完整的事件說明
+      const titleEventMatch = title.match(/[-–]\s*(.+)$/);
+      const eventLabel = titleEventMatch
+        ? translateEventEnglishToCn(titleEventMatch[1].trim())
+        : event;
+      return `歐盟緊急應變協調中心 (ERCC) 發布最新形勢地圖：${region}近期受到【${eventLabel}】影響，歐盟已啟動跨境人道應變與民防資訊整合機制，持續動態監測中。`;
     }
-    return `歐盟應急中心發布最新監測地圖：${desc}。此地圖與歐盟人道救援、民防應變及防範災害後續衝擊相關。`;
+
+    // 有標題但無 | 分隔符
+    if (title) {
+      const eventMatch = title.match(/[-–]\s*(.+)$/);
+      const eventStr   = eventMatch ? translateEventEnglishToCn(eventMatch[1].trim()) : (desc || title);
+      return `歐盟緊急應變協調中心 (ERCC) 每日監測簡報：${countryCn}近期發生【${eventStr}】事件，歐盟持續協調各成員國進行人道救援與民防應對工作。`;
+    }
+    return `歐盟應急中心發布最新監測地圖：${desc}。此資訊與歐盟人道救援、民防應變及防範災害後續衝擊相關。`;
   }
 
   // 3. 如果是 USGS 地震
   if (disaster.source === "USGS") {
     const title = disaster.title || "";
+    const desc  = disaster.description || "";
+
     // title format: "M 5.8 - 45km W of Petropavlovsk-Kamchatsky, Russia"
-    const magMatch = title.match(/M\s*([0-9.]+)/i);
-    const locMatch = title.split(" - ");
-    const locStr = locMatch.length > 1 ? locMatch[1] : "全球震區";
-    return `${dateStr}，全球地震監測網 (USGS) 錄得${countryCn}周邊（${locStr}）發生芮氏規模 ${magMatch ? magMatch[1] : "4.5"} 的中強震。`;
+    const magMatch   = title.match(/M\s*([0-9.]+)/i);
+    const locParts   = title.split(" - ");
+    const locStr     = locParts.length > 1 ? locParts[1].trim() : "全球震區";
+    const depthMatch = desc.match(/Depth[:\s]+([0-9.]+\s*(?:km|kilometers?))/i);
+
+    const magNum = magMatch ? parseFloat(magMatch[1]) : 4.5;
+    let intensityStr = "有感地震";
+    if      (magNum >= 7.0) intensityStr = "強烈大地震";
+    else if (magNum >= 6.0) intensityStr = "強震";
+    else if (magNum >= 5.0) intensityStr = "中強震";
+
+    const depthStr = depthMatch ? `，震源深度 ${depthMatch[1]}` : "";
+    const alertStr = alertLevel ? `，${alertLevel}` : "";
+
+    return `${dateStr}，USGS 地震監測網偵測到${countryCn}（${locStr}）發生芮氏規模 ${magNum.toFixed(1)} ${intensityStr}${depthStr}${alertStr}。`;
   }
 
-  // 4. 如果是 ReliefWeb 
+  // 4. 如果是 ReliefWeb
   if (disaster.source === "ReliefWeb") {
-    return `聯合國人道事務協調廳 (ReliefWeb) 發布最新形勢報告：針對${countryCn}地區之【${disaster.type}】危機提供即時評估，目前正密切關注災情動態與國際人道救援應對措施。`;
+    const title = disaster.title || "";
+
+    // 從標題解析報告類型和聯合國機構縮寫
+    const reportTypeMatch = title.match(/Situation\s*Report|Flash\s*Update|Emergency\s*Appeal|Humanitarian\s*Update|Crisis\s*Update|Response\s*Plan|Fact\s*Sheet|Assessment/i);
+    const orgMatch        = title.match(/\b(OCHA|UNHCR|UNICEF|WFP|IFRC|MSF|WHO|FAO|IOM|UNDP|IRC|NRC|CARE|ACF)\b/i);
+
+    const reportType = reportTypeMatch ? translateReliefWebReportType(reportTypeMatch[0]) : "情勢報告";
+    const org        = orgMatch ? orgMatch[0].toUpperCase() : "聯合國人道機構";
+    const alertStr   = alertLevel ? `（${alertLevel}）` : "";
+
+    return `聯合國 ReliefWeb 發布最新${reportType}（${org}）：${countryCn}${catName}危機${alertStr}持續演變，詳情請參閱官方報告連結取得完整評估資訊。`;
   }
 
   // 5. 萬用備用翻譯 (如果完全無法套用範本，則簡單套入並翻譯)
@@ -1603,21 +1793,63 @@ function translatePopText(englishPop) {
   return text.trim();
 }
 
+// 輔助翻譯：ReliefWeb 報告類型英翻中
+function translateReliefWebReportType(engType) {
+  if (!engType) return "情勢報告";
+  const t = engType.toLowerCase();
+  if (t.includes("situation report"))    return "形勢報告";
+  if (t.includes("flash update"))        return "緊急快報";
+  if (t.includes("emergency appeal"))    return "緊急援助呼籲";
+  if (t.includes("humanitarian update")) return "人道情勢更新";
+  if (t.includes("crisis update"))       return "危機情勢更新";
+  if (t.includes("response plan"))       return "應對計畫";
+  if (t.includes("fact sheet"))          return "事實摘要";
+  if (t.includes("assessment"))          return "形勢評估";
+  return engType;
+}
+
 // 輔助翻譯：一般事件名英翻中
 function translateEventEnglishToCn(evtEng) {
+  if (!evtEng) return "";
   const dict = {
     "Recent heatwave": "近期熱浪",
     "Heatwave": "熱浪",
+    "Extreme heat": "極端高溫",
     "Wildfires": "野火",
+    "Wildfire": "野火",
     "Wild fire": "野火",
+    "Forest fire": "森林火災",
     "Forest Firefighting": "森林消防準備",
-    "Monsoon season": "季風雨季預防",
+    "Monsoon season": "季風雨季",
+    "Monsoon flooding": "季風洪水",
     "Ebola": "伊波拉病毒疫情",
     "Epidemic": "傳染病爆發",
+    "Cholera": "霍亂疫情",
+    "Drought": "乾旱",
     "Flood": "淹水",
-    "Tropical Cyclone": "熱帶氣旋"
+    "Flooding": "洪水氾濫",
+    "Flash flood": "閃洪",
+    "Tropical Cyclone": "熱帶氣旋",
+    "Tropical storm": "熱帶風暴",
+    "Typhoon": "颱風",
+    "Hurricane": "颶風",
+    "Earthquake": "地震",
+    "Tsunami": "海嘯",
+    "Volcanic activity": "火山活動",
+    "Eruption": "火山噴發",
+    "Landslide": "山崩/土石流",
+    "Refugee crisis": "難民危機",
+    "Conflict": "武裝衝突",
+    "Food insecurity": "糧食不安全",
+    "Food crisis": "糧食危機"
   };
-  return dict[evtEng] || evtEng;
+  // 精確比對（不分大小寫）
+  const key = Object.keys(dict).find(k => k.toLowerCase() === evtEng.toLowerCase());
+  if (key) return dict[key];
+  // 包含模糊比對
+  const partialKey = Object.keys(dict).find(k => evtEng.toLowerCase().includes(k.toLowerCase()));
+  if (partialKey) return dict[partialKey];
+  return evtEng;
 }
 
 // 格式化日期字串 (將 Wed, 03 Jun 2026 22:23:39 GMT 轉成 06/03)
