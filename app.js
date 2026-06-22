@@ -3475,8 +3475,10 @@ function copySummaryTextToClipboard() {
 
   textOutput = textOutput.trim();
 
+  // 4. 複製至剪貼簿
+  navigator.clipboard.writeText(textOutput).then(() => {
+    showToast("已成功將選定災害文字摘要複製至剪貼簿！");
   }).catch(err => {
-    document.body.removeChild(clone);
     console.error("複製文字摘要失敗:", err);
     alert("複製文字摘要失敗，請重試！");
   });
