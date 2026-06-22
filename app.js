@@ -3543,42 +3543,49 @@ async function downloadSlidePPTX() {
   
   const pptxFilename = `${fileDateRange}-國際災情週報-${reporterName}.pptx`;
 
-  // 2. 初始化 PptxGenJS
+  // 2. 初始化 PptxGenJS，並強制明確指定 16:9 的精準寬高，確保在各種平台下格式一致
   const pptx = new PptxGenJS();
-  pptx.layout = "LAYOUT_16x9";
+  pptx.defineLayout({ name: "NCDR_LAYOUT", width: 13.33, height: 7.5 });
+  pptx.layout = "NCDR_LAYOUT";
 
-  // 3. 繪製 Slide 1 (標題頁)
+  // 3. 繪製 Slide 1 (標題頁) - 配合原白底 NCDR 模板
   const slide1 = pptx.addSlide();
-  slide1.background = { color: "0f172a" }; // 暗藍灰色底
+  slide1.background = { color: "ffffff" }; // 配合 NCDR 模板採用乾淨白底
 
-  // 加上裝飾的亮青色線條，呼叫平台的主題色，凸顯科技感
+  // 加上 NCDR 簡報主題深藍色邊條裝飾
   slide1.addShape(pptx.ShapeType.rect, {
-    x: 0, y: 0, w: 0.15, h: 7.5,
-    fill: { color: "06b6d4" }
+    x: 0, y: 0, w: 0.25, h: 7.5,
+    fill: { color: "1e3a8a" } // NCDR 主題深藍
+  });
+
+  // 載入 NCDR 標誌 (相對路徑在 GitHub Pages / 本機網頁伺服器中可以直接載入)
+  slide1.addImage({
+    path: "ncdr_logo.png",
+    x: 0.8, y: 0.6, w: 1.8, h: 0.45
   });
 
   // 大標題
   slide1.addText("世界災情週報", {
-    x: 1.0, y: 2.2, w: 11.0, h: 1.2,
-    fontSize: 44,
-    color: "FFFFFF",
+    x: 1.2, y: 2.3, w: 11.0, h: 1.2,
+    fontSize: 42,
+    color: "1e3a8a", // 科技深藍色字體
     fontFace: "Microsoft JhengHei",
     bold: true
   });
 
   // 副標題與時間
   slide1.addText(`時間：${dateRangeStr || "06/16 ~ 06/22"}`, {
-    x: 1.0, y: 3.6, w: 11.0, h: 0.6,
-    fontSize: 20,
-    color: "94a3b8",
+    x: 1.2, y: 3.8, w: 11.0, h: 0.5,
+    fontSize: 18,
+    color: "475569", // 深灰字體
     fontFace: "Microsoft JhengHei"
   });
 
   // 值週同仁
   slide1.addText(`值週同仁：${reporterName}`, {
-    x: 1.0, y: 4.3, w: 11.0, h: 0.6,
-    fontSize: 20,
-    color: "94a3b8",
+    x: 1.2, y: 4.5, w: 11.0, h: 0.5,
+    fontSize: 18,
+    color: "475569",
     fontFace: "Microsoft JhengHei"
   });
 
@@ -3702,7 +3709,7 @@ async function downloadSlidePPTX() {
       descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
     }
 
-    // 文獻 (參考連結清單)
+    // 文獻 (參考連結清單) - 字級縮小至 9.5 避開長網址撐破儲存格
     const refLinks = generateReferenceLinks(d);
     const refTextItems = [];
     if (refLinks && refLinks.length > 0) {
@@ -3713,18 +3720,18 @@ async function downloadSlidePPTX() {
             hyperlink: { url: ref.url },
             color: "0284c7",
             fontFace: "Microsoft JhengHei",
-            fontSize: 10,
+            fontSize: 9.5,
             underline: true
           }
         });
       });
     } else {
-      refTextItems.push({ text: "無", options: { fontFace: "Microsoft JhengHei", fontSize: 10 } });
+      refTextItems.push({ text: "無", options: { fontFace: "Microsoft JhengHei", fontSize: 9.5 } });
     }
 
-    // 地點儲存格結合超連結
+    // 地點儲存格結合超連結 (字級改為 9.5)
     const locCellText = [
-      { text: locText + "\n", options: { fontFace: "Microsoft JhengHei", fontSize: 11, color: "000000" } }
+      { text: locText + "\n", options: { fontFace: "Microsoft JhengHei", fontSize: 9.5, color: "000000" } }
     ];
     if (mapUrl) {
       locCellText.push({
@@ -3733,34 +3740,35 @@ async function downloadSlidePPTX() {
           hyperlink: { url: mapUrl },
           color: "0284c7",
           fontFace: "Microsoft JhengHei",
-          fontSize: 11,
+          fontSize: 9.5,
           underline: true
         }
       });
     }
 
     const rows = [
-      // 第一行: 表頭
+      // 第一行: 表頭 (字級改為 11pt，高對齊中)
       [
-        { text: "日期", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
-        { text: "地點", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
-        { text: "類別", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
-        { text: "災情說明", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
-        { text: "文獻", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } }
+        { text: "日期", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "地點", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "類別", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "災情說明", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "文獻", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } }
       ],
-      // 第二行: 資料
+      // 第二行: 資料 (說明字級改為 9.5pt，其餘 10pt)
       [
-        { text: shortDate, options: { fontFace: "Microsoft JhengHei", fontSize: 12, align: "center", valign: "middle" } },
-        { text: locCellText, options: { fontFace: "Microsoft JhengHei", fontSize: 11, align: "left", valign: "middle" } },
-        { text: catName, options: { fontFace: "Microsoft JhengHei", fontSize: 12, align: "center", valign: "middle" } },
-        { text: descText, options: { fontFace: "Microsoft JhengHei", fontSize: 11, align: "left", valign: "top" } },
+        { text: shortDate, options: { fontFace: "Microsoft JhengHei", fontSize: 10, align: "center", valign: "middle" } },
+        { text: locCellText, options: { fontFace: "Microsoft JhengHei", fontSize: 9.5, align: "left", valign: "middle" } },
+        { text: catName, options: { fontFace: "Microsoft JhengHei", fontSize: 10, align: "center", valign: "middle" } },
+        { text: descText, options: { fontFace: "Microsoft JhengHei", fontSize: 9.5, align: "left", valign: "top" } },
         { text: refTextItems, options: { align: "left", valign: "top" } }
       ]
     ];
 
+    // 表格寬度設為 12.0 英吋，x 設為 0.66，於 13.33 英吋寬投影片中實現左右黃金對比置中
     slide.addTable(rows, {
-      x: 0.5, y: 1.2, w: 12.33,
-      colWidths: [1.3, 2.5, 1.2, 5.3, 2.03],
+      x: 0.66, y: 1.4, w: 12.0,
+      colWidths: [1.0, 2.2, 1.0, 6.0, 1.8],
       border: { type: "solid", color: "cbd5e1", width: 1 },
       valign: "middle"
     });
