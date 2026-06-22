@@ -3131,6 +3131,10 @@ function downloadSlidePNG() {
     scaler.style.height = "675px";
   }
 
+  // 截圖前隱藏所有卡片的複製按鈕（📋），避免出現在下載圖片中
+  const copyBtns = canvas.querySelectorAll(".slide-card-copy-btn");
+  copyBtns.forEach(btn => { btn.style.display = "none"; });
+
   const svgEl = document.getElementById("slide-map-bg");
   let imgEl = null;
 
@@ -3156,6 +3160,9 @@ function downloadSlidePNG() {
         imgEl.parentNode.replaceChild(svgEl, imgEl);
       }
 
+      // 恢復複製按鈕顯示
+      copyBtns.forEach(btn => { btn.style.display = ""; });
+
       const url = canvasEl.toDataURL("image/png");
       const titleText = document.getElementById("slide-title-text").textContent.trim();
       
@@ -3179,6 +3186,10 @@ function downloadSlidePNG() {
       if (svgEl && imgEl && imgEl.parentNode) {
         imgEl.parentNode.replaceChild(svgEl, imgEl);
       }
+
+      // 恢復複製按鈕顯示
+      copyBtns.forEach(btn => { btn.style.display = ""; });
+
       alert("簡報圖卡生成失敗，可能是圖檔快取或瀏覽器限制，請重試或聯繫開發同仁。");
     });
   };
