@@ -3016,6 +3016,33 @@ function updateSlideCanvas() {
       drawConnectingLines();
     });
 
+    // 攔截貼上事件，強制以純文字插入
+    // 原因：瀏覽器預設會將剪貼簿中的 HTML 格式（字型大小、粗細、顏色）一併貼入，
+    //       導致貼上的文字與圖卡的 CSS 樣式不符。此處取出純文字再插入游標位置。
+    const handlePastePlainText = (e) => {
+      e.preventDefault();
+      // 取得純文字內容（去除所有 HTML 標籤與格式）
+      const plainText = (e.clipboardData || window.clipboardData).getData("text/plain");
+      if (!plainText) return;
+
+      // 使用 Selection API 在游標位置插入純文字節點
+      const selection = window.getSelection();
+      if (!selection || !selection.rangeCount) return;
+      const range = selection.getRangeAt(0);
+      range.deleteContents(); // 刪除已選取的文字（若有）
+      range.insertNode(document.createTextNode(plainText));
+      // 移動游標到插入文字的尾端
+      range.collapse(false);
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      // 觸發 input 事件以重新計算連接線
+      e.target.dispatchEvent(new Event("input", { bubbles: true }));
+    };
+    titleTextEl.addEventListener("paste", handlePastePlainText);
+    bodyTextEl.addEventListener("paste", handlePastePlainText);
+
+
     // D. 綁定卡片拖動功能
     makeCardDraggable(card);
   });
