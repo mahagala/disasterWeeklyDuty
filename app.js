@@ -829,6 +829,10 @@ function setupEventListeners() {
   if (downloadSlideBtn) {
     downloadSlideBtn.addEventListener("click", downloadSlidePNG);
   }
+  const copySummaryTextBtn = document.getElementById("copy-summary-text-btn");
+  if (copySummaryTextBtn) {
+    copySummaryTextBtn.addEventListener("click", copySummaryTextToClipboard);
+  }
 }
 
 // --- 多重 CORS 代理網路抓取工具 ---
@@ -3372,6 +3376,94 @@ function copyCardAsImage(cardEl) {
     document.body.removeChild(clone);
     console.error("生成卡片圖片失敗:", err);
     alert("複製卡片失敗，請重試！");
+  });
+}
+
+// 複製選定的重大災害文字摘要至剪貼簿
+function copySummaryTextToClipboard() {
+  const listContainer = document.getElementById("slide-disaster-list");
+  if (!listContainer) return;
+  
+  const checkedBoxes = listContainer.querySelectorAll("input[type='checkbox']:checked");
+  if (checkedBoxes.length === 0) {
+    alert("目前沒有選取任何災害項目！請先在左側勾選要加入的災害。");
+    return;
+  }
+
+  const checkedDisasters = [];
+  checkedBoxes.forEach(chk => {
+    const dId = chk.getAttribute("data-id");
+    const found = currentFilteredDisasters.find(d => d.id === dId);
+    if (found) checkedDisasters.push(found);
+  });
+
+  // 1. 取得標題並轉換日期格式 (去前導零，如 2026.03.24 -> 2026.3.24)
+  const slideTitleText = document.getElementById("slide-title-text").textContent.trim();
+  let summaryTitle = "上周重大災情回顧";
+  const dateMatch = slideTitleText.match(/\(([^)]+)\)/);
+  if (dateMatch) {
+    const rawDateRange = dateMatch[1];
+    // 去除 .01~.09 的前導 0 (如 2026.03.24 -> 2026.3.24)
+    const formattedDateRange = rawDateRange.replace(/\.0(\d)/g, '.$1');
+    summaryTitle = `上周重大災情回顧 (${formattedDateRange})`;
+  }
+
+  let textOutput = summaryTitle + "\n\n";
+
+  // 2. 組合各個災害的文字摘要與連結
+  checkedDisasters.forEach(d => {
+    // 優先從畫布卡片 DOM 中提取使用者可能即時修改過的最新內容
+    const cardEl = document.getElementById(`slide-card-${d.id}`);
+    let titleText = "";
+    let descText = "";
+
+    if (cardEl) {
+      const titleEl = cardEl.querySelector(".slide-card-title-text");
+      const bodyEl = cardEl.querySelector(".slide-card-body");
+      if (titleEl) {
+        titleText = titleEl.textContent.trim();
+      }
+      if (bodyEl) {
+        descText = bodyEl.textContent.trim();
+      }
+    }
+
+    // Fallback: 如果拿不到卡片，則使用原始物件資料重建
+    if (!titleText) {
+      const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
+      const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+      const countryName = translateCountry(d.country);
+      const catName = getCategoryInfo(d.type).name;
+      titleText = `${shortDate} ${countryName} ${catName}`;
+    }
+
+    if (!descText) {
+      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
+      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    }
+
+    textOutput += `# ${titleText}\n${descText}\n`;
+
+    // 3. 取得該災害的文獻/新聞檢索連結
+    const refLinks = generateReferenceLinks(d);
+    if (refLinks && refLinks.length > 0) {
+      textOutput += "\n參考連結：\n";
+      refLinks.forEach(ref => {
+        textOutput += `- ${ref.title}: ${ref.url}\n`;
+      });
+    }
+
+    textOutput += "\n";
+  });
+
+  textOutput = textOutput.trim();
+
+  // 4. 複製至剪貼簿
+  navigator.clipboard.writeText(textOutput).then(() => {
+    showToast("已成功將選定災害文字摘要複製至剪貼簿！");
+  }).catch(err => {
+    console.error("複製文字摘要失敗:", err);
+    alert("複製文字摘要失敗，請重試！");
   });
 }
 
