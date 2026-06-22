@@ -837,6 +837,12 @@ function setupEventListeners() {
   if (downloadSlidePptxBtn) {
     downloadSlidePptxBtn.addEventListener("click", downloadSlidePPTX);
   }
+  const reporterInput = document.getElementById("slide-reporter-name");
+  if (reporterInput) {
+    reporterInput.addEventListener("input", (e) => {
+      localStorage.setItem("slide_reporter_name", e.target.value.trim());
+    });
+  }
 }
 
 // --- 多重 CORS 代理網路抓取工具 ---
@@ -2828,6 +2834,13 @@ function openSlideGenerator() {
   if (!currentFilteredDisasters || currentFilteredDisasters.length === 0) {
     alert("目前沒有任何篩選出的災情，無法生成圖卡。請調整篩選器！");
     return;
+  }
+
+  // 0. 載入先前暫存的值週同仁姓名
+  const savedName = localStorage.getItem("slide_reporter_name") || "";
+  const reporterInput = document.getElementById("slide-reporter-name");
+  if (reporterInput) {
+    reporterInput.value = savedName;
   }
 
   // 1. 計算日期區間文字
