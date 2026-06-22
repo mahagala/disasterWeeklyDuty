@@ -833,6 +833,10 @@ function setupEventListeners() {
   if (copySummaryTextBtn) {
     copySummaryTextBtn.addEventListener("click", copySummaryTextToClipboard);
   }
+  const downloadSlidePptxBtn = document.getElementById("download-slide-pptx-btn");
+  if (downloadSlidePptxBtn) {
+    downloadSlidePptxBtn.addEventListener("click", downloadSlidePPTX);
+  }
 }
 
 // --- 多重 CORS 代理網路抓取工具 ---
@@ -3458,12 +3462,454 @@ function copySummaryTextToClipboard() {
 
   textOutput = textOutput.trim();
 
-  // 4. 複製至剪貼簿
-  navigator.clipboard.writeText(textOutput).then(() => {
-    showToast("已成功將選定災害文字摘要複製至剪貼簿！");
   }).catch(err => {
+    document.body.removeChild(clone);
     console.error("複製文字摘要失敗:", err);
     alert("複製文字摘要失敗，請重試！");
   });
+}
+
+// 輔助函數：讀取上傳檔案為 Base64
+function readFileAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+    reader.readAsDataURL(file);
+  });
+}
+
+// 動態生成並下載 16:9 PPTX 週報簡報
+async function downloadSlidePPTX() {
+  const listContainer = document.getElementById("slide-disaster-list");
+  if (!listContainer) return;
+  
+  const checkedBoxes = listContainer.querySelectorAll("input[type='checkbox']:checked");
+  if (checkedBoxes.length === 0) {
+    alert("目前沒有選取任何災害項目！請先在左側勾選要加入的災害。");
+    return;
+  }
+
+  showToast("正在自動組裝並生成 PPTX 週報簡報，請稍候...");
+
+  const checkedDisasters = [];
+  checkedBoxes.forEach(chk => {
+    const dId = chk.getAttribute("data-id");
+    const found = currentFilteredDisasters.find(d => d.id === dId);
+    if (found) checkedDisasters.push(found);
+  });
+
+  // 1. 取得標題並轉換日期格式 (例如 2026.06.16 ~ 2026.06.22 轉為 2026-0616-0622)
+  const slideTitleText = document.getElementById("slide-title-text").textContent.trim();
+  let dateRangeStr = "";
+  let fileDateRange = "2026-0616-0622"; // 預設安全值
+  
+  const dateMatch = slideTitleText.match(/\(([^)]+)\)/);
+  if (dateMatch) {
+    dateRangeStr = dateMatch[1]; // 如 "2026.06.16 ~ 2026.06.22"
+    // 將 YYYY.MM.DD ~ YYYY.MM.DD 轉成 YYYY-MMDD-MMDD 格式
+    const cleanMatch = dateRangeStr.match(/(\d{4})\.(\d{2})\.(\d{2})\s*~\s*(?:\d{4})\.(\d{2})\.(\d{2})/);
+    if (cleanMatch) {
+      const year = cleanMatch[1];
+      const m1 = cleanMatch[2];
+      const d1 = cleanMatch[3];
+      const m2 = cleanMatch[4];
+      const d2 = cleanMatch[5];
+      fileDateRange = `${year}-${m1}${d1}-${m2}${d2}`;
+    }
+  }
+
+  // 取得值週同仁姓名
+  const reporterInput = document.getElementById("slide-reporter-name");
+  let reporterName = reporterInput ? reporterInput.value.trim() : "";
+  if (!reporterName) {
+    reporterName = "值週同仁";
+  }
+  
+  const pptxFilename = `${fileDateRange}-國際災情週報-${reporterName}.pptx`;
+
+  // 2. 初始化 PptxGenJS
+  const pptx = new PptxGenJS();
+  pptx.layout = "LAYOUT_16x9";
+
+  // 3. 繪製 Slide 1 (標題頁)
+  const slide1 = pptx.addSlide();
+  slide1.background = { color: "0f172a" }; // 暗藍灰色底
+
+  // 加上裝飾的亮青色線條，呼叫平台的主題色，凸顯科技感
+  slide1.addShape(pptx.ShapeType.rect, {
+    x: 0, y: 0, w: 0.15, h: 7.5,
+    fill: { color: "06b6d4" }
+  });
+
+  // 大標題
+  slide1.addText("世界災情週報", {
+    x: 1.0, y: 2.2, w: 11.0, h: 1.2,
+    fontSize: 44,
+    color: "FFFFFF",
+    fontFace: "Microsoft JhengHei",
+    bold: true
+  });
+
+  // 副標題與時間
+  slide1.addText(`時間：${dateRangeStr || "06/16 ~ 06/22"}`, {
+    x: 1.0, y: 3.6, w: 11.0, h: 0.6,
+    fontSize: 20,
+    color: "94a3b8",
+    fontFace: "Microsoft JhengHei"
+  });
+
+  // 值週同仁
+  slide1.addText(`值週同仁：${reporterName}`, {
+    x: 1.0, y: 4.3, w: 11.0, h: 0.6,
+    fontSize: 20,
+    color: "94a3b8",
+    fontFace: "Microsoft JhengHei"
+  });
+
+  // 4. 繪製 Slide 2 (GDACS 截圖)
+  const slide2 = pptx.addSlide();
+  slide2.background = { color: "ffffff" };
+
+  // 標題：「GDACS_月/日」
+  let gdacsDateLabel = "GDACS";
+  if (dateRangeStr) {
+    const parts = dateRangeStr.split("~");
+    if (parts.length > 1) {
+      const endPart = parts[1].trim(); // "2026.06.22"
+      const dateOnly = endPart.substring(endPart.indexOf(".") + 1); // "06.22"
+      gdacsDateLabel = `GDACS_${dateOnly.replace(/\./g, "/")}`;
+    }
+  }
+
+  slide2.addText(gdacsDateLabel, {
+    x: 0.6, y: 0.4, w: 12.0, h: 0.6,
+    fontSize: 20,
+    color: "1e293b",
+    fontFace: "Microsoft JhengHei",
+    bold: true
+  });
+
+  // 讀取上傳圖片或擷取地圖
+  let gdacsBase64 = null;
+  const fileInput = document.getElementById("slide-gdacs-upload");
+  if (fileInput && fileInput.files.length > 0) {
+    try {
+      gdacsBase64 = await readFileAsBase64(fileInput.files[0]);
+    } catch (err) {
+      console.error("讀取上傳圖片失敗:", err);
+    }
+  } else {
+    // 試著擷取 Leaflet 地圖
+    const leafletMapEl = document.getElementById("disaster-map");
+    if (leafletMapEl) {
+      try {
+        const canvasEl = await html2canvas(leafletMapEl, {
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: "#0e111a"
+        });
+        gdacsBase64 = canvasEl.toDataURL("image/png");
+      } catch (err) {
+        console.error("無法自動擷取 Leaflet 地圖:", err);
+      }
+    }
+  }
+
+  if (gdacsBase64) {
+    slide2.addImage({
+      data: gdacsBase64,
+      x: 0.6, y: 1.2, w: 12.13, h: 5.6
+    });
+  } else {
+    slide2.addShape(pptx.ShapeType.rect, {
+      x: 0.6, y: 1.2, w: 12.13, h: 5.6,
+      fill: { color: "f8fafc" },
+      line: { color: "cbd5e1", width: 2 }
+    });
+    slide2.addText("【請在此處手動貼上當天 GDACS 全球災情分佈截圖】", {
+      x: 0.6, y: 3.5, w: 12.13, h: 1.0,
+      fontSize: 18,
+      color: "64748b",
+      fontFace: "Microsoft JhengHei",
+      align: "center"
+    });
+  }
+
+  // 5. 繪製 Slide 3~N (災害卡片表格頁)
+  for (let i = 0; i < checkedDisasters.length; i++) {
+    const d = checkedDisasters[i];
+    const slide = pptx.addSlide();
+    slide.background = { color: "ffffff" };
+
+    // 頂部標題
+    slide.addText("災害列表", {
+      x: 0.6, y: 0.4, w: 10.0, h: 0.6,
+      fontSize: 20,
+      color: "1e293b",
+      fontFace: "Microsoft JhengHei",
+      bold: true
+    });
+
+    // 右下角自訂頁碼
+    slide.addText((i + 3).toString(), {
+      x: 12.2, y: 6.8, w: 0.6, h: 0.4,
+      fontSize: 12,
+      color: "64748b",
+      fontFace: "Microsoft JhengHei",
+      align: "right"
+    });
+
+    // 準備表格欄位內容
+    const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
+    const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+
+    const continent = getCountryContinent(d.country);
+    const country = translateCountry(d.country);
+    const region = d.chineseLocationDetail || d.englishLocationDetail || "";
+    let locText = `${continent} ${country}\n${region}`;
+    if (d.lat !== null && d.lng !== null) {
+      locText += `\n${d.lat.toFixed(4)}°N ${d.lng.toFixed(4)}°E`;
+    }
+    const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lng}` : "";
+
+    const catName = getCategoryInfo(d.type).name;
+
+    // 災情說明 (優先讀取 DOM 卡片中同仁即時編輯後的內容)
+    const cardEl = document.getElementById(`slide-card-${d.id}`);
+    let descText = "";
+    if (cardEl) {
+      const bodyEl = cardEl.querySelector(".slide-card-body");
+      if (bodyEl) descText = bodyEl.textContent.trim();
+    }
+    if (!descText) {
+      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
+      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    }
+
+    // 文獻 (參考連結清單)
+    const refLinks = generateReferenceLinks(d);
+    const refTextItems = [];
+    if (refLinks && refLinks.length > 0) {
+      refLinks.forEach(ref => {
+        refTextItems.push({
+          text: `• ${ref.title}\n`,
+          options: {
+            hyperlink: { url: ref.url },
+            color: "0284c7",
+            fontFace: "Microsoft JhengHei",
+            fontSize: 10,
+            underline: true
+          }
+        });
+      });
+    } else {
+      refTextItems.push({ text: "無", options: { fontFace: "Microsoft JhengHei", fontSize: 10 } });
+    }
+
+    // 地點儲存格結合超連結
+    const locCellText = [
+      { text: locText + "\n", options: { fontFace: "Microsoft JhengHei", fontSize: 11, color: "000000" } }
+    ];
+    if (mapUrl) {
+      locCellText.push({
+        text: "📍 Google 地圖",
+        options: {
+          hyperlink: { url: mapUrl },
+          color: "0284c7",
+          fontFace: "Microsoft JhengHei",
+          fontSize: 11,
+          underline: true
+        }
+      });
+    }
+
+    const rows = [
+      // 第一行: 表頭
+      [
+        { text: "日期", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
+        { text: "地點", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
+        { text: "類別", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
+        { text: "災情說明", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } },
+        { text: "文獻", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 13, bold: true, align: "center", valign: "middle" } }
+      ],
+      // 第二行: 資料
+      [
+        { text: shortDate, options: { fontFace: "Microsoft JhengHei", fontSize: 12, align: "center", valign: "middle" } },
+        { text: locCellText, options: { fontFace: "Microsoft JhengHei", fontSize: 11, align: "left", valign: "middle" } },
+        { text: catName, options: { fontFace: "Microsoft JhengHei", fontSize: 12, align: "center", valign: "middle" } },
+        { text: descText, options: { fontFace: "Microsoft JhengHei", fontSize: 11, align: "left", valign: "top" } },
+        { text: refTextItems, options: { align: "left", valign: "top" } }
+      ]
+    ];
+
+    slide.addTable(rows, {
+      x: 0.5, y: 1.2, w: 12.33,
+      colWidths: [1.3, 2.5, 1.2, 5.3, 2.03],
+      border: { type: "solid", color: "cbd5e1", width: 1 },
+      valign: "middle"
+    });
+  }
+
+  // 6. 繪製 Slide N+1 (簡報圖卡圖片頁)
+  const slideMap = pptx.addSlide();
+  slideMap.background = { color: "ffffff" };
+
+  const canvasEl = document.getElementById("slide-canvas");
+  const scalerEl = document.getElementById("slide-canvas-scaler");
+  let mapImageBase64 = null;
+
+  if (canvasEl) {
+    const prevTransform = canvasEl.style.transform;
+    const prevScalerW = scalerEl ? scalerEl.style.width : "";
+    const prevScalerH = scalerEl ? scalerEl.style.height : "";
+    
+    canvasEl.style.transform = "none";
+    if (scalerEl) {
+      scalerEl.style.width = "1200px";
+      scalerEl.style.height = "675px";
+    }
+
+    const copyBtns = canvasEl.querySelectorAll(".slide-card-copy-btn");
+    copyBtns.forEach(btn => { btn.style.display = "none"; });
+
+    const svgEl = document.getElementById("slide-map-bg");
+    let imgEl = null;
+
+    if (svgEl) {
+      try {
+        const svgString = new XMLSerializer().serializeToString(svgEl);
+        const svgBase64 = btoa(unescape(encodeURIComponent(svgString)));
+        const imgUrl = "data:image/svg+xml;base64," + svgBase64;
+        
+        imgEl = document.createElement("img");
+        imgEl.src = imgUrl;
+        imgEl.style.position = "absolute";
+        imgEl.style.width = "1100px";
+        imgEl.style.height = "471.35px";
+        imgEl.style.left = "50px";
+        imgEl.style.top = "120px";
+        imgEl.style.opacity = "0.9";
+        imgEl.style.zIndex = "1";
+        
+        svgEl.parentNode.replaceChild(imgEl, svgEl);
+      } catch (err) {
+        console.error("SVG 轉 Image 失敗:", err);
+      }
+    }
+
+    try {
+      const capturedCanvas = await html2canvas(canvasEl, {
+        scale: 1.6,
+        useCORS: true,
+        allowTaint: false,
+        backgroundColor: "#f8fafc"
+      });
+      mapImageBase64 = capturedCanvas.toDataURL("image/png");
+    } catch (err) {
+      console.error("地圖圖卡截圖失敗:", err);
+    }
+
+    if (svgEl && imgEl && imgEl.parentNode) {
+      imgEl.parentNode.replaceChild(svgEl, imgEl);
+    }
+    copyBtns.forEach(btn => { btn.style.display = ""; });
+    canvasEl.style.transform = prevTransform;
+    if (scalerEl) {
+      scalerEl.style.width = prevScalerW;
+      scalerEl.style.height = prevScalerH;
+    }
+  }
+
+  if (mapImageBase64) {
+    slideMap.addImage({
+      data: mapImageBase64,
+      x: 0, y: 0, w: 13.33, h: 7.5
+    });
+  } else {
+    slideMap.addText("【地圖圖卡生成失敗，請下載 PNG 後手動貼至此處】", {
+      x: 0.6, y: 3.5, w: 12.13, h: 1.0,
+      fontSize: 18,
+      align: "center",
+      fontFace: "Microsoft JhengHei"
+    });
+  }
+
+  // 7. 繪製 Slide N+2 (文字摘要頁)
+  const slideText = pptx.addSlide();
+  slideText.background = { color: "ffffff" };
+
+  let summaryTitle = "上周重大災情回顧";
+  if (dateRangeStr) {
+    const formattedDateRange = dateRangeStr.replace(/\.0(\d)/g, '.$1');
+    summaryTitle = `上周重大災情回顧 (${formattedDateRange})`;
+  }
+
+  slideText.addText(summaryTitle, {
+    x: 0.6, y: 0.4, w: 12.0, h: 0.6,
+    fontSize: 20,
+    color: "1e293b",
+    fontFace: "Microsoft JhengHei",
+    bold: true
+  });
+
+  let summaryBody = "";
+  checkedDisasters.forEach(d => {
+    const cardEl = document.getElementById(`slide-card-${d.id}`);
+    let titleText = "";
+    let descText = "";
+
+    if (cardEl) {
+      const titleEl = cardEl.querySelector(".slide-card-title-text");
+      const bodyEl = cardEl.querySelector(".slide-card-body");
+      if (titleEl) titleText = titleEl.textContent.trim();
+      if (bodyEl) descText = bodyEl.textContent.trim();
+    }
+
+    if (!titleText) {
+      const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
+      const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+      const countryName = translateCountry(d.country);
+      const catName = getCategoryInfo(d.type).name;
+      titleText = `${shortDate} ${countryName} ${catName}`;
+    }
+
+    if (!descText) {
+      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
+      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    }
+
+    summaryBody += `# ${titleText}\n${descText}\n`;
+
+    const refLinks = generateReferenceLinks(d);
+    if (refLinks && refLinks.length > 0) {
+      summaryBody += "參考連結：\n";
+      refLinks.forEach(ref => {
+        summaryBody += `- ${ref.title}: ${ref.url}\n`;
+      });
+    }
+    summaryBody += "\n";
+  });
+
+  summaryBody = summaryBody.trim();
+
+  slideText.addText(summaryBody, {
+    x: 0.6, y: 1.2, w: 12.13, h: 5.6,
+    fontSize: 11,
+    color: "334155",
+    fontFace: "Microsoft JhengHei",
+    align: "left",
+    valign: "top"
+  });
+
+  // 8. 導出並下載簡報
+  pptx.writeFile({ fileName: pptxFilename })
+    .then(() => {
+      showToast("週報簡報 (PPTX) 下載成功！");
+    })
+    .catch(err => {
+      console.error("生成簡報失敗:", err);
+      alert("簡報生成失敗，請重試！");
+    });
 }
 

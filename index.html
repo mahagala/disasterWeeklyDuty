@@ -530,6 +530,8 @@
   <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.3.0/dist/umd/full.js"></script>
   <!-- html2canvas for presentation graphic generation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- PptxGenJS for PPTX generation -->
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
   <!-- Mock Data -->
   <script src="mockData.js?v=20260605_2"></script>
   <!-- Main Application JS -->
@@ -1528,6 +1530,17 @@
             <div class="slide-disaster-list" id="slide-disaster-list">
               <!-- Dynamically generated list -->
             </div>
+
+            <!-- PPTX Configuration Inputs -->
+            <div class="filter-group" style="margin-top: 15px; margin-bottom: 12px;">
+              <label for="slide-reporter-name" style="display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">值週同仁姓名</label>
+              <input type="text" id="slide-reporter-name" class="form-input" placeholder="請輸入值週人員姓名" style="background: rgba(10,14,25,0.7); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-main); font-size: 13px; padding: 8px 10px; width: 100%; outline: none;">
+            </div>
+
+            <div class="filter-group" style="margin-bottom: 15px;">
+              <label for="slide-gdacs-upload" style="display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">上傳當天 GDACS 截圖 (選填)</label>
+              <input type="file" id="slide-gdacs-upload" accept="image/*" class="form-input" style="background: rgba(10,14,25,0.7); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-muted); font-size: 11.5px; padding: 6px 10px; width: 100%; outline: none; cursor: pointer;">
+            </div>
             
             <div class="slide-action-box">
               <button class="primary-btn" id="download-slide-btn" style="width: 100%;">
@@ -1535,6 +1548,9 @@
               </button>
               <button class="secondary-btn" id="copy-summary-text-btn" style="width: 100%; margin-top: 10px;">
                 <span>📋 複製選定災害文字摘要</span>
+              </button>
+              <button class="primary-btn" id="download-slide-pptx-btn" style="width: 100%; margin-top: 10px; background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);">
+                <span>📊 生成並下載週報簡報 (PPTX)</span>
               </button>
             </div>
           </div>
