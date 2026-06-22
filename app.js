@@ -2618,6 +2618,16 @@ function exportToCSV() {
 function copyDisasterSummary(d) {
   const countryName = showOriginalEnglish ? (d.country || "Unknown Country") : translateCountry(d.country);
   const catInfo = getCategoryInfo(d.type);
+
+  // 對齊網頁表格顯示：加入洲名（如「南美洲」）
+  let continent = getCountryContinent(d.country);
+  if (showOriginalEnglish) {
+    const continentEnMap = {
+      "亞洲": "Asia", "歐洲": "Europe", "北美洲": "North America",
+      "南美洲": "South America", "非洲": "Africa", "大洋洲": "Oceania", "其它地區": "Other"
+    };
+    continent = continentEnMap[continent] || continent;
+  }
   let dateStr = formatDateRange(d.fromdate, d.todate, d.pubDate);
   
   // 依照用戶 PPT 格式優化日期顯示 (例如 03/25 ~ 03/27 ➔ 3/25-3/27)
@@ -2645,8 +2655,8 @@ function copyDisasterSummary(d) {
   const dmsLng = convertDecimalToDMS(d.lng, false);
   const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lng}` : "";
   
-  // 組合成與 PPT 相符的「地點」儲存格內容
-  let locCellContent = countryName;
+  // 組合成與 PPT 相符的「地點」儲存格內容（洲名 國名 詳細地址 座標 地圖）
+  let locCellContent = `${continent} ${countryName}`;
   if (detailLocText) {
     locCellContent += `\n${detailLocText}`;
   }
