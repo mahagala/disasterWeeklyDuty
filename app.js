@@ -3548,45 +3548,38 @@ async function downloadSlidePPTX() {
   pptx.defineLayout({ name: "NCDR_LAYOUT", width: 13.33, height: 7.5 });
   pptx.layout = "NCDR_LAYOUT";
 
-  // 3. 繪製 Slide 1 (標題頁) - 配合原白底 NCDR 模板
+  // 3. 繪製 Slide 1 (標題頁) - 嚴格完全保持原簡報封面樣式 (乾淨白底、黑字)
   const slide1 = pptx.addSlide();
-  slide1.background = { color: "ffffff" }; // 配合 NCDR 模板採用乾淨白底
+  slide1.background = { color: "ffffff" };
 
-  // 加上 NCDR 簡報主題深藍色邊條裝飾
-  slide1.addShape(pptx.ShapeType.rect, {
-    x: 0, y: 0, w: 0.25, h: 7.5,
-    fill: { color: "1e3a8a" } // NCDR 主題深藍
-  });
+  const currentYear = new Date().getFullYear();
 
-  // 載入 NCDR 標誌 (相對路徑在 GitHub Pages / 本機網頁伺服器中可以直接載入)
-  slide1.addImage({
-    path: "ncdr_logo.png",
-    x: 0.8, y: 0.6, w: 1.8, h: 0.45
-  });
-
-  // 大標題
-  slide1.addText("世界災情週報", {
-    x: 1.2, y: 2.3, w: 11.0, h: 1.2,
-    fontSize: 42,
-    color: "1e3a8a", // 科技深藍色字體
+  // 大標題 (分為年份與週報標題兩行)
+  slide1.addText(`${currentYear}\n世界災情週報`, {
+    x: 1.0, y: 1.8, w: 11.33, h: 1.6,
+    fontSize: 40,
+    color: "000000", // 純黑字體
     fontFace: "Microsoft JhengHei",
-    bold: true
+    bold: true,
+    align: "left"
   });
 
   // 副標題與時間
   slide1.addText(`時間：${dateRangeStr || "06/16 ~ 06/22"}`, {
-    x: 1.2, y: 3.8, w: 11.0, h: 0.5,
+    x: 1.0, y: 3.8, w: 11.33, h: 0.5,
     fontSize: 18,
-    color: "475569", // 深灰字體
-    fontFace: "Microsoft JhengHei"
+    color: "000000",
+    fontFace: "Microsoft JhengHei",
+    align: "left"
   });
 
   // 值週同仁
   slide1.addText(`值週同仁：${reporterName}`, {
-    x: 1.2, y: 4.5, w: 11.0, h: 0.5,
+    x: 1.0, y: 4.5, w: 11.33, h: 0.5,
     fontSize: 18,
-    color: "475569",
-    fontFace: "Microsoft JhengHei"
+    color: "000000",
+    fontFace: "Microsoft JhengHei",
+    align: "left"
   });
 
   // 4. 繪製 Slide 2 (GDACS 截圖)
@@ -3747,13 +3740,13 @@ async function downloadSlidePPTX() {
     }
 
     const rows = [
-      // 第一行: 表頭 (字級改為 11pt，高對齊中)
+      // 第一行: 表頭 (無背景顏色填滿，黑字粗體，字級 11pt)
       [
-        { text: "日期", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "地點", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "類別", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "災情說明", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "文獻", options: { fill: "334155", color: "FFFFFF", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } }
+        { text: "日期", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "地點", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "類別", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "災情說明", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+        { text: "文獻", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } }
       ],
       // 第二行: 資料 (說明字級改為 9.5pt，其餘 10pt)
       [
