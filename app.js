@@ -35,7 +35,7 @@ let showOriginalEnglish = false; // 是否顯示英文原文
 // --- 國家代碼與名稱中英對照表 (ISO3 / 常見英文名稱) ---
 const COUNTRY_MAP = {
   // ISO-3 Codes
-  "TWN": "台灣", "CHN": "中國", "JPN": "日本", "KOR": "韓國", "USA": "美國",
+  "TWN": "臺灣", "台灣": "臺灣", "臺灣": "臺灣", "CHN": "中國", "JPN": "日本", "KOR": "韓國", "USA": "美國",
   "PHL": "菲律賓", "VNM": "越南", "THA": "泰國", "IDN": "印尼", "MYS": "馬來西亞",
   "IND": "印度", "TUR": "土耳其", "ITA": "義大利", "TON": "東加", "RUS": "俄羅斯",
   "PER": "秘魯", "AGO": "安哥拉", "AUS": "澳洲", "NZL": "紐西蘭", "CAN": "加拿大",
@@ -260,7 +260,7 @@ const FLAG_MAP = {
 // --- 洲別對照表 ---
 const CONTINENT_MAP = {
   // 亞洲 (Asia)
-  "TWN": "亞洲", "台灣": "亞洲", "TAIWAN": "亞洲",
+  "TWN": "亞洲", "台灣": "亞洲", "臺灣": "亞洲", "TAIWAN": "亞洲",
   "CHN": "亞洲", "中國": "亞洲", "CHINA": "亞洲",
   "JPN": "亞洲", "日本": "亞洲", "JAPAN": "亞洲",
   "KOR": "亞洲", "韓國": "亞洲", "KOREA": "亞洲",
@@ -325,9 +325,53 @@ const CONTINENT_MAP = {
   "FJI": "大洋洲", "斐濟": "大洋洲", "FIJI": "大洋洲"
 };
 
+// --- 台灣行政區偵測（解決 GDACS 誤將台灣事件標示為「中國」的問題）---
+// 台灣所有縣市（繁體中文），用於比對 Nominatim 逆向地理編碼結果
+const TAIWAN_CITY_NAMES = new Set([
+  "臺北市", "台北市", "新北市", "桃園市", "台中市", "臺中市",
+  "台南市", "臺南市", "高雄市", "基隆市", "新竹市", "嘉義市",
+  "新竹縣", "苗栗縣", "彰化縣", "南投縣", "雲林縣", "嘉義縣",
+  "屏東縣", "宜蘭縣", "花蓮縣", "台東縣", "臺東縣", "澎湖縣",
+  "金門縣", "連江縣"
+]);
+
+/**
+ * 判斷一筆 disaster 是否實際位於台灣（即使 GDACS 誤標為「中國」）
+ * 依序檢查：① 中文地址 → ② 英文地址含「Taiwan」→ ③ 座標落在台灣範圍
+ */
+function isTaiwanLocation(d) {
+  // ① 中文地址包含「臺灣」或台灣任一縣市名稱
+  const zhLoc = d.chineseLocationDetail || "";
+  if (zhLoc.includes("臺灣") || zhLoc.includes("台灣")) return true;
+  for (const city of TAIWAN_CITY_NAMES) {
+    if (zhLoc.includes(city)) return true;
+  }
+  // ② 英文地址包含 Taiwan
+  const enLoc = (d.englishLocationDetail || "").toLowerCase();
+  if (enLoc.includes("taiwan")) return true;
+  // ③ 座標落在台灣地理邊界內（含離島）
+  if (d.lat !== null && d.lng !== null &&
+      d.lat >= 21.5 && d.lat <= 25.5 &&
+      d.lng >= 119.3 && d.lng <= 122.1) return true;
+  return false;
+}
+
+/**
+ * 若 GDACS 將台灣事件誤標為「中國」，自動修正 d.country 為「臺灣」
+ * 修改的是記憶體物件，不影響原始 RSS 資料
+ */
+function correctTaiwanCountry(d) {
+  const raw = (d.country || "").toUpperCase();
+  // 只有在標示為中國時才需要偵測
+  if (raw !== "CHN" && raw !== "CHINA" && raw !== "中國") return;
+  if (isTaiwanLocation(d)) {
+    d.country = "臺灣";
+  }
+}
+
 // --- 國家 2 位 ISO 代碼對照表 (用於 Flagcdn 載入國旗圖片) ---
 const ISO2_MAP = {
-  "TWN": "tw", "台灣": "tw", "TAIWAN": "tw",
+  "TWN": "tw", "台灣": "tw", "臺灣": "tw", "TAIWAN": "tw",
   "CHN": "cn", "中國": "cn", "CHINA": "cn",
   "JPN": "jp", "日本": "jp", "JAPAN": "jp",
   "KOR": "kr", "韓國": "kr", "KOREA": "kr",
@@ -932,6 +976,9 @@ async function loadData(forceReload = false) {
     allDisasters = Array.from(uniqueMap.values());
   }
 
+  // 根據座標範圍，立即修正誤標為「中國」但實際在台灣的事件（無需等待地理逆向編碼）
+  allDisasters.forEach(correctTaiwanCountry);
+
   // 隱藏 Loading 動態
   fetchLoader.style.display = "none";
   fetchBtnSpan.textContent = "立即同步與更新";
@@ -1398,6 +1445,8 @@ async function enrichLocationsWithGeocoding() {
         item.chineseLocationDetail = translateSimplifiedToTraditional(cachedVal.zh);
         item.englishLocationDetail = cachedVal.en;
       }
+      // 以地理編碼結果再次確認是否為台灣（補足座標偵測未能辨識的情況）
+      correctTaiwanCountry(item);
       continue;
     }
 
@@ -1464,6 +1513,8 @@ async function enrichLocationsWithGeocoding() {
       geocodeCache[cacheKey] = cacheVal;
       item.chineseLocationDetail = cacheVal.zh;
       item.englishLocationDetail = cacheVal.en;
+      // 以地理編碼結果確認是否為台灣（最精確的時機）
+      correctTaiwanCountry(item);
       
       // 寫入快取 LocalStorage
       localStorage.setItem("geocode_cache", JSON.stringify(geocodeCache));
