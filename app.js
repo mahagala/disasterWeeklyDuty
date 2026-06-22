@@ -3236,25 +3236,43 @@ function downloadSlidePNG() {
 function copyCardAsImage(cardEl) {
   if (!cardEl) return;
 
-  const copyBtn = cardEl.querySelector(".slide-card-copy-btn");
-  if (copyBtn) copyBtn.style.visibility = "hidden"; // 暫時隱藏複製圖示以防出現在照片中
-
   showToast("正在複製卡片，請稍候...");
 
-  html2canvas(cardEl, {
-    scale: 2.0, // 高解析度
+  // ── 修正文字重疊問題 ──────────────────────────────────────────
+  // html2canvas 直接截取在 CSS transform 父容器內的元素時，
+  // 會因座標系統偏差而導致文字雙重渲染（重疊）。
+  // 解法：將卡片 clone 至 document.body（脫離 transform 影響），
+  // 截圖後再移除 clone，不影響原始卡片的任何狀態。
+  // ──────────────────────────────────────────────────────────────
+  const clone = cardEl.cloneNode(true);
+
+  // 移除 clone 內的複製按鈕，確保不出現在截圖中
+  const cloneCopyBtn = clone.querySelector(".slide-card-copy-btn");
+  if (cloneCopyBtn) cloneCopyBtn.remove();
+
+  // 將 clone 放到畫面外，但保持與原卡片相同的寬度
+  clone.style.position  = "fixed";
+  clone.style.top       = "-9999px";
+  clone.style.left      = "-9999px";
+  clone.style.transform = "none";
+  clone.style.zIndex    = "-9999";
+  clone.style.width     = cardEl.offsetWidth + "px";
+  clone.style.height    = "auto";
+  document.body.appendChild(clone);
+
+  html2canvas(clone, {
+    scale: 2.0,       // 高解析度 (2×)
     useCORS: true,
     allowTaint: false,
-    backgroundColor: null // 透明背景 (去背)
+    backgroundColor: "#ffffff" // 白底，確保文字清晰
   }).then(canvas => {
-    if (copyBtn) copyBtn.style.visibility = "visible"; // 還原按鈕顯示
+    // 移除 clone
+    document.body.removeChild(clone);
 
     canvas.toBlob(async (blob) => {
       try {
         await navigator.clipboard.write([
-          new ClipboardItem({
-            "image/png": blob
-          })
+          new ClipboardItem({ "image/png": blob })
         ]);
         showToast("已成功將資訊卡複製至剪貼簿，可直接在 PPT 中貼上 (Ctrl+V)！");
       } catch (err) {
@@ -3263,8 +3281,9 @@ function copyCardAsImage(cardEl) {
       }
     }, "image/png");
   }).catch(err => {
+    document.body.removeChild(clone);
     console.error("生成卡片圖片失敗:", err);
-    if (copyBtn) copyBtn.style.visibility = "visible";
     alert("複製卡片失敗，請重試！");
   });
 }
+
