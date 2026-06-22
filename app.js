@@ -3548,38 +3548,39 @@ async function downloadSlidePPTX() {
   pptx.defineLayout({ name: "NCDR_LAYOUT", width: 13.33, height: 7.5 });
   pptx.layout = "NCDR_LAYOUT";
 
-  // 3. 繪製 Slide 1 (標題頁) - 嚴格完全保持原簡報封面樣式 (乾淨白底、黑字)
+  // 3. 繪製 Slide 1 (標題頁) - 嚴格完全按照使用者原始簡報樣式
   const slide1 = pptx.addSlide();
-  slide1.background = { color: "ffffff" };
+  // 使用原始標題投影片背景圖
+  slide1.background = { path: "slide1_bg.jpg" };
 
-  const currentYear = new Date().getFullYear();
+  // 解析日期區間的年份，用於組成標題如「2026世界災情週報」
+  let year = "2026";
+  if (dateRangeStr) {
+    const yearMatch = dateRangeStr.match(/^(\d{4})/);
+    if (yearMatch) {
+      year = yearMatch[1];
+    }
+  }
+  const coverTitle = `「${year}世界災情週報」`;
 
-  // 大標題 (分為年份與週報標題兩行)
-  slide1.addText(`${currentYear}\n世界災情週報`, {
-    x: 1.0, y: 1.8, w: 11.33, h: 1.6,
-    fontSize: 40,
-    color: "000000", // 純黑字體
+  // 大標題 - 依據 layout 的 ctrTitle 擺放位置與 44pt 字級
+  slide1.addText(coverTitle, {
+    x: 1.0, y: 2.33, w: 11.33, h: 1.6,
+    fontSize: 44,
+    color: "1b365d", // NCDR 主題深藍色
     fontFace: "Microsoft JhengHei",
     bold: true,
     align: "left"
   });
 
-  // 副標題與時間
-  slide1.addText(`時間：${dateRangeStr || "06/16 ~ 06/22"}`, {
-    x: 1.0, y: 3.8, w: 11.33, h: 0.5,
-    fontSize: 18,
-    color: "000000",
-    fontFace: "Microsoft JhengHei",
-    align: "left"
-  });
-
-  // 值週同仁
-  slide1.addText(`值週同仁：${reporterName}`, {
-    x: 1.0, y: 4.5, w: 11.33, h: 0.5,
-    fontSize: 18,
-    color: "000000",
-    fontFace: "Microsoft JhengHei",
-    align: "left"
+  // 副標題與時間、值週同仁 - 依據原簡報單一文字方塊、x=1.787" 及 20pt 字級
+  slide1.addText([
+    { text: `時間：${dateRangeStr || "06/16 ~ 06/22"}\n`, options: { fontSize: 20, color: "000000", fontFace: "Microsoft JhengHei" } },
+    { text: `值週同仁：${reporterName}`, options: { fontSize: 20, color: "000000", fontFace: "Microsoft JhengHei" } }
+  ], {
+    x: 1.787, y: 4.06, w: 9.33, h: 1.92,
+    align: "left",
+    valign: "top"
   });
 
   // 4. 繪製 Slide 2 (GDACS 截圖)
@@ -3652,8 +3653,76 @@ async function downloadSlidePPTX() {
   }
 
   // 5. 繪製 Slide 3~N (災害卡片表格頁)
+  // 分頁分組邏輯，計算一頁可以放下多少個災害項目
+  const pages = [];
+  let currentPage = [];
+  let currentHeight = 0;
+  const maxHeightLimit = 4.84; // 扣除表頭與頁碼留白後可供資料列使用的高度 (5.34 - 0.5)
+
   for (let i = 0; i < checkedDisasters.length; i++) {
     const d = checkedDisasters[i];
+    
+    // 取得災情說明文字
+    const cardEl = document.getElementById(`slide-card-${d.id}`);
+    let descText = "";
+    if (cardEl) {
+      const bodyEl = cardEl.querySelector(".slide-card-body");
+      if (bodyEl) descText = bodyEl.textContent.trim();
+    }
+    if (!descText) {
+      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
+      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    }
+
+    // 取得地點文字
+    const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
+    const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+    const continent = getCountryContinent(d.country);
+    const country = translateCountry(d.country);
+    const region = d.chineseLocationDetail || d.englishLocationDetail || "";
+    let locText = `${continent} ${country}\n${region}`;
+    if (d.lat !== null && d.lng !== null) {
+      locText += `\n${d.lat.toFixed(4)}°N ${d.lng.toFixed(4)}°E`;
+    }
+    const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lng}` : "";
+
+    // 取得文獻
+    const refLinks = generateReferenceLinks(d);
+
+    // 計算預估行數
+    const locLines = locText.split('\n').length + (mapUrl ? 1 : 0);
+    const descLines = Math.ceil(descText.length / 35);
+    const refLines = refLinks && refLinks.length > 0 ? refLinks.length * 2 : 1;
+
+    const maxLines = Math.max(locLines, descLines, refLines);
+    const estRowHeight = maxLines * 0.22 + 0.3; // 預估此列在 PPTX 中佔用之高度 (英吋)
+
+    // 檢查加上此列後是否會超出該頁高度限制
+    if (currentPage.length > 0 && currentHeight + estRowHeight > maxHeightLimit) {
+      pages.push(currentPage);
+      currentPage = [];
+      currentHeight = 0;
+    }
+    
+    currentPage.push({
+      disaster: d,
+      shortDate,
+      locText,
+      mapUrl,
+      descText,
+      refLinks,
+      height: estRowHeight
+    });
+    currentHeight += estRowHeight;
+  }
+  if (currentPage.length > 0) {
+    pages.push(currentPage);
+  }
+
+  // 遍歷所有分頁，為每頁建立一張投影片與表格
+  let slidePageNum = 3;
+  for (let pIdx = 0; pIdx < pages.length; pIdx++) {
+    const pageItems = pages[pIdx];
     const slide = pptx.addSlide();
     slide.background = { color: "ffffff" };
 
@@ -3667,101 +3736,83 @@ async function downloadSlidePPTX() {
     });
 
     // 右下角自訂頁碼
-    slide.addText((i + 3).toString(), {
+    slide.addText(slidePageNum.toString(), {
       x: 12.2, y: 6.8, w: 0.6, h: 0.4,
       fontSize: 12,
       color: "64748b",
       fontFace: "Microsoft JhengHei",
       align: "right"
     });
+    slidePageNum++;
 
-    // 準備表格欄位內容
-    const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
-    const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+    // 建立表格內容 rows
+    const tableRows = [];
+    
+    // 第一行: 表頭 (無背景顏色填滿，黑字粗體，字級 11pt)
+    tableRows.push([
+      { text: "日期", options: { fill: { color: "ffffff" }, color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+      { text: "地點", options: { fill: { color: "ffffff" }, color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+      { text: "類別", options: { fill: { color: "ffffff" }, color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+      { text: "災情說明", options: { fill: { color: "ffffff" }, color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
+      { text: "文獻", options: { fill: { color: "ffffff" }, color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } }
+    ]);
 
-    const continent = getCountryContinent(d.country);
-    const country = translateCountry(d.country);
-    const region = d.chineseLocationDetail || d.englishLocationDetail || "";
-    let locText = `${continent} ${country}\n${region}`;
-    if (d.lat !== null && d.lng !== null) {
-      locText += `\n${d.lat.toFixed(4)}°N ${d.lng.toFixed(4)}°E`;
-    }
-    const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lng}` : "";
+    // 填入此頁所有災害項目
+    for (let k = 0; k < pageItems.length; k++) {
+      const item = pageItems[k];
+      const d = item.disaster;
 
-    const catName = getCategoryInfo(d.type).name;
+      // 準備文獻連結 (字級縮小至 9.5 避開長網址撐破儲存格)
+      const refTextItems = [];
+      if (item.refLinks && item.refLinks.length > 0) {
+        item.refLinks.forEach(ref => {
+          refTextItems.push({
+            text: `• ${ref.title}\n`,
+            options: {
+              hyperlink: { url: ref.url },
+              color: "0284c7",
+              fontFace: "Microsoft JhengHei",
+              fontSize: 9.5,
+              underline: true
+            }
+          });
+        });
+      } else {
+        refTextItems.push({ text: "無", options: { fontFace: "Microsoft JhengHei", fontSize: 9.5 } });
+      }
 
-    // 災情說明 (優先讀取 DOM 卡片中同仁即時編輯後的內容)
-    const cardEl = document.getElementById(`slide-card-${d.id}`);
-    let descText = "";
-    if (cardEl) {
-      const bodyEl = cardEl.querySelector(".slide-card-body");
-      if (bodyEl) descText = bodyEl.textContent.trim();
-    }
-    if (!descText) {
-      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
-      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
-    }
-
-    // 文獻 (參考連結清單) - 字級縮小至 9.5 避開長網址撐破儲存格
-    const refLinks = generateReferenceLinks(d);
-    const refTextItems = [];
-    if (refLinks && refLinks.length > 0) {
-      refLinks.forEach(ref => {
-        refTextItems.push({
-          text: `• ${ref.title}\n`,
+      // 地點儲存格結合超連結 (字級改為 9.5)
+      const locCellText = [
+        { text: item.locText + "\n", options: { fontFace: "Microsoft JhengHei", fontSize: 9.5, color: "000000" } }
+      ];
+      if (item.mapUrl) {
+        locCellText.push({
+          text: "📍 Google 地圖",
           options: {
-            hyperlink: { url: ref.url },
+            hyperlink: { url: item.mapUrl },
             color: "0284c7",
             fontFace: "Microsoft JhengHei",
             fontSize: 9.5,
             underline: true
           }
         });
-      });
-    } else {
-      refTextItems.push({ text: "無", options: { fontFace: "Microsoft JhengHei", fontSize: 9.5 } });
+      }
+
+      const catName = getCategoryInfo(d.type).name;
+
+      tableRows.push([
+        { text: item.shortDate, options: { fill: { color: "ffffff" }, fontFace: "Microsoft JhengHei", fontSize: 10, align: "center", valign: "middle" } },
+        { text: locCellText, options: { fill: { color: "ffffff" }, align: "left", valign: "middle" } },
+        { text: catName, options: { fill: { color: "ffffff" }, fontFace: "Microsoft JhengHei", fontSize: 10, align: "center", valign: "middle" } },
+        { text: item.descText, options: { fill: { color: "ffffff" }, fontFace: "Microsoft JhengHei", fontSize: 9.5, align: "left", valign: "top" } },
+        { text: refTextItems, options: { fill: { color: "ffffff" }, align: "left", valign: "top" } }
+      ]);
     }
 
-    // 地點儲存格結合超連結 (字級改為 9.5)
-    const locCellText = [
-      { text: locText + "\n", options: { fontFace: "Microsoft JhengHei", fontSize: 9.5, color: "000000" } }
-    ];
-    if (mapUrl) {
-      locCellText.push({
-        text: "📍 Google 地圖",
-        options: {
-          hyperlink: { url: mapUrl },
-          color: "0284c7",
-          fontFace: "Microsoft JhengHei",
-          fontSize: 9.5,
-          underline: true
-        }
-      });
-    }
-
-    const rows = [
-      // 第一行: 表頭 (無背景顏色填滿，黑字粗體，字級 11pt)
-      [
-        { text: "日期", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "地點", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "類別", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "災情說明", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } },
-        { text: "文獻", options: { color: "000000", fontFace: "Microsoft JhengHei", fontSize: 11, bold: true, align: "center", valign: "middle" } }
-      ],
-      // 第二行: 資料 (說明字級改為 9.5pt，其餘 10pt)
-      [
-        { text: shortDate, options: { fontFace: "Microsoft JhengHei", fontSize: 10, align: "center", valign: "middle" } },
-        { text: locCellText, options: { fontFace: "Microsoft JhengHei", fontSize: 9.5, align: "left", valign: "middle" } },
-        { text: catName, options: { fontFace: "Microsoft JhengHei", fontSize: 10, align: "center", valign: "middle" } },
-        { text: descText, options: { fontFace: "Microsoft JhengHei", fontSize: 9.5, align: "left", valign: "top" } },
-        { text: refTextItems, options: { align: "left", valign: "top" } }
-      ]
-    ];
-
-    // 表格寬度設為 12.0 英吋，x 設為 0.66，於 13.33 英吋寬投影片中實現左右黃金對比置中
-    slide.addTable(rows, {
-      x: 0.66, y: 1.4, w: 12.0,
-      colWidths: [1.0, 2.2, 1.0, 6.0, 1.8],
+    // 繪製表格：使用與原始簡報相同的 x 座標及欄寬
+    slide.addTable(tableRows, {
+      x: 0.29, y: 1.66, w: 12.76,
+      colWidths: [0.95, 2.83, 0.90, 4.61, 3.48],
       border: { type: "solid", color: "cbd5e1", width: 1 },
       valign: "middle"
     });
