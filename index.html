@@ -338,7 +338,7 @@
       <div class="modal-body help-modal-body">
         <div class="help-content">
           <h3>📌 整合平台概述</h3>
-          <p>本平台專為 NCDR 坡洪組值週同仁設計，自動整合多個國際災害與人道監測數據，提供實時篩選、地圖視覺化、一鍵複製至簡報表格，以及 16:9 簡報圖卡一鍵生成等功能，協助同仁快速、省時地完成每週工作匯報。</p>
+          <p>本平台專為 NCDR 坡洪組值週同仁設計，自動整合多個國際災害與人道監測數據，提供實時篩選、地圖視覺化、一鍵複製至簡報表格，以及 16:9 簡報週報 PPTX 與圖卡一鍵生成等功能，協助同仁快速、省時地完成每週工作匯報。</p>
 
           <div class="help-grid">
             <div class="help-card">
@@ -352,12 +352,34 @@
             </div>
 
             <div class="help-card">
-              <h4>⚡ 核心省工功能 (一鍵複製)</h4>
+              <h4>⚡ 核心省工功能</h4>
               <ul>
                 <li><strong>直貼 PPT 表格</strong>：點擊災害表格右側的 <strong>「📋 複製」</strong>，在 PPT 表格的「日期」儲存格按 <strong>`Ctrl+V`</strong>，即可橫向自動填滿 5 個格子，完全不跑版。</li>
+                <li><strong>一鍵匯出值週 PPTX</strong>：在控制面板點擊 <strong>「生成並下載週報簡報 (PPTX)」</strong>，可自動匯出排版完成且內容完全可二次編輯的 16:9 簡報檔。</li>
                 <li><strong>單張小卡片複製</strong>：在圖卡生成器中，點擊小卡片上的 <strong>`📋` 按鈕</strong>，即可單獨複製該張卡片為「去背透明圖片」，直接在 PPT 中貼上使用。</li>
               </ul>
             </div>
+          </div>
+
+          <!-- 特別注意提醒區塊 -->
+          <div class="help-section alert-section" style="background: rgba(239, 68, 68, 0.08); border-left: 4px solid #ef4444; padding: 12px 16px; border-radius: 6px; margin-top: 15px; margin-bottom: 15px;">
+            <h4 style="color: #ef4444; margin-top: 0; display: flex; align-items: center; gap: 8px; font-weight: bold;">⚠️ 值週作業安全提醒</h4>
+            <ul style="margin: 0; padding-left: 20px; color: var(--text-color);">
+              <li style="margin-bottom: 8px;"><strong>中文翻譯核對：</strong>本平台之繁體中文翻譯與 AI 摘要皆為系統自動翻譯或生成，可能存在專有名詞或語意上的偏差，<strong>正式填寫週報前請務必點擊事件原始連結，查閱英文原文數據進行核對。</strong></li>
+              <li><strong>Google 新聞連結查核：</strong>災害列表「文獻」欄位中提供的 Google 連結，是系統依據「國家/地點 + 災害類型」關鍵字自動串接的 Google 新聞檢索，<strong>請同仁留意檢索出的新聞是否精確對應本次事件</strong>，必要時請手動篩選正確新聞。</li>
+            </ul>
+          </div>
+
+          <div class="help-section">
+            <h4>📊 週報簡報 (PPTX) 一鍵導出與結構指引</h4>
+            <p>點擊 <strong>「📊 生成並下載週報簡報 (PPTX)」</strong>，系統將自動解析當前日期區間，並結合您的姓名自動命名檔案（如：<code>2026-0616-0622-國際災情週報-江申.pptx</code>），下載的簡報結構包含：</p>
+            <ul style="padding-left: 20px;">
+              <li style="margin-bottom: 4px;"><strong>Slide 1 (標題頁)</strong>：自動載入包含 NCDR Logo 與深藍裝飾條的官方模板底圖，並寫入大標題、日期區間與值週人員姓名。</li>
+              <li style="margin-bottom: 4px;"><strong>Slide 2 (GDACS 截圖頁)</strong>：展示 GDACS 全球地圖分布。支援上傳自訂截圖，若未上傳則會自動擷取當前網頁地圖作為備用。</li>
+              <li style="margin-bottom: 4px;"><strong>Slide 3 ~ N (災害列表表格頁)</strong>：系統會自動計算每頁行高，將已選取之災害項目智慧分頁排列。<strong>表格表頭及資料列皆已設為無背景顏色填滿（純白底色）與純黑字體</strong>，完全符合值週排版規範，且所有文字方塊皆可直接二次編輯。</li>
+              <li style="margin-bottom: 4px;"><strong>Slide N+1 (簡報圖卡圖片頁)</strong>：將您在畫布上編輯、排序好的 16:9 全球重大災害回顧地圖圖卡以高清大圖置入。</li>
+              <li style="margin-bottom: 4px;"><strong>Slide N+2 (文字摘要頁)</strong>：條列式提供重大災害摘要文字，方便會議報告中直接複製使用。</li>
+            </ul>
           </div>
 
           <div class="help-section">
@@ -365,9 +387,10 @@
             <ol>
               <li>點擊控制面板的 <strong>「🎨 簡報圖卡」</strong> 開啟 16:9 全螢幕互動編輯器。</li>
               <li>右側可自由勾選要加入的災害事件（最美觀排版建議 3-5 筆，最大限制 5 筆）。</li>
-              <li><strong>自由拖曳與智慧連線</strong>：按住卡片「青色標題區」即可任意拖曳。連線會自動以曲線（Cubic Bezier）貼合卡片邊框，隨拖曳移動實時重繪，不穿透卡片。</li>
-              <li><strong>雙擊直接編輯文字</strong>：可雙擊簡報大標題或卡片內文字，直接修改文字內容。</li>
-              <li><strong>下載 1080p 大圖</strong>：點擊「💾 下載簡報圖卡 (PNG)」自動導出符合 PPT 比例的 1080p 清晰圖檔。已修復底圖縮放與平移，且自動補償紐西蘭的偏移。</li>
+              <li><strong>值週姓名本地記憶：</strong>在右側輸入您的姓名，系統將即時寫入瀏覽器 LocalStorage。<strong>下次開啟網頁時會自動填入，免去重複打字的負擔。</strong></li>
+              <li><strong>自由拖曳與智慧連線：</strong>按住卡片「青色標題區」即可任意拖曳。連線會自動以曲線（Cubic Bezier）貼合卡片邊框，隨拖曳移動實時重繪，不穿透卡片。</li>
+              <li><strong>雙擊直接編輯文字：</strong>可雙擊簡報大標題或卡片內文字，直接修改文字內容.</li>
+              <li><strong>下載 1080p 大圖：</strong>點擊「💾 下載簡報圖卡 (PNG)」自動導出符合 PPT 比例的 1080p 清晰圖檔。已修復底圖縮放與平移，且自動補償紐西蘭的偏移。</li>
             </ol>
           </div>
 
@@ -397,6 +420,9 @@
 
             <p><strong>Q4: 碰到某個資料來源（顯示紅燈）下載失敗時，可以單獨重新下載嗎？</strong><br>
             說明：可以。直接用滑鼠點擊上方 Header 中該資料來源的「指示按鈕」（例如 <code>ReliefWeb</code> 點燈區），系統即會單獨重新抓取並更新該來源的資料，無需重新整理整個網頁。</p>
+
+            <p><strong>Q5: 為什麼現在簡報圖卡上的點位非常精確，不會再偏離？</strong><br>
+            說明：系統已針對 [world_map.svg] 底圖幾何形狀進行了高精度投影法擬合。X 軸採用帶二次緯度分量修正的 Robinson 投影，Y 軸採用針對各國真實質心修正的線性回歸擬合（特別校正了日本 Honshu 與韓國的偏位），使點位在所有緯度上均能完美落於該國中心位置。</p>
           </div>
           <div class="help-section" style="margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; text-align: center;">
             <p style="font-size: 12px; color: var(--text-muted); letter-spacing: 0.05em;">＝ 作者對本站內容不負任何責任 ＝</p>
