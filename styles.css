@@ -1776,6 +1776,62 @@ mark {
   gap: 8px;
 }
 
+.custom-slide-card-panel {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-slide-card-panel h3 {
+  font-size: 14px;
+}
+
+.custom-slide-card-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.custom-slide-card-list {
+  display: grid;
+  gap: 6px;
+}
+
+.custom-slide-card-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 11.5px;
+  color: var(--text-main);
+}
+
+.custom-slide-card-delete {
+  border: 0;
+  background: rgba(239, 68, 68, 0.14);
+  color: #fecaca;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.custom-slide-card-delete:hover {
+  background: rgba(239, 68, 68, 0.24);
+}
+
+.slide-map-dot.custom-dot {
+  cursor: move;
+  background: #f97316;
+  box-shadow: 0 0 8px #f97316;
+}
+
 .slide-action-box {
   margin-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1895,5 +1951,4 @@ mark {
 .help-section p strong {
   color: var(--text-main);
 }
-
 

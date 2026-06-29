@@ -31,6 +31,7 @@ let markersGroup = null;    // Leaflet 標記群組
 let geocodeCache = {};      // 經緯度地理編碼快取 (減少 API 請求)
 let currentFilteredDisasters = []; // 儲存目前過濾後的災害物件 (用於地理編碼增強時的表格獨立更新)
 let showOriginalEnglish = false; // 是否顯示英文原文
+let customSlideCards = []; // 簡報圖卡中由使用者自行新增的空白災害卡片
 
 // --- 國家代碼與名稱中英對照表 (ISO3 / 常見英文名稱) ---
 const COUNTRY_MAP = {
@@ -185,6 +186,30 @@ function xmlGetVal(el, localName) {
 function cleanId(id) {
   if (!id) return "";
   return id.replace(/[^a-zA-Z0-9_]/g, "_");
+}
+
+// 輔助函數：轉義外部來源文字，避免 RSS/API 內容被當成 HTML 執行
+function escapeHtml(value) {
+  if (value === null || value === undefined) return "";
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function safeExternalUrl(url) {
+  if (!url) return "#";
+  try {
+    const parsed = new URL(url, window.location.href);
+    if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+      return parsed.href;
+    }
+  } catch (e) {
+    console.warn("忽略不安全或無效的外部連結:", url);
+  }
+  return "#";
 }
 
 // 輔助函數：將各來源的多樣化災害類型字串映射到標準化代碼 (EQ, FL, TC, VO, WF, DR, OTHER)
@@ -455,7 +480,7 @@ function getCountryFlagImgHtml(country) {
   return parts.map(part => {
     const iso2 = getCountryIso2(part);
     if (iso2) {
-      return `<img src="https://flagcdn.com/w20/${iso2}.png" alt="${part}" class="flag-icon" style="height: 12px; width: auto; vertical-align: middle; margin-right: 4px; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);">`;
+      return `<img src="https://flagcdn.com/w20/${iso2}.png" alt="${escapeHtml(part)}" class="flag-icon" style="height: 12px; width: auto; vertical-align: middle; margin-right: 4px; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);">`;
     }
     return "";
   }).join("");
@@ -494,7 +519,7 @@ function getCountryFlagImgHtmlForSlide(country) {
   return parts.map(part => {
     const iso2 = getCountryIso2(part);
     if (iso2) {
-      return `<img src="https://flagcdn.com/w40/${iso2}.png" alt="${part}" crossorigin="anonymous" style="height: 16px; width: auto; vertical-align: middle; border: 1px solid rgba(0,0,0,0.15); border-radius: 2px;">`;
+      return `<img src="https://flagcdn.com/w40/${iso2}.png" alt="${escapeHtml(part)}" crossorigin="anonymous" style="height: 16px; width: auto; vertical-align: middle; border: 1px solid rgba(0,0,0,0.15); border-radius: 2px;">`;
     }
     return "";
   }).join("");
@@ -836,6 +861,10 @@ function setupEventListeners() {
   const downloadSlidePptxBtn = document.getElementById("download-slide-pptx-btn");
   if (downloadSlidePptxBtn) {
     downloadSlidePptxBtn.addEventListener("click", downloadSlidePPTX);
+  }
+  const addCustomSlideCardBtn = document.getElementById("add-custom-slide-card-btn");
+  if (addCustomSlideCardBtn) {
+    addCustomSlideCardBtn.addEventListener("click", addCustomSlideCardFromInputs);
   }
   const reporterInput = document.getElementById("slide-reporter-name");
   if (reporterInput) {
@@ -2080,7 +2109,7 @@ async function tryGeminiTranslation(disaster, descContainer) {
       const highlightedResultText = highlightText(resultText, searchVal);
       descContainer.innerHTML = `
         ${disaster.alertlevel && disaster.alertlevel !== "None" ? 
-          `<span class="desc-alert-badge ${disaster.alertlevel.toLowerCase()}">${disaster.alertlevel === 'Red' ? '紅色警戒' : disaster.alertlevel === 'Orange' ? '橙色警戒' : '綠色警報'}</span>` : ''}
+          `<span class="desc-alert-badge ${escapeHtml(disaster.alertlevel.toLowerCase())}">${disaster.alertlevel === 'Red' ? '紅色警戒' : disaster.alertlevel === 'Orange' ? '橙色警戒' : '綠色警報'}</span>` : ''}
         <span class="desc-text">${highlightedResultText}</span>
         <span class="desc-ai-generated">✦ AI 智慧生成繁中摘要</span>
       `;
@@ -2263,12 +2292,13 @@ function renderMapMarkers(disasters) {
     // 彈出視窗內容
     const countryCn = translateCountry(d.country);
     const catName = getCategoryInfo(d.type).name;
+    const safeRowId = cleanId(d.id);
     const popupContent = `
       <div class="map-popup-card">
-        <h4>[${d.source}] ${countryCn} · ${catName}</h4>
-        <p>${d.title}</p>
+        <h4>[${escapeHtml(d.source)}] ${escapeHtml(countryCn)} · ${escapeHtml(catName)}</h4>
+        <p>${escapeHtml(d.title)}</p>
         <p style="font-size:11px; color:#9ca3af; margin-bottom: 4px;">座標: ${d.lat.toFixed(4)}, ${d.lng.toFixed(4)}</p>
-        <a href="#row-${d.id}" class="popup-link" onclick="highlightTableRow('${d.id}')">🔍 在下方報表中查看</a>
+        <a href="#row-${safeRowId}" class="popup-link" onclick="highlightTableRow('${safeRowId}')">🔍 在下方報表中查看</a>
       </div>
     `;
 
@@ -2285,10 +2315,10 @@ function renderMapMarkers(disasters) {
 function highlightText(text, keyword) {
   if (text === null || text === undefined) return "";
   const textStr = String(text);
-  if (!keyword) return textStr;
+  if (!keyword) return escapeHtml(textStr);
   const escapedKeyword = keyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
   const regex = new RegExp(`(${escapedKeyword})`, 'gi');
-  return textStr.replace(regex, '<mark>$1</mark>');
+  return escapeHtml(textStr).replace(regex, '<mark>$1</mark>');
 }
 
 // --- 渲染數據表格 ---
@@ -2315,7 +2345,7 @@ function renderTable(disasters) {
 
   disasters.forEach(d => {
     const tr = document.createElement("tr");
-    tr.id = `row-${d.id}`;
+    tr.id = `row-${cleanId(d.id)}`;
     
     // 雙擊或點擊行在地圖上定位
     tr.addEventListener("click", () => {
@@ -2358,7 +2388,7 @@ function renderTable(disasters) {
     const highlightedCountryName = highlightText(countryName, searchVal);
     
     // 格式為：國旗 洲 國名 (無括弧)
-    const countryLabel = flagImg ? `${flagImg} ${continent} ${highlightedCountryName}` : `${continent} ${highlightedCountryName}`;
+    const countryLabel = flagImg ? `${flagImg} ${escapeHtml(continent)} ${highlightedCountryName}` : `${escapeHtml(continent)} ${highlightedCountryName}`;
     
     const dmsLat = convertDecimalToDMS(d.lat, true);
     const dmsLng = convertDecimalToDMS(d.lng, false);
@@ -2382,7 +2412,7 @@ function renderTable(disasters) {
       <div class="loc-country">${countryLabel}</div>
       ${detailLocStr}
       ${d.lat !== null ? `<span class="loc-coords">${dmsLat}<br>${dmsLng}</span>` : ''}
-      ${d.lat !== null ? `<a href="${mapUrl}" target="_blank" class="loc-maps-link" onclick="event.stopPropagation();">📍 Google 地圖</a>` : ''}
+      ${d.lat !== null ? `<a href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer" class="loc-maps-link" onclick="event.stopPropagation();">📍 Google 地圖</a>` : ''}
     `;
     tr.appendChild(locCell);
 
@@ -2391,7 +2421,7 @@ function renderTable(disasters) {
     catCell.className = "category-cell";
     catCell.setAttribute("data-label", "類別");
     const catInfo = getCategoryInfo(d.type);
-    catCell.innerHTML = `<span class="cat-badge ${catInfo.cssClass}">${catInfo.name}</span>`;
+    catCell.innerHTML = `<span class="cat-badge ${escapeHtml(catInfo.cssClass)}">${escapeHtml(catInfo.name)}</span>`;
     tr.appendChild(catCell);
 
     // 4. 災害說明 (如果已經有快取的 AI 翻譯，則直接使用；否則使用範本引擎，並啟動異步 Gemini 翻譯)
@@ -2401,7 +2431,7 @@ function renderTable(disasters) {
 
     // 警報等級外觀
     const alertBadge = d.alertlevel && d.alertlevel !== "None" ? 
-      `<span class="desc-alert-badge ${d.alertlevel.toLowerCase()}">${d.alertlevel === 'Red' ? '紅色警戒' : d.alertlevel === 'Orange' ? '橙色警戒' : '綠色警報'}</span>` : "";
+      `<span class="desc-alert-badge ${escapeHtml(d.alertlevel.toLowerCase())}">${d.alertlevel === 'Red' ? '紅色警戒' : d.alertlevel === 'Orange' ? '橙色警戒' : '綠色警報'}</span>` : "";
 
     const fallbackDescText = generateChineseDescription(d);
     
@@ -2445,7 +2475,7 @@ function renderTable(disasters) {
     list.className = "refs-list";
     refLinks.forEach(ref => {
       const li = document.createElement("li");
-      li.innerHTML = `<a href="${ref.url}" target="_blank" class="ref-anchor" onclick="event.stopPropagation();">${ref.title}</a>`;
+      li.innerHTML = `<a href="${escapeHtml(safeExternalUrl(ref.url))}" target="_blank" rel="noopener noreferrer" class="ref-anchor" onclick="event.stopPropagation();">${escapeHtml(ref.title)}</a>`;
       list.appendChild(li);
     });
     refsCell.appendChild(list);
@@ -2515,11 +2545,11 @@ function renderStats(disasters) {
     barItem.className = "category-bar-item";
     barItem.innerHTML = `
       <div class="category-bar-label">
-        <span>${catName}</span>
-        <span>${count} 次 (${percentage}%)</span>
+        <span>${escapeHtml(catName)}</span>
+        <span>${escapeHtml(count)} 次 (${escapeHtml(percentage)}%)</span>
       </div>
       <div class="progress-track">
-        <div class="progress-fill ${fillClass}" style="width: ${percentage}%"></div>
+        <div class="progress-fill ${escapeHtml(fillClass)}" style="width: ${escapeHtml(percentage)}%"></div>
       </div>
     `;
     categoryBars.appendChild(barItem);
@@ -2535,7 +2565,7 @@ function highlightTableRow(id) {
     row.classList.remove("row-highlight");
   });
 
-  const targetRow = document.getElementById(`row-${id}`);
+  const targetRow = document.getElementById(`row-${cleanId(id)}`);
   if (targetRow) {
     targetRow.classList.add("row-highlight");
     targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -2775,7 +2805,7 @@ function showToast(message) {
   
   const toast = document.createElement("div");
   toast.className = "toast-notification";
-  toast.innerHTML = `<span>🔔</span> <span>${message}</span>`;
+  toast.innerHTML = `<span>🔔</span> <span>${escapeHtml(message)}</span>`;
   
   container.appendChild(toast);
   
@@ -2793,6 +2823,221 @@ function showToast(message) {
 }
 
 // --- 簡報圖卡生成器邏輯實作 ---
+
+function getSlideCardDomId(id) {
+  return `slide-card-${cleanId(id)}`;
+}
+
+function getSlideDotDomId(id) {
+  return `slide-dot-${cleanId(id)}`;
+}
+
+function addCustomSlideCardFromInputs() {
+  const countryInput = document.getElementById("custom-slide-country");
+  const titleInput = document.getElementById("custom-slide-title");
+  const bodyInput = document.getElementById("custom-slide-body");
+
+  const country = countryInput ? countryInput.value.trim() : "";
+  const title = titleInput ? titleInput.value.trim() : "";
+  const body = bodyInput ? bodyInput.value.trim() : "";
+
+  const nextIndex = customSlideCards.length + 1;
+  customSlideCards.push({
+    id: `custom_${Date.now()}_${nextIndex}`,
+    type: "custom",
+    country,
+    title: title || `${country ? translateCountry(country) + " " : ""}自訂災害`,
+    body: body || "請雙擊此處輸入災情摘要。",
+    cardLeft: 455,
+    cardTop: 260,
+    dotLeft: 600,
+    dotTop: 330
+  });
+
+  if (countryInput) countryInput.value = "";
+  if (titleInput) titleInput.value = "";
+  if (bodyInput) bodyInput.value = "";
+
+  renderCustomSlideCardList();
+  updateSlideCanvas();
+}
+
+function renderCustomSlideCardList() {
+  const list = document.getElementById("custom-slide-card-list");
+  if (!list) return;
+  list.innerHTML = "";
+
+  customSlideCards.forEach(cardData => {
+    const item = document.createElement("div");
+    item.className = "custom-slide-card-item";
+    item.innerHTML = `
+      <span>${escapeHtml(cardData.title || "自訂災害卡片")}</span>
+      <button type="button" class="custom-slide-card-delete" title="刪除此自訂卡片">×</button>
+    `;
+    const deleteBtn = item.querySelector(".custom-slide-card-delete");
+    deleteBtn.addEventListener("click", () => {
+      customSlideCards = customSlideCards.filter(card => card.id !== cardData.id);
+      renderCustomSlideCardList();
+      updateSlideCanvas();
+    });
+    list.appendChild(item);
+  });
+}
+
+function getCheckedSlideDisasters() {
+  const listContainer = document.getElementById("slide-disaster-list");
+  if (!listContainer) return [];
+
+  const checkedDisasters = [];
+  const checkedBoxes = listContainer.querySelectorAll("input[type='checkbox']:checked");
+  checkedBoxes.forEach(chk => {
+    const dId = chk.getAttribute("data-id");
+    const found = currentFilteredDisasters.find(d => d.id === dId);
+    if (found) checkedDisasters.push(found);
+  });
+  return checkedDisasters;
+}
+
+function getCustomCardDomText(cardData) {
+  const cardEl = document.getElementById(getSlideCardDomId(cardData.id));
+  if (!cardEl) {
+    return {
+      title: cardData.title || "自訂災害",
+      body: cardData.body || ""
+    };
+  }
+  const titleEl = cardEl.querySelector(".slide-card-title-text");
+  const bodyEl = cardEl.querySelector(".slide-card-body");
+  return {
+    title: titleEl ? titleEl.textContent.trim() : (cardData.title || "自訂災害"),
+    body: bodyEl ? bodyEl.textContent.trim() : (cardData.body || "")
+  };
+}
+
+function getDisasterCardText(d) {
+  const cardEl = document.getElementById(getSlideCardDomId(d.id));
+  let titleText = "";
+  let descText = "";
+
+  if (cardEl) {
+    const titleEl = cardEl.querySelector(".slide-card-title-text");
+    const bodyEl = cardEl.querySelector(".slide-card-body");
+    if (titleEl) titleText = titleEl.textContent.trim();
+    if (bodyEl) descText = bodyEl.textContent.trim();
+  }
+
+  if (!titleText) {
+    const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
+    const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+    const countryName = translateCountry(d.country);
+    const catName = getCategoryInfo(d.type).name;
+    titleText = `${shortDate} ${countryName} ${catName}`;
+  }
+
+  if (!descText) {
+    descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
+    descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
+  }
+
+  return { titleText, descText };
+}
+
+function bindSlideCardEditing(card, onChange) {
+  const titleTextEl = card.querySelector(".slide-card-title-text");
+  const bodyTextEl = card.querySelector(".slide-card-body");
+  if (!titleTextEl || !bodyTextEl) return;
+
+  const enableEdit = (el) => {
+    el.setAttribute("contenteditable", "true");
+    el.focus();
+
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  };
+
+  const handlePastePlainText = (e) => {
+    e.preventDefault();
+    const plainText = (e.clipboardData || window.clipboardData).getData("text/plain");
+    if (!plainText) return;
+
+    const selection = window.getSelection();
+    if (!selection || !selection.rangeCount) return;
+    const range = selection.getRangeAt(0);
+    range.deleteContents();
+    range.insertNode(document.createTextNode(plainText));
+    range.collapse(false);
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    e.target.dispatchEvent(new Event("input", { bubbles: true }));
+  };
+
+  [titleTextEl, bodyTextEl].forEach(el => {
+    el.addEventListener("dblclick", (e) => {
+      enableEdit(el);
+      e.stopPropagation();
+    });
+    el.addEventListener("input", () => {
+      drawConnectingLines();
+      if (onChange) onChange();
+    });
+    el.addEventListener("blur", () => {
+      el.setAttribute("contenteditable", "false");
+      drawConnectingLines();
+      if (onChange) onChange();
+    });
+    el.addEventListener("paste", handlePastePlainText);
+  });
+}
+
+function createSlideCalloutCard({ id, title, body, country, dotId, left, top, customData }) {
+  const flagHtml = getCountryFlagImgHtmlForSlide(country || "");
+  const card = document.createElement("div");
+  card.className = "slide-callout-card";
+  card.id = getSlideCardDomId(id);
+  if (dotId) card.setAttribute("data-dot-id", dotId);
+  card.style.left = `${left}px`;
+  card.style.top = `${top}px`;
+  card.innerHTML = `
+    <div class="slide-card-header">
+      <span class="slide-card-title-text" style="outline: none;">${escapeHtml(title)}</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px;">
+        ${flagHtml}
+        <button class="slide-card-copy-btn" title="複製單張卡片為圖片" style="background: none; border: none; color: #006064; cursor: pointer; padding: 2px; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; outline: none; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">📋</button>
+      </span>
+    </div>
+    <div class="slide-card-body" style="outline: none;">${escapeHtml(body)}</div>
+  `;
+
+  const copyBtn = card.querySelector(".slide-card-copy-btn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      copyCardAsImage(card);
+    });
+  }
+
+  bindSlideCardEditing(card, () => {
+    if (!customData) return;
+    const text = getCustomCardDomText(customData);
+    customData.title = text.title;
+    customData.body = text.body;
+    renderCustomSlideCardList();
+  });
+
+  makeCardDraggable(card, {
+    onMove: () => {
+      if (!customData) return;
+      customData.cardLeft = parseFloat(card.style.left) || 0;
+      customData.cardTop = parseFloat(card.style.top) || 0;
+    }
+  });
+
+  return card;
+}
 
 // 根據可用空間自動雙向縮放簡報畫布，防止橫向與縱向溢出捲動
 function resizeSlideCanvas() {
@@ -2842,6 +3087,12 @@ function openSlideGenerator() {
   if (reporterInput) {
     reporterInput.value = savedName;
   }
+  customSlideCards = [];
+  ["custom-slide-country", "custom-slide-title", "custom-slide-body"].forEach(id => {
+    const input = document.getElementById(id);
+    if (input) input.value = "";
+  });
+  renderCustomSlideCardList();
 
   // 1. 計算日期區間文字
   const timeRangeVal = document.getElementById("time-range").value;
@@ -2881,11 +3132,11 @@ function openSlideGenerator() {
     const countryName = translateCountry(d.country);
     
     item.innerHTML = `
-      <input type="checkbox" id="slide-chk-${d.id}" data-id="${d.id}" ${isChecked}>
+      <input type="checkbox" id="slide-chk-${cleanId(d.id)}" data-id="${escapeHtml(d.id)}" ${isChecked}>
       <div class="slide-disaster-info">
-        <span class="title">${shortDate} ${countryName} ${getCategoryInfo(d.type).name}</span>
+        <span class="title">${escapeHtml(shortDate)} ${escapeHtml(countryName)} ${escapeHtml(getCategoryInfo(d.type).name)}</span>
         <span class="meta">
-          <span>來源: ${d.source}</span>
+          <span>來源: ${escapeHtml(d.source)}</span>
           <span>警報: ${d.alertlevel === 'Red' ? '紅色' : d.alertlevel === 'Orange' ? '橙色' : d.alertlevel === 'Green' ? '綠色' : '無'}</span>
         </span>
       </div>
@@ -2935,15 +3186,7 @@ function updateSlideCanvas() {
   if (!layer) return;
   layer.innerHTML = ""; // 清空舊內容
 
-  const checkedDisasters = [];
-  const listContainer = document.getElementById("slide-disaster-list");
-  const checkedBoxes = listContainer.querySelectorAll("input[type='checkbox']:checked");
-  
-  checkedBoxes.forEach(chk => {
-    const dId = chk.getAttribute("data-id");
-    const found = currentFilteredDisasters.find(d => d.id === dId);
-    if (found) checkedDisasters.push(found);
-  });
+  const checkedDisasters = getCheckedSlideDisasters();
 
   // 定義預設擺放位置 (Slot 1~5)
   const defaultCardPositions = [
@@ -2961,7 +3204,7 @@ function updateSlideCanvas() {
     // B. 建立發光地圖定位點
     const dot = document.createElement("div");
     dot.className = "slide-map-dot";
-    dot.id = `slide-dot-${d.id}`;
+    dot.id = getSlideDotDomId(d.id);
     dot.style.left = `${dotPos.x}px`;
     dot.style.top = `${dotPos.y}px`;
     layer.appendChild(dot);
@@ -2971,111 +3214,51 @@ function updateSlideCanvas() {
     const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
     const countryName = translateCountry(d.country);
     const catName = getCategoryInfo(d.type).name;
-    const flagHtml = getCountryFlagImgHtmlForSlide(d.country);
-    
     let descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
     // 移除可能存在的 HTML 標籤
     descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
 
-    const card = document.createElement("div");
-    card.className = "slide-callout-card";
-    card.id = `slide-card-${d.id}`;
-    card.setAttribute("data-dot-id", `slide-dot-${d.id}`);
-    
     // 根據 Slot 給予預設 Left/Top，如果同仁有拖曳過可以保留或重新排序
     const pos = defaultCardPositions[index % defaultCardPositions.length];
-    card.style.left = `${pos.left}px`;
-    card.style.top = `${pos.top}px`;
-
-    card.innerHTML = `
-      <div class="slide-card-header">
-        <span class="slide-card-title-text" style="outline: none;">${shortDate} ${countryName} ${catName}</span>
-        <span style="display: inline-flex; align-items: center; gap: 8px;">
-          ${flagHtml}
-          <button class="slide-card-copy-btn" title="複製單張卡片為圖片" style="background: none; border: none; color: #006064; cursor: pointer; padding: 2px; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; outline: none; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">📋</button>
-        </span>
-      </div>
-      <div class="slide-card-body" style="outline: none;">${descText}</div>
-    `;
+    const card = createSlideCalloutCard({
+      id: d.id,
+      title: `${shortDate} ${countryName} ${catName}`,
+      body: descText,
+      country: d.country,
+      dotId: getSlideDotDomId(d.id),
+      left: pos.left,
+      top: pos.top
+    });
     
     layer.appendChild(card);
+  });
 
-    // 雙擊與編輯事件綁定
-    const titleTextEl = card.querySelector(".slide-card-title-text");
-    const bodyTextEl = card.querySelector(".slide-card-body");
-    const copyBtn = card.querySelector(".slide-card-copy-btn");
-
-    if (copyBtn) {
-      copyBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // 阻止事件冒泡以防觸發卡片拖曳
-        copyCardAsImage(card);
-      });
-    }
-
-    const enableEdit = (el) => {
-      el.setAttribute("contenteditable", "true");
-      el.focus();
-      
-      // 移動游標至文字尾端並選取
-      const range = document.createRange();
-      range.selectNodeContents(el);
-      const sel = window.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(range);
-    };
-
-    titleTextEl.addEventListener("dblclick", (e) => {
-      enableEdit(titleTextEl);
-      e.stopPropagation(); // 阻止事件冒泡防止觸發拖拽
-    });
-    bodyTextEl.addEventListener("dblclick", (e) => {
-      enableEdit(bodyTextEl);
-      e.stopPropagation();
+  customSlideCards.forEach(cardData => {
+    const dot = document.createElement("div");
+    dot.className = "slide-map-dot custom-dot";
+    dot.id = getSlideDotDomId(cardData.id);
+    dot.title = "拖曳調整自訂卡片連接點";
+    dot.style.left = `${cardData.dotLeft}px`;
+    dot.style.top = `${cardData.dotTop}px`;
+    layer.appendChild(dot);
+    makeDotDraggable(dot, {
+      onMove: (left, top) => {
+        cardData.dotLeft = left;
+        cardData.dotTop = top;
+      }
     });
 
-    // 即時重新計算線條（防寬高改變）
-    titleTextEl.addEventListener("input", drawConnectingLines);
-    bodyTextEl.addEventListener("input", drawConnectingLines);
-
-    // 失去焦點關閉編輯狀態
-    titleTextEl.addEventListener("blur", () => {
-      titleTextEl.setAttribute("contenteditable", "false");
-      drawConnectingLines();
+    const card = createSlideCalloutCard({
+      id: cardData.id,
+      title: cardData.title,
+      body: cardData.body,
+      country: cardData.country,
+      dotId: getSlideDotDomId(cardData.id),
+      left: cardData.cardLeft,
+      top: cardData.cardTop,
+      customData: cardData
     });
-    bodyTextEl.addEventListener("blur", () => {
-      bodyTextEl.setAttribute("contenteditable", "false");
-      drawConnectingLines();
-    });
-
-    // 攔截貼上事件，強制以純文字插入
-    // 原因：瀏覽器預設會將剪貼簿中的 HTML 格式（字型大小、粗細、顏色）一併貼入，
-    //       導致貼上的文字與圖卡的 CSS 樣式不符。此處取出純文字再插入游標位置。
-    const handlePastePlainText = (e) => {
-      e.preventDefault();
-      // 取得純文字內容（去除所有 HTML 標籤與格式）
-      const plainText = (e.clipboardData || window.clipboardData).getData("text/plain");
-      if (!plainText) return;
-
-      // 使用 Selection API 在游標位置插入純文字節點
-      const selection = window.getSelection();
-      if (!selection || !selection.rangeCount) return;
-      const range = selection.getRangeAt(0);
-      range.deleteContents(); // 刪除已選取的文字（若有）
-      range.insertNode(document.createTextNode(plainText));
-      // 移動游標到插入文字的尾端
-      range.collapse(false);
-      selection.removeAllRanges();
-      selection.addRange(range);
-
-      // 觸發 input 事件以重新計算連接線
-      e.target.dispatchEvent(new Event("input", { bubbles: true }));
-    };
-    titleTextEl.addEventListener("paste", handlePastePlainText);
-    bodyTextEl.addEventListener("paste", handlePastePlainText);
-
-
-    // D. 綁定卡片拖動功能
-    makeCardDraggable(card);
+    layer.appendChild(card);
   });
 
   // E. 重新繪製連接線
@@ -3152,10 +3335,8 @@ function drawConnectingLines() {
   });
 }
 
-// 輕量化滑鼠與觸控卡片拖曳邏輯
-function makeCardDraggable(cardEl) {
-  const header = cardEl.querySelector(".slide-card-header");
-  if (!header) return;
+function makeElementDraggableWithinCanvas(el, dragHandle, options = {}) {
+  if (!el || !dragHandle) return;
 
   let activeDrag = false;
   let startX = 0;
@@ -3171,8 +3352,8 @@ function makeCardDraggable(cardEl) {
     startX = clientX;
     startY = clientY;
     
-    initLeft = parseFloat(cardEl.style.left) || 0;
-    initTop = parseFloat(cardEl.style.top) || 0;
+    initLeft = parseFloat(el.style.left) || 0;
+    initTop = parseFloat(el.style.top) || 0;
     
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseup", onEnd);
@@ -3199,14 +3380,17 @@ function makeCardDraggable(cardEl) {
     let newTop = initTop + dy * scale;
 
     // 限制在 1200x675 簡報範圍內
-    newLeft = Math.max(0, Math.min(1200 - cardEl.offsetWidth, newLeft));
-    newTop = Math.max(0, Math.min(675 - cardEl.offsetHeight, newTop));
+    const maxLeft = options.centered ? 1200 : 1200 - el.offsetWidth;
+    const maxTop = options.centered ? 675 : 675 - el.offsetHeight;
+    newLeft = Math.max(0, Math.min(maxLeft, newLeft));
+    newTop = Math.max(0, Math.min(maxTop, newTop));
 
-    cardEl.style.left = `${newLeft}px`;
-    cardEl.style.top = `${newTop}px`;
+    el.style.left = `${newLeft}px`;
+    el.style.top = `${newTop}px`;
 
     // 實時重新繪製連接線
     drawConnectingLines();
+    if (options.onMove) options.onMove(newLeft, newTop);
     e.preventDefault();
   };
 
@@ -3216,10 +3400,23 @@ function makeCardDraggable(cardEl) {
     document.removeEventListener("mouseup", onEnd);
     document.removeEventListener("touchmove", onMove);
     document.removeEventListener("touchend", onEnd);
+    if (options.onEnd) {
+      options.onEnd(parseFloat(el.style.left) || 0, parseFloat(el.style.top) || 0);
+    }
   };
 
-  header.addEventListener("mousedown", onStart);
-  header.addEventListener("touchstart", onStart, { passive: false });
+  dragHandle.addEventListener("mousedown", onStart);
+  dragHandle.addEventListener("touchstart", onStart, { passive: false });
+}
+
+// 輕量化滑鼠與觸控卡片拖曳邏輯
+function makeCardDraggable(cardEl, options = {}) {
+  const header = cardEl.querySelector(".slide-card-header");
+  makeElementDraggableWithinCanvas(cardEl, header, options);
+}
+
+function makeDotDraggable(dotEl, options = {}) {
+  makeElementDraggableWithinCanvas(dotEl, dotEl, { ...options, centered: true });
 }
 
 // 下載投影片圖卡為高解析度 PNG
@@ -3402,18 +3599,11 @@ function copySummaryTextToClipboard() {
   const listContainer = document.getElementById("slide-disaster-list");
   if (!listContainer) return;
   
-  const checkedBoxes = listContainer.querySelectorAll("input[type='checkbox']:checked");
-  if (checkedBoxes.length === 0) {
-    alert("目前沒有選取任何災害項目！請先在左側勾選要加入的災害。");
+  const checkedDisasters = getCheckedSlideDisasters();
+  if (checkedDisasters.length === 0 && customSlideCards.length === 0) {
+    alert("目前沒有任何災害項目或自訂卡片可複製。");
     return;
   }
-
-  const checkedDisasters = [];
-  checkedBoxes.forEach(chk => {
-    const dId = chk.getAttribute("data-id");
-    const found = currentFilteredDisasters.find(d => d.id === dId);
-    if (found) checkedDisasters.push(found);
-  });
 
   // 1. 取得標題並轉換日期格式 (去前導零，如 2026.03.24 -> 2026.3.24)
   const slideTitleText = document.getElementById("slide-title-text").textContent.trim();
@@ -3430,35 +3620,7 @@ function copySummaryTextToClipboard() {
 
   // 2. 組合各個災害的文字摘要與連結
   checkedDisasters.forEach(d => {
-    // 優先從畫布卡片 DOM 中提取使用者可能即時修改過的最新內容
-    const cardEl = document.getElementById(`slide-card-${d.id}`);
-    let titleText = "";
-    let descText = "";
-
-    if (cardEl) {
-      const titleEl = cardEl.querySelector(".slide-card-title-text");
-      const bodyEl = cardEl.querySelector(".slide-card-body");
-      if (titleEl) {
-        titleText = titleEl.textContent.trim();
-      }
-      if (bodyEl) {
-        descText = bodyEl.textContent.trim();
-      }
-    }
-
-    // Fallback: 如果拿不到卡片，則使用原始物件資料重建
-    if (!titleText) {
-      const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
-      const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
-      const countryName = translateCountry(d.country);
-      const catName = getCategoryInfo(d.type).name;
-      titleText = `${shortDate} ${countryName} ${catName}`;
-    }
-
-    if (!descText) {
-      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
-      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
-    }
+    const { titleText, descText } = getDisasterCardText(d);
 
     textOutput += `# ${titleText}\n${descText}\n`;
 
@@ -3472,6 +3634,11 @@ function copySummaryTextToClipboard() {
     }
 
     textOutput += "\n";
+  });
+
+  customSlideCards.forEach(cardData => {
+    const { title, body } = getCustomCardDomText(cardData);
+    textOutput += `# ${title}\n${body}\n\n`;
   });
 
   textOutput = textOutput.trim();
@@ -3500,20 +3667,13 @@ async function downloadSlidePPTX() {
   const listContainer = document.getElementById("slide-disaster-list");
   if (!listContainer) return;
   
-  const checkedBoxes = listContainer.querySelectorAll("input[type='checkbox']:checked");
-  if (checkedBoxes.length === 0) {
-    alert("目前沒有選取任何災害項目！請先在左側勾選要加入的災害。");
+  const checkedDisasters = getCheckedSlideDisasters();
+  if (checkedDisasters.length === 0 && customSlideCards.length === 0) {
+    alert("目前沒有任何災害項目或自訂卡片可生成簡報。");
     return;
   }
 
   showToast("正在自動組裝並生成 PPTX 週報簡報，請稍候...");
-
-  const checkedDisasters = [];
-  checkedBoxes.forEach(chk => {
-    const dId = chk.getAttribute("data-id");
-    const found = currentFilteredDisasters.find(d => d.id === dId);
-    if (found) checkedDisasters.push(found);
-  });
 
   // 1. 取得標題並轉換日期格式 (例如 2026.06.16 ~ 2026.06.22 轉為 2026-0616-0622)
   const slideTitleText = document.getElementById("slide-title-text").textContent.trim();
@@ -3660,20 +3820,28 @@ async function downloadSlidePPTX() {
   let currentHeight = 0;
   const maxHeightLimit = 4.84; // 扣除表頭與頁碼留白後可供資料列使用的高度 (5.34 - 0.5)
 
+  const appendPptTableItem = (item) => {
+    const locLines = item.locText.split('\n').length + (item.mapUrl ? 1 : 0);
+    const descLines = Math.ceil(item.descText.length / 35);
+    const refLines = item.refLinks && item.refLinks.length > 0 ? item.refLinks.length * 2 : 1;
+    const maxLines = Math.max(locLines, descLines, refLines);
+    const estRowHeight = maxLines * 0.22 + 0.3;
+
+    if (currentPage.length > 0 && currentHeight + estRowHeight > maxHeightLimit) {
+      pages.push(currentPage);
+      currentPage = [];
+      currentHeight = 0;
+    }
+
+    currentPage.push({ ...item, height: estRowHeight });
+    currentHeight += estRowHeight;
+  };
+
   for (let i = 0; i < checkedDisasters.length; i++) {
     const d = checkedDisasters[i];
     
     // 取得災情說明文字
-    const cardEl = document.getElementById(`slide-card-${d.id}`);
-    let descText = "";
-    if (cardEl) {
-      const bodyEl = cardEl.querySelector(".slide-card-body");
-      if (bodyEl) descText = bodyEl.textContent.trim();
-    }
-    if (!descText) {
-      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
-      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
-    }
+    const { descText } = getDisasterCardText(d);
 
     // 取得地點文字
     const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
@@ -3690,32 +3858,31 @@ async function downloadSlidePPTX() {
     // 取得文獻
     const refLinks = generateReferenceLinks(d);
 
-    // 計算預估行數
-    const locLines = locText.split('\n').length + (mapUrl ? 1 : 0);
-    const descLines = Math.ceil(descText.length / 35);
-    const refLines = refLinks && refLinks.length > 0 ? refLinks.length * 2 : 1;
-
-    const maxLines = Math.max(locLines, descLines, refLines);
-    const estRowHeight = maxLines * 0.22 + 0.3; // 預估此列在 PPTX 中佔用之高度 (英吋)
-
-    // 檢查加上此列後是否會超出該頁高度限制
-    if (currentPage.length > 0 && currentHeight + estRowHeight > maxHeightLimit) {
-      pages.push(currentPage);
-      currentPage = [];
-      currentHeight = 0;
-    }
-    
-    currentPage.push({
+    appendPptTableItem({
       disaster: d,
       shortDate,
       locText,
       mapUrl,
       descText,
       refLinks,
-      height: estRowHeight
+      catName: getCategoryInfo(d.type).name
     });
-    currentHeight += estRowHeight;
   }
+
+  customSlideCards.forEach(cardData => {
+    const { title, body } = getCustomCardDomText(cardData);
+    const country = cardData.country ? translateCountry(cardData.country) : "自訂地點";
+    appendPptTableItem({
+      disaster: null,
+      shortDate: "自訂",
+      locText: country,
+      mapUrl: "",
+      descText: body || title,
+      refLinks: [],
+      catName: "自訂"
+    });
+  });
+
   if (currentPage.length > 0) {
     pages.push(currentPage);
   }
@@ -3761,7 +3928,6 @@ async function downloadSlidePPTX() {
     // 填入此頁所有災害項目
     for (let k = 0; k < pageItems.length; k++) {
       const item = pageItems[k];
-      const d = item.disaster;
 
       // 準備文獻連結 (字級縮小至 9.5 避開長網址撐破儲存格)
       const refTextItems = [];
@@ -3799,7 +3965,7 @@ async function downloadSlidePPTX() {
         });
       }
 
-      const catName = getCategoryInfo(d.type).name;
+      const catName = item.catName || "自訂";
 
       tableRows.push([
         { text: item.shortDate, options: { fill: { color: "ffffff" }, fontFace: "Microsoft JhengHei", fontSize: 10, align: "center", valign: "middle" } },
@@ -3923,29 +4089,7 @@ async function downloadSlidePPTX() {
 
   let summaryBody = "";
   checkedDisasters.forEach(d => {
-    const cardEl = document.getElementById(`slide-card-${d.id}`);
-    let titleText = "";
-    let descText = "";
-
-    if (cardEl) {
-      const titleEl = cardEl.querySelector(".slide-card-title-text");
-      const bodyEl = cardEl.querySelector(".slide-card-body");
-      if (titleEl) titleText = titleEl.textContent.trim();
-      if (bodyEl) descText = bodyEl.textContent.trim();
-    }
-
-    if (!titleText) {
-      const dateRange = formatDateRange(d.fromdate, d.todate, d.pubDate);
-      const shortDate = dateRange.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
-      const countryName = translateCountry(d.country);
-      const catName = getCategoryInfo(d.type).name;
-      titleText = `${shortDate} ${countryName} ${catName}`;
-    }
-
-    if (!descText) {
-      descText = d.aiChineseDescription ? translateSimplifiedToTraditional(d.aiChineseDescription) : translateSimplifiedToTraditional(generateChineseDescription(d));
-      descText = descText.replace(/<\/?[^>]+(>|$)/g, "").trim();
-    }
+    const { titleText, descText } = getDisasterCardText(d);
 
     summaryBody += `# ${titleText}\n${descText}\n`;
 
@@ -3957,6 +4101,11 @@ async function downloadSlidePPTX() {
       });
     }
     summaryBody += "\n";
+  });
+
+  customSlideCards.forEach(cardData => {
+    const { title, body } = getCustomCardDomText(cardData);
+    summaryBody += `# ${title}\n${body}\n\n`;
   });
 
   summaryBody = summaryBody.trim();
@@ -3980,4 +4129,3 @@ async function downloadSlidePPTX() {
       alert("簡報生成失敗，請重試！");
     });
 }
-
