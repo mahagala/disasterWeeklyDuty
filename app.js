@@ -21,7 +21,10 @@ const CONFIG = {
     reliefweb: "https://api.reliefweb.int/v1/reports?limit=150&preset=latest" // 擴展至 150 篇以覆蓋更久歷史
   },
   // 逆向地理編碼 OSM Nominatim 啟用狀態
-  enableNominatim: true
+  enableNominatim: true,
+  // 伺服器端定時快照 (由 GitHub Actions 排程產生)。開啟頁面時優先讀取此檔，
+  // 可秒開、且完全避開瀏覽器 CORS 限制；讀取失敗才退回即時抓取。
+  snapshotUrl: "data.json"
 };
 
 // --- 全域變數 ---
@@ -133,6 +136,13 @@ const CATEGORY_MAP = {
   "Drought": { name: "乾旱", cssClass: "cat-wildfire" }
 };
 
+// 由 CATEGORY_MAP 建立「大小寫不敏感」的正規化查表 (key 一律 trim + 轉小寫)。
+// 避免各資料源回傳如 "earthquake"、"EARTHQUAKE" 等不同大小寫時被誤判為「其它災害」。
+const CATEGORY_MAP_LOOKUP = Object.keys(CATEGORY_MAP).reduce((acc, key) => {
+  acc[key.trim().toLowerCase()] = CATEGORY_MAP[key];
+  return acc;
+}, {});
+
 // --- 災害排序優先級對照表 (照使用者要求優先級排列) ---
 const CATEGORY_PRIORITY = {
   "TC": 1,
@@ -155,6 +165,26 @@ const CATEGORY_PRIORITY = {
   "Resources": 10,
   "General": 11
 };
+
+// --- 標準群組優先級 (與篩選用的 getStandardCategoryGroup 對齊，避免排序與分類篩選不一致) ---
+const GROUP_PRIORITY = { "TC": 1, "FL": 2, "EQ": 3, "VO": 4, "WF": 5, "DR": 6, "OTHER": 99 };
+
+// 取得災害的排序優先級：優先使用精細的 CATEGORY_PRIORITY，
+// 若 type 字串不在表中，則退回以標準群組計算，確保與 filterAndDisplayData 的分類判定一致。
+function getCategoryPriority(type) {
+  if (CATEGORY_PRIORITY[type] != null) return CATEGORY_PRIORITY[type];
+  const group = getStandardCategoryGroup(type);
+  return GROUP_PRIORITY[group] != null ? GROUP_PRIORITY[group] : 99;
+}
+
+// 輔助函數：debounce，用於高頻事件（如搜尋輸入）避免每次按鍵都觸發完整過濾與重繪
+function debounce(fn, delay) {
+  let timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
 
 // 輔助函數：以命名空間無關方式讀取 XML 節點內容，相容於不同瀏覽器的 DOMParser 解析結果
 function xmlGetVal(el, localName) {
@@ -560,7 +590,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initSettings();
   initMap();
   setupEventListeners();
-  loadData(); // 開始載入數據
+  // 先嘗試讀取伺服器端定時快照 (data.json)：秒開、無 CORS 問題。
+  // 若無快照或解析不出資料，才退回原本的即時抓取流程。
+  loadFromSnapshot().then(ok => {
+    if (!ok) loadData();
+  });
 });
 
 // --- 即時時鐘 ---
@@ -685,8 +719,9 @@ function setupEventListeners() {
     filterAndDisplayData();
   });
 
-  // 篩選與更新按鈕
+  // 篩選與更新按鈕：使用者手動即時抓取，資料改為「即時」，隱藏快照時間標示
   document.getElementById("fetch-btn").addEventListener("click", () => {
+    setSnapshotTimeIndicator(null);
     loadData(true); // 強制重載
   });
 
@@ -719,8 +754,8 @@ function setupEventListeners() {
   document.getElementById("cat-dr-chk").addEventListener("change", filterAndDisplayData);
   document.getElementById("cat-other-chk").addEventListener("change", filterAndDisplayData);
   
-  // 表格搜尋框
-  document.getElementById("table-search").addEventListener("input", filterAndDisplayData);
+  // 表格搜尋框 (使用 debounce 避免每按一鍵就重跑完整過濾/排序/地圖重繪)
+  document.getElementById("table-search").addEventListener("input", debounce(filterAndDisplayData, 250));
 
   // 切換中英文原文按鈕 (同步表格上方按鈕與右下角懸浮按鈕)
   const toggleBtn = document.getElementById("toggle-translation-btn");
@@ -1008,19 +1043,8 @@ async function loadData(forceReload = false) {
     updateSourceStatus("reliefweb", "error");
   }
 
-  // 對 allDisasters 進行去重 (根據 id 屬性)，防止多個訂閱源中包含重複的事件
-  if (allDisasters.length > 0) {
-    const uniqueMap = new Map();
-    allDisasters.forEach(d => {
-      if (!uniqueMap.has(d.id)) {
-        uniqueMap.set(d.id, d);
-      }
-    });
-    allDisasters = Array.from(uniqueMap.values());
-  }
-
-  // 根據座標範圍，立即修正誤標為「中國」但實際在台灣的事件（無需等待地理逆向編碼）
-  allDisasters.forEach(correctTaiwanCountry);
+  // 去重 (依 id) 並立即修正誤標為「中國」但實際在台灣的事件
+  dedupeAndCorrectDisasters();
 
   // 隱藏 Loading 動態
   fetchLoader.style.display = "none";
@@ -1050,6 +1074,142 @@ async function loadData(forceReload = false) {
   if (CONFIG.enableNominatim) {
     enrichLocationsWithGeocoding();
   }
+}
+
+// --- 去重 (依 id) 並立即修正台灣事件 (載入路徑共用) ---
+function dedupeAndCorrectDisasters() {
+  if (allDisasters.length > 0) {
+    const uniqueMap = new Map();
+    allDisasters.forEach(d => {
+      if (!uniqueMap.has(d.id)) {
+        uniqueMap.set(d.id, d);
+      }
+    });
+    allDisasters = Array.from(uniqueMap.values());
+  }
+  // 根據座標範圍，立即修正誤標為「中國」但實際在台灣的事件（無需等待地理逆向編碼）
+  allDisasters.forEach(correctTaiwanCountry);
+}
+
+// --- 讀取伺服器端定時快照 (data.json) ---
+// 回傳 true 表示成功以快照資料完成渲染；false 表示無快照可用（呼叫端應改為即時抓取）。
+async function loadFromSnapshot() {
+  if (!CONFIG.snapshotUrl) return false;
+
+  let snapshot = null;
+  try {
+    // 加上時間戳避免瀏覽器/CDN 快取住舊的 data.json
+    const res = await fetch(`${CONFIG.snapshotUrl}?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) return false;
+    snapshot = await res.json();
+  } catch (e) {
+    console.warn("找不到或無法解析定時快照 data.json，將改為即時抓取:", e);
+    return false;
+  }
+
+  if (!snapshot || !snapshot.sources) return false;
+
+  const offlineBadge = document.getElementById("offline-badge");
+  const sources = snapshot.sources;
+  const getBody = (key) => {
+    const s = sources[key];
+    return (s && s.ok && typeof s.body === "string" && s.body.length > 0) ? s.body : null;
+  };
+
+  allDisasters = [];
+
+  // 1. GDACS (四個訂閱源)
+  let gdacsOk = 0;
+  for (const key of ["gdacs7d", "gdacsEq3m", "gdacsTc3m", "gdacsFl3m"]) {
+    const body = getBody(key);
+    if (!body) continue;
+    try {
+      allDisasters.push(...parseGdacsRSS(body));
+      gdacsOk++;
+    } catch (err) {
+      console.warn(`快照 GDACS 來源 ${key} 解析失敗:`, err);
+    }
+  }
+  updateSourceStatus("gdacs", gdacsOk > 0 ? "active" : "error");
+
+  // 2. ERCC
+  const erccBody = getBody("ercc");
+  if (erccBody) {
+    try {
+      allDisasters.push(...parseErccRSS(erccBody));
+      updateSourceStatus("ercc", "active");
+    } catch (err) {
+      console.warn("快照 ERCC 解析失敗:", err);
+      updateSourceStatus("ercc", "error");
+    }
+  } else {
+    updateSourceStatus("ercc", "error");
+  }
+
+  // 3. USGS
+  const usgsBody = getBody("usgs");
+  if (usgsBody) {
+    try {
+      allDisasters.push(...parseUsgsAtom(usgsBody));
+      updateSourceStatus("usgs", "active");
+    } catch (err) {
+      console.warn("快照 USGS 解析失敗:", err);
+      updateSourceStatus("usgs", "error");
+    }
+  } else {
+    updateSourceStatus("usgs", "error");
+  }
+
+  // 4. ReliefWeb
+  const rwBody = getBody("reliefweb");
+  if (rwBody) {
+    try {
+      allDisasters.push(...parseReliefWebAPI(rwBody));
+      updateSourceStatus("reliefweb", "active");
+    } catch (err) {
+      console.warn("快照 ReliefWeb 解析失敗:", err);
+      updateSourceStatus("reliefweb", "error");
+    }
+  } else {
+    updateSourceStatus("reliefweb", "error");
+  }
+
+  // 快照存在但完全解析不出任何事件 → 視為失敗，讓呼叫端退回即時抓取
+  if (allDisasters.length === 0) return false;
+
+  if (offlineBadge) offlineBadge.classList.add("hidden");
+
+  // 去重、台灣修正、渲染
+  dedupeAndCorrectDisasters();
+  setSnapshotTimeIndicator(snapshot.fetchedAt);
+  filterAndDisplayData();
+
+  // 補足中文地名 (快取命中者不會重新查詢)
+  if (CONFIG.enableNominatim) {
+    enrichLocationsWithGeocoding();
+  }
+
+  return true;
+}
+
+// --- 更新「資料時間」指示器 (顯示快照產生的時間) ---
+function setSnapshotTimeIndicator(fetchedAt) {
+  const el = document.getElementById("snapshot-time");
+  if (!el) return;
+  if (!fetchedAt) {
+    el.classList.add("hidden");
+    return;
+  }
+  const d = new Date(fetchedAt);
+  if (isNaN(d.getTime())) {
+    el.classList.add("hidden");
+    return;
+  }
+  const pad = (n) => String(n).padStart(2, "0");
+  const stamp = `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  el.textContent = `📅 資料時間 ${stamp}`;
+  el.title = `此為伺服器定時快照資料（${stamp}）。如需即時最新資料，請點「立即同步與更新」。`;
+  el.classList.remove("hidden");
 }
 
 // --- 點燈指示器更新 ---
@@ -1570,14 +1730,28 @@ async function enrichLocationsWithGeocoding() {
 
 // --- 中文翻譯規則引擎 (內建字典與範本解析) ---
 
-// 國家名稱翻譯
+// 國家名稱翻譯 (memoized：同一原始字串只需計算一次，避免每次渲染都重跑整張 COUNTRY_MAP 的 RegExp 迴圈)
+const _translateCountryCache = new Map();
 function translateCountry(rawCountry) {
   if (!rawCountry) return "未知地點";
+
+  // 以原始字串為鍵讀取快取
+  if (_translateCountryCache.has(rawCountry)) {
+    return _translateCountryCache.get(rawCountry);
+  }
+
+  const result = translateCountryRaw(rawCountry);
+  _translateCountryCache.set(rawCountry, result);
+  return result;
+}
+
+// 實際的翻譯計算 (未快取版本)
+function translateCountryRaw(rawCountry) {
   const trimmed = rawCountry.trim().toUpperCase();
-  
+
   // 1. 直接查表對照
   if (COUNTRY_MAP[trimmed]) return COUNTRY_MAP[trimmed];
-  
+
   // 2. 對於包含逗號等多國列表，分開處理
   if (trimmed.includes(",")) {
     return trimmed.split(",")
@@ -1598,8 +1772,8 @@ function translateCountry(rawCountry) {
 
 // 類別翻譯
 function getCategoryInfo(rawType) {
-  const typeKey = rawType ? rawType.trim() : "General";
-  return CATEGORY_MAP[typeKey] || { name: rawType || "其它災害", cssClass: "cat-general" };
+  const typeKey = rawType ? rawType.trim().toLowerCase() : "general";
+  return CATEGORY_MAP_LOOKUP[typeKey] || { name: rawType || "其它災害", cssClass: "cat-general" };
 }
 
 // 災害說明繁體中文模組 (根據不同組織與欄位做中文化格式化)
@@ -2238,8 +2412,8 @@ function filterAndDisplayData() {
 
   // 按類別優先級排序 (TC > FL > EQ > VO > WF > DR > 其它)，同類別則按日期由新到舊排序
   filteredDisasters.sort((a, b) => {
-    const priorityA = CATEGORY_PRIORITY[a.type] || 99;
-    const priorityB = CATEGORY_PRIORITY[b.type] || 99;
+    const priorityA = getCategoryPriority(a.type);
+    const priorityB = getCategoryPriority(b.type);
 
     if (priorityA !== priorityB) {
       return priorityA - priorityB;
