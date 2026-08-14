@@ -1,0 +1,45 @@
+name: 定時更新災害資料快照
+
+# 何時執行：
+#   - 每小時整點自動執行（cron 使用 UTC；GitHub 可能延遲數分鐘）
+#   - 也可在 Actions 頁面手動點「Run workflow」立即執行
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+
+# 允許 workflow 將更新後的 data.json 推回 repo
+permissions:
+  contents: write
+
+# 避免多個排程同時執行互相衝突
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取出程式碼
+        uses: actions/checkout@v4
+
+      - name: 設定 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 抓取各來源並產生 data.json
+        run: node .github/scripts/fetch-feeds.mjs
+
+      - name: 有變更才提交並推送
+        run: |
+          if [[ -z "$(git status --porcelain data.json)" ]]; then
+            echo "data.json 無變更，略過提交。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "chore(data): 更新災害資料定時快照 [skip ci]"
+          git push
