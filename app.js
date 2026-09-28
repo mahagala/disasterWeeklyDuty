@@ -2519,8 +2519,8 @@ function copyDisasterSummary(d) {
   }
   let dateStr = formatDateRange(d.fromdate, d.todate, d.pubDate);
   
-  // 依照用戶 PPT 格式優化日期顯示 (例如 03/25 ~ 03/27 ➔ 3/25-3/27)
-  dateStr = dateStr.replace(/0(\d)/g, '$1').replace(/\s*~\s*/g, '-');
+  // 依照週報表格格式顯示日期，保留前導零 (例如 08/31 ~ 09/01 ➔ 08/31-09/01)
+  dateStr = dateStr.replace(/\s*~\s*/g, '-');
   
   let alertText = "";
   if (d.alertlevel && d.alertlevel !== "None") {
@@ -2533,25 +2533,15 @@ function copyDisasterSummary(d) {
     alertText = showOriginalEnglish ? "Green/No Alert" : "綠色/無警報";
   }
   
-  let detailLocText = "";
-  if (showOriginalEnglish) {
-    detailLocText = d.englishLocationDetail || "";
-  } else {
-    detailLocText = translateSimplifiedToTraditional(d.chineseLocationDetail || "");
-  }
-  
   const dmsLat = convertDecimalToDMS(d.lat, true);
   const dmsLng = convertDecimalToDMS(d.lng, false);
-  // 純文字無法隱藏網址，改用較短的 Google 地圖網址格式
-  const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps?q=${d.lat},${d.lng}` : "";
+  // 最短的 Google 地圖網址格式（maps.app.goo.gl 短網址無法由程式產生）
+  const mapUrl = d.lat !== null && d.lng !== null ? `https://maps.google.com/?q=${d.lat},${d.lng}` : "";
 
-  // 組合成與 PPT 相符的「地點」儲存格內容（洲名 國名 詳細地址 座標）；地圖連結另外附加
-  let locCellContent = `${continent} ${countryName}`;
-  if (detailLocText) {
-    locCellContent += `\n${detailLocText}`;
-  }
+  // 依照週報表格格式組合「地點」儲存格：洲名、國名、座標各一行；地圖連結另外附加
+  let locCellContent = `${continent}\n${countryName}`;
   if (d.lat !== null && d.lng !== null) {
-    locCellContent += `\n${dmsLat} ${dmsLng}`;
+    locCellContent += `\n${dmsLat}${dmsLng}`;
   }
 
   let descText = "";
@@ -2567,8 +2557,9 @@ function copyDisasterSummary(d) {
   // 移除可能存在的 HTML 標籤
   descText = descText.replace(/<\/?[^>]+(>|$)/g, "");
   
-  const refLinks = generateReferenceLinks(d);
-  const refUrls = refLinks.map(ref => ref.url).join("\n");
+  // 參考文獻只放官方報告，以「•網址」呈現；新聞搜尋連結不放入週報表格
+  const officialUrl = generateReferenceLinks(d)[0]?.url || "";
+  const refUrls = officialUrl ? `•${officialUrl}` : "";
 
   // TSV 單元格防破格處理輔助函數
   const formatCellForTSV = (val) => {
@@ -2601,14 +2592,14 @@ function copyDisasterSummary(d) {
     .replace(/\n/g, "<br>");
   const toHtmlTd = (innerHtml) =>
     `<td style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt; vertical-align: top; line-height: 1.4;">${innerHtml}</td>`;
-  // 與 PPTX 匯出一致：以短標題顯示超連結，隱藏冗長網址
+  // 連結以網址本身作為文字，貼入 PPT / Word 後可直接點擊
   const toHtmlLink = (url, label) => `<a href="${escapeCell(url)}">${escapeCell(label)}</a>`;
 
   let locHtml = escapeCell(locCellContent);
   if (mapUrl) {
-    locHtml += `<br>${toHtmlLink(mapUrl, showOriginalEnglish ? "📍 Google Maps" : "📍 Google 地圖")}`;
+    locHtml += `<br>${toHtmlLink(mapUrl, mapUrl)}`;
   }
-  const refsHtml = refLinks.map(ref => toHtmlLink(ref.url, `• ${ref.title}`)).join("<br>");
+  const refsHtml = officialUrl ? `•${toHtmlLink(officialUrl, officialUrl)}` : "";
 
   const htmlText = `<table style="border-collapse: collapse; font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt;"><tr style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt;">` +
     toHtmlTd(escapeCell(dateStr)) +
