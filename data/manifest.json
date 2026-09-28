@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T06:23:10.742654+00:00",
+  "generatedAt": "2026-09-28T06:24:05.076412+00:00",
   "feeds": {
     "gdacs7d": {
       "source": "gdacs",
       "file": "gdacs7d.xml",
-      "checkedAt": "2026-09-28T06:23:10.742654+00:00",
-      "lastSuccessAt": "2026-09-28T06:23:10.742654+00:00",
+      "checkedAt": "2026-09-28T06:24:05.076412+00:00",
+      "lastSuccessAt": "2026-09-28T06:24:05.076412+00:00",
       "count": 445,
       "sha256": "fd5fb08ca5cbe0404ff7e76788a5fc9de46755150154b67509ff64760056d3ba",
       "available": true,
@@ -16,8 +16,8 @@
     "gdacsEq3m": {
       "source": "gdacs",
       "file": "gdacsEq3m.xml",
-      "checkedAt": "2026-09-28T06:23:10.742654+00:00",
-      "lastSuccessAt": "2026-09-28T06:23:10.742654+00:00",
+      "checkedAt": "2026-09-28T06:24:05.076412+00:00",
+      "lastSuccessAt": "2026-09-28T06:24:05.076412+00:00",
       "count": 7,
       "sha256": "4aa4aefaf1aaee54a5c657d5f4196663fa205baf20eb9dc36eed6fb377adfef4",
       "available": true,
@@ -27,8 +27,8 @@
     "gdacsTc3m": {
       "source": "gdacs",
       "file": "gdacsTc3m.xml",
-      "checkedAt": "2026-09-28T06:23:10.742654+00:00",
-      "lastSuccessAt": "2026-09-28T06:23:10.742654+00:00",
+      "checkedAt": "2026-09-28T06:24:05.076412+00:00",
+      "lastSuccessAt": "2026-09-28T06:24:05.076412+00:00",
       "count": 41,
       "sha256": "c618bdee99d60be0f7e35dcd2c5e6323a851117a219652540894841c95c0c08d",
       "available": true,
@@ -38,8 +38,8 @@
     "gdacsFl3m": {
       "source": "gdacs",
       "file": "gdacsFl3m.xml",
-      "checkedAt": "2026-09-28T06:23:10.742654+00:00",
-      "lastSuccessAt": "2026-09-28T06:23:10.742654+00:00",
+      "checkedAt": "2026-09-28T06:24:05.076412+00:00",
+      "lastSuccessAt": "2026-09-28T06:24:05.076412+00:00",
       "count": 225,
       "sha256": "cf1ee01dc104f067b0d5ddfc55ad0bfa9bbea748972bc9eabc861e01237eb213",
       "available": true,
@@ -49,10 +49,10 @@
     "ercc": {
       "source": "ercc",
       "file": "ercc.xml",
-      "checkedAt": "2026-09-28T06:23:10.742654+00:00",
-      "lastSuccessAt": "2026-09-28T06:23:10.742654+00:00",
+      "checkedAt": "2026-09-28T06:24:05.076412+00:00",
+      "lastSuccessAt": "2026-09-28T06:24:05.076412+00:00",
       "count": 10,
-      "sha256": "d28fe5b3275f1477307c236647415ab56eb96c93cd3620c8b1ddacfecce41136",
+      "sha256": "acbda8882b493a991623c9b1b32e795e2c4d93539f7a882375b10909ed7d8d6d",
       "available": true,
       "status": "ok",
       "error": null
@@ -60,10 +60,10 @@
     "usgs": {
       "source": "usgs",
       "file": "usgs.xml",
-      "checkedAt": "2026-09-28T06:23:10.742654+00:00",
-      "lastSuccessAt": "2026-09-28T06:23:10.742654+00:00",
+      "checkedAt": "2026-09-28T06:24:05.076412+00:00",
+      "lastSuccessAt": "2026-09-28T06:24:05.076412+00:00",
       "count": 509,
-      "sha256": "0115355f21d04e78d366444c8aa5e056acc4cf64e197ca0155c969787fa58b6f",
+      "sha256": "bcbd42452dedc2f9b2dccbf11a8b4a97542b3618b0ed8745de29182c814d259b",
       "available": true,
       "status": "ok",
       "error": null
@@ -71,13 +71,13 @@
     "reliefweb": {
       "source": "reliefweb",
       "file": "reliefweb.json",
-      "checkedAt": "2026-09-28T06:23:10.742654+00:00",
-      "lastSuccessAt": null,
-      "count": 0,
-      "sha256": null,
-      "available": false,
-      "status": "unconfigured",
-      "error": "尚未設定官方核准的 ReliefWeb appname"
+      "checkedAt": "2026-09-28T06:24:05.076412+00:00",
+      "lastSuccessAt": "2026-09-28T06:24:05.076412+00:00",
+      "count": 150,
+      "sha256": "cc07a02d120b489730c8788ec061411a4b394b73dd24fbcb3b4967ded7fe0236",
+      "available": true,
+      "status": "ok",
+      "error": null
     }
   }
 }
