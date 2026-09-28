@@ -1952,3 +1952,14 @@ mark {
   color: var(--text-main);
 }
 
+
+/* Scheduled feed freshness and accessible status details */
+.status-indicator.stale .dot { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+.status-indicator.stale { color: #fbbf24; border-color: #a16207; }
+.status-indicator.unconfigured .dot { background: #94a3b8; box-shadow: none; }
+.status-indicator.unconfigured { color: #94a3b8; }
+.data-freshness { padding: 16px; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.data-freshness summary { font-weight: 600; cursor: pointer; }
+.data-freshness p { color: var(--text-muted); margin-top: 10px; }
+.data-freshness ul { padding-left: 16px; }
+.data-freshness li { margin-top: 10px; }

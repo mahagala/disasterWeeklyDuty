@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:gdacs="http://www.gdacs.org" xmlns:glide="http://glidenumber.net" xmlns:georss="http://www.georss.org/georss" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GDACS RSS information</title>
+    <link>https://www.gdacs.org/</link>
+    <copyright>public domain</copyright>
+    <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
+    <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
+    <!--Records number 7-->
+    <!--Start 9/28/2026 3:48:02 AM-->
+    <!--=Start 9/28/2026 3:48:02 AM-->
+    <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
+    <pubDate>Mon, 28 Sep 2026 01:48:02 GMT</pubDate>
+    <atom:link href="https://www.gdacs.org/xml/rss_eq_3m.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orange earthquake (Magnitude 5M, Depth:10km) in China 28/08/2026 05:13 UTC, 15.8 million in 100km.</title>
+      <description>On 8/28/2026 5:13:35 AM, an earthquake occurred in China potentially affecting 15.8 million in 100km. The earthquake had Magnitude 5M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1729706_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1562260</link>
+      <pubDate>Fri, 28 Aug 2026 05:32:14 GMT</pubDate>
+      <gdacs:dateadded>Fri, 28 Aug 2026 05:32:14 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Fri, 28 Aug 2026 07:04:27 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 28 Aug 2026 05:13:35 GMT</gdacs:fromdate>
+      <gdacs:todate>Fri, 28 Aug 2026 05:13:35 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ2</dc:subject>
+      <guid isPermaLink="false">EQ1562260</guid>
+      <geo:Point>
+        <geo:lat>29.2752</geo:lat>
+        <geo:long>105.229</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>101.229 109.229 25.2752 33.2752</gdacs:bbox>
+      <georss:point>29.2752 105.229</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1562260/cap_1562260.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>1.02196166728945</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1562260</gdacs:eventid>
+      <gdacs:episodeid>1729706</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="5">Magnitude 5M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="in MMI VI" value="303826">300 thousand in MMI VI</gdacs:population>
+      <gdacs:vulnerability value="1.34753404409685" />
+      <gdacs:iso3>CHN</gdacs:iso3>
+      <gdacs:country>China</gdacs:country>
+      <gdacs:glide>EQ-2026-000168-CHN</gdacs:glide>
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1562260/rss_1562260.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Red earthquake (Magnitude 7.7M, Depth:10km) in Indonesia 14/08/2026 21:58 UTC, 870 thousand (in MMI&gt;=VII).</title>
+      <description>On 8/14/2026 9:58:21 PM, an earthquake occurred in Indonesia potentially affecting 870 thousand (in MMI&gt;=VII). The earthquake had Magnitude 7.7M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1725109_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1558059</link>
+      <pubDate>Fri, 14 Aug 2026 22:21:19 GMT</pubDate>
+      <gdacs:dateadded>Fri, 14 Aug 2026 22:21:19 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 28 Sep 2026 01:45:15 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 14 Aug 2026 21:58:21 GMT</gdacs:fromdate>
+      <gdacs:todate>Fri, 14 Aug 2026 21:58:21 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ3</dc:subject>
+      <guid isPermaLink="false">EQ1558059</guid>
+      <geo:Point>
+        <geo:lat>-8.3101</geo:lat>
+        <geo:long>121.3517</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>117.3517 125.3517 -12.3101 -4.3101</gdacs:bbox>
+      <georss:point>-8.3101 121.3517</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1558059/cap_1558059.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Red/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Red</gdacs:alertlevel>
+      <gdacs:alertscore>2.14589742473401</gdacs:alertscore>
+      <gdacs:episodealertlevel>Red</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>3</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1558059</gdacs:eventid>
+      <gdacs:episodeid>1725109</gdacs:episodeid>
+      <gdacs:calculationtype>tsunami</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="7.7">Magnitude 7.7M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="866959">870 thousand (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="1.62113293717696" />
+      <gdacs:iso3>IDN</gdacs:iso3>
+      <gdacs:country>Indonesia</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1558059/rss_1558059.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Red earthquake (Magnitude 7.4M, Depth:110.285km) in Colombia 10/08/2026 12:34 UTC, 5.4 million (in MMI&gt;=VII).</title>
+      <description>On 8/10/2026 12:34:28 PM, an earthquake occurred in Colombia potentially affecting 5.4 million (in MMI&gt;=VII). The earthquake had Magnitude 7.4M, Depth:110.285km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1724218_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1557236</link>
+      <pubDate>Mon, 10 Aug 2026 12:50:33 GMT</pubDate>
+      <gdacs:dateadded>Mon, 10 Aug 2026 12:50:33 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 28 Sep 2026 01:45:15 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Mon, 10 Aug 2026 12:34:28 GMT</gdacs:fromdate>
+      <gdacs:todate>Mon, 10 Aug 2026 12:34:28 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ3</dc:subject>
+      <guid isPermaLink="false">EQ1557236</guid>
+      <geo:Point>
+        <geo:lat>4.8436</geo:lat>
+        <geo:long>-76.2422</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-80.2422 -72.2422 0.8436 8.8436</gdacs:bbox>
+      <georss:point>4.8436 -76.2422</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1557236/cap_1557236.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Red/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Red</gdacs:alertlevel>
+      <gdacs:alertscore>2.27096883026439</gdacs:alertscore>
+      <gdacs:episodealertlevel>Red</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>3</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1557236</gdacs:eventid>
+      <gdacs:episodeid>1724218</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="7.4">Magnitude 7.4M, Depth:110.3km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="5395888">5.4 million (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="2.081044689573" />
+      <gdacs:iso3>COL</gdacs:iso3>
+      <gdacs:country>Colombia</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1557236/rss_1557236.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Orange earthquake (Magnitude 6.3M, Depth:10km) in Philippines 05/08/2026 04:14 UTC, 10 thousand (in MMI&gt;=VII).</title>
+      <description>On 8/5/2026 4:14:06 AM, an earthquake occurred in Philippines potentially affecting 10 thousand (in MMI&gt;=VII). The earthquake had Magnitude 6.3M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1723078_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1556215</link>
+      <pubDate>Wed, 05 Aug 2026 04:30:21 GMT</pubDate>
+      <gdacs:dateadded>Wed, 05 Aug 2026 04:30:21 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 06 Aug 2026 14:02:30 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Wed, 05 Aug 2026 04:14:06 GMT</gdacs:fromdate>
+      <gdacs:todate>Wed, 05 Aug 2026 04:14:06 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ2</dc:subject>
+      <guid isPermaLink="false">EQ1556215</guid>
+      <geo:Point>
+        <geo:lat>5.1812</geo:lat>
+        <geo:long>125.276</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>121.276 129.276 1.1812 9.1812</gdacs:bbox>
+      <georss:point>5.1812 125.276</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1556215/cap_1556215.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>1.07318512524065</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1556215</gdacs:eventid>
+      <gdacs:episodeid>1723078</gdacs:episodeid>
+      <gdacs:calculationtype>tsunami</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="6.3">Magnitude 6.3M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="10648">10 thousand (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>PHL</gdacs:iso3>
+      <gdacs:country>Philippines</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1556215/rss_1556215.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Orange earthquake (Magnitude 6.8M, Depth:10km) in Japan 28/07/2026 07:27 UTC, 1.2 million (in MMI&gt;=VII).</title>
+      <description>On 7/28/2026 7:27:15 AM, an earthquake occurred in Japan potentially affecting 1.2 million (in MMI&gt;=VII). The earthquake had Magnitude 6.8M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1721238_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1554552</link>
+      <pubDate>Tue, 28 Jul 2026 07:37:31 GMT</pubDate>
+      <gdacs:dateadded>Tue, 28 Jul 2026 07:37:31 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 28 Sep 2026 01:45:15 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Tue, 28 Jul 2026 07:27:15 GMT</gdacs:fromdate>
+      <gdacs:todate>Tue, 28 Jul 2026 07:27:15 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ2</dc:subject>
+      <guid isPermaLink="false">EQ1554552</guid>
+      <geo:Point>
+        <geo:lat>32.6817</geo:lat>
+        <geo:long>130.7217</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>126.7217 134.7217 28.6817 36.6817</gdacs:bbox>
+      <georss:point>32.6817 130.7217</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1554552/cap_1554552.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>1.04568866159891</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1554552</gdacs:eventid>
+      <gdacs:episodeid>1721238</gdacs:episodeid>
+      <gdacs:calculationtype>tsunami</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="6.8">Magnitude 6.8M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="1238319">1.2 million (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>JPN</gdacs:iso3>
+      <gdacs:country>Japan</gdacs:country>
+      <gdacs:glide>EQ-2026-000135-JPN</gdacs:glide>
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1554552/rss_1554552.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Orange earthquake (Magnitude 5.7M, Depth:10km) in China 28/07/2026 03:16 UTC, 6 thousand (in MMI&gt;=VII).</title>
+      <description>On 7/28/2026 3:16:08 AM, an earthquake occurred in China potentially affecting 6 thousand (in MMI&gt;=VII). The earthquake had Magnitude 5.7M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1721184_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1554510</link>
+      <pubDate>Tue, 28 Jul 2026 03:32:32 GMT</pubDate>
+      <gdacs:dateadded>Tue, 28 Jul 2026 03:32:32 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 05 Aug 2026 02:05:35 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Tue, 28 Jul 2026 03:16:08 GMT</gdacs:fromdate>
+      <gdacs:todate>Tue, 28 Jul 2026 03:16:08 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ2</dc:subject>
+      <guid isPermaLink="false">EQ1554510</guid>
+      <geo:Point>
+        <geo:lat>35.3685</geo:lat>
+        <geo:long>99.5198</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>95.5198 103.5198 31.3685 39.3685</gdacs:bbox>
+      <georss:point>35.3685 99.5198</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1554510/cap_1554510.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>1.34010816441183</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1554510</gdacs:eventid>
+      <gdacs:episodeid>1721184</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="5.7">Magnitude 5.7M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="6128">6 thousand (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="1.34753404409685" />
+      <gdacs:iso3>CHN</gdacs:iso3>
+      <gdacs:country>China</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1554510/rss_1554510.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Orange earthquake (Magnitude 5.5M, Depth:10km) in Peru 19/07/2026 02:24 UTC, 240 thousand (in MMI&gt;=VII).</title>
+      <description>On 7/19/2026 2:24:35 AM, an earthquake occurred in Peru potentially affecting 240 thousand (in MMI&gt;=VII). The earthquake had Magnitude 5.5M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1719805_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1552752</link>
+      <pubDate>Sun, 19 Jul 2026 02:42:14 GMT</pubDate>
+      <gdacs:dateadded>Sun, 19 Jul 2026 02:42:14 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 22 Jul 2026 02:06:24 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 19 Jul 2026 02:24:35 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 19 Jul 2026 02:24:35 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ2</dc:subject>
+      <guid isPermaLink="false">EQ1552752</guid>
+      <geo:Point>
+        <geo:lat>-12.1036</geo:lat>
+        <geo:long>-75.3034</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-79.3034 -71.3034 -16.1036 -8.1036</gdacs:bbox>
+      <georss:point>-12.1036 -75.3034</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1552752/cap_1552752.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>1.93224355119598</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1552752</gdacs:eventid>
+      <gdacs:episodeid>1719805</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="5.5">Magnitude 5.5M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="238871">240 thousand (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="1.78228028098837" />
+      <gdacs:iso3>PER</gdacs:iso3>
+      <gdacs:country>Peru</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1552752/rss_1552752.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+  </channel>
+</rss><!--End 9/28/2026 3:48:03 AM-->

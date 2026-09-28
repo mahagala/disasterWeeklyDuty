@@ -11,7 +11,7 @@
   <!-- Leaflet Map CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css?v=20260605_2">
+  <link rel="stylesheet" href="styles.css?v=20260928_1">
 </head>
 <body>
   <!-- Header Bar -->
@@ -39,16 +39,16 @@
             <span class="spinning" style="font-size: 14px; display: inline-block;">🌐</span>
             <span>資料載入中</span>
           </div>
-          <div class="status-indicator" id="status-gdacs" title="點擊單獨重新下載此來源">
+          <div class="status-indicator" id="status-gdacs" title="點擊查看狀態並重新載入網站資料">
             <span class="dot"></span> GDACS
           </div>
-          <div class="status-indicator" id="status-ercc" title="點擊單獨重新下載此來源">
+          <div class="status-indicator" id="status-ercc" title="點擊查看狀態並重新載入網站資料">
             <span class="dot"></span> ERCC
           </div>
-          <div class="status-indicator" id="status-usgs" title="點擊單獨重新下載此來源">
+          <div class="status-indicator" id="status-usgs" title="點擊查看狀態並重新載入網站資料">
             <span class="dot"></span> USGS
           </div>
-          <div class="status-indicator" id="status-reliefweb" title="點擊單獨重新下載此來源">
+          <div class="status-indicator" id="status-reliefweb" title="點擊查看狀態並重新載入網站資料">
             <span class="dot"></span> ReliefWeb
           </div>
         </div>
@@ -213,7 +213,7 @@
               <svg class="btn-icon spinning" id="fetch-loader" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none; width:16px; height:16px; margin-right:6px;">
                 <circle cx="12" cy="12" r="10" stroke-dasharray="16 8"></circle>
               </svg>
-              <span>立即同步與更新</span>
+              <span>重新載入資料</span>
             </button>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%;">
               <button class="secondary-btn" id="export-csv-btn" title="匯出 CSV">
@@ -225,6 +225,13 @@
             </div>
           </div>
         </div>
+
+        <details class="glass-card data-freshness" open>
+          <summary>資料更新狀態</summary>
+          <p id="data-updated-at" role="status">正在讀取最近一次排程資料…</p>
+          <ul id="source-update-details"></ul>
+          <p>按鈕會讀取網站最近一次排程資料，不會立即向官方重新下載。橙燈表示部分資料較舊；灰燈表示尚未設定。</p>
+        </details>
 
         <!-- Statistics Card -->
         <div class="glass-card stats-card">
@@ -273,7 +280,7 @@
           <div id="disaster-map"></div>
           <!-- Offline Notice Overlay -->
           <div class="offline-badge hidden" id="offline-badge">
-            <span class="badge-dot"></span> 離線/快取模式 (使用備用數據)
+            <span class="badge-dot"></span> 部分資料較舊，請查看各來源更新狀態
           </div>
         </div>
       </article>
@@ -397,8 +404,8 @@
           <div class="help-section">
             <h4>🔄 重新載入與更新資訊機制</h4>
             <ul>
-              <li><strong>全域立即同步與更新</strong>：點擊控制面板最上方的 <strong>「立即同步與更新」</strong> 按鈕，系統將重新執行完整的初始化流程，完整重新抓取並更新所有已啟用來源的災害資料。</li>
-              <li><strong>單一來源重新整理</strong>：若個別資料來源因網路波動或跨域限制顯示紅燈（下載失敗），可直接點擊 Header 上對應的資料來源指示按鈕（例如 <code>ReliefWeb</code>），系統即會在背景單獨重新下載並更新該來源資料，無需重新整理整個網頁。</li>
+              <li><strong>重新載入資料</strong>：讀取網站最近一次排程下載的資料。GitHub 每小時排程一次，實際執行可能延遲；此按鈕不會立即向官方重新下載。</li>
+              <li><strong>來源狀態</strong>：綠燈表示更新正常；橙燈表示部分資料較舊或更新失敗；紅燈表示無法取得資料；灰燈表示尚未設定。可展開「資料更新狀態」查看最後成功時間與原因。</li>
             </ul>
           </div>
 
@@ -409,17 +416,17 @@
 
           <div class="help-section">
             <h4>❓ 常見問題排查</h4>
-            <p><strong>Q1: 部署到線上版 (GitHub Pages) 後，GDACS 顯示紅色連線失敗？</strong><br>
-            說明：因線上安全限制，部分跨域代理被阻擋。請在瀏覽器中安裝擴充功能 <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffbjicikbagmonpehd" target="_blank" rel="noopener noreferrer">Allow CORS: Access-Control-Allow-Origin</a>，並點選為 <strong>ON</strong> 即可 100% 穩定直連。</p>
-            
+            <p><strong>Q1: 資料來源顯示橙燈或紅燈？</strong><br>
+            請查看「資料更新狀態」。下載失敗時會保留上次成功的真實資料；管理者可到 GitHub Actions 手動執行更新。無須安裝跨域外掛。</p>
+
             <p><strong>Q2: Windows 電腦上國旗顯示為英文代碼？</strong><br>
             說明：Windows 預設不顯示國旗 Emoji。本平台已全面改採 flagcdn 的實體國旗圖片，保證在所有系統上均能彩色正常顯示。</p>
 
             <p><strong>Q3: 填寫的 Gemini API 金鑰安全嗎？</strong><br>
-            說明：API 金鑰完全保存在同仁各自本機瀏覽器的 LocalStorage 中，網頁在 GitHub 上公開也是 100% 安全的，請放心填寫。</p>
+            說明：API 金鑰保存在本機瀏覽器 LocalStorage，使用 AI 摘要時會傳送給 Google Gemini API。請勿將金鑰加入公開程式碼。</p>
 
-            <p><strong>Q4: 碰到某個資料來源（顯示紅燈）下載失敗時，可以單獨重新下載嗎？</strong><br>
-            說明：可以。直接用滑鼠點擊上方 Header 中該資料來源的「指示按鈕」（例如 <code>ReliefWeb</code> 點燈區），系統即會單獨重新抓取並更新該來源的資料，無需重新整理整個網頁。</p>
+            <p><strong>Q4: 點擊來源狀態燈會立即重新向官方下載嗎？</strong><br>
+            說明：點擊會顯示該來源狀態並重新載入本站最近一次排程資料。若要立即向官方下載，請由管理者到 GitHub Actions 手動執行更新。</p>
 
             <p><strong>Q5: 為什麼現在簡報圖卡上的點位非常精確，不會再偏離？</strong><br>
             說明：系統已針對 [world_map.svg] 底圖幾何形狀進行了高精度投影法擬合。X 軸採用帶二次緯度分量修正的 Robinson 投影，Y 軸採用針對各國真實質心修正的線性回歸擬合（特別校正了日本 Honshu 與韓國的偏位），使點位在所有緯度上均能完美落於該國中心位置。</p>
@@ -445,13 +452,11 @@
         <div class="settings-group">
           <label for="gemini-key-input">Google Gemini API Key (可選)</label>
           <input type="password" id="gemini-key-input" class="form-input" placeholder="AI Studio API Key (AIzaSy...)">
-          <small class="helper-text">密鑰會以安全方式儲存於您本機瀏覽器的 LocalStorage 中，不會上傳到任何第三方伺服器。</small>
+          <small class="helper-text">金鑰儲存在本機瀏覽器 LocalStorage，使用 AI 摘要時會傳送給 Google Gemini API。</small>
         </div>
 
         <div class="settings-group">
-          <label>CORS 跨域代理設定 (優先順序嘗試)</label>
-          <textarea id="cors-proxies-input" class="form-textarea" rows="3" placeholder="代理 URL，每行一個"></textarea>
-          <small class="helper-text">由於瀏覽器安全性限制，從外部 RSS 讀取需要 CORS 代理。本平台已預設配置了多個公共代理。</small>
+          <p class="helper-text">災情由 GitHub 每小時排程下載。ReliefWeb 需由管理者申請官方核准的 appname，並設定 GitHub Actions Secret：RELIEFWEB_APPNAME。</p>
         </div>
 
         <div class="settings-group">
@@ -559,9 +564,8 @@
   <!-- PptxGenJS for PPTX generation -->
   <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
   <!-- Mock Data -->
-  <script src="mockData.js?v=20260622_1"></script>
   <!-- Main Application JS -->
-  <script src="app.js?v=20260622_1"></script>
+  <script src="app.js?v=20260928_1"></script>
 
   <!-- Floating Scroll Navigation Widget -->
   <div class="scroll-nav-widget" id="scroll-nav-widget">

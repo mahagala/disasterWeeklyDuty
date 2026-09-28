@@ -4,22 +4,6 @@
 
 // --- 系統配置 ---
 const CONFIG = {
-  // CORS 代理列表 (會依序嘗試，直到成功為止)
-  corsProxies: [
-    "https://api.allorigins.win/raw?url=",
-    "https://corsproxy.io/?",
-    "https://thingproxy.freeboard.io/fetch/"
-  ],
-  // 災害資料來源 feeds
-  feeds: {
-    gdacs7d: "https://www.gdacs.org/xml/rss_7d.xml",
-    gdacsEq3m: "https://www.gdacs.org/xml/rss_eq_3m.xml",
-    gdacsTc3m: "https://www.gdacs.org/xml/rss_tc_3m.xml",
-    gdacsFl3m: "https://www.gdacs.org/xml/rss_fl_3m.xml",
-    ercc: "https://erccportal.jrc.ec.europa.eu/API/ERCC/Maps/GetLatestDailyMapRss",
-    usgs: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.atom", // 擴展至過去 30 天
-    reliefweb: "https://api.reliefweb.int/v1/reports?limit=150&preset=latest" // 擴展至 150 篇以覆蓋更久歷史
-  },
   // 逆向地理編碼 OSM Nominatim 啟用狀態
   enableNominatim: true
 };
@@ -639,20 +623,15 @@ function initMap() {
   new L.Control.ResetView().addTo(map);
 }
 
-// --- 設定管理 (API Key 與 CORS Proxy) ---
+// --- 設定管理 (API Key 與地理編碼) ---
 function initSettings() {
   const localKey = localStorage.getItem("gemini_api_key") || "";
-  const localProxies = localStorage.getItem("custom_cors_proxies") || CONFIG.corsProxies.join("\n");
   const localNominatim = localStorage.getItem("enable_nominatim") !== "false";
 
   document.getElementById("gemini-key-input").value = localKey;
-  document.getElementById("cors-proxies-input").value = localProxies;
   document.getElementById("nominatim-geocoding-chk").checked = localNominatim;
 
   // 更新配置記憶體
-  if (localProxies) {
-    CONFIG.corsProxies = localProxies.split("\n").map(p => p.trim()).filter(p => p !== "");
-  }
   CONFIG.enableNominatim = localNominatim;
 
   // 從 LocalStorage 載入地理編碼快取
@@ -685,9 +664,12 @@ function setupEventListeners() {
     filterAndDisplayData();
   });
 
-  // 篩選與更新按鈕
+  document.getElementById("start-date").addEventListener("change", filterAndDisplayData);
+  document.getElementById("end-date").addEventListener("change", filterAndDisplayData);
+
+  // 重新讀取本站最近一次排程資料
   document.getElementById("fetch-btn").addEventListener("click", () => {
-    loadData(true); // 強制重載
+    loadData();
   });
 
   // 資料來源點燈指示器點擊單獨更新
@@ -790,11 +772,9 @@ function setupEventListeners() {
   // 儲存設定
   document.getElementById("save-settings-btn").addEventListener("click", () => {
     const key = document.getElementById("gemini-key-input").value.trim();
-    const proxies = document.getElementById("cors-proxies-input").value.trim();
     const nominatim = document.getElementById("nominatim-geocoding-chk").checked;
 
     localStorage.setItem("gemini_api_key", key);
-    localStorage.setItem("custom_cors_proxies", proxies);
     localStorage.setItem("enable_nominatim", nominatim.toString());
 
     initSettings();
@@ -874,283 +854,148 @@ function setupEventListeners() {
   }
 }
 
-// --- 多重 CORS 代理網路抓取工具 ---
-async function fetchWithProxy(url) {
-  let lastError = null;
-  
-  // 遍歷所有 CORS 代理進行嘗試
-  for (let proxy of CONFIG.corsProxies) {
-    try {
-      const proxyUrl = `${proxy}${encodeURIComponent(url)}`;
-      console.log(`正在透過代理抓取數據: ${proxyUrl}`);
-      
-      const response = await fetch(proxyUrl);
-      if (!response.ok) throw new Error(`HTTP 錯誤! 狀態碼: ${response.status}`);
-      
-      const data = await response.text();
-      return data; // 成功回傳 XML/JSON 字串
-    } catch (err) {
-      console.warn(`代理 ${proxy} 失敗，嘗試下一個。錯誤: ${err.message}`);
-      lastError = err;
+// --- 同網域資料載入：官方來源由 GitHub Actions 定時下載 ---
+const SOURCE_NAMES = { gdacs: 'GDACS', ercc: 'ERCC', usgs: 'USGS', reliefweb: 'ReliefWeb' };
+const FEED_PARSERS = { gdacs: parseGdacsRSS, ercc: parseErccRSS, usgs: parseUsgsAtom, reliefweb: parseReliefWebAPI };
+let loadingData = false;
+let sourceDetails = {};
+
+async function fetchSiteData(path, asJson = false, expectedHash = null) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch(path, { cache: 'no-store', signal: controller.signal });
+    if (!response.ok) throw new Error(`網站資料讀取失敗（HTTP ${response.status}）`);
+    const bytes = await response.arrayBuffer();
+    if (expectedHash && globalThis.crypto?.subtle) {
+      const hash = await crypto.subtle.digest('SHA-256', bytes);
+      const digest = Array.from(new Uint8Array(hash), byte => byte.toString(16).padStart(2, '0')).join('');
+      if (digest !== expectedHash) throw new Error('資料正在更新，請稍後重新載入');
     }
-  }
-  
-  // 嘗試直接抓取 (如果本地或代理皆失效)
-  try {
-    console.log(`嘗試直接抓取 URL (無代理): ${url}`);
-    const response = await fetch(url);
-    if (response.ok) return await response.text();
-  } catch (err) {
-    console.error("直接抓取也失敗。");
-  }
-
-  throw lastError || new Error("無法連接至該 RSS 來源，所有 CORS 代理皆失敗。");
-}
-
-// --- 數據載入主控 ---
-async function loadData(forceReload = false) {
-  const fetchLoader = document.getElementById("fetch-loader");
-  const fetchBtnSpan = document.querySelector("#fetch-btn span");
-  const offlineBadge = document.getElementById("offline-badge");
-  const syncGlobe = document.getElementById("sync-globe");
-
-  // 顯示 Loading 動態
-  fetchLoader.style.display = "inline-block";
-  fetchBtnSpan.textContent = "資料同步中...";
-  if (syncGlobe) {
-    syncGlobe.classList.remove("hidden");
-  }
-  document.getElementById("disaster-table-body").innerHTML = `
-    <tr>
-      <td colspan="5" class="table-loading">
-        <div class="spinner"></div>
-        <p>正從各國際組織下載最新 RSS 資料...</p>
-      </td>
-    </tr>
-  `;
-
-  // 重置各組織狀態點燈
-  updateSourceStatus("gdacs", "loading");
-  updateSourceStatus("ercc", "loading");
-  updateSourceStatus("usgs", "loading");
-  updateSourceStatus("reliefweb", "loading");
-
-  allDisasters = [];
-  let successSources = 0;
-
-  // 1. 下載 GDACS (並行下載 7天總覽, 3個月地震, 3個月熱帶氣旋, 3個月淹水)
-  try {
-    const gdacsFeeds = [
-      CONFIG.feeds.gdacs7d,
-      CONFIG.feeds.gdacsEq3m,
-      CONFIG.feeds.gdacsTc3m,
-      CONFIG.feeds.gdacsFl3m
-    ];
-    
-    // 使用 Promise.allSettled 並行抓取所有 GDACS 訂閱源
-    const promises = gdacsFeeds.map(url => fetchWithProxy(url).then(xml => parseGdacsRSS(xml)));
-    const results = await Promise.allSettled(promises);
-    
-    let gdacsSuccessCount = 0;
-    results.forEach((result, idx) => {
-      if (result.status === "fulfilled" && result.value) {
-        allDisasters.push(...result.value);
-        gdacsSuccessCount++;
-      } else {
-        console.warn(`GDACS 訂閱源 ${gdacsFeeds[idx]} 載入失敗:`, result.reason);
-      }
-    });
-
-    if (gdacsSuccessCount > 0) {
-      updateSourceStatus("gdacs", "active");
-      successSources++;
-    } else {
-      updateSourceStatus("gdacs", "error");
-    }
-  } catch (err) {
-    console.error("GDACS 處理發生錯誤:", err);
-    updateSourceStatus("gdacs", "error");
-  }
-
-  // 2. 下載 ERCC
-  try {
-    const erccXml = await fetchWithProxy(CONFIG.feeds.ercc);
-    const parsedErcc = parseErccRSS(erccXml);
-    allDisasters.push(...parsedErcc);
-    updateSourceStatus("ercc", "active");
-    successSources++;
-  } catch (err) {
-    console.error("ERCC 載入失敗:", err);
-    updateSourceStatus("ercc", "error");
-  }
-
-  // 3. 下載 USGS 地震
-  try {
-    const usgsAtom = await fetchWithProxy(CONFIG.feeds.usgs);
-    const parsedUsgs = parseUsgsAtom(usgsAtom);
-    allDisasters.push(...parsedUsgs);
-    updateSourceStatus("usgs", "active");
-    successSources++;
-  } catch (err) {
-    console.error("USGS 載入失敗:", err);
-    updateSourceStatus("usgs", "error");
-  }
-
-  // 4. 下載 ReliefWeb
-  try {
-    const rwJsonString = await fetchWithProxy(CONFIG.feeds.reliefweb);
-    const parsedRw = parseReliefWebAPI(rwJsonString);
-    allDisasters.push(...parsedRw);
-    updateSourceStatus("reliefweb", "active");
-    successSources++;
-  } catch (err) {
-    console.error("ReliefWeb 載入失敗:", err);
-    updateSourceStatus("reliefweb", "error");
-  }
-
-  // 對 allDisasters 進行去重 (根據 id 屬性)，防止多個訂閱源中包含重複的事件
-  if (allDisasters.length > 0) {
-    const uniqueMap = new Map();
-    allDisasters.forEach(d => {
-      if (!uniqueMap.has(d.id)) {
-        uniqueMap.set(d.id, d);
-      }
-    });
-    allDisasters = Array.from(uniqueMap.values());
-  }
-
-  // 根據座標範圍，立即修正誤標為「中國」但實際在台灣的事件（無需等待地理逆向編碼）
-  allDisasters.forEach(correctTaiwanCountry);
-
-  // 隱藏 Loading 動態
-  fetchLoader.style.display = "none";
-  fetchBtnSpan.textContent = "立即同步與更新";
-  if (syncGlobe) {
-    syncGlobe.classList.add("hidden");
-  }
-
-  // 若完全失敗，則載入本地模擬的 mockData.js 以防使用者看到空白畫面
-  if (successSources === 0 && typeof mockDisasters !== "undefined") {
-    console.warn("所有網路來源皆失敗，載入離線 Mock 數據。");
-    allDisasters = [...mockDisasters];
-    offlineBadge.classList.remove("hidden");
-    
-    updateSourceStatus("gdacs", "error");
-    updateSourceStatus("ercc", "error");
-    updateSourceStatus("usgs", "error");
-    updateSourceStatus("reliefweb", "error");
-  } else {
-    offlineBadge.classList.add("hidden");
-  }
-
-  // 排序並過濾顯示資料
-  filterAndDisplayData();
-  
-  // 異步啟動 OSM 逆向地理編碼以補足中文地名
-  if (CONFIG.enableNominatim) {
-    enrichLocationsWithGeocoding();
+    const text = new TextDecoder().decode(bytes);
+    return asJson ? JSON.parse(text) : text;
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
-// --- 點燈指示器更新 ---
-function updateSourceStatus(sourceId, status) {
+function dataTime(value) {
+  return value ? new Date(value).toLocaleString('zh-TW', { hour12: false }) : '尚無成功紀錄';
+}
+
+function updateSourceStatus(sourceId, status, message = '') {
   const el = document.getElementById(`status-${sourceId}`);
   if (!el) return;
-  el.classList.remove("active", "error");
-  if (status === "active") {
-    el.classList.add("active");
-  } else if (status === "error") {
-    el.classList.add("error");
+  el.classList.remove('active', 'error', 'stale', 'unconfigured');
+  if (status !== 'loading') el.classList.add(status);
+  el.title = message || '讀取網站資料中';
+  el.setAttribute('aria-label', `${SOURCE_NAMES[sourceId]}：${el.title}`);
+  if (message) sourceDetails[sourceId] = message;
+}
+
+function renderSourceDetails() {
+  const list = document.getElementById('source-update-details');
+  list.replaceChildren();
+  for (const [source, name] of Object.entries(SOURCE_NAMES)) {
+    const item = document.createElement('li');
+    item.textContent = `${name}：${sourceDetails[source] || '尚未載入'}`;
+    list.appendChild(item);
   }
 }
 
-// 單獨重新下載某個資料來源
-async function reloadSingleSource(sourceId) {
-  const sourceNameMap = {
-    gdacs: "GDACS",
-    ercc: "ERCC",
-    usgs: "USGS",
-    reliefweb: "ReliefWeb"
-  };
-  const sourceName = sourceNameMap[sourceId];
-  if (!sourceName) return;
-
-  showToast(`正在單獨重新整理 ${sourceName} 資料...`);
-  updateSourceStatus(sourceId, "loading");
-
-  let newDisasters = [];
-  let success = false;
-
+async function loadData() {
+  if (loadingData) return;
+  loadingData = true;
+  const button = document.getElementById('fetch-btn');
+  const label = button.querySelector('span');
+  const loader = document.getElementById('fetch-loader');
+  const badge = document.getElementById('offline-badge');
+  button.disabled = true;
+  label.textContent = '資料載入中...';
+  loader.style.display = 'inline-block';
+  document.getElementById('sync-globe').classList.remove('hidden');
+  Object.keys(SOURCE_NAMES).forEach(source => updateSourceStatus(source, 'loading'));
   try {
-    if (sourceId === "gdacs") {
-      const gdacsFeeds = [
-        CONFIG.feeds.gdacs7d,
-        CONFIG.feeds.gdacsEq3m,
-        CONFIG.feeds.gdacsTc3m,
-        CONFIG.feeds.gdacsFl3m
-      ];
-      const promises = gdacsFeeds.map(url => fetchWithProxy(url).then(xml => parseGdacsRSS(xml)));
-      const results = await Promise.allSettled(promises);
-      
-      let gdacsSuccessCount = 0;
-      results.forEach((result, idx) => {
-        if (result.status === "fulfilled" && result.value) {
-          newDisasters.push(...result.value);
-          gdacsSuccessCount++;
-        }
-      });
-      if (gdacsSuccessCount > 0) success = true;
-    } else if (sourceId === "ercc") {
-      const erccXml = await fetchWithProxy(CONFIG.feeds.ercc);
-      newDisasters = parseErccRSS(erccXml);
-      success = true;
-    } else if (sourceId === "usgs") {
-      const usgsAtom = await fetchWithProxy(CONFIG.feeds.usgs);
-      newDisasters = parseUsgsAtom(usgsAtom);
-      success = true;
-    } else if (sourceId === "reliefweb") {
-      const rwJsonString = await fetchWithProxy(CONFIG.feeds.reliefweb);
-      newDisasters = parseReliefWebAPI(rwJsonString);
-      success = true;
+    if (location.protocol === 'file:') throw new Error('請使用線上網站或本機 HTTP 伺服器開啟，不能直接雙擊 HTML 讀取資料檔。');
+    const manifest = await fetchSiteData('data/manifest.json', true);
+    if (manifest.schemaVersion !== 1 || !manifest.feeds || !Number.isFinite(Date.parse(manifest.generatedAt))) {
+      throw new Error('網站資料索引格式錯誤');
     }
-
-    if (success) {
-      // 移除原有的該來源災害資料
-      allDisasters = allDisasters.filter(d => d.source !== sourceName);
-      
-      // 加入新獲取的資料
-      allDisasters.push(...newDisasters);
-      
-      // 去重
-      const uniqueMap = new Map();
-      allDisasters.forEach(d => {
-        if (!uniqueMap.has(d.id)) {
-          uniqueMap.set(d.id, d);
-        }
-      });
-      allDisasters = Array.from(uniqueMap.values());
-
-      updateSourceStatus(sourceId, "active");
-      
-      // 如果此時有成功的網路資料，隱藏離線標誌
-      const offlineBadge = document.getElementById("offline-badge");
-      if (offlineBadge) offlineBadge.classList.add("hidden");
-
-      showToast(`${sourceName} 資料更新成功！`);
-      filterAndDisplayData();
-      
-      if (CONFIG.enableNominatim) {
-        enrichLocationsWithGeocoding();
+    document.getElementById('data-updated-at').textContent = `資料排程時間：${dataTime(manifest.generatedAt)}（每小時排程，可能延遲）`;
+    let hasStaleData = false;
+    await Promise.all(Object.entries(SOURCE_NAMES).map(async ([source, name]) => {
+      const entries = Object.values(manifest.feeds).filter(feed => feed.source === source);
+      if (!entries.length) {
+        const available = allDisasters.some(item => item.source === name);
+        if (available) hasStaleData = true;
+        updateSourceStatus(source, available ? 'stale' : 'error', `${name} 缺少資料索引`);
+        return;
       }
-    } else {
-      updateSourceStatus(sourceId, "error");
-      showToast(`${sourceName} 資料更新失敗，請稍後重試。`);
-    }
-  } catch (err) {
-    console.error(`${sourceName} 單獨重新整理失敗:`, err);
-    updateSourceStatus(sourceId, "error");
-    showToast(`${sourceName} 連線失敗，請檢查網路。`);
+      if (entries.every(feed => feed.status === 'unconfigured')) {
+        allDisasters = allDisasters.filter(item => item.source !== name);
+        updateSourceStatus(source, 'unconfigured', '尚未設定官方核准的 appname，暫不提供報告');
+        return;
+      }
+      const results = await Promise.allSettled(entries.map(async feed => {
+        if (!feed.available) throw new Error(feed.error || '尚無可用資料');
+        if (!/^[a-zA-Z0-9]+\.(xml|json)$/.test(feed.file)) throw new Error('資料檔路徑無效');
+        const body = await fetchSiteData(`data/${feed.file}?v=${encodeURIComponent(feed.sha256 || feed.lastSuccessAt)}`, false, feed.sha256);
+        const parsed = FEED_PARSERS[source](body);
+        if (!parsed.length || parsed.some(item => !item.title || !Number.isFinite(Date.parse(item.pubDate)))) {
+          throw new Error('資料格式或日期無效');
+        }
+        return parsed;
+      }));
+      const fulfilled = results.filter(result => result.status === 'fulfilled');
+      const previous = allDisasters.filter(item => item.source === name);
+      if (fulfilled.length) {
+        // Keep the previous source snapshot if any locally fetched part failed.
+        const records = fulfilled.flatMap(result => result.value);
+        const merged = new Map((fulfilled.length < entries.length ? previous : []).map(item => [item.id, item]));
+        records.forEach(item => {
+          const prior = merged.get(item.id);
+          if (!prior || Date.parse(item.pubDate) > Date.parse(prior.pubDate)) merged.set(item.id, item);
+        });
+        allDisasters = allDisasters.filter(item => item.source !== name).concat([...merged.values()]);
+      }
+      const old = entries.some(feed => feed.available && (!feed.lastSuccessAt || Date.now() - Date.parse(feed.lastSuccessAt) > 3 * 3600000));
+      const degraded = old || entries.some(feed => feed.status !== 'ok') || fulfilled.length !== entries.length;
+      const available = fulfilled.length > 0 || previous.length > 0;
+      const state = degraded ? (available ? 'stale' : 'error') : 'active';
+      if (state === 'stale') hasStaleData = true;
+      const times = entries.filter(feed => feed.available && feed.lastSuccessAt).map(feed => feed.lastSuccessAt).sort();
+      const errors = entries.filter(feed => feed.error).map(feed => feed.error);
+      results.forEach(result => { if (result.status === 'rejected') errors.push(result.reason.message); });
+      const message = [state === 'active' ? '更新正常' : available ? '部分資料更新失敗或已超過 3 小時，請留意資料時間' : '資料無法載入',
+        `最近下載：${times.length ? times.map(dataTime).filter((value, index, values) => values.indexOf(value) === index).join(' ～ ') : '尚無成功紀錄'}`,
+        ...new Set(errors)].join('；');
+      updateSourceStatus(source, state, message);
+    }));
+    badge.classList.toggle('hidden', !hasStaleData);
+  } catch (error) {
+    const message = error.name === 'AbortError' ? '網站資料讀取逾時，請稍後重新載入' : error.message;
+    Object.entries(SOURCE_NAMES).forEach(([source, name]) => {
+      updateSourceStatus(source, allDisasters.some(item => item.source === name) ? 'stale' : 'error', message);
+    });
+    badge.classList.toggle('hidden', !allDisasters.length);
+    document.getElementById('data-updated-at').textContent = message;
+    showToast(message);
+  } finally {
+    allDisasters.forEach(correctTaiwanCountry);
+    filterAndDisplayData();
+    renderSourceDetails();
+    button.disabled = false;
+    label.textContent = '重新載入資料';
+    loader.style.display = 'none';
+    document.getElementById('sync-globe').classList.add('hidden');
+    loadingData = false;
   }
+  if (CONFIG.enableNominatim) enrichLocationsWithGeocoding();
+}
+
+function reloadSingleSource(sourceId) {
+  showToast(`${SOURCE_NAMES[sourceId]}：${sourceDetails[sourceId] || '尚未載入'}。重新載入網站最近一次排程資料。`);
+  return loadData();
 }
 
 // --- RSS/Atom/API 解析器 ---
@@ -1345,17 +1190,17 @@ function parseReliefWebAPI(jsonText) {
       const id = cleanId(`ReliefWeb_${item.id}`);
       const title = item.fields.title || "";
       const link = item.fields.url || "";
-      const pubDate = item.fields.date.created || "";
+      const pubDate = item.fields.date?.created || "";
       
       // 取得分類
       let type = "General";
-      if (item.fields.theme && item.fields.theme.length > 0) {
-        type = item.fields.theme[0].name;
+      if (item.fields.disaster_type && item.fields.disaster_type.length > 0) {
+        type = item.fields.disaster_type[0].name;
       }
       
       // 取得地理資訊與國家
       let country = "Global";
-      let lat = 0, lng = 0;
+      let lat = null, lng = null;
       if (item.fields.primary_country) {
         country = item.fields.primary_country.name;
         if (item.fields.primary_country.location) {
@@ -2598,7 +2443,7 @@ function focusOnMap(lat, lng, id) {
 
 // --- 匯出 CSV 報表 ---
 function exportToCSV() {
-  if (allDisasters.length === 0) {
+  if (currentFilteredDisasters.length === 0) {
     alert("目前沒有資料可匯出！");
     return;
   }
@@ -2608,8 +2453,8 @@ function exportToCSV() {
   
   const csvRows = [headers.join(",")];
 
-  // 遍歷當前載入的資料
-  allDisasters.forEach(d => {
+  // 與目前畫面的日期、來源及關鍵字篩選一致
+  currentFilteredDisasters.forEach(d => {
     const dateStr = formatDateRange(d.fromdate, d.todate, d.pubDate);
     const flag = getCountryFlag(d.country);
     const continent = getCountryContinent(d.country);
