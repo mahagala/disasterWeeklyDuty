@@ -2542,16 +2542,16 @@ function copyDisasterSummary(d) {
   
   const dmsLat = convertDecimalToDMS(d.lat, true);
   const dmsLng = convertDecimalToDMS(d.lng, false);
-  const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lng}` : "";
-  
-  // 組合成與 PPT 相符的「地點」儲存格內容（洲名 國名 詳細地址 座標 地圖）
+  // 純文字無法隱藏網址，改用較短的 Google 地圖網址格式
+  const mapUrl = d.lat !== null && d.lng !== null ? `https://www.google.com/maps?q=${d.lat},${d.lng}` : "";
+
+  // 組合成與 PPT 相符的「地點」儲存格內容（洲名 國名 詳細地址 座標）；地圖連結另外附加
   let locCellContent = `${continent} ${countryName}`;
   if (detailLocText) {
     locCellContent += `\n${detailLocText}`;
   }
   if (d.lat !== null && d.lng !== null) {
     locCellContent += `\n${dmsLat} ${dmsLng}`;
-    locCellContent += `\n${mapUrl}`;
   }
 
   let descText = "";
@@ -2584,34 +2584,38 @@ function copyDisasterSummary(d) {
   // 1. 純文字格式 (TSV) - 支援本機文字檔或 Excel 直貼
   const plainText = [
     formatCellForTSV(dateStr),
-    formatCellForTSV(locCellContent),
+    formatCellForTSV(mapUrl ? `${locCellContent}\n${mapUrl}` : locCellContent),
     formatCellForTSV(catInfo.name),
     formatCellForTSV(descText),
     formatCellForTSV(refUrls)
   ].join("\t");
 
   // 2. HTML 格式 (Table) - 支援 MS Word 與 PPT 表格「直接貼入多格」
-  const toHtmlTd = (val) => {
-    if (val === null || val === undefined) return `<td style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt; vertical-align: top;"></td>`;
-    let str = String(val).trim();
-    // 轉義 HTML 字元以防注入與破格
-    str = str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-    // 將換行符轉為 <br>
-    str = str.replace(/\n/g, "<br>");
-    return `<td style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt; vertical-align: top; line-height: 1.4;">${str}</td>`;
-  };
+  // 轉義 HTML 字元以防注入與破格，並將換行符轉為 <br>
+  const escapeCell = (val) => String(val ?? "").trim()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+    .replace(/\n/g, "<br>");
+  const toHtmlTd = (innerHtml) =>
+    `<td style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt; vertical-align: top; line-height: 1.4;">${innerHtml}</td>`;
+  // 與 PPTX 匯出一致：以短標題顯示超連結，隱藏冗長網址
+  const toHtmlLink = (url, label) => `<a href="${escapeCell(url)}">${escapeCell(label)}</a>`;
+
+  let locHtml = escapeCell(locCellContent);
+  if (mapUrl) {
+    locHtml += `<br>${toHtmlLink(mapUrl, showOriginalEnglish ? "📍 Google Maps" : "📍 Google 地圖")}`;
+  }
+  const refsHtml = refLinks.map(ref => toHtmlLink(ref.url, `• ${ref.title}`)).join("<br>");
 
   const htmlText = `<table style="border-collapse: collapse; font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt;"><tr style="font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif; font-size: 14pt;">` +
-    toHtmlTd(dateStr) +
-    toHtmlTd(locCellContent) +
-    toHtmlTd(catInfo.name) +
-    toHtmlTd(descText) +
-    toHtmlTd(refUrls) +
+    toHtmlTd(escapeCell(dateStr)) +
+    toHtmlTd(locHtml) +
+    toHtmlTd(escapeCell(catInfo.name)) +
+    toHtmlTd(escapeCell(descText)) +
+    toHtmlTd(refsHtml) +
     `</tr></table>`;
 
   // 執行複製：優先寫入富文字 (HTML) 與純文字雙重格式，若瀏覽器不支援則 fallback 至純文字
