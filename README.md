@@ -60,7 +60,15 @@ appname 以「機構或個人識別 + 用途 + 隨機字元」組合，例如 `m
 
 ## 本機開發
 
-需 Python 3.9+；網頁本身不需要 npm 安裝或建置。
+需 Python 3.9+；網頁本身不需要 npm 安裝或建置。程式碼只用 Python 標準函式庫與原生 JavaScript，Intel 與 Apple 晶片 Mac 皆可執行，差別只在工具安裝位置。
+
+先檢查環境，腳本會依晶片提示該用的 Homebrew 路徑、Node 與 Python 指令：
+
+```sh
+bash scripts/check_env.sh
+```
+
+若預設 `python3` 低於 3.9（例如 Anaconda 3.8），以下指令的 `python3` 請換成腳本建議的版本，例如 `python3.12`。兩台電腦輪流開發時，開始前先 `git pull`；本機跑 `update_feeds.py` 產生的 `data/` 改動不要提交，用 `git checkout -- data/` 還原。
 
 ```sh
 python3 scripts/update_feeds.py
