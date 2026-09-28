@@ -33,6 +33,17 @@ def valid_date(value):
         parsedate_to_datetime(value)
 
 
+def sanitize(body, source):
+    """Drop ReliefWeb links that echo the request URL, so the appname never reaches the public snapshot."""
+    if source != 'reliefweb':
+        return body
+    document = json.loads(body)
+    public = {key: document[key] for key in ('totalCount', 'count') if key in document}
+    public['data'] = [{key: record[key] for key in ('id', 'score', 'fields') if key in record}
+                      for record in document['data']]
+    return json.dumps(public, ensure_ascii=False, separators=(',', ':')).encode()
+
+
 def validate(body, source):
     if source == 'reliefweb':
         document = json.loads(body)
@@ -104,6 +115,7 @@ def update_one(key, source, url, directory, previous, now, appname=''):
     try:
         body = download(url)
         count = validate(body, source)
+        body = sanitize(body, source)
         temporary = path.with_suffix(path.suffix + '.tmp')
         temporary.write_bytes(body)
         temporary.replace(path)

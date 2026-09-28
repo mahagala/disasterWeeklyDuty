@@ -1,3 +1,4 @@
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -53,6 +54,21 @@ class FeedTests(unittest.TestCase):
         self.assertEqual(feeds.validate(body, 'reliefweb'), 1)
         with self.assertRaises(ValueError):
             feeds.validate(b'{"error":"denied"}', 'reliefweb')
+
+    def test_reliefweb_snapshot_hides_appname(self):
+        secret = 'approved-appname-123'
+        link = 'https://api.reliefweb.int/v2/reports?appname=' + secret
+        body = json.dumps({'href': link, 'links': {'self': {'href': link}, 'next': {'href': link + '&offset=1'}},
+                           'totalCount': 1, 'count': 1,
+                           'data': [{'id': 1, 'href': link, 'fields': {'title': 'Flood', 'url': 'https://reliefweb.int/report/example',
+                                                                       'date': {'created': '2026-09-28T01:00:00Z'}}}]}).encode()
+        with tempfile.TemporaryDirectory() as folder, patch.object(feeds, 'download', return_value=body):
+            _, result = feeds.update_one('reliefweb', 'reliefweb', 'https://example.org', Path(folder), {}, 'now', secret)
+            saved = (Path(folder) / 'reliefweb.json').read_bytes()
+        self.assertEqual(result['status'], 'ok')
+        self.assertNotIn(secret.encode(), saved)
+        self.assertEqual(feeds.validate(saved, 'reliefweb'), 1)
+        self.assertEqual(result['sha256'], hashlib.sha256(saved).hexdigest())
 
 
 if __name__ == '__main__':
