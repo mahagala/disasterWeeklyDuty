@@ -7,11 +7,65 @@
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
     <!--Records number 43-->
-    <!--Start 9/30/2026 1:09:10 AM-->
-    <!--=Start 9/30/2026 1:09:10 AM-->
+    <!--Start 9/30/2026 3:59:05 AM-->
+    <!--=Start 9/30/2026 3:59:05 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Tue, 29 Sep 2026 23:09:10 GMT</pubDate>
+    <pubDate>Wed, 30 Sep 2026 01:59:05 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Green notification for tropical cyclone RACHEL-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
+      <description>From 27/09/2026 to 29/09/2026, a Tropical Storm (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001329/1001329_11_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
+      <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
+      <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Tue, 29 Sep 2026 23:40:31 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Tue, 29 Sep 2026 21:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC1</dc:subject>
+      <guid isPermaLink="false">TC1001329</guid>
+      <geo:Point>
+        <geo:lat>16</geo:lat>
+        <geo:long>-105.7</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-119.551218312403 -93.5512183124029 3.74944359741588 29.7494435974159</gdacs:bbox>
+      <georss:point>16 -105.7</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001329/cap_1001329.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>11</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname>RACHEL-26</gdacs:eventname>
+      <gdacs:eventid>1001329</gdacs:eventid>
+      <gdacs:episodeid>11</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="194.4432">Tropical Storm (maximum wind speed of 194 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
+      <gdacs:country />
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001329/rss_1001329.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
     <item>
       <title>Green notification for tropical cyclone HANNA-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
       <description>From 28/09/2026 to 29/09/2026, a Tropical Storm (maximum wind speed of 74 km/h) HANNA-26 was active in Atlantic. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
@@ -182,7 +236,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001325</link>
       <pubDate>Mon, 21 Sep 2026 06:39:52 GMT</pubDate>
       <gdacs:dateadded>Mon, 21 Sep 2026 06:39:52 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Tue, 29 Sep 2026 23:05:15 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 01:55:22 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 21 Sep 2026 03:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Tue, 29 Sep 2026 21:00:00 GMT</gdacs:todate>
@@ -221,60 +275,6 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001325/rss_1001325.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green notification for tropical cyclone RACHEL-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 27/09/2026 to 29/09/2026, a Tropical Storm (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001329/1001329_11_tn.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
-      <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
-      <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Tue, 29 Sep 2026 21:04:07 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Tue, 29 Sep 2026 21:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC1</dc:subject>
-      <guid isPermaLink="false">TC1001329</guid>
-      <geo:Point>
-        <geo:lat>16</geo:lat>
-        <geo:long>-105.7</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-119.551218312403 -93.5512183124029 3.74944359741588 29.7494435974159</gdacs:bbox>
-      <georss:point>16 -105.7</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001329/cap_1001329.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>11</gdacs:version>
-      <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname>RACHEL-26</gdacs:eventname>
-      <gdacs:eventid>1001329</gdacs:eventid>
-      <gdacs:episodeid>11</gdacs:episodeid>
-      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="194.4432">Tropical Storm (maximum wind speed of 194 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
-      <gdacs:iso3>MEX</gdacs:iso3>
-      <gdacs:country>Mexico</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001329/rss_1001329.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -344,7 +344,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Tue, 29 Sep 2026 22:56:31 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 01:56:15 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Tue, 29 Sep 2026 18:00:00 GMT</gdacs:todate>
@@ -506,7 +506,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001326</link>
       <pubDate>Tue, 22 Sep 2026 20:06:51 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 20:06:51 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Tue, 29 Sep 2026 23:05:18 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 01:55:25 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 22 Sep 2026 18:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 24 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -2180,7 +2180,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001279</link>
       <pubDate>Wed, 01 Jul 2026 01:51:41 GMT</pubDate>
       <gdacs:dateadded>Wed, 01 Jul 2026 01:51:41 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Tue, 29 Sep 2026 23:05:36 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 01:55:39 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 01 Jul 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 11 Jul 2026 18:00:00 GMT</gdacs:todate>
@@ -2335,4 +2335,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 9/30/2026 1:11:12 AM-->
+</rss><!--End 9/30/2026 4:01:31 AM-->
