@@ -7,10 +7,10 @@
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
     <!--Records number 44-->
-    <!--Start 9/30/2026 5:19:09 PM-->
-    <!--=Start 9/30/2026 5:19:09 PM-->
+    <!--Start 9/30/2026 10:08:58 PM-->
+    <!--=Start 9/30/2026 10:08:58 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Wed, 30 Sep 2026 15:19:09 GMT</pubDate>
+    <pubDate>Wed, 30 Sep 2026 20:08:58 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green notification for tropical cyclone HANNA-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
@@ -122,13 +122,13 @@
     </item>
     <item>
       <title>Green notification for tropical cyclone RACHEL-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 27/09/2026 to 30/09/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <description>From 27/09/2026 to 30/09/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001329/1001329_14_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 30 Sep 2026 15:14:02 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 18:12:31 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 15:00:00 GMT</gdacs:todate>
@@ -157,8 +157,8 @@
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
       <gdacs:severity unit="km/h" value="194.4432">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 194 km/h)</gdacs:severity>
       <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (1030 in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
-      <gdacs:iso3>MEX</gdacs:iso3>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
       <gdacs:country>Mexico</gdacs:country>
       <gdacs:glide />
       <gdacs:mapimage />
@@ -175,14 +175,68 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green notification for tropical cyclone NOLO-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
+      <description>From 13/09/2026 to 30/09/2026, a Tropical Storm (maximum wind speed of 250 km/h) NOLO-26 was active in CentralPacific. The cyclone affects these countries: United States (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001321/1001321_40_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001321</link>
+      <pubDate>Sun, 13 Sep 2026 20:58:31 GMT</pubDate>
+      <gdacs:dateadded>Sun, 13 Sep 2026 20:58:31 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 30 Sep 2026 17:00:15 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 13 Sep 2026 21:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Wed, 30 Sep 2026 15:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC1</dc:subject>
+      <guid isPermaLink="false">TC1001321</guid>
+      <geo:Point>
+        <geo:lat>22</geo:lat>
+        <geo:long>-165</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-124.098847772175 -98.098847772175 8.35255053897855 34.3525505389785</gdacs:bbox>
+      <georss:point>22 -165</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001321/cap_1001321.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>40</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname>NOLO-26</gdacs:eventname>
+      <gdacs:eventid>1001321</gdacs:eventid>
+      <gdacs:episodeid>40</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="249.9984">Tropical Storm (maximum wind speed of 167 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
+      <gdacs:country>United States</gdacs:country>
+      <gdacs:glide>TC-2026-000184-MEX</gdacs:glide>
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001321/rss_1001321.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green notification for tropical cyclone TWENTYSIX-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 30/09/2026 to 30/09/2026, a Tropical Storm (maximum wind speed of 204 km/h) TWENTYSIX-26 was active in NWPacific. The cyclone affects these countries: Northern Mariana Islands (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <description>From 30/09/2026 to 30/09/2026, a Tropical Storm (maximum wind speed of 204 km/h) TWENTYSIX-26 was active in NWPacific. The cyclone affects these countries: Northern Mariana Islands (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001332/1001332_3_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001332</link>
       <pubDate>Wed, 30 Sep 2026 02:12:11 GMT</pubDate>
       <gdacs:dateadded>Wed, 30 Sep 2026 02:12:11 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 30 Sep 2026 14:58:11 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 16:56:48 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -211,9 +265,9 @@
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
       <gdacs:severity unit="km/h" value="203.7024">Tropical Storm (maximum wind speed of 204 km/h)</gdacs:severity>
       <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (49271 in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
-      <gdacs:iso3>MNP</gdacs:iso3>
-      <gdacs:country>Northern Mariana Islands</gdacs:country>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
+      <gdacs:country />
       <gdacs:glide />
       <gdacs:mapimage />
       <gdacs:maplink />
@@ -230,13 +284,13 @@
     </item>
     <item>
       <title>Green notification for tropical cyclone SURIGAE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 23/09/2026 to 30/09/2026, a Tropical Depression (maximum wind speed of 241 km/h) SURIGAE-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <description>From 23/09/2026 to 30/09/2026, a Tropical Depression (maximum wind speed of 241 km/h) SURIGAE-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001327/1001327_30_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 30 Sep 2026 15:16:39 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 19:56:59 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -265,8 +319,8 @@
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
       <gdacs:severity unit="km/h" value="240.7392">Tropical Depression (maximum wind speed of 56 km/h)</gdacs:severity>
       <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (1.375 million in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="1">Low</gdacs:vulnerability>
-      <gdacs:iso3>JPN</gdacs:iso3>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
       <gdacs:country>Japan</gdacs:country>
       <gdacs:glide />
       <gdacs:mapimage />
@@ -283,60 +337,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green notification for tropical cyclone NOLO-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 13/09/2026 to 30/09/2026, a Tropical Storm (maximum wind speed of 250 km/h) NOLO-26 was active in CentralPacific. The cyclone affects these countries: United States (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001321/1001321_39_tn.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001321</link>
-      <pubDate>Sun, 13 Sep 2026 20:58:31 GMT</pubDate>
-      <gdacs:dateadded>Sun, 13 Sep 2026 20:58:31 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 30 Sep 2026 10:00:21 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 13 Sep 2026 21:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Wed, 30 Sep 2026 09:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>2</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC1</dc:subject>
-      <guid isPermaLink="false">TC1001321</guid>
-      <geo:Point>
-        <geo:lat>22.4</geo:lat>
-        <geo:long>-164.6</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-143.434914900076 -117.434914900076 8.34660283495404 34.346602834954</gdacs:bbox>
-      <georss:point>22.4 -164.6</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001321/cap_1001321.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>39</gdacs:version>
-      <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname>NOLO-26</gdacs:eventname>
-      <gdacs:eventid>1001321</gdacs:eventid>
-      <gdacs:episodeid>39</gdacs:episodeid>
-      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="249.9984">Tropical Storm (maximum wind speed of 148 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3 />
-      <gdacs:country>United States</gdacs:country>
-      <gdacs:glide>TC-2026-000184-MEX</gdacs:glide>
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001321/rss_1001321.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Red notification for tropical cyclone POLO-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.222 million .</title>
       <description>From 21/09/2026 to 30/09/2026, a Tropical Depression (maximum wind speed of 287 km/h) POLO-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.222 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001325/1001325_38_tn.png" />
@@ -344,7 +344,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001325</link>
       <pubDate>Mon, 21 Sep 2026 06:39:52 GMT</pubDate>
       <gdacs:dateadded>Mon, 21 Sep 2026 06:39:52 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 30 Sep 2026 09:40:21 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 30 Sep 2026 17:00:41 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 21 Sep 2026 03:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 03:00:00 GMT</gdacs:todate>
@@ -2389,4 +2389,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 9/30/2026 5:20:54 PM-->
+</rss><!--End 9/30/2026 10:10:31 PM-->
