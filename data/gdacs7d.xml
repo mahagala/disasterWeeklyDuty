@@ -6,11 +6,11 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 390-->
-    <!--Start 10/2/2026 1:10:45 AM-->
-    <!--=Start 10/2/2026 1:10:45 AM-->
+    <!--Records number 392-->
+    <!--Start 10/2/2026 4:10:45 AM-->
+    <!--=Start 10/2/2026 4:10:45 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Thu, 01 Oct 2026 23:10:45 GMT</pubDate>
+    <pubDate>Fri, 02 Oct 2026 02:10:45 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_7d.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green flood alert in Mexico</title>
@@ -121,6 +121,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green earthquake (Magnitude 4.5M, Depth:65.032km) in Japan 01/10/2026 21:01 UTC, 41.6 million in 100km.</title>
+      <description>On 10/1/2026 9:01:41 PM, an earthquake occurred in Japan potentially affecting 41.6 million in 100km. The earthquake had Magnitude 4.5M, Depth:65.032km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1737158_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1568985</link>
+      <pubDate>Thu, 01 Oct 2026 23:24:05 GMT</pubDate>
+      <gdacs:dateadded>Thu, 01 Oct 2026 23:24:05 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:24:06 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Thu, 01 Oct 2026 21:01:41 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 01 Oct 2026 21:01:41 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ1</dc:subject>
+      <guid isPermaLink="false">EQ1568985</guid>
+      <geo:Point>
+        <geo:lat>36.0904</geo:lat>
+        <geo:long>139.7487</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>135.7487 143.7487 32.0904 40.0904</gdacs:bbox>
+      <georss:point>36.0904 139.7487</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1568985/cap_1568985.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>0</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1568985</gdacs:eventid>
+      <gdacs:episodeid>1737158</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="4.5">Magnitude 4.5M, Depth:65km</gdacs:severity>
+      <gdacs:population unit="in MMI IV" value="9025935">9 million in MMI IV</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>JPN</gdacs:iso3>
+      <gdacs:country>Japan</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1568985/rss_1568985.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green notification for tropical cyclone NINETEEN-E-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
       <description>From 29/09/2026 to 01/10/2026, a Tropical Depression (maximum wind speed of 56 km/h) NINETEEN-E-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001331/1001331_10_tn.png" />
@@ -182,7 +236,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 22:51:37 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:56:08 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 21:00:00 GMT</gdacs:todate>
@@ -398,7 +452,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001332</link>
       <pubDate>Wed, 30 Sep 2026 02:12:11 GMT</pubDate>
       <gdacs:dateadded>Wed, 30 Sep 2026 02:12:11 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 22:50:35 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 02 Oct 2026 01:30:13 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 18:00:00 GMT</gdacs:todate>
@@ -1363,6 +1417,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green forest fire notification in Brazil</title>
+      <description>On 19/09/2026, a forest fire started in Brazil,  until 01/10/2026.</description>
+      <enclosure type="image/png" length="1" url="" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032531</link>
+      <pubDate>Thu, 01 Oct 2026 23:12:27 GMT</pubDate>
+      <gdacs:dateadded>Thu, 01 Oct 2026 23:12:27 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:27 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>WF1</dc:subject>
+      <guid isPermaLink="false">WF1032531</guid>
+      <geo:Point>
+        <geo:lat>-6.6972384837226615</geo:lat>
+        <geo:long>-55.076532504736875</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-59.0765325047369 -51.0765325047369 -10.6972384837227 -2.69723848372266</gdacs:bbox>
+      <georss:point>-6.6972384837226615 -55.076532504736875</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032531/cap_1032531.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
+      <gdacs:version>0</gdacs:version>
+      <gdacs:eventtype>WF</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1032531</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="ha" value="7344">Green impact for forestfire in 7344 ha</gdacs:severity>
+      <gdacs:population unit="" value="1">1 people affected in the area</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>BRA</gdacs:iso3>
+      <gdacs:country>Brazil</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032531/rss_1032531.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green forest fire notification in Indonesia</title>
       <description>On 21/09/2026, a forest fire started in Indonesia,  until 01/10/2026.</description>
       <enclosure type="image/png" length="1" url="" />
@@ -2126,7 +2234,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032516</link>
       <pubDate>Thu, 01 Oct 2026 07:09:21 GMT</pubDate>
       <gdacs:dateadded>Thu, 01 Oct 2026 07:09:21 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:11:42 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:11:17 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -2135,12 +2243,12 @@
       <dc:subject>WF1</dc:subject>
       <guid isPermaLink="false">WF1032516</guid>
       <geo:Point>
-        <geo:lat>-12.789370987627558</geo:lat>
-        <geo:long>-54.0380409610917</geo:long>
+        <geo:lat>-12.787374235625128</geo:lat>
+        <geo:long>-54.038366595168945</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-58.0380409610917 -50.0380409610917 -16.7893709876276 -8.78937098762756</gdacs:bbox>
-      <georss:point>-12.789370987627558 -54.0380409610917</georss:point>
+      <gdacs:bbox>-58.0383665951689 -50.0383665951689 -16.7873742356251 -8.78737423562513</gdacs:bbox>
+      <georss:point>-12.787374235625128 -54.038366595168945</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032516/cap_1032516.xml</gdacs:cap>
       <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
       <gdacs:version>0</gdacs:version>
@@ -2151,9 +2259,9 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname />
       <gdacs:eventid>1032516</gdacs:eventid>
-      <gdacs:episodeid>3</gdacs:episodeid>
+      <gdacs:episodeid>4</gdacs:episodeid>
       <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="6981">Green impact for forestfire in 6981 ha</gdacs:severity>
+      <gdacs:severity unit="ha" value="7200">Green impact for forestfire in 7200 ha</gdacs:severity>
       <gdacs:population unit="" value="8">8 people affected in the area</gdacs:population>
       <gdacs:vulnerability value="0" />
       <gdacs:iso3>BRA</gdacs:iso3>
@@ -2180,7 +2288,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032515</link>
       <pubDate>Thu, 01 Oct 2026 03:11:13 GMT</pubDate>
       <gdacs:dateadded>Thu, 01 Oct 2026 03:11:13 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:31 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:13:37 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -2189,12 +2297,12 @@
       <dc:subject>WF1</dc:subject>
       <guid isPermaLink="false">WF1032515</guid>
       <geo:Point>
-        <geo:lat>-10.840657312605632</geo:lat>
-        <geo:long>-57.183788259665256</geo:long>
+        <geo:lat>-10.840212563837149</geo:lat>
+        <geo:long>-57.18429346158468</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-61.1837882596653 -53.1837882596653 -14.8406573126056 -6.84065731260563</gdacs:bbox>
-      <georss:point>-10.840657312605632 -57.183788259665256</georss:point>
+      <gdacs:bbox>-61.1842934615847 -53.1842934615847 -14.8402125638371 -6.84021256383715</gdacs:bbox>
+      <georss:point>-10.840212563837149 -57.18429346158468</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032515/cap_1032515.xml</gdacs:cap>
       <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
       <gdacs:version>0</gdacs:version>
@@ -2205,9 +2313,9 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname />
       <gdacs:eventid>1032515</gdacs:eventid>
-      <gdacs:episodeid>4</gdacs:episodeid>
+      <gdacs:episodeid>5</gdacs:episodeid>
       <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="5792">Green impact for forestfire in 5792 ha</gdacs:severity>
+      <gdacs:severity unit="ha" value="5857">Green impact for forestfire in 5857 ha</gdacs:severity>
       <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
       <gdacs:vulnerability value="0" />
       <gdacs:iso3>BRA</gdacs:iso3>
@@ -2666,7 +2774,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032505</link>
       <pubDate>Thu, 01 Oct 2026 15:13:47 GMT</pubDate>
       <gdacs:dateadded>Thu, 01 Oct 2026 15:13:47 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:12:14 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:13:55 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -3314,7 +3422,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032482</link>
       <pubDate>Wed, 30 Sep 2026 03:20:52 GMT</pubDate>
       <gdacs:dateadded>Wed, 30 Sep 2026 03:20:52 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:03 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:41 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -3632,7 +3740,7 @@
     </item>
     <item>
       <title>Green forest fire notification in Brazil</title>
-      <description>On 28/09/2026, a forest fire started in Brazil,  until 30/09/2026.</description>
+      <description>On 28/09/2026, a forest fire started in Brazil,  until 01/10/2026.</description>
       <enclosure type="image/png" length="1" url="" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032471</link>
@@ -4009,6 +4117,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green forest fire notification in Indonesia</title>
+      <description>On 19/09/2026, a forest fire started in Indonesia,  until 30/09/2026.</description>
+      <enclosure type="image/png" length="1" url="" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032448</link>
+      <pubDate>Mon, 28 Sep 2026 03:09:23 GMT</pubDate>
+      <gdacs:dateadded>Mon, 28 Sep 2026 03:09:23 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:13:07 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>WF1</dc:subject>
+      <guid isPermaLink="false">WF1032448</guid>
+      <geo:Point>
+        <geo:lat>0.19764926552584655</geo:lat>
+        <geo:long>116.80747512859574</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>112.807475128596 120.807475128596 -3.80235073447415 4.19764926552585</gdacs:bbox>
+      <georss:point>0.19764926552584655 116.80747512859574</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032448/cap_1032448.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
+      <gdacs:version>0</gdacs:version>
+      <gdacs:eventtype>WF</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1032448</gdacs:eventid>
+      <gdacs:episodeid>11</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="ha" value="6493">Green impact for forestfire in 6493 ha</gdacs:severity>
+      <gdacs:population unit="" value="22">22 people affected in the area</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>IDN</gdacs:iso3>
+      <gdacs:country>Indonesia</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032448/rss_1032448.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green forest fire notification in Brazil</title>
       <description>On 25/09/2026, a forest fire started in Brazil,  until 01/10/2026.</description>
       <enclosure type="image/png" length="1" url="" />
@@ -4124,7 +4286,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032441</link>
       <pubDate>Mon, 28 Sep 2026 11:13:11 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 11:13:11 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:17:28 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:17:39 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 17 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -4334,7 +4496,7 @@
     </item>
     <item>
       <title>Green forest fire notification in Australia</title>
-      <description>On 24/09/2026, a forest fire started in Australia,  until 30/09/2026.</description>
+      <description>On 24/09/2026, a forest fire started in Australia,  until 01/10/2026.</description>
       <enclosure type="image/png" length="1" url="" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032422</link>
@@ -4502,7 +4664,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032394</link>
       <pubDate>Fri, 25 Sep 2026 19:07:46 GMT</pubDate>
       <gdacs:dateadded>Fri, 25 Sep 2026 19:07:46 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:12:44 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:10 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -4511,12 +4673,12 @@
       <dc:subject>WF1</dc:subject>
       <guid isPermaLink="false">WF1032394</guid>
       <geo:Point>
-        <geo:lat>-4.5352097815867412</geo:lat>
-        <geo:long>152.22946459784936</geo:long>
+        <geo:lat>-4.535303296139622</geo:lat>
+        <geo:long>152.22906206300078</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>148.229464597849 156.229464597849 -8.53520978158674 -0.535209781586741</gdacs:bbox>
-      <georss:point>-4.5352097815867412 152.22946459784936</georss:point>
+      <gdacs:bbox>148.229062063001 156.229062063001 -8.53530329613962 -0.535303296139622</gdacs:bbox>
+      <georss:point>-4.535303296139622 152.22906206300078</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032394/cap_1032394.xml</gdacs:cap>
       <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
       <gdacs:version>0</gdacs:version>
@@ -4527,9 +4689,9 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname />
       <gdacs:eventid>1032394</gdacs:eventid>
-      <gdacs:episodeid>12</gdacs:episodeid>
+      <gdacs:episodeid>13</gdacs:episodeid>
       <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="8085">Green impact for forestfire in 8085 ha</gdacs:severity>
+      <gdacs:severity unit="ha" value="8128">Green impact for forestfire in 8128 ha</gdacs:severity>
       <gdacs:population unit="" value="2171">2171 people affected in the area</gdacs:population>
       <gdacs:vulnerability value="0" />
       <gdacs:iso3>PNG</gdacs:iso3>
@@ -4603,8 +4765,62 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green forest fire notification in Brazil</title>
+      <description>On 19/09/2026, a forest fire started in Brazil,  until 28/09/2026.</description>
+      <enclosure type="image/png" length="1" url="" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032386</link>
+      <pubDate>Fri, 25 Sep 2026 07:05:32 GMT</pubDate>
+      <gdacs:dateadded>Fri, 25 Sep 2026 07:05:32 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:13:11 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>WF1</dc:subject>
+      <guid isPermaLink="false">WF1032386</guid>
+      <geo:Point>
+        <geo:lat>-6.9267219914210214</geo:lat>
+        <geo:long>-42.909933175794677</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-46.9099331757947 -38.9099331757947 -10.926721991421 -2.92672199142102</gdacs:bbox>
+      <georss:point>-6.9267219914210214 -42.909933175794677</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032386/cap_1032386.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
+      <gdacs:version>0</gdacs:version>
+      <gdacs:eventtype>WF</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1032386</gdacs:eventid>
+      <gdacs:episodeid>9</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="ha" value="6294">Green impact for forestfire in 6294 ha</gdacs:severity>
+      <gdacs:population unit="" value="106">106 people affected in the area</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>BRA</gdacs:iso3>
+      <gdacs:country>Brazil</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032386/rss_1032386.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green forest fire notification in Australia</title>
-      <description>On 22/09/2026, a forest fire started in Australia,  until 29/09/2026.</description>
+      <description>On 22/09/2026, a forest fire started in Australia,  until 01/10/2026.</description>
       <enclosure type="image/png" length="1" url="" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032385</link>
@@ -4765,6 +4981,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green forest fire notification in Indonesia</title>
+      <description>On 18/09/2026, a forest fire started in Indonesia,  until 28/09/2026.</description>
+      <enclosure type="image/png" length="1" url="" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032349</link>
+      <pubDate>Wed, 23 Sep 2026 15:05:55 GMT</pubDate>
+      <gdacs:dateadded>Wed, 23 Sep 2026 15:05:55 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:14:53 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>WF1</dc:subject>
+      <guid isPermaLink="false">WF1032349</guid>
+      <geo:Point>
+        <geo:lat>-2.83788745431943</geo:lat>
+        <geo:long>112.65726931346664</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>108.657269313467 116.657269313467 -6.83788745431943 1.16211254568057</gdacs:bbox>
+      <georss:point>-2.83788745431943 112.65726931346664</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032349/cap_1032349.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
+      <gdacs:version>0</gdacs:version>
+      <gdacs:eventtype>WF</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1032349</gdacs:eventid>
+      <gdacs:episodeid>19</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="ha" value="6962">Green impact for forestfire in 6962 ha</gdacs:severity>
+      <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>IDN</gdacs:iso3>
+      <gdacs:country>Indonesia</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032349/rss_1032349.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green forest fire notification in Brazil</title>
       <description>On 19/09/2026, a forest fire started in Brazil,  until 30/09/2026.</description>
       <enclosure type="image/png" length="1" url="" />
@@ -4772,7 +5042,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032340</link>
       <pubDate>Tue, 22 Sep 2026 23:02:13 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 23:02:13 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:19 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:13:51 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -4781,12 +5051,12 @@
       <dc:subject>WF1</dc:subject>
       <guid isPermaLink="false">WF1032340</guid>
       <geo:Point>
-        <geo:lat>1.6008811580694224</geo:lat>
-        <geo:long>-55.893334674673874</geo:long>
+        <geo:lat>1.6013626967250791</geo:lat>
+        <geo:long>-55.893469828345459</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-59.8933346746739 -51.8933346746739 -2.39911884193058 5.60088115806942</gdacs:bbox>
-      <georss:point>1.6008811580694224 -55.893334674673874</georss:point>
+      <gdacs:bbox>-59.8934698283455 -51.8934698283455 -2.39863730327492 5.60136269672508</gdacs:bbox>
+      <georss:point>1.6013626967250791 -55.893469828345459</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032340/cap_1032340.xml</gdacs:cap>
       <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
       <gdacs:version>0</gdacs:version>
@@ -4797,9 +5067,9 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname />
       <gdacs:eventid>1032340</gdacs:eventid>
-      <gdacs:episodeid>31</gdacs:episodeid>
+      <gdacs:episodeid>32</gdacs:episodeid>
       <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="23405">Green impact for forestfire in 23405 ha</gdacs:severity>
+      <gdacs:severity unit="ha" value="23493">Green impact for forestfire in 23493 ha</gdacs:severity>
       <gdacs:population unit="" value="52">52 people affected in the area</gdacs:population>
       <gdacs:vulnerability value="0" />
       <gdacs:iso3>BRA</gdacs:iso3>
@@ -4826,7 +5096,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032327</link>
       <pubDate>Tue, 22 Sep 2026 15:06:19 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 15:06:19 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:18:43 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:17:15 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 17 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -4873,6 +5143,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green forest fire notification in Brazil</title>
+      <description>On 18/09/2026, a forest fire started in Brazil,  until 27/09/2026.</description>
+      <enclosure type="image/png" length="1" url="" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032325</link>
+      <pubDate>Tue, 22 Sep 2026 11:04:16 GMT</pubDate>
+      <gdacs:dateadded>Tue, 22 Sep 2026 11:04:16 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:15:33 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>WF1</dc:subject>
+      <guid isPermaLink="false">WF1032325</guid>
+      <geo:Point>
+        <geo:lat>-2.9039316156603583</geo:lat>
+        <geo:long>-57.801637429220193</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-61.8016374292202 -53.8016374292202 -6.90393161566036 1.09606838433964</gdacs:bbox>
+      <georss:point>-2.9039316156603583 -57.801637429220193</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032325/cap_1032325.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
+      <gdacs:version>0</gdacs:version>
+      <gdacs:eventtype>WF</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1032325</gdacs:eventid>
+      <gdacs:episodeid>18</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="ha" value="7007">Green impact for forestfire in 7007 ha</gdacs:severity>
+      <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>BRA</gdacs:iso3>
+      <gdacs:country>Brazil</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032325/rss_1032325.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green forest fire notification in Australia</title>
       <description>On 18/09/2026, a forest fire started in Australia,  until 28/09/2026.</description>
       <enclosure type="image/png" length="1" url="" />
@@ -4880,7 +5204,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032324</link>
       <pubDate>Tue, 22 Sep 2026 19:04:15 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 19:04:15 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:16:52 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:16:30 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -4889,12 +5213,12 @@
       <dc:subject>WF1</dc:subject>
       <guid isPermaLink="false">WF1032324</guid>
       <geo:Point>
-        <geo:lat>-16.960642434118391</geo:lat>
-        <geo:long>135.56686627040295</geo:long>
+        <geo:lat>-16.960581652150029</geo:lat>
+        <geo:long>135.56664452062543</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>131.566866270403 139.566866270403 -20.9606424341184 -12.9606424341184</gdacs:bbox>
-      <georss:point>-16.960642434118391 135.56686627040295</georss:point>
+      <gdacs:bbox>131.566644520625 139.566644520625 -20.96058165215 -12.96058165215</gdacs:bbox>
+      <georss:point>-16.960581652150029 135.56664452062543</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032324/cap_1032324.xml</gdacs:cap>
       <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
       <gdacs:version>0</gdacs:version>
@@ -4905,9 +5229,9 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname />
       <gdacs:eventid>1032324</gdacs:eventid>
-      <gdacs:episodeid>25</gdacs:episodeid>
+      <gdacs:episodeid>26</gdacs:episodeid>
       <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="62539">Green impact for forestfire in 62539 ha</gdacs:severity>
+      <gdacs:severity unit="ha" value="62628">Green impact for forestfire in 62628 ha</gdacs:severity>
       <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
       <gdacs:vulnerability value="0" />
       <gdacs:iso3>AUS</gdacs:iso3>
@@ -4919,6 +5243,60 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032324/rss_1032324.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green forest fire notification in Brazil</title>
+      <description>On 19/09/2026, a forest fire started in Brazil,  until 28/09/2026.</description>
+      <enclosure type="image/png" length="1" url="" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032323</link>
+      <pubDate>Tue, 22 Sep 2026 15:01:54 GMT</pubDate>
+      <gdacs:dateadded>Tue, 22 Sep 2026 15:01:54 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:37 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>WF1</dc:subject>
+      <guid isPermaLink="false">WF1032323</guid>
+      <geo:Point>
+        <geo:lat>-12.899860092925671</geo:lat>
+        <geo:long>-50.969333859729765</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-54.9693338597298 -46.9693338597298 -16.8998600929257 -8.89986009292567</gdacs:bbox>
+      <georss:point>-12.899860092925671 -50.969333859729765</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032323/cap_1032323.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
+      <gdacs:version>0</gdacs:version>
+      <gdacs:eventtype>WF</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1032323</gdacs:eventid>
+      <gdacs:episodeid>13</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="ha" value="11348">Green impact for forestfire in 11348 ha</gdacs:severity>
+      <gdacs:population unit="" value="4">4 people affected in the area</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>BRA</gdacs:iso3>
+      <gdacs:country>Brazil</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032323/rss_1032323.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -4988,7 +5366,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032229</link>
       <pubDate>Sat, 19 Sep 2026 23:00:47 GMT</pubDate>
       <gdacs:dateadded>Sat, 19 Sep 2026 23:00:47 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:14:11 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:13:16 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -5042,7 +5420,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032217</link>
       <pubDate>Sat, 19 Sep 2026 03:01:15 GMT</pubDate>
       <gdacs:dateadded>Sat, 19 Sep 2026 03:01:15 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:18:29 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:17:23 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 17 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 01 Oct 2026 00:00:00 GMT</gdacs:todate>
@@ -5051,12 +5429,12 @@
       <dc:subject>WF1</dc:subject>
       <guid isPermaLink="false">WF1032217</guid>
       <geo:Point>
-        <geo:lat>-11.370119662669889</geo:lat>
-        <geo:long>-43.414494088177413</geo:long>
+        <geo:lat>-11.380565439547262</geo:lat>
+        <geo:long>-43.424857242701471</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-47.4144940881774 -39.4144940881774 -15.3701196626699 -7.37011966266989</gdacs:bbox>
-      <georss:point>-11.370119662669889 -43.414494088177413</georss:point>
+      <gdacs:bbox>-47.4248572427015 -39.4248572427015 -15.3805654395473 -7.38056543954726</gdacs:bbox>
+      <georss:point>-11.380565439547262 -43.424857242701471</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032217/cap_1032217.xml</gdacs:cap>
       <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
       <gdacs:version>0</gdacs:version>
@@ -5067,9 +5445,9 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname />
       <gdacs:eventid>1032217</gdacs:eventid>
-      <gdacs:episodeid>29</gdacs:episodeid>
+      <gdacs:episodeid>30</gdacs:episodeid>
       <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="22325">Green impact for forestfire in 22325 ha</gdacs:severity>
+      <gdacs:severity unit="ha" value="25804">Green impact for forestfire in 25804 ha</gdacs:severity>
       <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
       <gdacs:vulnerability value="0" />
       <gdacs:iso3>BRA</gdacs:iso3>
@@ -5096,7 +5474,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1568826</link>
       <pubDate>Wed, 30 Sep 2026 22:10:38 GMT</pubDate>
       <gdacs:dateadded>Wed, 30 Sep 2026 22:10:38 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 00:00:54 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 02 Oct 2026 02:03:17 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 30 Sep 2026 21:55:26 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 21:55:26 GMT</gdacs:todate>
@@ -5420,7 +5798,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 22:51:25 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 02 Oct 2026 01:57:06 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -6770,7 +7148,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032469</link>
       <pubDate>Tue, 29 Sep 2026 15:09:59 GMT</pubDate>
       <gdacs:dateadded>Tue, 29 Sep 2026 15:09:59 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:11:05 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:11:46 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -7087,60 +7465,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green forest fire notification in Indonesia</title>
-      <description>On 19/09/2026, a forest fire started in Indonesia,  until 30/09/2026.</description>
-      <enclosure type="image/png" length="1" url="" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032448</link>
-      <pubDate>Mon, 28 Sep 2026 03:09:23 GMT</pubDate>
-      <gdacs:dateadded>Mon, 28 Sep 2026 03:09:23 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:43 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>2</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>WF1</dc:subject>
-      <guid isPermaLink="false">WF1032448</guid>
-      <geo:Point>
-        <geo:lat>0.19747190903714185</geo:lat>
-        <geo:long>116.80686546198038</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>112.80686546198 120.80686546198 -3.80252809096286 4.19747190903714</gdacs:bbox>
-      <georss:point>0.19747190903714185 116.80686546198038</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032448/cap_1032448.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
-      <gdacs:version>0</gdacs:version>
-      <gdacs:eventtype>WF</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1032448</gdacs:eventid>
-      <gdacs:episodeid>10</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="6395">Green impact for forestfire in 6395 ha</gdacs:severity>
-      <gdacs:population unit="" value="22">22 people affected in the area</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>IDN</gdacs:iso3>
-      <gdacs:country>Indonesia</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032448/rss_1032448.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green forest fire notification in Paraguay</title>
       <description>On 24/09/2026, a forest fire started in Paraguay,  until 30/09/2026.</description>
       <enclosure type="image/png" length="1" url="" />
@@ -7202,7 +7526,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032440</link>
       <pubDate>Mon, 28 Sep 2026 15:07:30 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 15:07:30 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:10:29 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:11:23 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -7256,7 +7580,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032439</link>
       <pubDate>Mon, 28 Sep 2026 15:08:27 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 15:08:27 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:11:26 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:01 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -7688,7 +8012,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032412</link>
       <pubDate>Sat, 26 Sep 2026 15:04:31 GMT</pubDate>
       <gdacs:dateadded>Sat, 26 Sep 2026 15:04:31 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:14:22 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:13:19 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -7898,114 +8222,6 @@
     </item>
     <item>
       <title>Green forest fire notification in Brazil</title>
-      <description>On 19/09/2026, a forest fire started in Brazil,  until 28/09/2026.</description>
-      <enclosure type="image/png" length="1" url="" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032386</link>
-      <pubDate>Fri, 25 Sep 2026 07:05:32 GMT</pubDate>
-      <gdacs:dateadded>Fri, 25 Sep 2026 07:05:32 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:39 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>2</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>WF1</dc:subject>
-      <guid isPermaLink="false">WF1032386</guid>
-      <geo:Point>
-        <geo:lat>-6.9247952058067437</geo:lat>
-        <geo:long>-42.91192011021036</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-46.9119201102104 -38.9119201102104 -10.9247952058067 -2.92479520580674</gdacs:bbox>
-      <georss:point>-6.9247952058067437 -42.91192011021036</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032386/cap_1032386.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
-      <gdacs:version>0</gdacs:version>
-      <gdacs:eventtype>WF</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1032386</gdacs:eventid>
-      <gdacs:episodeid>8</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="6055">Green impact for forestfire in 6055 ha</gdacs:severity>
-      <gdacs:population unit="" value="106">106 people affected in the area</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>BRA</gdacs:iso3>
-      <gdacs:country>Brazil</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032386/rss_1032386.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green forest fire notification in Indonesia</title>
-      <description>On 18/09/2026, a forest fire started in Indonesia,  until 28/09/2026.</description>
-      <enclosure type="image/png" length="1" url="" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032349</link>
-      <pubDate>Wed, 23 Sep 2026 15:05:55 GMT</pubDate>
-      <gdacs:dateadded>Wed, 23 Sep 2026 15:05:55 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:14:44 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>2</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>WF1</dc:subject>
-      <guid isPermaLink="false">WF1032349</guid>
-      <geo:Point>
-        <geo:lat>-2.83788745431943</geo:lat>
-        <geo:long>112.65726931346664</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>108.657269313467 116.657269313467 -6.83788745431943 1.16211254568057</gdacs:bbox>
-      <georss:point>-2.83788745431943 112.65726931346664</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032349/cap_1032349.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
-      <gdacs:version>0</gdacs:version>
-      <gdacs:eventtype>WF</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1032349</gdacs:eventid>
-      <gdacs:episodeid>18</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="6962">Green impact for forestfire in 6962 ha</gdacs:severity>
-      <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>IDN</gdacs:iso3>
-      <gdacs:country>Indonesia</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032349/rss_1032349.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green forest fire notification in Brazil</title>
       <description>On 16/09/2026, a forest fire started in Brazil,  until 28/09/2026.</description>
       <enclosure type="image/png" length="1" url="" />
       <gdacs:temporary>false</gdacs:temporary>
@@ -8060,67 +8276,13 @@
     </item>
     <item>
       <title>Green forest fire notification in Brazil</title>
-      <description>On 18/09/2026, a forest fire started in Brazil,  until 27/09/2026.</description>
-      <enclosure type="image/png" length="1" url="" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032325</link>
-      <pubDate>Tue, 22 Sep 2026 11:04:16 GMT</pubDate>
-      <gdacs:dateadded>Tue, 22 Sep 2026 11:04:16 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:17:07 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>2</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>WF1</dc:subject>
-      <guid isPermaLink="false">WF1032325</guid>
-      <geo:Point>
-        <geo:lat>-2.9039322688079867</geo:lat>
-        <geo:long>-57.801639434268367</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-61.8016394342684 -53.8016394342684 -6.90393226880799 1.09606773119201</gdacs:bbox>
-      <georss:point>-2.9039322688079867 -57.801639434268367</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032325/cap_1032325.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
-      <gdacs:version>0</gdacs:version>
-      <gdacs:eventtype>WF</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1032325</gdacs:eventid>
-      <gdacs:episodeid>17</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="7006">Green impact for forestfire in 7006 ha</gdacs:severity>
-      <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>BRA</gdacs:iso3>
-      <gdacs:country>Brazil</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032325/rss_1032325.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green forest fire notification in Brazil</title>
       <description>On 19/09/2026, a forest fire started in Brazil,  until 30/09/2026.</description>
       <enclosure type="image/png" length="1" url="" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032305</link>
       <pubDate>Tue, 22 Sep 2026 07:02:28 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 07:02:28 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:12:59 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:19 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -8174,7 +8336,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032262</link>
       <pubDate>Sun, 20 Sep 2026 19:48:49 GMT</pubDate>
       <gdacs:dateadded>Sun, 20 Sep 2026 19:48:49 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:16:21 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:14:32 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -9902,7 +10064,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032477</link>
       <pubDate>Tue, 29 Sep 2026 19:12:12 GMT</pubDate>
       <gdacs:dateadded>Tue, 29 Sep 2026 19:12:12 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:10:11 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:10:56 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Tue, 29 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -10766,7 +10928,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032347</link>
       <pubDate>Wed, 23 Sep 2026 15:01:41 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 15:01:41 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:10:01 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:11:53 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Tue, 29 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -10913,60 +11075,6 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032344/rss_1032344.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green forest fire notification in Brazil</title>
-      <description>On 19/09/2026, a forest fire started in Brazil,  until 28/09/2026.</description>
-      <enclosure type="image/png" length="1" url="" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032323</link>
-      <pubDate>Tue, 22 Sep 2026 15:01:54 GMT</pubDate>
-      <gdacs:dateadded>Tue, 22 Sep 2026 15:01:54 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:56 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Tue, 29 Sep 2026 00:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>1</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>WF1</dc:subject>
-      <guid isPermaLink="false">WF1032323</guid>
-      <geo:Point>
-        <geo:lat>-12.902362491623242</geo:lat>
-        <geo:long>-50.966721977959892</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-54.9667219779599 -46.9667219779599 -16.9023624916232 -8.90236249162324</gdacs:bbox>
-      <georss:point>-12.902362491623242 -50.966721977959892</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/WF/1032323/cap_1032323.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/WF.png</gdacs:icon>
-      <gdacs:version>0</gdacs:version>
-      <gdacs:eventtype>WF</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1032323</gdacs:eventid>
-      <gdacs:episodeid>12</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="ha" value="10827">Green impact for forestfire in 10827 ha</gdacs:severity>
-      <gdacs:population unit="" value="0">0 people affected in the area</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>BRA</gdacs:iso3>
-      <gdacs:country>Brazil</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/WF/1032323/rss_1032323.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -11144,7 +11252,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032256</link>
       <pubDate>Sun, 20 Sep 2026 07:01:38 GMT</pubDate>
       <gdacs:dateadded>Sun, 20 Sep 2026 07:01:38 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:15:06 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:15:02 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Tue, 29 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -12981,7 +13089,7 @@
       <pubDate>Thu, 01 Oct 2026 09:52:43 GMT</pubDate>
       <gdacs:dateadded>Thu, 01 Oct 2026 09:52:43 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 09:52:43 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 26 Sep 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13035,7 +13143,7 @@
       <pubDate>Wed, 30 Sep 2026 05:14:50 GMT</pubDate>
       <gdacs:dateadded>Wed, 30 Sep 2026 05:14:50 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 30 Sep 2026 05:14:50 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 26 Sep 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13089,7 +13197,7 @@
       <pubDate>Thu, 17 Sep 2026 10:34:34 GMT</pubDate>
       <gdacs:dateadded>Thu, 17 Sep 2026 10:34:34 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 06:32:55 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 15 Sep 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -13143,7 +13251,7 @@
       <pubDate>Thu, 27 Aug 2026 09:43:25 GMT</pubDate>
       <gdacs:dateadded>Thu, 27 Aug 2026 09:43:25 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 30 Sep 2026 12:04:55 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 18 Aug 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>6</gdacs:durationinweek>
@@ -13197,7 +13305,7 @@
       <pubDate>Thu, 27 Aug 2026 08:14:48 GMT</pubDate>
       <gdacs:dateadded>Thu, 27 Aug 2026 08:14:48 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 29 Sep 2026 11:25:14 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 09 Aug 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>7</gdacs:durationinweek>
@@ -13251,7 +13359,7 @@
       <pubDate>Tue, 18 Aug 2026 12:27:42 GMT</pubDate>
       <gdacs:dateadded>Tue, 18 Aug 2026 12:27:42 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 30 Sep 2026 05:14:36 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 17 Aug 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>6</gdacs:durationinweek>
@@ -13305,7 +13413,7 @@
       <pubDate>Fri, 10 Jul 2026 06:58:25 GMT</pubDate>
       <gdacs:dateadded>Fri, 10 Jul 2026 06:58:25 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 10:04:17 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 04 Jul 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>12</gdacs:durationinweek>
@@ -13359,7 +13467,7 @@
       <pubDate>Mon, 28 Sep 2026 04:49:47 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 04:49:47 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 04:49:49 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 28 Sep 2026 00:54:43 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:54:43 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13413,7 +13521,7 @@
       <pubDate>Mon, 28 Sep 2026 04:07:24 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 04:07:24 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 04:07:24 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 28 Sep 2026 00:47:33 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:47:33 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13467,7 +13575,7 @@
       <pubDate>Mon, 28 Sep 2026 03:24:23 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 03:24:23 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 03:24:23 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 28 Sep 2026 00:37:59 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:37:59 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13521,7 +13629,7 @@
       <pubDate>Tue, 29 Sep 2026 03:03:11 GMT</pubDate>
       <gdacs:dateadded>Tue, 29 Sep 2026 03:03:11 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 29 Sep 2026 03:03:11 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13575,7 +13683,7 @@
       <pubDate>Thu, 01 Oct 2026 23:01:26 GMT</pubDate>
       <gdacs:dateadded>Thu, 01 Oct 2026 23:01:26 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:01:25 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13629,7 +13737,7 @@
       <pubDate>Thu, 01 Oct 2026 23:08:02 GMT</pubDate>
       <gdacs:dateadded>Thu, 01 Oct 2026 23:08:02 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:08:02 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -13683,7 +13791,7 @@
       <pubDate>Thu, 01 Oct 2026 23:05:51 GMT</pubDate>
       <gdacs:dateadded>Thu, 01 Oct 2026 23:05:51 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:05:51 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 25 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13737,7 +13845,7 @@
       <pubDate>Mon, 28 Sep 2026 15:16:51 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 15:16:51 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 19:19:04 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 16 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -13791,7 +13899,7 @@
       <pubDate>Mon, 28 Sep 2026 07:02:13 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 07:02:13 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:06:36 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 24 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -13845,7 +13953,7 @@
       <pubDate>Mon, 28 Sep 2026 15:25:49 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 15:25:49 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 19:25:12 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 13 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -13899,7 +14007,7 @@
       <pubDate>Mon, 28 Sep 2026 15:03:50 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 15:03:50 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:04:19 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 25 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -13953,7 +14061,7 @@
       <pubDate>Mon, 28 Sep 2026 03:01:43 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 03:01:43 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:03:35 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -14007,7 +14115,7 @@
       <pubDate>Mon, 28 Sep 2026 07:19:26 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 07:19:26 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 19:25:51 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 13 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -14061,7 +14169,7 @@
       <pubDate>Sun, 27 Sep 2026 15:13:19 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 15:13:19 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 30 Sep 2026 19:22:45 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 15 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -14115,7 +14223,7 @@
       <pubDate>Sun, 27 Sep 2026 03:02:55 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 03:02:55 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:07:19 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14169,7 +14277,7 @@
       <pubDate>Sun, 27 Sep 2026 03:02:02 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 03:02:02 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:07:07 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 24 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14223,7 +14331,7 @@
       <pubDate>Sat, 26 Sep 2026 07:00:41 GMT</pubDate>
       <gdacs:dateadded>Sat, 26 Sep 2026 07:00:41 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:07:41 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14277,7 +14385,7 @@
       <pubDate>Fri, 25 Sep 2026 03:01:30 GMT</pubDate>
       <gdacs:dateadded>Fri, 25 Sep 2026 03:01:30 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:07:36 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14331,7 +14439,7 @@
       <pubDate>Wed, 23 Sep 2026 11:16:59 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 11:16:59 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 19:25:25 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 13 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -14385,7 +14493,7 @@
       <pubDate>Tue, 22 Sep 2026 23:01:40 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 23:01:40 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 23:10:04 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14438,8 +14546,8 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032321</link>
       <pubDate>Tue, 22 Sep 2026 15:02:01 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 15:02:01 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:14:34 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:14:22 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14492,8 +14600,8 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032318</link>
       <pubDate>Tue, 22 Sep 2026 15:01:21 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 15:01:21 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:10:21 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:11:35 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14547,7 +14655,7 @@
       <pubDate>Mon, 21 Sep 2026 19:14:51 GMT</pubDate>
       <gdacs:dateadded>Mon, 21 Sep 2026 19:14:51 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 30 Sep 2026 19:21:26 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 15 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -14601,7 +14709,7 @@
       <pubDate>Mon, 21 Sep 2026 06:28:25 GMT</pubDate>
       <gdacs:dateadded>Mon, 21 Sep 2026 06:28:25 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 29 Sep 2026 19:28:52 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 14 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -14654,8 +14762,8 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032285</link>
       <pubDate>Mon, 21 Sep 2026 06:20:42 GMT</pubDate>
       <gdacs:dateadded>Mon, 21 Sep 2026 06:20:42 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:16:08 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:16:36 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -14709,7 +14817,7 @@
       <pubDate>Thu, 17 Sep 2026 11:03:19 GMT</pubDate>
       <gdacs:dateadded>Thu, 17 Sep 2026 11:03:19 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 19:26:31 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 13 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -14763,7 +14871,7 @@
       <pubDate>Tue, 15 Sep 2026 15:01:24 GMT</pubDate>
       <gdacs:dateadded>Tue, 15 Sep 2026 15:01:24 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 19:26:06 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 13 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 28 Sep 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>2</gdacs:durationinweek>
@@ -14817,7 +14925,7 @@
       <pubDate>Mon, 28 Sep 2026 02:53:23 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 02:53:23 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 02:53:24 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 23:55:48 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 27 Sep 2026 23:55:48 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -16274,7 +16382,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032397</link>
       <pubDate>Fri, 25 Sep 2026 19:02:25 GMT</pubDate>
       <gdacs:dateadded>Fri, 25 Sep 2026 19:02:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:11:31 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:10:52 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 27 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -16436,7 +16544,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032342</link>
       <pubDate>Tue, 22 Sep 2026 23:06:25 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 23:06:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:17:46 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:17:26 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 17 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 27 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -18650,7 +18758,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032401</link>
       <pubDate>Sat, 26 Sep 2026 07:04:44 GMT</pubDate>
       <gdacs:dateadded>Sat, 26 Sep 2026 07:04:44 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:51 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:48 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -18704,7 +18812,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032393</link>
       <pubDate>Fri, 25 Sep 2026 19:03:38 GMT</pubDate>
       <gdacs:dateadded>Fri, 25 Sep 2026 19:03:38 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:11:46 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:11:57 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 20 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -19028,7 +19136,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032360</link>
       <pubDate>Thu, 24 Sep 2026 15:02:34 GMT</pubDate>
       <gdacs:dateadded>Thu, 24 Sep 2026 15:02:34 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:14:17 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:12:32 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -19190,7 +19298,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032328</link>
       <pubDate>Tue, 22 Sep 2026 15:05:55 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 15:05:55 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:17:52 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:17:44 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 17 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -19244,7 +19352,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032320</link>
       <pubDate>Tue, 22 Sep 2026 19:02:30 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 19:02:30 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:13:12 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:14:06 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sat, 19 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -19352,7 +19460,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=WF&amp;eventid=1032297</link>
       <pubDate>Mon, 21 Sep 2026 11:04:35 GMT</pubDate>
       <gdacs:dateadded>Mon, 21 Sep 2026 11:04:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 01 Oct 2026 19:15:46 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 01 Oct 2026 23:15:49 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 18 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 26 Sep 2026 00:00:00 GMT</gdacs:todate>
@@ -21073,4 +21181,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/2/2026 1:12:08 AM-->
+</rss><!--End 10/2/2026 4:12:04 AM-->
