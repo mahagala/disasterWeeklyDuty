@@ -6,12 +6,66 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 7-->
-    <!--Start 10/8/2026 8:07:38 AM-->
-    <!--=Start 10/8/2026 8:07:38 AM-->
+    <!--Records number 8-->
+    <!--Start 10/8/2026 3:37:42 PM-->
+    <!--=Start 10/8/2026 3:37:42 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Thu, 08 Oct 2026 06:07:38 GMT</pubDate>
+    <pubDate>Thu, 08 Oct 2026 13:37:42 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_eq_3m.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orange earthquake (Magnitude 6.3M, Depth:10km) in Vanuatu 08/10/2026 09:00 UTC, 10 thousand (in MMI&gt;=VII).</title>
+      <description>On 10/8/2026 9:00:07 AM, an earthquake occurred in Vanuatu potentially affecting 10 thousand (in MMI&gt;=VII). The earthquake had Magnitude 6.3M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1738390_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570077</link>
+      <pubDate>Thu, 08 Oct 2026 09:09:40 GMT</pubDate>
+      <gdacs:dateadded>Thu, 08 Oct 2026 09:09:40 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 08 Oct 2026 12:02:03 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Thu, 08 Oct 2026 09:00:07 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 08 Oct 2026 09:00:07 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ2</dc:subject>
+      <guid isPermaLink="false">EQ1570077</guid>
+      <geo:Point>
+        <geo:lat>-15.5411</geo:lat>
+        <geo:long>168.1889</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>164.1889 172.1889 -19.5411 -11.5411</gdacs:bbox>
+      <georss:point>-15.5411 168.1889</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1570077/cap_1570077.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>1.18722060465239</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1570077</gdacs:eventid>
+      <gdacs:episodeid>1738390</gdacs:episodeid>
+      <gdacs:calculationtype>tsunami</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="6.3">Magnitude 6.3M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="10680">10 thousand (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>VUT</gdacs:iso3>
+      <gdacs:country>Vanuatu</gdacs:country>
+      <gdacs:glide>EQ-2026-000186-VUT</gdacs:glide>
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1570077/rss_1570077.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
     <item>
       <title>Orange earthquake (Magnitude 5M, Depth:10km) in China 28/08/2026 05:13 UTC, 15.8 million in 100km.</title>
       <description>On 8/28/2026 5:13:35 AM, an earthquake occurred in China potentially affecting 15.8 million in 100km. The earthquake had Magnitude 5M, Depth:10km.</description>
@@ -391,4 +445,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/8/2026 8:07:40 AM-->
+</rss><!--End 10/8/2026 3:37:43 PM-->
