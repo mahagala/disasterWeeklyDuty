@@ -6,12 +6,66 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 8-->
-    <!--Start 10/9/2026 3:27:37 PM-->
-    <!--=Start 10/9/2026 3:27:37 PM-->
+    <!--Records number 9-->
+    <!--Start 10/9/2026 8:57:39 PM-->
+    <!--=Start 10/9/2026 8:57:39 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Fri, 09 Oct 2026 13:27:37 GMT</pubDate>
+    <pubDate>Fri, 09 Oct 2026 18:57:39 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_eq_3m.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orange earthquake (Magnitude 7.7M, Depth:12.647km) in Panama 09/10/2026 17:56 UTC, 350 thousand (in MMI&gt;=VII).</title>
+      <description>On 10/9/2026 5:56:06 PM, an earthquake occurred in Panama potentially affecting 350 thousand (in MMI&gt;=VII). The earthquake had Magnitude 7.7M, Depth:12.647km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1738684_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570339</link>
+      <pubDate>Fri, 09 Oct 2026 18:04:04 GMT</pubDate>
+      <gdacs:dateadded>Fri, 09 Oct 2026 18:04:04 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Fri, 09 Oct 2026 18:40:09 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 09 Oct 2026 17:56:06 GMT</gdacs:fromdate>
+      <gdacs:todate>Fri, 09 Oct 2026 17:56:06 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ2</dc:subject>
+      <guid isPermaLink="false">EQ1570339</guid>
+      <geo:Point>
+        <geo:lat>7.5868</geo:lat>
+        <geo:long>-80.769</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-84.769 -76.769 3.5868 11.5868</gdacs:bbox>
+      <georss:point>7.5868 -80.769</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1570339/cap_1570339.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>1.55667218407521</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1570339</gdacs:eventid>
+      <gdacs:episodeid>1738684</gdacs:episodeid>
+      <gdacs:calculationtype>tsunami</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="7.7">Magnitude 7.7M, Depth:12.6km</gdacs:severity>
+      <gdacs:population unit="(in MMI&gt;=VII)" value="353124">350 thousand (in MMI&gt;=VII)</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>PAN</gdacs:iso3>
+      <gdacs:country>Panama</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1570339/rss_1570339.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
     <item>
       <title>Orange earthquake (Magnitude 6.3M, Depth:10km) in Vanuatu 08/10/2026 09:00 UTC, 10 thousand (in MMI&gt;=VII).</title>
       <description>On 10/8/2026 9:00:07 AM, an earthquake occurred in Vanuatu potentially affecting 10 thousand (in MMI&gt;=VII). The earthquake had Magnitude 6.3M, Depth:10km.</description>
@@ -20,7 +74,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570077</link>
       <pubDate>Thu, 08 Oct 2026 09:09:40 GMT</pubDate>
       <gdacs:dateadded>Thu, 08 Oct 2026 09:09:40 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 08 Oct 2026 12:02:03 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 09 Oct 2026 15:01:35 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Thu, 08 Oct 2026 09:00:07 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 08 Oct 2026 09:00:07 GMT</gdacs:todate>
@@ -445,4 +499,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/9/2026 3:27:39 PM-->
+</rss><!--End 10/9/2026 8:57:41 PM-->
