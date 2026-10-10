@@ -7,20 +7,20 @@
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
     <!--Records number 45-->
-    <!--Start 10/10/2026 5:49:25 PM-->
-    <!--=Start 10/10/2026 5:49:25 PM-->
+    <!--Start 10/10/2026 9:59:17 PM-->
+    <!--=Start 10/10/2026 9:59:17 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Sat, 10 Oct 2026 15:49:25 GMT</pubDate>
+    <pubDate>Sat, 10 Oct 2026 19:59:17 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green notification for tropical cyclone RACHEL-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 27/09/2026 to 10/10/2026, a Tropical Storm (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <description>From 27/09/2026 to 10/10/2026, a Tropical Storm (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001329/1001329_54_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sat, 10 Oct 2026 15:13:40 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sat, 10 Oct 2026 19:58:00 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 10 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -49,8 +49,8 @@
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
       <gdacs:severity unit="km/h" value="194.4432">Tropical Storm (maximum wind speed of 102 km/h)</gdacs:severity>
       <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (20.413 million in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
-      <gdacs:iso3>MEX</gdacs:iso3>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
       <gdacs:country>Mexico</gdacs:country>
       <gdacs:glide />
       <gdacs:mapimage />
@@ -74,7 +74,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001335</link>
       <pubDate>Wed, 07 Oct 2026 15:33:28 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 15:33:28 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sat, 10 Oct 2026 14:57:39 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sat, 10 Oct 2026 16:27:32 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 15:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 10 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -128,7 +128,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sat, 10 Oct 2026 15:15:33 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sat, 10 Oct 2026 16:57:47 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 10 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -182,7 +182,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001333</link>
       <pubDate>Mon, 05 Oct 2026 02:11:52 GMT</pubDate>
       <gdacs:dateadded>Mon, 05 Oct 2026 02:11:52 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sat, 10 Oct 2026 14:27:41 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sat, 10 Oct 2026 19:56:52 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 05 Oct 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 10 Oct 2026 12:00:00 GMT</gdacs:todate>
@@ -237,7 +237,7 @@
       <pubDate>Wed, 30 Sep 2026 02:12:11 GMT</pubDate>
       <gdacs:dateadded>Wed, 30 Sep 2026 02:12:11 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 07 Oct 2026 05:31:26 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 30 Sep 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Tue, 06 Oct 2026 18:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -452,7 +452,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sat, 10 Oct 2026 15:43:26 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sat, 10 Oct 2026 19:57:44 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -2443,4 +2443,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/10/2026 5:51:10 PM-->
+</rss><!--End 10/10/2026 10:01:30 PM-->
