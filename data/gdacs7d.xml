@@ -6,11 +6,11 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 425-->
-    <!--Start 10/11/2026 5:41:09 PM-->
-    <!--=Start 10/11/2026 5:41:09 PM-->
+    <!--Records number 427-->
+    <!--Start 10/11/2026 9:40:58 PM-->
+    <!--=Start 10/11/2026 9:40:58 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Sun, 11 Oct 2026 15:41:09 GMT</pubDate>
+    <pubDate>Sun, 11 Oct 2026 19:40:58 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_7d.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green flood alert in Italy</title>
@@ -59,6 +59,222 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/FL/1104220/rss_1104220.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green earthquake (Magnitude 4.7M, Depth:10km) in Tonga Islands Region 11/10/2026 18:06 UTC, No people affected in 100km.</title>
+      <description>On 10/11/2026 6:06:35 PM, an earthquake occurred in Tonga Islands Region potentially affecting No people affected in 100km. The earthquake had Magnitude 4.7M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1739300_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570871</link>
+      <pubDate>Sun, 11 Oct 2026 19:17:04 GMT</pubDate>
+      <gdacs:dateadded>Sun, 11 Oct 2026 19:17:04 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Sun, 11 Oct 2026 19:17:04 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 11 Oct 2026 18:06:35 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 11 Oct 2026 18:06:35 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ1</dc:subject>
+      <guid isPermaLink="false">EQ1570871</guid>
+      <geo:Point>
+        <geo:lat>-19.3844</geo:lat>
+        <geo:long>-172.7162</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-176.7162 -168.7162 -23.3844 -15.3844</gdacs:bbox>
+      <georss:point>-19.3844 -172.7162</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1570871/cap_1570871.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>0</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1570871</gdacs:eventid>
+      <gdacs:episodeid>1739300</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="4.7">Magnitude 4.7M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="in MMI -" value="0" />
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3 />
+      <gdacs:country>Tonga Islands Region</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1570871/rss_1570871.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green earthquake (Magnitude 4.8M, Depth:10km) in Panama 11/10/2026 17:11 UTC, 420 thousand in 100km.</title>
+      <description>On 10/11/2026 5:11:29 PM, an earthquake occurred in Panama potentially affecting 420 thousand in 100km. The earthquake had Magnitude 4.8M, Depth:10km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1739287_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570859</link>
+      <pubDate>Sun, 11 Oct 2026 18:10:04 GMT</pubDate>
+      <gdacs:dateadded>Sun, 11 Oct 2026 18:10:04 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Sun, 11 Oct 2026 18:10:04 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 11 Oct 2026 17:11:29 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 11 Oct 2026 17:11:29 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ1</dc:subject>
+      <guid isPermaLink="false">EQ1570859</guid>
+      <geo:Point>
+        <geo:lat>7.7084</geo:lat>
+        <geo:long>-81.6209</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-85.6209 -77.6209 3.7084 11.7084</gdacs:bbox>
+      <georss:point>7.7084 -81.6209</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1570859/cap_1570859.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>0</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1570859</gdacs:eventid>
+      <gdacs:episodeid>1739287</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="4.8">Magnitude 4.8M, Depth:10km</gdacs:severity>
+      <gdacs:population unit="in MMI&gt;=IV" value="19947">20 thousand in MMI&gt;=IV</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>PAN</gdacs:iso3>
+      <gdacs:country>Panama</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1570859/rss_1570859.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green earthquake (Magnitude 5.2M, Depth:83.386km) in Russia 11/10/2026 17:00 UTC, Few people affected in 100km.</title>
+      <description>On 10/11/2026 5:00:29 PM, an earthquake occurred in Russia potentially affecting Few people affected in 100km. The earthquake had Magnitude 5.2M, Depth:83.386km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1739278_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570850</link>
+      <pubDate>Sun, 11 Oct 2026 17:24:38 GMT</pubDate>
+      <gdacs:dateadded>Sun, 11 Oct 2026 17:24:38 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Sun, 11 Oct 2026 17:40:42 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 11 Oct 2026 17:00:29 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 11 Oct 2026 17:00:29 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ1</dc:subject>
+      <guid isPermaLink="false">EQ1570850</guid>
+      <geo:Point>
+        <geo:lat>49.7885</geo:lat>
+        <geo:long>155.7863</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>151.7863 159.7863 45.7885 53.7885</gdacs:bbox>
+      <georss:point>49.7885 155.7863</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1570850/cap_1570850.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>0</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1570850</gdacs:eventid>
+      <gdacs:episodeid>1739278</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="5.2">Magnitude 5.2M, Depth:83.4km</gdacs:severity>
+      <gdacs:population unit="in MMI&gt;=III" value="1415">1 thousand in MMI&gt;=III</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>RUS</gdacs:iso3>
+      <gdacs:country>Russia</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1570850/rss_1570850.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green earthquake (Magnitude 4.7M, Depth:55.788km) in Japan 11/10/2026 16:24 UTC, 34.7 million in 100km.</title>
+      <description>On 10/11/2026 4:24:25 PM, an earthquake occurred in Japan potentially affecting 34.7 million in 100km. The earthquake had Magnitude 4.7M, Depth:55.788km.</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1739286_1.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570844</link>
+      <pubDate>Sun, 11 Oct 2026 18:10:17 GMT</pubDate>
+      <gdacs:dateadded>Sun, 11 Oct 2026 18:10:17 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Sun, 11 Oct 2026 18:10:17 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 11 Oct 2026 16:24:25 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 11 Oct 2026 16:24:25 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>EQ1</dc:subject>
+      <guid isPermaLink="false">EQ1570844</guid>
+      <geo:Point>
+        <geo:lat>35.5301</geo:lat>
+        <geo:long>140.4377</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>136.4377 144.4377 31.5301 39.5301</gdacs:bbox>
+      <georss:point>35.5301 140.4377</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1570844/cap_1570844.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/EQ.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>EQ</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>0</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1570844</gdacs:eventid>
+      <gdacs:episodeid>1739286</gdacs:episodeid>
+      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
+      <gdacs:severity unit="M" value="4.7">Magnitude 4.7M, Depth:55.8km</gdacs:severity>
+      <gdacs:population unit="in MMI III" value="35634794">35.6 million in MMI III</gdacs:population>
+      <gdacs:vulnerability value="1.3145341380124" />
+      <gdacs:iso3>JPN</gdacs:iso3>
+      <gdacs:country>Japan</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1570844/rss_1570844.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -128,7 +344,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sun, 11 Oct 2026 15:28:39 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sun, 11 Oct 2026 19:28:47 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -182,7 +398,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sun, 11 Oct 2026 15:26:54 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sun, 11 Oct 2026 19:26:54 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -236,7 +452,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1570810</link>
       <pubDate>Sun, 11 Oct 2026 14:25:40 GMT</pubDate>
       <gdacs:dateadded>Sun, 11 Oct 2026 14:25:40 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sun, 11 Oct 2026 14:34:42 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Sun, 11 Oct 2026 16:12:22 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 11 Oct 2026 14:07:23 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 14:07:23 GMT</gdacs:todate>
@@ -17247,7 +17463,7 @@
       <pubDate>Thu, 08 Oct 2026 14:42:04 GMT</pubDate>
       <gdacs:dateadded>Thu, 08 Oct 2026 14:42:04 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 08 Oct 2026 14:42:04 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 19:36:46 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 07 Oct 2026 19:36:46 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -17301,7 +17517,7 @@
       <pubDate>Wed, 07 Oct 2026 21:06:27 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 21:06:27 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 08 Oct 2026 15:08:22 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 19:13:47 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 07 Oct 2026 19:13:47 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -17355,7 +17571,7 @@
       <pubDate>Wed, 07 Oct 2026 18:55:42 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 18:55:42 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 07 Oct 2026 18:55:43 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 18:15:04 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 07 Oct 2026 18:15:04 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -17409,7 +17625,7 @@
       <pubDate>Wed, 07 Oct 2026 18:35:03 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 18:35:03 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 07 Oct 2026 18:35:03 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 18:13:13 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 07 Oct 2026 18:13:13 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -17463,7 +17679,7 @@
       <pubDate>Wed, 07 Oct 2026 19:07:23 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 19:07:23 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 07 Oct 2026 19:07:23 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 17:36:13 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 07 Oct 2026 17:36:13 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -17517,7 +17733,7 @@
       <pubDate>Wed, 07 Oct 2026 17:40:24 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 17:40:24 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 07 Oct 2026 17:40:24 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 16:42:49 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 07 Oct 2026 16:42:49 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -17571,7 +17787,7 @@
       <pubDate>Wed, 07 Oct 2026 16:57:43 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 16:57:43 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 07 Oct 2026 16:57:43 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 15:46:14 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 07 Oct 2026 15:46:14 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
@@ -22854,113 +23070,5 @@
         </gdacs:resource>
       </gdacs:resources>
     </item>
-    <item>
-      <title>Green notification for tropical cyclone NOLO-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 13/09/2026 to 04/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 250 km/h) NOLO-26 was active in NWPacific. The cyclone affects these countries: United States (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001321/1001321_57_tn.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001321</link>
-      <pubDate>Sun, 13 Sep 2026 20:58:31 GMT</pubDate>
-      <gdacs:dateadded>Sun, 13 Sep 2026 20:58:31 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 05 Oct 2026 01:00:17 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 13 Sep 2026 21:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Sun, 04 Oct 2026 21:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>3</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC1</dc:subject>
-      <guid isPermaLink="false">TC1001321</guid>
-      <geo:Point>
-        <geo:lat>24.2</geo:lat>
-        <geo:long>180</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-18.4461600212275 7.55383997877253 10.0552909815137 36.0552909815137</gdacs:bbox>
-      <georss:point>24.2 180</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001321/cap_1001321.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>57</gdacs:version>
-      <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname>NOLO-26</gdacs:eventname>
-      <gdacs:eventid>1001321</gdacs:eventid>
-      <gdacs:episodeid>57</gdacs:episodeid>
-      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="249.9984">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 204 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3 />
-      <gdacs:country>United States</gdacs:country>
-      <gdacs:glide>TC-2026-000184-MEX</gdacs:glide>
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001321/rss_1001321.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green earthquake (Magnitude 4.8M, Depth:248.906km) in Afghanistan 04/10/2026 20:27 UTC, 1.4 million in 100km.</title>
-      <description>On 10/4/2026 8:27:25 PM, an earthquake occurred in Afghanistan potentially affecting 1.4 million in 100km. The earthquake had Magnitude 4.8M, Depth:248.906km.</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1737725_1.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1569499</link>
-      <pubDate>Sun, 04 Oct 2026 20:43:39 GMT</pubDate>
-      <gdacs:dateadded>Sun, 04 Oct 2026 20:43:39 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Sun, 04 Oct 2026 21:07:42 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 04 Oct 2026 20:27:25 GMT</gdacs:fromdate>
-      <gdacs:todate>Sun, 04 Oct 2026 20:27:25 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>EQ1</dc:subject>
-      <guid isPermaLink="false">EQ1569499</guid>
-      <geo:Point>
-        <geo:lat>36.611</geo:lat>
-        <geo:long>71.0216</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>67.0216 75.0216 32.611 40.611</gdacs:bbox>
-      <georss:point>36.611 71.0216</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1569499/cap_1569499.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/EQ.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>EQ</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>0</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1569499</gdacs:eventid>
-      <gdacs:episodeid>1737725</gdacs:episodeid>
-      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
-      <gdacs:severity unit="M" value="4.8">Magnitude 4.8M, Depth:248.9km</gdacs:severity>
-      <gdacs:population unit="in MMI III" value="68069">70 thousand in MMI III</gdacs:population>
-      <gdacs:vulnerability value="4.63518629614819" />
-      <gdacs:iso3>AFG</gdacs:iso3>
-      <gdacs:country>Afghanistan</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1569499/rss_1569499.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
   </channel>
-</rss><!--End 10/11/2026 5:42:30 PM-->
+</rss><!--End 10/11/2026 9:42:18 PM-->
