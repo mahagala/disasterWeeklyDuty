@@ -4,7 +4,21 @@
     <link>https://erccportal.jrc.ec.europa.eu</link>
     <description>This feed contains the latest maps published by the Emergency Response Coordination Centre (ERCC). The maps are produced by the Joint Research Centre of the European Commission and by ERCC. The daily map provides an overview of a significant event or situation on a daily basis. The maps are related to DG ECHO humanitarian and civil protection interventions or depict events that are expected to have humanitarian consequences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 09:48:30 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 19:51:08 GMT</lastBuildDate>
+    <item>
+      <title>ECHO Daily Map of 12 October 2026</title>
+      <description><![CDATA[<p>Panama | 7.7 M earthquake of 9 October</p>]]></description>
+      <ercc:pubDate>Mon, 12 Oct 2026 19:07:04 GMT</ercc:pubDate>
+      <link>https://erccportal.jrc.ec.europa.eu/ECHOProducts//Maps#/maps/5811</link>
+      <guid>ERCC_Map_5811</guid>
+      <image>
+        <url>https://erccportal.jrc.ec.europa.eu/API/ERCC/Maps/DownloadPublicMap?contentItemID=5811&amp;fileN=ImageFile&amp;forceDownload=False</url>
+        <title>ECHO Daily Map of 12 October 2026</title>
+        <link>https://erccportal.jrc.ec.europa.eu/ECHOProducts//Maps#/maps/5811</link>
+      </image>
+      <ercc:mainCountry>Panama</ercc:mainCountry>
+      <ercc:eventTypes>Earthquake</ercc:eventTypes>
+    </item>
     <item>
       <title>ECHO Daily Map of 09 October 2026</title>
       <description><![CDATA[<p>Mexico | Tropical cyclone activity</p>]]></description>
@@ -126,22 +140,8 @@
         <title>ECHO Daily Map of 29 September 2026</title>
         <link>https://erccportal.jrc.ec.europa.eu/ECHOProducts//Maps#/maps/5799</link>
       </image>
-      <ercc:countries>CHN, NPL</ercc:countries>
+      <ercc:countries>NPL, CHN</ercc:countries>
       <ercc:eventTypes>Flood</ercc:eventTypes>
-    </item>
-    <item>
-      <title>ECHO Daily Map of 28 September 2026</title>
-      <description><![CDATA[<p>Mexico | Hurricane POLO</p>]]></description>
-      <ercc:pubDate>Mon, 28 Sep 2026 18:53:39 GMT</ercc:pubDate>
-      <link>https://erccportal.jrc.ec.europa.eu/ECHOProducts//Maps#/maps/5798</link>
-      <guid>ERCC_Map_5798</guid>
-      <image>
-        <url>https://erccportal.jrc.ec.europa.eu/API/ERCC/Maps/DownloadPublicMap?contentItemID=5798&amp;fileN=ImageFile&amp;forceDownload=False</url>
-        <title>ECHO Daily Map of 28 September 2026</title>
-        <link>https://erccportal.jrc.ec.europa.eu/ECHOProducts//Maps#/maps/5798</link>
-      </image>
-      <ercc:mainCountry>Mexico</ercc:mainCountry>
-      <ercc:eventTypes>Tropical Cyclone</ercc:eventTypes>
     </item>
   </channel>
 </rss>
