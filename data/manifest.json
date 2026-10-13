@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T09:30:38.069472+00:00",
+  "generatedAt": "2026-10-13T17:09:39.616931+00:00",
   "feeds": {
     "gdacs7d": {
       "source": "gdacs",
       "file": "gdacs7d.xml",
-      "checkedAt": "2026-10-13T09:30:38.069472+00:00",
-      "lastSuccessAt": "2026-10-13T09:30:38.069472+00:00",
-      "count": 464,
-      "sha256": "ed5828b5f1017f9d42e6a09100d2a94077973db1e1950bc0a9d767e0bfde02e3",
+      "checkedAt": "2026-10-13T17:09:39.616931+00:00",
+      "lastSuccessAt": "2026-10-13T17:09:39.616931+00:00",
+      "count": 462,
+      "sha256": "c4beae745f8c871fc006ba0113cebd463acebb60b2c56a336ec2562c1ba98878",
       "available": true,
       "status": "ok",
       "error": null
@@ -16,10 +16,10 @@
     "gdacsEq3m": {
       "source": "gdacs",
       "file": "gdacsEq3m.xml",
-      "checkedAt": "2026-10-13T09:30:38.069472+00:00",
-      "lastSuccessAt": "2026-10-13T09:30:38.069472+00:00",
+      "checkedAt": "2026-10-13T17:09:39.616931+00:00",
+      "lastSuccessAt": "2026-10-13T17:09:39.616931+00:00",
       "count": 9,
-      "sha256": "21dc136a37c213d73716c4981161ad8587c1981309711a8a1574a0300ce575c6",
+      "sha256": "591600e3ff5b108773cdbcb75b0d6c459dafb11ce45dce16acd1797b6f3a36f9",
       "available": true,
       "status": "ok",
       "error": null
@@ -27,10 +27,10 @@
     "gdacsTc3m": {
       "source": "gdacs",
       "file": "gdacsTc3m.xml",
-      "checkedAt": "2026-10-13T09:30:38.069472+00:00",
-      "lastSuccessAt": "2026-10-13T09:30:38.069472+00:00",
-      "count": 45,
-      "sha256": "d29ffd40e7244f69a778730761b9a0f7f8395500c8560f616fad67677a1b081b",
+      "checkedAt": "2026-10-13T17:09:39.616931+00:00",
+      "lastSuccessAt": "2026-10-13T17:09:39.616931+00:00",
+      "count": 46,
+      "sha256": "c5a6c8fb9b5b2bd8988fde5912189d0ac9c128e3b066e41401d60ced0d58d7b3",
       "available": true,
       "status": "ok",
       "error": null
@@ -38,10 +38,10 @@
     "gdacsFl3m": {
       "source": "gdacs",
       "file": "gdacsFl3m.xml",
-      "checkedAt": "2026-10-13T09:30:38.069472+00:00",
-      "lastSuccessAt": "2026-10-13T09:30:38.069472+00:00",
+      "checkedAt": "2026-10-13T17:09:39.616931+00:00",
+      "lastSuccessAt": "2026-10-13T17:09:39.616931+00:00",
       "count": 218,
-      "sha256": "fc25dfae27776f5c65d3086160f2ae859271017883431216dcf8845adac058f7",
+      "sha256": "c1ab2337f4493abfd279aec749848fcb9dcf27358e92cb447261cbde6300710d",
       "available": true,
       "status": "ok",
       "error": null
@@ -49,10 +49,10 @@
     "ercc": {
       "source": "ercc",
       "file": "ercc.xml",
-      "checkedAt": "2026-10-13T09:30:38.069472+00:00",
-      "lastSuccessAt": "2026-10-13T09:30:38.069472+00:00",
+      "checkedAt": "2026-10-13T17:09:39.616931+00:00",
+      "lastSuccessAt": "2026-10-13T17:09:39.616931+00:00",
       "count": 10,
-      "sha256": "5d10f93b0abba3ed4edc88e0258ac4712c4df044710830caa64ceffd3069839b",
+      "sha256": "d93b51236fbbff6f10bf840a08b98755c3478cc649857c34c7997b220def273b",
       "available": true,
       "status": "ok",
       "error": null
@@ -60,10 +60,10 @@
     "usgs": {
       "source": "usgs",
       "file": "usgs.xml",
-      "checkedAt": "2026-10-13T09:30:38.069472+00:00",
-      "lastSuccessAt": "2026-10-13T09:30:38.069472+00:00",
-      "count": 619,
-      "sha256": "1e459bec58b38f8d57960753d6818f197bf2d9e9e6e4568f355df14131787295",
+      "checkedAt": "2026-10-13T17:09:39.616931+00:00",
+      "lastSuccessAt": "2026-10-13T17:09:39.616931+00:00",
+      "count": 626,
+      "sha256": "73761cf31f87166344b96e9a6d0e4e0c0898bbf7297bff3cce946ad1311e8d78",
       "available": true,
       "status": "ok",
       "error": null
@@ -71,10 +71,10 @@
     "reliefweb": {
       "source": "reliefweb",
       "file": "reliefweb.json",
-      "checkedAt": "2026-10-13T09:30:38.069472+00:00",
-      "lastSuccessAt": "2026-10-13T09:30:38.069472+00:00",
+      "checkedAt": "2026-10-13T17:09:39.616931+00:00",
+      "lastSuccessAt": "2026-10-13T17:09:39.616931+00:00",
       "count": 150,
-      "sha256": "ab7f60a8b3082b27fd0113e1557dd3317c6203fdf1705995683634e52b2f5916",
+      "sha256": "b1f5fb3855916a120d8c5731ab68623c6642bf25f3816a92cd92d6de7be85e1e",
       "available": true,
       "status": "ok",
       "error": null
