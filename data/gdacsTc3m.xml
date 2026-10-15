@@ -7,11 +7,65 @@
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
     <!--Records number 47-->
-    <!--Start 10/15/2026 11:49:04 AM-->
-    <!--=Start 10/15/2026 11:49:04 AM-->
+    <!--Start 10/15/2026 4:59:03 PM-->
+    <!--=Start 10/15/2026 4:59:03 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Thu, 15 Oct 2026 09:49:04 GMT</pubDate>
+    <pubDate>Thu, 15 Oct 2026 14:59:03 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orange notification for tropical cyclone CHAMPI-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.175 million .</title>
+      <description>From 14/10/2026 to 15/10/2026, a Tropical Storm (maximum wind speed of 231 km/h) CHAMPI-26 was active in NWPacific. The cyclone affects these countries: Guam (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.175 million .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001338/1001338_5_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001338</link>
+      <pubDate>Wed, 14 Oct 2026 14:31:53 GMT</pubDate>
+      <gdacs:dateadded>Wed, 14 Oct 2026 14:31:53 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 15 Oct 2026 13:56:37 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Wed, 14 Oct 2026 12:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 15 Oct 2026 12:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC2</dc:subject>
+      <guid isPermaLink="false">TC1001338</guid>
+      <geo:Point>
+        <geo:lat>11</geo:lat>
+        <geo:long>157.4</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>144.4 170.4 -2 24</gdacs:bbox>
+      <georss:point>11 157.4</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001338/cap_1001338.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:version>5</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>2</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname>CHAMPI-26</gdacs:eventname>
+      <gdacs:eventid>1001338</gdacs:eventid>
+      <gdacs:episodeid>5</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="231.48">Tropical Storm (maximum wind speed of 167 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="175254">Population affected by Category 1 (120 km/h) wind speeds or higher is 0.175 million </gdacs:population>
+      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
+      <gdacs:iso3>GUM</gdacs:iso3>
+      <gdacs:country>Guam</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001338/rss_1001338.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
     <item>
       <title>Green notification for tropical cyclone TRUDY-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
       <description>From 13/10/2026 to 15/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 213 km/h) TRUDY-26 was active in EastPacific. The cyclone affects these countries: México (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
@@ -20,7 +74,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001337</link>
       <pubDate>Tue, 13 Oct 2026 15:15:58 GMT</pubDate>
       <gdacs:dateadded>Tue, 13 Oct 2026 15:15:58 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 15 Oct 2026 09:06:06 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 15 Oct 2026 13:51:29 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 13 Oct 2026 15:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 15 Oct 2026 09:00:00 GMT</gdacs:todate>
@@ -74,7 +128,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001335</link>
       <pubDate>Wed, 07 Oct 2026 15:33:28 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 15:33:28 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 15 Oct 2026 09:04:20 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 15 Oct 2026 12:53:19 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 07 Oct 2026 15:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 15 Oct 2026 09:00:00 GMT</gdacs:todate>
@@ -105,7 +159,7 @@
       <gdacs:population unit="Pop74" value="62">Population affected by Category 1 (120 km/h) wind speeds or higher is 62 </gdacs:population>
       <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
       <gdacs:iso3>MEX</gdacs:iso3>
-      <gdacs:country>Mexico, México</gdacs:country>
+      <gdacs:country>México</gdacs:country>
       <gdacs:glide />
       <gdacs:mapimage />
       <gdacs:maplink />
@@ -121,60 +175,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Orange notification for tropical cyclone CHAMPI-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.175 million .</title>
-      <description>From 14/10/2026 to 15/10/2026, a Tropical Depression (maximum wind speed of 231 km/h) CHAMPI-26 was active in NWPacific. The cyclone affects these countries: Guam, Northern Mariana Islands (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.175 million .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001338/1001338_4_tn.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001338</link>
-      <pubDate>Wed, 14 Oct 2026 14:31:53 GMT</pubDate>
-      <gdacs:dateadded>Wed, 14 Oct 2026 14:31:53 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 15 Oct 2026 08:15:32 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Wed, 14 Oct 2026 12:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Thu, 15 Oct 2026 06:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC2</dc:subject>
-      <guid isPermaLink="false">TC1001338</guid>
-      <geo:Point>
-        <geo:lat>10.9</geo:lat>
-        <geo:long>158.4</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>145.4 171.4 -2.1 23.9</gdacs:bbox>
-      <georss:point>10.9 158.4</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001338/cap_1001338.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
-      <gdacs:version>4</gdacs:version>
-      <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Orange</gdacs:alertlevel>
-      <gdacs:alertscore>2</gdacs:alertscore>
-      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>2</gdacs:episodealertscore>
-      <gdacs:eventname>CHAMPI-26</gdacs:eventname>
-      <gdacs:eventid>1001338</gdacs:eventid>
-      <gdacs:episodeid>4</gdacs:episodeid>
-      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="231.48">Tropical Depression (maximum wind speed of 148 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="175261">Population affected by Category 1 (120 km/h) wind speeds or higher is 0.175 million </gdacs:population>
-      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
-      <gdacs:iso3>GUM</gdacs:iso3>
-      <gdacs:country>Guam, Northern Mariana Islands</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001338/rss_1001338.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green notification for tropical cyclone TWENTYEIGHT-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
       <description>From 12/10/2026 to 15/10/2026, a Tropical Depression (maximum wind speed of 56 km/h) TWENTYEIGHT-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001336/1001336_14_tn.png" />
@@ -182,7 +182,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001336</link>
       <pubDate>Mon, 12 Oct 2026 02:43:29 GMT</pubDate>
       <gdacs:dateadded>Mon, 12 Oct 2026 02:43:29 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 15 Oct 2026 07:51:59 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 15 Oct 2026 13:58:06 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 12 Oct 2026 00:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Thu, 15 Oct 2026 06:00:00 GMT</gdacs:todate>
@@ -290,7 +290,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 15 Oct 2026 09:42:42 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 15 Oct 2026 14:57:33 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -344,7 +344,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 15 Oct 2026 09:48:44 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 15 Oct 2026 14:44:45 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -614,7 +614,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 15 Oct 2026 09:30:13 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 15 Oct 2026 14:44:33 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -2551,4 +2551,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/15/2026 11:51:00 AM-->
+</rss><!--End 10/15/2026 5:01:25 PM-->
