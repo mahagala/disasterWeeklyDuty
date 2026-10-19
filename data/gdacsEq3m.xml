@@ -6,11 +6,11 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 9-->
-    <!--Start 10/19/2026 1:07:20 AM-->
-    <!--=Start 10/19/2026 1:07:20 AM-->
+    <!--Records number 8-->
+    <!--Start 10/19/2026 3:47:18 AM-->
+    <!--=Start 10/19/2026 3:47:18 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Sun, 18 Oct 2026 23:07:20 GMT</pubDate>
+    <pubDate>Mon, 19 Oct 2026 01:47:18 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_eq_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Orange earthquake (Magnitude 7.7M, Depth:12.647km) in Panama 09/10/2026 17:56 UTC, 130 thousand (in MMI&gt;=VII).</title>
@@ -444,59 +444,5 @@
         </gdacs:resource>
       </gdacs:resources>
     </item>
-    <item>
-      <title>Orange earthquake (Magnitude 5.5M, Depth:10km) in Peru 19/07/2026 02:24 UTC, 240 thousand (in MMI&gt;=VII).</title>
-      <description>On 7/19/2026 2:24:35 AM, an earthquake occurred in Peru potentially affecting 240 thousand (in MMI&gt;=VII). The earthquake had Magnitude 5.5M, Depth:10km.</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1719805_1.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1552752</link>
-      <pubDate>Sun, 19 Jul 2026 02:42:14 GMT</pubDate>
-      <gdacs:dateadded>Sun, 19 Jul 2026 02:42:14 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 22 Jul 2026 02:06:24 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 19 Jul 2026 02:24:35 GMT</gdacs:fromdate>
-      <gdacs:todate>Sun, 19 Jul 2026 02:24:35 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>EQ2</dc:subject>
-      <guid isPermaLink="false">EQ1552752</guid>
-      <geo:Point>
-        <geo:lat>-12.1036</geo:lat>
-        <geo:long>-75.3034</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-79.3034 -71.3034 -16.1036 -8.1036</gdacs:bbox>
-      <georss:point>-12.1036 -75.3034</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1552752/cap_1552752.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/EQ.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>EQ</gdacs:eventtype>
-      <gdacs:alertlevel>Orange</gdacs:alertlevel>
-      <gdacs:alertscore>1.93224355119598</gdacs:alertscore>
-      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>2</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1552752</gdacs:eventid>
-      <gdacs:episodeid>1719805</gdacs:episodeid>
-      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
-      <gdacs:severity unit="M" value="5.5">Magnitude 5.5M, Depth:10km</gdacs:severity>
-      <gdacs:population unit="(in MMI&gt;=VII)" value="238871">240 thousand (in MMI&gt;=VII)</gdacs:population>
-      <gdacs:vulnerability value="1.78228028098837" />
-      <gdacs:iso3>PER</gdacs:iso3>
-      <gdacs:country>Peru</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/EQ/1552752/rss_1552752.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
   </channel>
-</rss><!--End 10/19/2026 1:07:22 AM-->
+</rss><!--End 10/19/2026 3:47:19 AM-->
