@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:gdacs="http://www.gdacs.org" xmlns:glide="http://glidenumber.net" xmlns:georss="http://www.georss.org/georss" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GDACS RSS information</title>
-    <link>https://www.gdacs.org/</link>
+    <link>http://www.gdacs.org/</link>
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
     <!--Records number 49-->
-    <!--Start 10/22/2026 6:38:44 AM-->
-    <!--=Start 10/22/2026 6:38:44 AM-->
+    <!--Start 10/22/2026 12:08:56 PM-->
+    <!--=Start 10/22/2026 12:08:56 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Thu, 22 Oct 2026 04:38:44 GMT</pubDate>
-    <atom:link href="https://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 22 Oct 2026 10:08:56 GMT</pubDate>
+    <atom:link href="http://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green notification for tropical cyclone VANCE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
       <description>From 21/10/2026 to 22/10/2026, a Tropical Storm (maximum wind speed of 194 km/h) VANCE-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001341/1001341_3_tn.png" />
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001341/1001341_4_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001341</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001341</link>
       <pubDate>Wed, 21 Oct 2026 14:51:54 GMT</pubDate>
       <gdacs:dateadded>Wed, 21 Oct 2026 14:51:54 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 22 Oct 2026 04:36:50 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 22 Oct 2026 09:07:26 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 21 Oct 2026 15:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Thu, 22 Oct 2026 03:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Thu, 22 Oct 2026 09:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001341</guid>
       <geo:Point>
-        <geo:lat>9.6</geo:lat>
-        <geo:long>-100.7</geo:long>
+        <geo:lat>9.7</geo:lat>
+        <geo:long>-101.5</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-116.954955747528 -90.9549557475277 0.433412754892457 26.4334127548925</gdacs:bbox>
-      <georss:point>9.6 -100.7</georss:point>
+      <gdacs:bbox>-117.017904991211 -91.0179049912107 0.0136499701405057 26.0136499701405</gdacs:bbox>
+      <georss:point>9.7 -101.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001341/cap_1001341.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>3</gdacs:version>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>4</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
       <gdacs:alertscore>1</gdacs:alertscore>
@@ -45,7 +45,7 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>VANCE-26</gdacs:eventname>
       <gdacs:eventid>1001341</gdacs:eventid>
-      <gdacs:episodeid>3</gdacs:episodeid>
+      <gdacs:episodeid>4</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
       <gdacs:severity unit="km/h" value="194.4432">Tropical Storm (maximum wind speed of 194 km/h)</gdacs:severity>
       <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
@@ -58,7 +58,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001341/rss_1001341.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001341/rss_1001341.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -68,30 +68,30 @@
     </item>
     <item>
       <title>Green notification for tropical cyclone JOSEPHINE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (7.514 million in Tropical Storm).</title>
-      <description>From 21/10/2026 to 22/10/2026, a Tropical Storm (maximum wind speed of 120 km/h) JOSEPHINE-26 was active in Atlantic. The cyclone affects these countries: United States, Canada, Saint Pierre and Miquelon (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (7.514 million in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001342/1001342_2_tn.png" />
+      <description>From 21/10/2026 to 22/10/2026, a Tropical Storm (maximum wind speed of 130 km/h) JOSEPHINE-26 was active in Atlantic. The cyclone affects these countries: United States, Canada, Saint Pierre and Miquelon (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (7.514 million in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001342/1001342_3_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001342</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001342</link>
       <pubDate>Wed, 21 Oct 2026 21:08:24 GMT</pubDate>
       <gdacs:dateadded>Wed, 21 Oct 2026 21:08:24 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 22 Oct 2026 03:10:04 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 22 Oct 2026 09:10:19 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 21 Oct 2026 21:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Thu, 22 Oct 2026 03:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Thu, 22 Oct 2026 09:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001342</guid>
       <geo:Point>
-        <geo:lat>37.7</geo:lat>
-        <geo:long>-69.4</geo:long>
+        <geo:lat>38.7</geo:lat>
+        <geo:long>-68.3</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-74.5093881028816 -48.5093881028816 27.8963634335145 53.8963634335145</gdacs:bbox>
-      <georss:point>37.7 -69.4</georss:point>
+      <gdacs:bbox>-74.966325979932 -48.966325979932 28.0071269941664 54.0071269941664</gdacs:bbox>
+      <georss:point>38.7 -68.3</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001342/cap_1001342.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>2</gdacs:version>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>3</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
       <gdacs:alertscore>1</gdacs:alertscore>
@@ -99,10 +99,10 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>JOSEPHINE-26</gdacs:eventname>
       <gdacs:eventid>1001342</gdacs:eventid>
-      <gdacs:episodeid>2</gdacs:episodeid>
+      <gdacs:episodeid>3</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="120.3696">Tropical Storm (maximum wind speed of 120 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (50.785 million in Tropical Storm)</gdacs:population>
+      <gdacs:severity unit="km/h" value="129.6288">Tropical Storm (maximum wind speed of 130 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (52.861 million in Tropical Storm)</gdacs:population>
       <gdacs:vulnerability value="1">Low</gdacs:vulnerability>
       <gdacs:iso3>CAN</gdacs:iso3>
       <gdacs:country>United States, Canada, Saint Pierre and Miquelon</gdacs:country>
@@ -112,7 +112,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001342/rss_1001342.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001342/rss_1001342.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -121,31 +121,31 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Red notification for tropical cyclone CHAMPI-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.18 million .</title>
-      <description>From 14/10/2026 to 22/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 296 km/h) CHAMPI-26 was active in NWPacific. The cyclone affects these countries: Philippines, Guam, Northern Mariana Islands, Japan (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.18 million .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001338/1001338_31_tn.png" />
+      <title>Red notification for tropical cyclone CHAMPI-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.231 million .</title>
+      <description>From 14/10/2026 to 22/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 296 km/h) CHAMPI-26 was active in NWPacific. The cyclone affects these countries: Philippines, Guam, Northern Mariana Islands, Japan, Taiwan (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.231 million .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001338/1001338_32_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001338</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001338</link>
       <pubDate>Wed, 14 Oct 2026 14:31:53 GMT</pubDate>
       <gdacs:dateadded>Wed, 14 Oct 2026 14:31:53 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 22 Oct 2026 04:00:32 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 22 Oct 2026 09:00:36 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 14 Oct 2026 12:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Thu, 22 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Thu, 22 Oct 2026 06:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001338</guid>
       <geo:Point>
-        <geo:lat>20.3</geo:lat>
-        <geo:long>126</geo:long>
+        <geo:lat>20.9</geo:lat>
+        <geo:long>125.4</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>118.953316798195 144.953316798195 6.52677464335614 32.5267746433561</gdacs:bbox>
-      <georss:point>20.3 126</georss:point>
+      <gdacs:bbox>119.106850598478 145.106850598478 7.47865534060669 33.4786553406067</gdacs:bbox>
+      <georss:point>20.9 125.4</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001338/cap_1001338.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Red/TC.png</gdacs:icon>
-      <gdacs:version>31</gdacs:version>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Red/TC.png</gdacs:icon>
+      <gdacs:version>32</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Red</gdacs:alertlevel>
       <gdacs:alertscore>3</gdacs:alertscore>
@@ -153,20 +153,20 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>CHAMPI-26</gdacs:eventname>
       <gdacs:eventid>1001338</gdacs:eventid>
-      <gdacs:episodeid>31</gdacs:episodeid>
+      <gdacs:episodeid>32</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="296.2944">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 213 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="180174">Population affected by Category 1 (120 km/h) wind speeds or higher is 0.18 million </gdacs:population>
+      <gdacs:severity unit="km/h" value="296.2944">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 194 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="231210">Population affected by Category 1 (120 km/h) wind speeds or higher is 0.231 million </gdacs:population>
       <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
       <gdacs:iso3>GUM</gdacs:iso3>
-      <gdacs:country>Philippines, Guam, Northern Mariana Islands, Japan</gdacs:country>
+      <gdacs:country>Philippines, Guam, Northern Mariana Islands, Japan, Taiwan</gdacs:country>
       <gdacs:glide>TC-2026-000192-GUM</gdacs:glide>
       <gdacs:mapimage />
       <gdacs:maplink />
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001338/rss_1001338.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001338/rss_1001338.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -179,7 +179,7 @@
       <description>From 13/10/2026 to 20/10/2026, a Tropical Depression (maximum wind speed of 194 km/h) TRUDY-26 was active in EastPacific. The cyclone affects these countries: México (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001337/1001337_27_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001337</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001337</link>
       <pubDate>Tue, 13 Oct 2026 15:15:58 GMT</pubDate>
       <gdacs:dateadded>Tue, 13 Oct 2026 15:15:58 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 21 Oct 2026 00:21:20 GMT</gdacs:datemodified>
@@ -198,7 +198,7 @@
       <gdacs:bbox>-116.137509251028 -90.1375092510277 2.47220863624064 28.4722086362406</gdacs:bbox>
       <georss:point>19.5 -108</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001337/cap_1001337.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>27</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -220,7 +220,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001337/rss_1001337.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001337/rss_1001337.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -233,7 +233,7 @@
       <description>From 16/10/2026 to 19/10/2026, a Tropical Storm (maximum wind speed of 120 km/h) WATI-26 was active in SEPacific. The cyclone affects these countries: Cook Islands, French Polynesia (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001339/1001339_7_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001339</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001339</link>
       <pubDate>Fri, 16 Oct 2026 07:39:18 GMT</pubDate>
       <gdacs:dateadded>Fri, 16 Oct 2026 07:39:18 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 20 Oct 2026 06:12:48 GMT</gdacs:datemodified>
@@ -252,7 +252,7 @@
       <gdacs:bbox>-170.637534953622 -144.637534953622 -32.1313476773565 -6.13134767735646</gdacs:bbox>
       <georss:point>-20.7 -156.8</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001339/cap_1001339.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>7</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -274,7 +274,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001339/rss_1001339.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001339/rss_1001339.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -287,7 +287,7 @@
       <description>From 07/10/2026 to 16/10/2026, a Tropical Depression (maximum wind speed of 250 km/h) SIMON-26 was active in EastPacific. The cyclone affects these countries: México (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 62 .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001335/1001335_38_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001335</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001335</link>
       <pubDate>Wed, 07 Oct 2026 15:33:28 GMT</pubDate>
       <gdacs:dateadded>Wed, 07 Oct 2026 15:33:28 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sat, 17 Oct 2026 17:37:52 GMT</gdacs:datemodified>
@@ -306,7 +306,7 @@
       <gdacs:bbox>-118.086518775508 -92.086518775508 4.645699506006 30.645699506006</gdacs:bbox>
       <georss:point>21.5 -110.3</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001335/cap_1001335.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
       <gdacs:version>38</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Orange</gdacs:alertlevel>
@@ -328,7 +328,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001335/rss_1001335.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001335/rss_1001335.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -341,7 +341,7 @@
       <description>From 12/10/2026 to 15/10/2026, a Tropical Depression (maximum wind speed of 56 km/h) TWENTYEIGHT-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001336/1001336_14_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001336</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001336</link>
       <pubDate>Mon, 12 Oct 2026 02:43:29 GMT</pubDate>
       <gdacs:dateadded>Mon, 12 Oct 2026 02:43:29 GMT</gdacs:dateadded>
       <gdacs:datemodified>Fri, 16 Oct 2026 10:16:29 GMT</gdacs:datemodified>
@@ -360,7 +360,7 @@
       <gdacs:bbox>126.7 152.7 9.5 35.5</gdacs:bbox>
       <georss:point>22.5 139.7</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001336/cap_1001336.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>14</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -382,7 +382,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001336/rss_1001336.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001336/rss_1001336.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -395,7 +395,7 @@
       <description>From 05/10/2026 to 13/10/2026, a Tropical Storm (maximum wind speed of 222 km/h) KOGUMA-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001333/1001333_36_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001333</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001333</link>
       <pubDate>Mon, 05 Oct 2026 02:11:52 GMT</pubDate>
       <gdacs:dateadded>Mon, 05 Oct 2026 02:11:52 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 13 Oct 2026 20:44:42 GMT</gdacs:datemodified>
@@ -414,7 +414,7 @@
       <gdacs:bbox>144.231083535904 170.231083535904 18.5852869210233 44.5852869210233</gdacs:bbox>
       <georss:point>38.3 157.2</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001333/cap_1001333.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>36</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -436,7 +436,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001333/rss_1001333.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001333/rss_1001333.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -449,10 +449,10 @@
       <description>From 27/09/2026 to 11/10/2026, a Tropical Depression (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico, United States (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001329/1001329_58_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 22 Oct 2026 04:37:35 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 22 Oct 2026 10:07:19 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -468,7 +468,7 @@
       <gdacs:bbox>-127.6 -101.6 22.8 48.8</gdacs:bbox>
       <georss:point>35.8 -114.6</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001329/cap_1001329.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>58</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -490,7 +490,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001329/rss_1001329.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001329/rss_1001329.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -503,10 +503,10 @@
       <description>From 06/10/2026 to 11/10/2026, a Tropical Depression (maximum wind speed of 194 km/h) ISAIAS-26 was active in Atlantic. The cyclone affects these countries: United States (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.567 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001334/1001334_20_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 22 Oct 2026 04:37:58 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 22 Oct 2026 10:07:38 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -522,7 +522,7 @@
       <gdacs:bbox>-101.044874893642 -75.0448748936418 14.3471829785707 40.3471829785707</gdacs:bbox>
       <georss:point>37.5 -84</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001334/cap_1001334.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
       <gdacs:version>20</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Orange</gdacs:alertlevel>
@@ -544,7 +544,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001334/rss_1001334.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001334/rss_1001334.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -557,7 +557,7 @@
       <description>From 30/09/2026 to 06/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 250 km/h) CHOI-WAN-26 was active in NWPacific. The cyclone affects these countries: Guam, Northern Mariana Islands, Russian Federation (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001332/1001332_28_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001332</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001332</link>
       <pubDate>Wed, 30 Sep 2026 02:12:11 GMT</pubDate>
       <gdacs:dateadded>Wed, 30 Sep 2026 02:12:11 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 07 Oct 2026 05:31:26 GMT</gdacs:datemodified>
@@ -576,7 +576,7 @@
       <gdacs:bbox>141.98388804694 167.98388804694 24.4998808634092 50.4998808634092</gdacs:bbox>
       <georss:point>36.3 149.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001332/cap_1001332.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>28</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -598,7 +598,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001332/rss_1001332.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001332/rss_1001332.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -611,7 +611,7 @@
       <description>From 13/09/2026 to 04/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 250 km/h) NOLO-26 was active in NWPacific. The cyclone affects these countries: United States (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001321/1001321_57_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001321</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001321</link>
       <pubDate>Sun, 13 Sep 2026 20:58:31 GMT</pubDate>
       <gdacs:dateadded>Sun, 13 Sep 2026 20:58:31 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 05 Oct 2026 01:00:17 GMT</gdacs:datemodified>
@@ -630,7 +630,7 @@
       <gdacs:bbox>-18.4461600212275 7.55383997877253 10.0552909815137 36.0552909815137</gdacs:bbox>
       <georss:point>24.2 180</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001321/cap_1001321.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>57</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -652,7 +652,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001321/rss_1001321.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001321/rss_1001321.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -665,7 +665,7 @@
       <description>From 29/09/2026 to 01/10/2026, a Tropical Depression (maximum wind speed of 56 km/h) NINETEEN-E-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001331/1001331_10_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001331</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001331</link>
       <pubDate>Tue, 29 Sep 2026 15:15:39 GMT</pubDate>
       <gdacs:dateadded>Tue, 29 Sep 2026 15:15:39 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sat, 03 Oct 2026 02:28:04 GMT</gdacs:datemodified>
@@ -684,7 +684,7 @@
       <gdacs:bbox>-136 -110 2 28</gdacs:bbox>
       <georss:point>15 -123</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001331/cap_1001331.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>10</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -706,7 +706,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001331/rss_1001331.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001331/rss_1001331.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -719,7 +719,7 @@
       <description>From 28/09/2026 to 30/09/2026, a Tropical Depression (maximum wind speed of 74 km/h) HANNA-26 was active in Atlantic. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001330/1001330_9_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001330</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001330</link>
       <pubDate>Mon, 28 Sep 2026 15:26:52 GMT</pubDate>
       <gdacs:dateadded>Mon, 28 Sep 2026 15:26:52 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 30 Sep 2026 15:14:43 GMT</gdacs:datemodified>
@@ -738,7 +738,7 @@
       <gdacs:bbox>-60.2635800209769 -34.2635800209769 22.4973779990003 48.4973779990003</gdacs:bbox>
       <georss:point>33.4 -43.6</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001330/cap_1001330.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>9</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -760,7 +760,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001330/rss_1001330.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001330/rss_1001330.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -773,10 +773,10 @@
       <description>From 23/09/2026 to 30/09/2026, a Tropical Depression (maximum wind speed of 241 km/h) SURIGAE-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001327/1001327_30_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 22 Oct 2026 04:37:18 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Thu, 22 Oct 2026 10:06:58 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -792,7 +792,7 @@
       <gdacs:bbox>119.250803093665 145.250803093665 11.6279767153316 37.6279767153316</gdacs:bbox>
       <georss:point>31.8 138.8</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001327/cap_1001327.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>30</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -814,7 +814,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001327/rss_1001327.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001327/rss_1001327.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -827,7 +827,7 @@
       <description>From 21/09/2026 to 30/09/2026, a Tropical Depression (maximum wind speed of 287 km/h) POLO-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.222 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001325/1001325_38_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001325</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001325</link>
       <pubDate>Mon, 21 Sep 2026 06:39:52 GMT</pubDate>
       <gdacs:dateadded>Mon, 21 Sep 2026 06:39:52 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 01 Oct 2026 05:00:43 GMT</gdacs:datemodified>
@@ -846,7 +846,7 @@
       <gdacs:bbox>-122.334780162298 -96.3347801622979 7.10361471585882 33.1036147158588</gdacs:bbox>
       <georss:point>30.5 -108</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001325/cap_1001325.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Red/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Red/TC.png</gdacs:icon>
       <gdacs:version>38</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Red</gdacs:alertlevel>
@@ -868,7 +868,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001325/rss_1001325.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001325/rss_1001325.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -881,7 +881,7 @@
       <description>From 19/09/2026 to 29/09/2026, a Tropical Depression (maximum wind speed of 111 km/h) FAY-26 was active in Atlantic. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001323/1001323_39_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001323</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001323</link>
       <pubDate>Sat, 19 Sep 2026 15:06:02 GMT</pubDate>
       <gdacs:dateadded>Sat, 19 Sep 2026 15:06:02 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 29 Sep 2026 20:54:55 GMT</gdacs:datemodified>
@@ -900,7 +900,7 @@
       <gdacs:bbox>-51.1808021054365 -25.1808021054365 17.7680607918749 43.7680607918749</gdacs:bbox>
       <georss:point>23.7 -48.2</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001323/cap_1001323.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>39</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -922,7 +922,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001323/rss_1001323.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001323/rss_1001323.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -935,7 +935,7 @@
       <description>From 20/09/2026 to 27/09/2026, a Tropical Storm (maximum wind speed of 213 km/h) ODALYS-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001324/1001324_32_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001324</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001324</link>
       <pubDate>Sun, 20 Sep 2026 09:08:06 GMT</pubDate>
       <gdacs:dateadded>Sun, 20 Sep 2026 09:08:06 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sun, 27 Sep 2026 20:56:31 GMT</gdacs:datemodified>
@@ -954,7 +954,7 @@
       <gdacs:bbox>-139.148442579517 -113.148442579517 3.6890361376559 29.6890361376559</gdacs:bbox>
       <georss:point>22.8 -123.1</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001324/cap_1001324.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>32</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -976,7 +976,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001324/rss_1001324.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001324/rss_1001324.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -989,7 +989,7 @@
       <description>From 25/09/2026 to 26/09/2026, a Tropical Storm (maximum wind speed of 83 km/h) GONZALO-26 was active in Atlantic. The cyclone affects these countries: Cape Verde (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0.419 million in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001328/1001328_8_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001328</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001328</link>
       <pubDate>Fri, 25 Sep 2026 03:13:23 GMT</pubDate>
       <gdacs:dateadded>Fri, 25 Sep 2026 03:13:23 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sun, 27 Sep 2026 22:53:58 GMT</gdacs:datemodified>
@@ -1008,7 +1008,7 @@
       <gdacs:bbox>-35.7895942465147 -9.78959424651469 3.53408464431846 29.5340846443185</gdacs:bbox>
       <georss:point>19.3 -23.3</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001328/cap_1001328.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>8</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1030,7 +1030,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001328/rss_1001328.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001328/rss_1001328.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1043,7 +1043,7 @@
       <description>From 22/09/2026 to 24/09/2026, a Tropical Storm (maximum wind speed of 83 km/h) ONE-26 was active in NorthIndian. The cyclone affects these countries: India (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (10.248 million in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001326/1001326_6_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001326</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001326</link>
       <pubDate>Tue, 22 Sep 2026 20:06:51 GMT</pubDate>
       <gdacs:dateadded>Tue, 22 Sep 2026 20:06:51 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 30 Sep 2026 09:40:21 GMT</gdacs:datemodified>
@@ -1062,7 +1062,7 @@
       <gdacs:bbox>71.2024786850529 97.2024786850529 4.99972621017383 30.9997262101738</gdacs:bbox>
       <georss:point>18.1 83.7</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001326/cap_1001326.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
       <gdacs:version>6</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Orange</gdacs:alertlevel>
@@ -1084,7 +1084,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001326/rss_1001326.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001326/rss_1001326.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1097,7 +1097,7 @@
       <description>From 15/09/2026 to 22/09/2026, a Tropical Storm (maximum wind speed of 130 km/h) DUJUAN-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001322/1001322_28_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001322</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001322</link>
       <pubDate>Tue, 15 Sep 2026 14:22:03 GMT</pubDate>
       <gdacs:dateadded>Tue, 15 Sep 2026 14:22:03 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 23 Sep 2026 08:20:07 GMT</gdacs:datemodified>
@@ -1116,7 +1116,7 @@
       <gdacs:bbox>136.721348666219 162.721348666219 20.1866111969667 46.1866111969667</gdacs:bbox>
       <georss:point>39 150.2</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001322/cap_1001322.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>28</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1138,7 +1138,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001322/rss_1001322.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001322/rss_1001322.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1151,7 +1151,7 @@
       <description>From 09/09/2026 to 15/09/2026, a Tropical Depression (maximum wind speed of 102 km/h) NORBERT-26 was active in CentralPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001320/1001320_24_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001320</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001320</link>
       <pubDate>Wed, 09 Sep 2026 21:06:56 GMT</pubDate>
       <gdacs:dateadded>Wed, 09 Sep 2026 21:06:56 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 16 Sep 2026 09:20:50 GMT</gdacs:datemodified>
@@ -1170,7 +1170,7 @@
       <gdacs:bbox>-143.959312633585 -117.959312633585 5.12230537344637 31.1223053734464</gdacs:bbox>
       <georss:point>20.5 -143.1</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001320/cap_1001320.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>24</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1192,7 +1192,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001320/rss_1001320.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001320/rss_1001320.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1205,7 +1205,7 @@
       <description>From 27/08/2026 to 11/09/2026, a Tropical Storm (maximum wind speed of 259 km/h) LOWELL-26 was active in CentralPacific. The cyclone affects these countries: United States (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 2381 .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001315/1001315_60_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001315</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001315</link>
       <pubDate>Thu, 27 Aug 2026 21:21:11 GMT</pubDate>
       <gdacs:dateadded>Thu, 27 Aug 2026 21:21:11 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 23 Sep 2026 20:52:30 GMT</gdacs:datemodified>
@@ -1224,7 +1224,7 @@
       <gdacs:bbox>-172.901679953948 -146.901679953948 8.55328178399856 34.5532817839986</gdacs:bbox>
       <georss:point>29 -169.9</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001315/cap_1001315.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>60</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1246,7 +1246,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001315/rss_1001315.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001315/rss_1001315.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1259,7 +1259,7 @@
       <description>From 01/09/2026 to 09/09/2026, a Tropical Depression (maximum wind speed of 83 km/h) KROVANH-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001318/1001318_33_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001318</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001318</link>
       <pubDate>Tue, 01 Sep 2026 09:28:20 GMT</pubDate>
       <gdacs:dateadded>Tue, 01 Sep 2026 09:28:20 GMT</gdacs:dateadded>
       <gdacs:datemodified>Fri, 11 Sep 2026 02:07:37 GMT</gdacs:datemodified>
@@ -1278,7 +1278,7 @@
       <gdacs:bbox>116.608568345507 142.608568345507 12.8287556525813 38.8287556525813</gdacs:bbox>
       <georss:point>34.3 135.9</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001318/cap_1001318.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>33</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1300,7 +1300,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001318/rss_1001318.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001318/rss_1001318.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1313,7 +1313,7 @@
       <description>From 01/09/2026 to 08/09/2026, a Tropical Storm (maximum wind speed of 157 km/h) MARIE-26 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001317/1001317_30_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001317</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001317</link>
       <pubDate>Tue, 01 Sep 2026 09:24:37 GMT</pubDate>
       <gdacs:dateadded>Tue, 01 Sep 2026 09:24:37 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 24 Sep 2026 07:21:21 GMT</gdacs:datemodified>
@@ -1332,7 +1332,7 @@
       <gdacs:bbox>-130.048157101694 -104.048157101694 7.0381099689315 33.0381099689315</gdacs:bbox>
       <georss:point>25.8 -127.4</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001317/cap_1001317.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>30</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1354,7 +1354,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001317/rss_1001317.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001317/rss_1001317.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1367,7 +1367,7 @@
       <description>From 27/08/2026 to 07/09/2026, a Tropical Storm (maximum wind speed of 231 km/h) KARINA-26 was active in CentralPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001314/1001314_43_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001314</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001314</link>
       <pubDate>Thu, 27 Aug 2026 21:20:03 GMT</pubDate>
       <gdacs:dateadded>Thu, 27 Aug 2026 21:20:03 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 23 Sep 2026 16:21:32 GMT</gdacs:datemodified>
@@ -1386,7 +1386,7 @@
       <gdacs:bbox>-140.115247584762 -114.115247584762 4.46222739619156 30.4622273961916</gdacs:bbox>
       <georss:point>23.1 -146.2</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001314/cap_1001314.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>43</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1408,7 +1408,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001314/rss_1001314.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001314/rss_1001314.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1421,7 +1421,7 @@
       <description>From 04/09/2026 to 05/09/2026, a Tropical Depression (maximum wind speed of 74 km/h) TWENTYTHREE-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001319/1001319_5_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001319</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001319</link>
       <pubDate>Fri, 04 Sep 2026 15:42:34 GMT</pubDate>
       <gdacs:dateadded>Fri, 04 Sep 2026 15:42:34 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sat, 05 Sep 2026 14:28:54 GMT</gdacs:datemodified>
@@ -1440,7 +1440,7 @@
       <gdacs:bbox>124.513754264611 150.513754264611 10.0531736311411 36.0531736311411</gdacs:bbox>
       <georss:point>28.5 133.8</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001319/cap_1001319.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>5</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1462,7 +1462,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001319/rss_1001319.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001319/rss_1001319.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1475,7 +1475,7 @@
       <description>From 31/08/2026 to 03/09/2026, a Tropical Depression (maximum wind speed of 83 km/h) EDOUARD-26 was active in Atlantic. The cyclone affects these countries: United States (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001316/1001316_12_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001316</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001316</link>
       <pubDate>Mon, 31 Aug 2026 21:18:21 GMT</pubDate>
       <gdacs:dateadded>Mon, 31 Aug 2026 21:18:21 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 08:54:16 GMT</gdacs:datemodified>
@@ -1494,7 +1494,7 @@
       <gdacs:bbox>-106.174600674041 -80.1746006740413 16.3797250953621 42.3797250953621</gdacs:bbox>
       <georss:point>32.5 -96.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001316/cap_1001316.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>12</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1516,7 +1516,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001316/rss_1001316.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001316/rss_1001316.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1529,7 +1529,7 @@
       <description>From 18/08/2026 to 03/09/2026, a Tropical Storm (maximum wind speed of 213 km/h) SAUDEL-26 was active in NWPacific. The cyclone affects these countries: Japan, China, Northern Mariana Islands (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 13.05 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001305/1001305_47_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001305</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001305</link>
       <pubDate>Tue, 18 Aug 2026 13:37:43 GMT</pubDate>
       <gdacs:dateadded>Tue, 18 Aug 2026 13:37:43 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 23 Sep 2026 13:50:51 GMT</gdacs:datemodified>
@@ -1548,7 +1548,7 @@
       <gdacs:bbox>120.22764193066 146.22764193066 9.39060202220321 35.3906020222032</gdacs:bbox>
       <georss:point>23.8 117.4</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001305/cap_1001305.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
       <gdacs:version>47</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Orange</gdacs:alertlevel>
@@ -1570,7 +1570,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001305/rss_1001305.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001305/rss_1001305.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1583,7 +1583,7 @@
       <description>From 27/08/2026 to 30/08/2026, a Tropical Depression (maximum wind speed of 83 km/h) ETAU-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001312/1001312_16_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001312</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001312</link>
       <pubDate>Thu, 27 Aug 2026 03:02:18 GMT</pubDate>
       <gdacs:dateadded>Thu, 27 Aug 2026 03:02:18 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 28 Sep 2026 08:54:10 GMT</gdacs:datemodified>
@@ -1602,7 +1602,7 @@
       <gdacs:bbox>153.196607654225 179.196607654225 13.6220737642935 39.6220737642935</gdacs:bbox>
       <georss:point>31.7 166.8</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001312/cap_1001312.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>16</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1624,7 +1624,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001312/rss_1001312.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001312/rss_1001312.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1637,7 +1637,7 @@
       <description>From 26/08/2026 to 30/08/2026, a Tropical Storm (maximum wind speed of 139 km/h) BANG-LANG-26 was active in NWPacific. The cyclone affects these countries: United States Minor Outlying Islands (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001311/1001311_18_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001311</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001311</link>
       <pubDate>Wed, 26 Aug 2026 08:33:16 GMT</pubDate>
       <gdacs:dateadded>Wed, 26 Aug 2026 08:33:16 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sun, 30 Aug 2026 21:31:17 GMT</gdacs:datemodified>
@@ -1656,7 +1656,7 @@
       <gdacs:bbox>154.120012703701 180.120012703701 15.7031905659123 41.7031905659123</gdacs:bbox>
       <georss:point>34.1 165.9</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001311/cap_1001311.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>18</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1678,7 +1678,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001311/rss_1001311.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001311/rss_1001311.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1691,7 +1691,7 @@
       <description>From 27/08/2026 to 28/08/2026, a Tropical Storm (maximum wind speed of 65 km/h) DOLLY-26 was active in Atlantic. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001313/1001313_5_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001313</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001313</link>
       <pubDate>Thu, 27 Aug 2026 15:17:00 GMT</pubDate>
       <gdacs:dateadded>Thu, 27 Aug 2026 15:17:00 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sun, 30 Aug 2026 20:21:52 GMT</gdacs:datemodified>
@@ -1710,7 +1710,7 @@
       <gdacs:bbox>-60.5430915470971 -34.5430915470971 2.03229987618293 28.0322998761829</gdacs:bbox>
       <georss:point>15 -46.9</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001313/cap_1001313.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>5</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1732,7 +1732,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001313/rss_1001313.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001313/rss_1001313.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1745,7 +1745,7 @@
       <description>From 12/08/2026 to 28/08/2026, a Tropical Storm (maximum wind speed of 213 km/h) LALA-26 was active in CentralPacific. The cyclone affects these countries: United States (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 11938 .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001303/1001303_63_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001303</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001303</link>
       <pubDate>Thu, 13 Aug 2026 14:50:11 GMT</pubDate>
       <gdacs:dateadded>Thu, 13 Aug 2026 14:50:11 GMT</gdacs:dateadded>
       <gdacs:datemodified>Fri, 28 Aug 2026 07:00:14 GMT</gdacs:datemodified>
@@ -1764,7 +1764,7 @@
       <gdacs:bbox>-166.666587042184 -140.666587042184 9.73232757640157 35.7323275764016</gdacs:bbox>
       <georss:point>38.2 -179.4</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001303/cap_1001303.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>64</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1786,7 +1786,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001303/rss_1001303.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001303/rss_1001303.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1799,7 +1799,7 @@
       <description>From 23/08/2026 to 27/08/2026, a Tropical Depression (maximum wind speed of 111 km/h) ISELLE-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001309/1001309_15_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001309</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001309</link>
       <pubDate>Sun, 23 Aug 2026 15:12:58 GMT</pubDate>
       <gdacs:dateadded>Sun, 23 Aug 2026 15:12:58 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 27 Aug 2026 09:18:37 GMT</gdacs:datemodified>
@@ -1818,7 +1818,7 @@
       <gdacs:bbox>-133.458790182556 -107.458790182555 7.27031467188742 33.2703146718874</gdacs:bbox>
       <georss:point>23 -125.9</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001309/cap_1001309.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>15</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1840,7 +1840,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001309/rss_1001309.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001309/rss_1001309.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1853,7 +1853,7 @@
       <description>From 24/08/2026 to 25/08/2026, a Tropical Storm (maximum wind speed of 83 km/h) JULIO-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001310/1001310_5_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001310</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001310</link>
       <pubDate>Mon, 24 Aug 2026 20:56:49 GMT</pubDate>
       <gdacs:dateadded>Mon, 24 Aug 2026 20:56:49 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 27 Aug 2026 01:16:52 GMT</gdacs:datemodified>
@@ -1872,7 +1872,7 @@
       <gdacs:bbox>-132.3331351799 -106.3331351799 4.61224455835787 30.6122445583579</gdacs:bbox>
       <georss:point>21 -119.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001310/cap_1001310.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>5</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1894,7 +1894,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001310/rss_1001310.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001310/rss_1001310.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1907,7 +1907,7 @@
       <description>From 20/08/2026 to 25/08/2026, a Tropical Depression (maximum wind speed of 74 km/h) NARRA-26 was active in NWPacific. The cyclone affects these countries: Viet Nam, China (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001307/1001307_21_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001307</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001307</link>
       <pubDate>Thu, 20 Aug 2026 21:39:02 GMT</pubDate>
       <gdacs:dateadded>Thu, 20 Aug 2026 21:39:02 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 25 Aug 2026 21:02:51 GMT</gdacs:datemodified>
@@ -1926,7 +1926,7 @@
       <gdacs:bbox>94.9506838881252 120.950683888125 6.96934505992296 32.969345059923</gdacs:bbox>
       <georss:point>20 109.6</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001307/cap_1001307.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>21</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -1948,7 +1948,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001307/rss_1001307.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001307/rss_1001307.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1961,7 +1961,7 @@
       <description>From 20/08/2026 to 25/08/2026, a Tropical Depression (maximum wind speed of 83 km/h) TWO-C-26 was active in CentralPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001306/1001306_20_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001306</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001306</link>
       <pubDate>Thu, 20 Aug 2026 15:10:35 GMT</pubDate>
       <gdacs:dateadded>Thu, 20 Aug 2026 15:10:35 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 25 Aug 2026 13:57:09 GMT</gdacs:datemodified>
@@ -1980,7 +1980,7 @@
       <gdacs:bbox>-164.191325257372 -138.191325257372 1.77842507346746 27.7784250734675</gdacs:bbox>
       <georss:point>16.3 -164.1</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001306/cap_1001306.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>20</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2002,7 +2002,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001306/rss_1001306.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001306/rss_1001306.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2015,7 +2015,7 @@
       <description>From 22/08/2026 to 25/08/2026, a Tropical Depression (maximum wind speed of 56 km/h) ATSANI-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001308/1001308_12_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001308</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001308</link>
       <pubDate>Sat, 22 Aug 2026 14:13:37 GMT</pubDate>
       <gdacs:dateadded>Sat, 22 Aug 2026 14:13:37 GMT</gdacs:dateadded>
       <gdacs:datemodified>Tue, 25 Aug 2026 14:24:54 GMT</gdacs:datemodified>
@@ -2034,7 +2034,7 @@
       <gdacs:bbox>124.3 150.3 7.6 33.6</gdacs:bbox>
       <georss:point>20.6 137.3</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001308/cap_1001308.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>12</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2056,7 +2056,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001308/rss_1001308.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001308/rss_1001308.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2069,7 +2069,7 @@
       <description>From 13/08/2026 to 15/08/2026, a Tropical Depression (maximum wind speed of 74 km/h) HERNAN-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001304/1001304_12_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001304</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001304</link>
       <pubDate>Thu, 13 Aug 2026 03:09:14 GMT</pubDate>
       <gdacs:dateadded>Thu, 13 Aug 2026 03:09:14 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sun, 16 Aug 2026 17:36:17 GMT</gdacs:datemodified>
@@ -2088,7 +2088,7 @@
       <gdacs:bbox>-144.931010092169 -118.931010092169 4.31491541379209 30.3149154137921</gdacs:bbox>
       <georss:point>15.8 -135.9</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001304/cap_1001304.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>12</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2110,7 +2110,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001304/rss_1001304.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001304/rss_1001304.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2123,7 +2123,7 @@
       <description>From 12/08/2026 to 14/08/2026, a Tropical Depression (maximum wind speed of 65 km/h) NANGKA-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001301/1001301_9_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001301</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001301</link>
       <pubDate>Wed, 12 Aug 2026 13:36:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 12 Aug 2026 13:36:25 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sat, 15 Aug 2026 13:35:21 GMT</gdacs:datemodified>
@@ -2142,7 +2142,7 @@
       <gdacs:bbox>138.668786174717 164.668786174717 15.149484258326 41.149484258326</gdacs:bbox>
       <georss:point>28.3 154.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001301/cap_1001301.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>9</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2164,7 +2164,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001301/rss_1001301.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001301/rss_1001301.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2177,7 +2177,7 @@
       <description>From 04/08/2026 to 13/08/2026, a Tropical Depression (maximum wind speed of 74 km/h) PEILOU-26 was active in NWPacific. The cyclone affects these countries: Philippines (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0.874 million in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001298/1001298_28_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001298</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001298</link>
       <pubDate>Tue, 04 Aug 2026 22:23:42 GMT</pubDate>
       <gdacs:dateadded>Tue, 04 Aug 2026 22:23:42 GMT</gdacs:dateadded>
       <gdacs:datemodified>Fri, 14 Aug 2026 21:00:28 GMT</gdacs:datemodified>
@@ -2196,7 +2196,7 @@
       <gdacs:bbox>82.8618108710556 108.861810871056 16.2802555864871 42.2802555864871</gdacs:bbox>
       <georss:point>33.8 170.2</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001298/cap_1001298.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>28</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2218,7 +2218,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001298/rss_1001298.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001298/rss_1001298.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2231,7 +2231,7 @@
       <description>From 12/08/2026 to 13/08/2026, a Tropical Depression (maximum wind speed of 74 km/h) CRISTOBAL-26 was active in Atlantic. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001302/1001302_5_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001302</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001302</link>
       <pubDate>Wed, 12 Aug 2026 15:06:05 GMT</pubDate>
       <gdacs:dateadded>Wed, 12 Aug 2026 15:06:05 GMT</gdacs:dateadded>
       <gdacs:datemodified>Fri, 14 Aug 2026 21:20:13 GMT</gdacs:datemodified>
@@ -2250,7 +2250,7 @@
       <gdacs:bbox>-53.8359593836812 -27.8359593836812 24.4018712852134 50.4018712852134</gdacs:bbox>
       <georss:point>39.4 -36.8</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001302/cap_1001302.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>5</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2272,7 +2272,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001302/rss_1001302.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001302/rss_1001302.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2285,7 +2285,7 @@
       <description>From 07/08/2026 to 11/08/2026, a Tropical Depression (maximum wind speed of 93 km/h) CHAN-HOM-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001299/1001299_20_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001299</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001299</link>
       <pubDate>Fri, 07 Aug 2026 02:37:14 GMT</pubDate>
       <gdacs:dateadded>Fri, 07 Aug 2026 02:37:14 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 12 Aug 2026 19:50:21 GMT</gdacs:datemodified>
@@ -2304,7 +2304,7 @@
       <gdacs:bbox>141.18005000376 167.18005000376 19.1864626165691 45.1864626165691</gdacs:bbox>
       <georss:point>35.8 137.4</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001299/cap_1001299.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>20</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2326,7 +2326,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001299/rss_1001299.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001299/rss_1001299.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2339,7 +2339,7 @@
       <description>From 10/08/2026 to 11/08/2026, a Tropical Depression (maximum wind speed of 65 km/h) FIFTEEN-26 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001300/1001300_5_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001300</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001300</link>
       <pubDate>Mon, 10 Aug 2026 02:21:18 GMT</pubDate>
       <gdacs:dateadded>Mon, 10 Aug 2026 02:21:18 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 12 Aug 2026 00:50:21 GMT</gdacs:datemodified>
@@ -2358,7 +2358,7 @@
       <gdacs:bbox>147.67910218162 173.67910218162 14.1825683547363 40.1825683547363</gdacs:bbox>
       <georss:point>28.4 160.8</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001300/cap_1001300.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>5</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2380,7 +2380,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001300/rss_1001300.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001300/rss_1001300.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2393,7 +2393,7 @@
       <description>From 27/07/2026 to 09/08/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 269 km/h) DOLPHIN-26 was active in NWPacific. The cyclone affects these countries: Marshall Islands, Japan, China (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 14.054 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001297/1001297_55_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001297</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001297</link>
       <pubDate>Mon, 27 Jul 2026 02:24:29 GMT</pubDate>
       <gdacs:dateadded>Mon, 27 Jul 2026 02:24:29 GMT</gdacs:dateadded>
       <gdacs:datemodified>Wed, 23 Sep 2026 12:50:40 GMT</gdacs:datemodified>
@@ -2412,7 +2412,7 @@
       <gdacs:bbox>129.550902471008 155.550902471008 10.8735056906153 36.8735056906153</gdacs:bbox>
       <georss:point>27.9 120.6</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001297/cap_1001297.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
       <gdacs:version>55</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Orange</gdacs:alertlevel>
@@ -2434,7 +2434,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001297/rss_1001297.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001297/rss_1001297.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2447,7 +2447,7 @@
       <description>From 24/07/2026 to 02/08/2026, a Tropical Storm (maximum wind speed of 259 km/h) GENEVIEVE-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001296/1001296_39_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001296</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001296</link>
       <pubDate>Fri, 24 Jul 2026 14:55:20 GMT</pubDate>
       <gdacs:dateadded>Fri, 24 Jul 2026 14:55:20 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 03 Aug 2026 17:52:44 GMT</gdacs:datemodified>
@@ -2466,7 +2466,7 @@
       <gdacs:bbox>-133.452996875248 -107.452996875248 5.37716602754697 31.377166027547</gdacs:bbox>
       <georss:point>24.8 -139.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001296/cap_1001296.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>39</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2488,7 +2488,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001296/rss_1001296.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001296/rss_1001296.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2501,7 +2501,7 @@
       <description>From 19/07/2026 to 29/07/2026, a Tropical Depression (maximum wind speed of 167 km/h) FAUSTO-26 was active in CentralPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001289/1001289_43_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001289</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001289</link>
       <pubDate>Sun, 19 Jul 2026 02:53:14 GMT</pubDate>
       <gdacs:dateadded>Sun, 19 Jul 2026 02:53:14 GMT</gdacs:dateadded>
       <gdacs:datemodified>Thu, 30 Jul 2026 13:08:54 GMT</gdacs:datemodified>
@@ -2520,7 +2520,7 @@
       <gdacs:bbox>-146.324551596453 -120.324551596453 5.57821736104742 31.5782173610474</gdacs:bbox>
       <georss:point>23.8 -155.6</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001289/cap_1001289.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>43</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2542,7 +2542,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001289/rss_1001289.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001289/rss_1001289.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2555,7 +2555,7 @@
       <description>From 23/07/2026 to 26/07/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 157 km/h) NOUL-26 was active in NWPacific. The cyclone affects these countries: China, Philippines (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 11.891 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001294/1001294_13_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001294</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001294</link>
       <pubDate>Thu, 23 Jul 2026 08:39:30 GMT</pubDate>
       <gdacs:dateadded>Thu, 23 Jul 2026 08:39:30 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 27 Jul 2026 00:37:14 GMT</gdacs:datemodified>
@@ -2574,7 +2574,7 @@
       <gdacs:bbox>106.857126636286 132.857126636286 7.39634411145021 33.3963441114502</gdacs:bbox>
       <georss:point>22.9 114.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001294/cap_1001294.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
       <gdacs:version>13</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Orange</gdacs:alertlevel>
@@ -2596,7 +2596,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001294/rss_1001294.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001294/rss_1001294.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2609,7 +2609,7 @@
       <description>From 19/07/2026 to 24/07/2026, a Tropical Depression (maximum wind speed of 93 km/h) BERTHA-26 was active in Atlantic. The cyclone affects these countries: United States (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001290/1001290_19_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001290</link>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001290</link>
       <pubDate>Sun, 19 Jul 2026 15:09:29 GMT</pubDate>
       <gdacs:dateadded>Sun, 19 Jul 2026 15:09:29 GMT</gdacs:dateadded>
       <gdacs:datemodified>Sat, 25 Jul 2026 00:21:44 GMT</gdacs:datemodified>
@@ -2628,7 +2628,7 @@
       <gdacs:bbox>-104.357927880158 -78.357927880158 16.5162692675458 42.5162692675458</gdacs:bbox>
       <georss:point>30 -96</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001290/cap_1001290.xml</gdacs:cap>
-      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
       <gdacs:version>19</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
@@ -2650,7 +2650,7 @@
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001290/rss_1001290.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001290/rss_1001290.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2659,4 +2659,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/22/2026 6:40:44 AM-->
+</rss><!--End 10/22/2026 12:11:07 PM-->
