@@ -6,11 +6,11 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 48-->
-    <!--Start 10/21/2026 10:48:52 PM-->
-    <!--=Start 10/21/2026 10:48:52 PM-->
+    <!--Records number 49-->
+    <!--Start 10/22/2026 1:48:47 AM-->
+    <!--=Start 10/22/2026 1:48:47 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Wed, 21 Oct 2026 20:48:52 GMT</pubDate>
+    <pubDate>Wed, 21 Oct 2026 23:48:47 GMT</pubDate>
     <atom:link href="https://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green notification for tropical cyclone VANCE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
@@ -67,6 +67,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green notification for tropical cyclone JOSEPHINE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (7.514 million in Tropical Storm).</title>
+      <description>From 21/10/2026 to 21/10/2026, a Tropical Storm (maximum wind speed of 130 km/h) JOSEPHINE-26 was active in Atlantic. The cyclone affects these countries: United States, Canada, Saint Pierre and Miquelon (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (7.514 million in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001342/1001342_1_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001342</link>
+      <pubDate>Wed, 21 Oct 2026 21:08:24 GMT</pubDate>
+      <gdacs:dateadded>Wed, 21 Oct 2026 21:08:24 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 21 Oct 2026 23:22:13 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Wed, 21 Oct 2026 21:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Wed, 21 Oct 2026 21:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC1</dc:subject>
+      <guid isPermaLink="false">TC1001342</guid>
+      <geo:Point>
+        <geo:lat>37.4</geo:lat>
+        <geo:long>-69.5</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-70.2590218158345 -44.2590218158345 28.6053165672867 54.6053165672867</gdacs:bbox>
+      <georss:point>37.4 -69.5</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001342/cap_1001342.xml</gdacs:cap>
+      <gdacs:icon>https://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname>JOSEPHINE-26</gdacs:eventname>
+      <gdacs:eventid>1001342</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="129.6288">Tropical Storm (maximum wind speed of 130 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (49.664 million in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="1">Low</gdacs:vulnerability>
+      <gdacs:iso3>CAN</gdacs:iso3>
+      <gdacs:country>United States, Canada, Saint Pierre and Miquelon</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="https://www.gdacs.org//datareport/resources/TC/1001342/rss_1001342.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Red notification for tropical cyclone CHAMPI-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.231 million .</title>
       <description>From 14/10/2026 to 21/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 296 km/h) CHAMPI-26 was active in NWPacific. The cyclone affects these countries: Philippines, Guam, Northern Mariana Islands, Japan, Taiwan (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.231 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001338/1001338_30_tn.png" />
@@ -74,7 +128,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001338</link>
       <pubDate>Wed, 14 Oct 2026 14:31:53 GMT</pubDate>
       <gdacs:dateadded>Wed, 14 Oct 2026 14:31:53 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 21 Oct 2026 20:41:29 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 21 Oct 2026 21:00:33 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 14 Oct 2026 12:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 21 Oct 2026 18:00:00 GMT</gdacs:todate>
@@ -106,7 +160,7 @@
       <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
       <gdacs:iso3>GUM</gdacs:iso3>
       <gdacs:country>Philippines, Guam, Northern Mariana Islands, Japan, Taiwan</gdacs:country>
-      <gdacs:glide />
+      <gdacs:glide>TC-2026-000192-GUM</gdacs:glide>
       <gdacs:mapimage />
       <gdacs:maplink />
       <gdacs:gtsimage />
@@ -398,7 +452,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 21 Oct 2026 20:44:02 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 21 Oct 2026 23:37:14 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -452,7 +506,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 21 Oct 2026 20:44:19 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 21 Oct 2026 23:37:34 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -722,7 +776,7 @@
       <link>https://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 21 Oct 2026 20:43:44 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 21 Oct 2026 23:36:57 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -2605,4 +2659,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/21/2026 10:50:42 PM-->
+</rss><!--End 10/22/2026 1:50:45 AM-->
