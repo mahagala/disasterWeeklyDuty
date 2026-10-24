@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T02:00:36.783145+00:00",
+  "generatedAt": "2026-10-24T07:22:11.825012+00:00",
   "feeds": {
     "gdacs7d": {
       "source": "gdacs",
       "file": "gdacs7d.xml",
-      "checkedAt": "2026-10-24T02:00:36.783145+00:00",
-      "lastSuccessAt": "2026-10-24T02:00:36.783145+00:00",
-      "count": 496,
-      "sha256": "6b55fadb2bee873d74db4bd92cbb39e62fa2a3675acbcdd55c6af44c80208d16",
+      "checkedAt": "2026-10-24T07:22:11.825012+00:00",
+      "lastSuccessAt": "2026-10-24T07:22:11.825012+00:00",
+      "count": 509,
+      "sha256": "9ea7721e41b40e0ed52d7aa117b3b917455167bcc40457c14f30ae0c35b6198f",
       "available": true,
       "status": "ok",
       "error": null
@@ -16,10 +16,10 @@
     "gdacsEq3m": {
       "source": "gdacs",
       "file": "gdacsEq3m.xml",
-      "checkedAt": "2026-10-24T02:00:36.783145+00:00",
-      "lastSuccessAt": "2026-10-24T02:00:36.783145+00:00",
+      "checkedAt": "2026-10-24T07:22:11.825012+00:00",
+      "lastSuccessAt": "2026-10-24T07:22:11.825012+00:00",
       "count": 9,
-      "sha256": "d18a7001e3173e2e44e48e24da3e9a22f1626567ff2e14acb3274a53cd1175c5",
+      "sha256": "4ce7d66cdf0995c18b133cfd75b27eb1c51040581164cbd91088f830f4b7e583",
       "available": true,
       "status": "ok",
       "error": null
@@ -27,10 +27,10 @@
     "gdacsTc3m": {
       "source": "gdacs",
       "file": "gdacsTc3m.xml",
-      "checkedAt": "2026-10-24T02:00:36.783145+00:00",
-      "lastSuccessAt": "2026-10-24T02:00:36.783145+00:00",
+      "checkedAt": "2026-10-24T07:22:11.825012+00:00",
+      "lastSuccessAt": "2026-10-24T07:22:11.825012+00:00",
       "count": 48,
-      "sha256": "bd2a563ae3dc8c1a94c2384fdefe4188c91123b0d2dca66c084749e9747321a9",
+      "sha256": "f40a69b8175571d1d1792a9276c60154a1248d712878131c929f7e59929debf7",
       "available": true,
       "status": "ok",
       "error": null
@@ -38,10 +38,10 @@
     "gdacsFl3m": {
       "source": "gdacs",
       "file": "gdacsFl3m.xml",
-      "checkedAt": "2026-10-24T02:00:36.783145+00:00",
-      "lastSuccessAt": "2026-10-24T02:00:36.783145+00:00",
+      "checkedAt": "2026-10-24T07:22:11.825012+00:00",
+      "lastSuccessAt": "2026-10-24T07:22:11.825012+00:00",
       "count": 199,
-      "sha256": "16951528225ff70ff548f55cbe1f5108e21ab73b60c0dad9e5befb6980b9159a",
+      "sha256": "804d2831fcda31cd39e686717e97052d9ab4ed7602cc159db377f12d1af75d32",
       "available": true,
       "status": "ok",
       "error": null
@@ -49,10 +49,10 @@
     "ercc": {
       "source": "ercc",
       "file": "ercc.xml",
-      "checkedAt": "2026-10-24T02:00:36.783145+00:00",
-      "lastSuccessAt": "2026-10-24T02:00:36.783145+00:00",
+      "checkedAt": "2026-10-24T07:22:11.825012+00:00",
+      "lastSuccessAt": "2026-10-24T07:22:11.825012+00:00",
       "count": 10,
-      "sha256": "9eaf0c0bded2a25532400272d901039bea4d10b3d9a7d5572e56673d0f54635c",
+      "sha256": "77ba7d2e64f37bcf13fc253ddb05751b82c2410d81b3626a8923719a80101faa",
       "available": true,
       "status": "ok",
       "error": null
@@ -60,10 +60,10 @@
     "usgs": {
       "source": "usgs",
       "file": "usgs.xml",
-      "checkedAt": "2026-10-24T02:00:36.783145+00:00",
-      "lastSuccessAt": "2026-10-24T02:00:36.783145+00:00",
-      "count": 709,
-      "sha256": "58ebafea62f5dda2ae070a22c4cb36c16105372ce4a54861f94937c29eeb7f9a",
+      "checkedAt": "2026-10-24T07:22:11.825012+00:00",
+      "lastSuccessAt": "2026-10-24T07:22:11.825012+00:00",
+      "count": 729,
+      "sha256": "88d46f7c9ed5bac79618fbf9b7236bcc7cbd259ff8414dff7ace4add2181d39c",
       "available": true,
       "status": "ok",
       "error": null
@@ -71,8 +71,8 @@
     "reliefweb": {
       "source": "reliefweb",
       "file": "reliefweb.json",
-      "checkedAt": "2026-10-24T02:00:36.783145+00:00",
-      "lastSuccessAt": "2026-10-24T02:00:36.783145+00:00",
+      "checkedAt": "2026-10-24T07:22:11.825012+00:00",
+      "lastSuccessAt": "2026-10-24T07:22:11.825012+00:00",
       "count": 150,
       "sha256": "11084f8e70b6875789f3f81222ad786102e4f95b4d9043546a7662cdeb38eba9",
       "available": true,
