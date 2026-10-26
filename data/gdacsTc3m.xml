@@ -7,37 +7,91 @@
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
     <!--Records number 50-->
-    <!--Start 10/26/2026 6:19:25 AM-->
-    <!--=Start 10/26/2026 6:19:25 AM-->
+    <!--Start 10/26/2026 12:19:16 PM-->
+    <!--=Start 10/26/2026 12:19:16 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Mon, 26 Oct 2026 05:19:25 GMT</pubDate>
+    <pubDate>Mon, 26 Oct 2026 11:19:16 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Green notification for tropical cyclone VANCE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
+      <description>From 21/10/2026 to 26/10/2026, a Tropical Storm (maximum wind speed of 139 km/h) VANCE-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001341/1001341_20_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001341</link>
+      <pubDate>Wed, 21 Oct 2026 14:51:54 GMT</pubDate>
+      <gdacs:dateadded>Wed, 21 Oct 2026 14:51:54 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 26 Oct 2026 08:50:50 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Wed, 21 Oct 2026 15:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Mon, 26 Oct 2026 09:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>1</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC1</dc:subject>
+      <guid isPermaLink="false">TC1001341</guid>
+      <geo:Point>
+        <geo:lat>15.3</geo:lat>
+        <geo:long>-105.1</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-117.377186311305 -91.3771863113052 1.66739191327387 27.6673919132739</gdacs:bbox>
+      <georss:point>15.3 -105.1</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001341/cap_1001341.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>20</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname>VANCE-26</gdacs:eventname>
+      <gdacs:eventid>1001341</gdacs:eventid>
+      <gdacs:episodeid>20</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="138.888">Tropical Storm (maximum wind speed of 102 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
+      <gdacs:country />
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001341/rss_1001341.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green notification for tropical cyclone THREE-C-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 25/10/2026 to 26/10/2026, a Tropical Storm (maximum wind speed of 74 km/h) THREE-C-26 was active in CentralPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001344/1001344_3_tn.png" />
+      <description>From 25/10/2026 to 26/10/2026, a Tropical Storm (maximum wind speed of 65 km/h) THREE-C-26 was active in CentralPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001344/1001344_4_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001344</link>
       <pubDate>Sun, 25 Oct 2026 15:05:43 GMT</pubDate>
       <gdacs:dateadded>Sun, 25 Oct 2026 15:05:43 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 26 Oct 2026 02:51:56 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Mon, 26 Oct 2026 08:52:01 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 25 Oct 2026 15:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 26 Oct 2026 03:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Mon, 26 Oct 2026 09:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001344</guid>
       <geo:Point>
         <geo:lat>14.9</geo:lat>
-        <geo:long>-177.3</geo:long>
+        <geo:long>-176.6</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-188.93502425193 -162.93502425193 1.44534076395598 27.445340763956</gdacs:bbox>
-      <georss:point>14.9 -177.3</georss:point>
+      <gdacs:bbox>-189.972322108493 -163.972322108493 1.80313727250504 27.803137272505</gdacs:bbox>
+      <georss:point>14.9 -176.6</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001344/cap_1001344.xml</gdacs:cap>
       <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>3</gdacs:version>
+      <gdacs:version>4</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
       <gdacs:alertscore>1</gdacs:alertscore>
@@ -45,9 +99,9 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>THREE-C-26</gdacs:eventname>
       <gdacs:eventid>1001344</gdacs:eventid>
-      <gdacs:episodeid>3</gdacs:episodeid>
+      <gdacs:episodeid>4</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcycloneonly</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="74.0736">Tropical Storm (maximum wind speed of 74 km/h)</gdacs:severity>
+      <gdacs:severity unit="km/h" value="64.8144">Tropical Storm (maximum wind speed of 65 km/h)</gdacs:severity>
       <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
       <gdacs:vulnerability value="0" />
       <gdacs:iso3 />
@@ -67,96 +121,42 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green notification for tropical cyclone VANCE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 21/10/2026 to 26/10/2026, a Tropical Storm (maximum wind speed of 139 km/h) VANCE-26 was active in EastPacific. The cyclone affects these countries: México (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001341/1001341_19_tn.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001341</link>
-      <pubDate>Wed, 21 Oct 2026 14:51:54 GMT</pubDate>
-      <gdacs:dateadded>Wed, 21 Oct 2026 14:51:54 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 26 Oct 2026 02:50:53 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Wed, 21 Oct 2026 15:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 26 Oct 2026 03:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>1</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC1</dc:subject>
-      <guid isPermaLink="false">TC1001341</guid>
-      <geo:Point>
-        <geo:lat>15</geo:lat>
-        <geo:long>-104.7</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-117.223938643814 -91.2239386438139 1.74201439533389 27.7420143953339</gdacs:bbox>
-      <georss:point>15 -104.7</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001341/cap_1001341.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>19</gdacs:version>
-      <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname>VANCE-26</gdacs:eventname>
-      <gdacs:eventid>1001341</gdacs:eventid>
-      <gdacs:episodeid>19</gdacs:episodeid>
-      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="138.888">Tropical Storm (maximum wind speed of 102 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (3519 in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
-      <gdacs:iso3>MEX</gdacs:iso3>
-      <gdacs:country>México</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001341/rss_1001341.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Orange notification for tropical cyclone TWO-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.356 million .</title>
-      <description>From 26/10/2026 to 26/10/2026, a Tropical Storm (maximum wind speed of 120 km/h) TWO-26 was active in NorthIndian. The cyclone affects these countries: India (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.356 million .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001345/1001345_1_tn.png" />
+      <title>Red notification for tropical cyclone ARNAB-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 3.049 million .</title>
+      <description>From 26/10/2026 to 26/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 204 km/h) ARNAB-26 was active in NorthIndian. The cyclone affects these countries: India (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 3.049 million .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001345/1001345_2_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001345</link>
       <pubDate>Mon, 26 Oct 2026 01:51:40 GMT</pubDate>
       <gdacs:dateadded>Mon, 26 Oct 2026 01:51:40 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 26 Oct 2026 03:50:25 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Mon, 26 Oct 2026 08:07:19 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Mon, 26 Oct 2026 00:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 26 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Mon, 26 Oct 2026 06:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC2</dc:subject>
+      <dc:subject>TC3</dc:subject>
       <guid isPermaLink="false">TC1001345</guid>
       <geo:Point>
-        <geo:lat>16</geo:lat>
-        <geo:long>89.1</geo:long>
+        <geo:lat>15.3</geo:lat>
+        <geo:long>88.4</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>71.7431410999805 97.7431410999805 3.67419282938843 29.6741928293884</gdacs:bbox>
-      <georss:point>16 89.1</georss:point>
+      <gdacs:bbox>71.7118312160552 97.7118312160552 3.35499525455839 29.3549952545584</gdacs:bbox>
+      <georss:point>15.3 88.4</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001345/cap_1001345.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Red/TC.png</gdacs:icon>
+      <gdacs:version>2</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Orange</gdacs:alertlevel>
-      <gdacs:alertscore>2</gdacs:alertscore>
-      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>2</gdacs:episodealertscore>
-      <gdacs:eventname>TWO-26</gdacs:eventname>
+      <gdacs:alertlevel>Red</gdacs:alertlevel>
+      <gdacs:alertscore>3</gdacs:alertscore>
+      <gdacs:episodealertlevel>Red</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>3</gdacs:episodealertscore>
+      <gdacs:eventname>ARNAB-26</gdacs:eventname>
       <gdacs:eventid>1001345</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:episodeid>2</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="120.3696">Tropical Storm (maximum wind speed of 120 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="356465">Population affected by Category 1 (120 km/h) wind speeds or higher is 0.356 million </gdacs:population>
+      <gdacs:severity unit="km/h" value="203.7024">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 185 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="3048725">Population affected by Category 1 (120 km/h) wind speeds or higher is 3.049 million </gdacs:population>
       <gdacs:vulnerability value="3">High</gdacs:vulnerability>
       <gdacs:iso3>IND</gdacs:iso3>
       <gdacs:country>India</gdacs:country>
@@ -176,30 +176,30 @@
     </item>
     <item>
       <title>Green notification for tropical cyclone IN-FA-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 25/10/2026 to 26/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 222 km/h) IN-FA-26 was active in NWPacific. The cyclone affects these countries: Marshall Islands (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001343/1001343_11_tn.png" />
+      <description>From 25/10/2026 to 26/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 250 km/h) IN-FA-26 was active in NWPacific. The cyclone affects these countries: Marshall Islands, Northern Mariana Islands (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001343/1001343_12_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001343</link>
       <pubDate>Sun, 25 Oct 2026 11:52:38 GMT</pubDate>
       <gdacs:dateadded>Sun, 25 Oct 2026 11:52:38 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 26 Oct 2026 01:36:05 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Mon, 26 Oct 2026 08:20:58 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 25 Oct 2026 06:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 26 Oct 2026 00:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Mon, 26 Oct 2026 06:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001343</guid>
       <geo:Point>
-        <geo:lat>13.8</geo:lat>
-        <geo:long>163.2</geo:long>
+        <geo:lat>14</geo:lat>
+        <geo:long>163</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>138.461354653878 164.461354653878 3.63110810921435 29.6311081092143</gdacs:bbox>
-      <georss:point>13.8 163.2</georss:point>
+      <gdacs:bbox>138.273751242514 164.273751242514 3.61416830810338 29.6141683081034</gdacs:bbox>
+      <georss:point>14 163</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001343/cap_1001343.xml</gdacs:cap>
       <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>11</gdacs:version>
+      <gdacs:version>12</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
       <gdacs:alertscore>1</gdacs:alertscore>
@@ -207,13 +207,13 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>IN-FA-26</gdacs:eventname>
       <gdacs:eventid>1001343</gdacs:eventid>
-      <gdacs:episodeid>11</gdacs:episodeid>
+      <gdacs:episodeid>12</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="222.2208">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 222 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (4 in Tropical Storm)</gdacs:population>
+      <gdacs:severity unit="km/h" value="249.9984">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 250 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (38041 in Tropical Storm)</gdacs:population>
       <gdacs:vulnerability value="3">High</gdacs:vulnerability>
       <gdacs:iso3>MHL</gdacs:iso3>
-      <gdacs:country>Marshall Islands</gdacs:country>
+      <gdacs:country>Marshall Islands, Northern Mariana Islands</gdacs:country>
       <gdacs:glide />
       <gdacs:mapimage />
       <gdacs:maplink />
@@ -607,60 +607,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green notification for tropical cyclone RACHEL-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 27/09/2026 to 11/10/2026, a Tropical Depression (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico, United States (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001329/1001329_58_tn.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
-      <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
-      <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 26 Oct 2026 05:06:28 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>2</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC1</dc:subject>
-      <guid isPermaLink="false">TC1001329</guid>
-      <geo:Point>
-        <geo:lat>35.8</geo:lat>
-        <geo:long>-114.6</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-127.6 -101.6 22.8 48.8</gdacs:bbox>
-      <georss:point>35.8 -114.6</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001329/cap_1001329.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>58</gdacs:version>
-      <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname>RACHEL-26</gdacs:eventname>
-      <gdacs:eventid>1001329</gdacs:eventid>
-      <gdacs:episodeid>58</gdacs:episodeid>
-      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="194.4432">Tropical Depression (maximum wind speed of 56 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (27.359 million in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
-      <gdacs:iso3>MEX</gdacs:iso3>
-      <gdacs:country>Mexico, United States</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001329/rss_1001329.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Orange notification for tropical cyclone ISAIAS-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.567 million .</title>
       <description>From 06/10/2026 to 11/10/2026, a Tropical Depression (maximum wind speed of 194 km/h) ISAIAS-26 was active in Atlantic. The cyclone affects these countries: United States (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0.567 million .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001334/1001334_20_tn.png" />
@@ -668,7 +614,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 26 Oct 2026 05:06:53 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Mon, 26 Oct 2026 11:06:57 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -707,6 +653,60 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001334/rss_1001334.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green notification for tropical cyclone RACHEL-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
+      <description>From 27/09/2026 to 11/10/2026, a Tropical Depression (maximum wind speed of 194 km/h) RACHEL-26 was active in EastPacific. The cyclone affects these countries: Mexico, United States (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001329/1001329_58_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
+      <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
+      <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 26 Oct 2026 11:06:25 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC1</dc:subject>
+      <guid isPermaLink="false">TC1001329</guid>
+      <geo:Point>
+        <geo:lat>35.8</geo:lat>
+        <geo:long>-114.6</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-127.6 -101.6 22.8 48.8</gdacs:bbox>
+      <georss:point>35.8 -114.6</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001329/cap_1001329.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>58</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname>RACHEL-26</gdacs:eventname>
+      <gdacs:eventid>1001329</gdacs:eventid>
+      <gdacs:episodeid>58</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="194.4432">Tropical Depression (maximum wind speed of 56 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (27.359 million in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
+      <gdacs:iso3>MEX</gdacs:iso3>
+      <gdacs:country>Mexico, United States</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001329/rss_1001329.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -938,7 +938,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 26 Oct 2026 05:05:48 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Mon, 26 Oct 2026 11:05:51 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -2713,4 +2713,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/26/2026 6:21:31 AM-->
+</rss><!--End 10/26/2026 12:21:39 PM-->
