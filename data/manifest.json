@@ -1,69 +1,69 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T21:55:35.437220+00:00",
+  "generatedAt": "2026-10-27T01:30:46.954236+00:00",
   "feeds": {
     "gdacs7d": {
       "source": "gdacs",
       "file": "gdacs7d.xml",
-      "checkedAt": "2026-10-26T21:55:35.437220+00:00",
+      "checkedAt": "2026-10-27T01:30:46.954236+00:00",
       "lastSuccessAt": "2026-10-26T21:55:35.437220+00:00",
       "count": 602,
       "sha256": "ad2765d357f967838dfc9ef926fd96b78335320c8f761a76854dbc02a2bd8cf9",
       "available": true,
-      "status": "ok",
-      "error": null
+      "status": "stale",
+      "error": "連線失敗或逾時，已嘗試三次"
     },
     "gdacsEq3m": {
       "source": "gdacs",
       "file": "gdacsEq3m.xml",
-      "checkedAt": "2026-10-26T21:55:35.437220+00:00",
+      "checkedAt": "2026-10-27T01:30:46.954236+00:00",
       "lastSuccessAt": "2026-10-26T21:55:35.437220+00:00",
       "count": 9,
       "sha256": "fb90e27b1fa4c33403f5a7e3618b0c667c74abb6bbe88374f1eb2967612ef549",
       "available": true,
-      "status": "ok",
-      "error": null
+      "status": "stale",
+      "error": "連線失敗或逾時，已嘗試三次"
     },
     "gdacsTc3m": {
       "source": "gdacs",
       "file": "gdacsTc3m.xml",
-      "checkedAt": "2026-10-26T21:55:35.437220+00:00",
+      "checkedAt": "2026-10-27T01:30:46.954236+00:00",
       "lastSuccessAt": "2026-10-26T21:55:35.437220+00:00",
       "count": 50,
       "sha256": "3ceb861e115d69d6c297b94df9cc6d3b8154f1536fe0102bf1f3d9737f489773",
       "available": true,
-      "status": "ok",
-      "error": null
+      "status": "stale",
+      "error": "連線失敗或逾時，已嘗試三次"
     },
     "gdacsFl3m": {
       "source": "gdacs",
       "file": "gdacsFl3m.xml",
-      "checkedAt": "2026-10-26T21:55:35.437220+00:00",
+      "checkedAt": "2026-10-27T01:30:46.954236+00:00",
       "lastSuccessAt": "2026-10-26T21:55:35.437220+00:00",
       "count": 196,
       "sha256": "0d3f858e4b6f0e2437d4c77b10dcd4c06c12b9826c6d9dae6f1765680e7c2659",
       "available": true,
-      "status": "ok",
-      "error": null
+      "status": "stale",
+      "error": "連線失敗或逾時，已嘗試三次"
     },
     "ercc": {
       "source": "ercc",
       "file": "ercc.xml",
-      "checkedAt": "2026-10-26T21:55:35.437220+00:00",
+      "checkedAt": "2026-10-27T01:30:46.954236+00:00",
       "lastSuccessAt": "2026-10-26T21:55:35.437220+00:00",
       "count": 10,
       "sha256": "1b4d9ba85b8c40a9a3bdde20a85b42f0ec25a3a21fdc1d485610fcd42a4fef69",
       "available": true,
-      "status": "ok",
-      "error": null
+      "status": "stale",
+      "error": "連線失敗或逾時，已嘗試三次"
     },
     "usgs": {
       "source": "usgs",
       "file": "usgs.xml",
-      "checkedAt": "2026-10-26T21:55:35.437220+00:00",
-      "lastSuccessAt": "2026-10-26T21:55:35.437220+00:00",
-      "count": 724,
-      "sha256": "1e43349b8399b3cd0babfcef083d9a967cc3e0863c732fce7b5ba10f52070340",
+      "checkedAt": "2026-10-27T01:30:46.954236+00:00",
+      "lastSuccessAt": "2026-10-27T01:30:46.954236+00:00",
+      "count": 727,
+      "sha256": "0c45e9501c334ae6d7ecb21f7a54a6b0c410a0ac502f1980106368dbf85facbb",
       "available": true,
       "status": "ok",
       "error": null
@@ -71,10 +71,10 @@
     "reliefweb": {
       "source": "reliefweb",
       "file": "reliefweb.json",
-      "checkedAt": "2026-10-26T21:55:35.437220+00:00",
-      "lastSuccessAt": "2026-10-26T21:55:35.437220+00:00",
+      "checkedAt": "2026-10-27T01:30:46.954236+00:00",
+      "lastSuccessAt": "2026-10-27T01:30:46.954236+00:00",
       "count": 150,
-      "sha256": "ca2eeae573366f93cd5055e55a39bc07c2b4f6be6004b45e933014afb64b365f",
+      "sha256": "70d2145706beecd3d062347bb56cfa83be817d46e3bb2fb3303693be56188d26",
       "available": true,
       "status": "ok",
       "error": null
