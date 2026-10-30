@@ -7,37 +7,37 @@
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
     <!--Records number 50-->
-    <!--Start 10/30/2026 1:58:40 PM-->
-    <!--=Start 10/30/2026 1:58:40 PM-->
+    <!--Start 10/30/2026 7:29:00 PM-->
+    <!--=Start 10/30/2026 7:29:00 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Fri, 30 Oct 2026 12:58:40 GMT</pubDate>
+    <pubDate>Fri, 30 Oct 2026 18:29:00 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Green notification for tropical cyclone IN-FA-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 2127 .</title>
-      <description>From 25/10/2026 to 30/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 241 km/h) IN-FA-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 2127 .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001343/1001343_28_tn.png" />
+      <title>Green notification for tropical cyclone IN-FA-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
+      <description>From 25/10/2026 to 30/10/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 241 km/h) IN-FA-26 was active in NWPacific. The cyclone affects these countries: Japan, Marshall Islands (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001343/1001343_29_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001343</link>
       <pubDate>Sun, 25 Oct 2026 11:52:38 GMT</pubDate>
       <gdacs:dateadded>Sun, 25 Oct 2026 11:52:38 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 30 Oct 2026 08:07:34 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 30 Oct 2026 13:52:05 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 25 Oct 2026 06:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Fri, 30 Oct 2026 06:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Fri, 30 Oct 2026 12:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001343</guid>
       <geo:Point>
-        <geo:lat>18.7</geo:lat>
-        <geo:long>146.2</geo:long>
+        <geo:lat>19.7</geo:lat>
+        <geo:long>144.5</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>136.551831707083 162.551831707083 5.79459338816965 31.7945933881697</gdacs:bbox>
-      <georss:point>18.7 146.2</georss:point>
+      <gdacs:bbox>136.209031515619 162.209031515619 6.08559266439016 32.0855926643902</gdacs:bbox>
+      <georss:point>19.7 144.5</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001343/cap_1001343.xml</gdacs:cap>
       <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>28</gdacs:version>
+      <gdacs:version>29</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
       <gdacs:alertscore>1</gdacs:alertscore>
@@ -45,13 +45,13 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>IN-FA-26</gdacs:eventname>
       <gdacs:eventid>1001343</gdacs:eventid>
-      <gdacs:episodeid>28</gdacs:episodeid>
+      <gdacs:episodeid>29</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="240.7392">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 231 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="2127">Population affected by Category 1 (120 km/h) wind speeds or higher is 2127 </gdacs:population>
-      <gdacs:vulnerability value="1">Low</gdacs:vulnerability>
-      <gdacs:iso3>JPN</gdacs:iso3>
-      <gdacs:country>Japan</gdacs:country>
+      <gdacs:severity unit="km/h" value="240.7392">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 222 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (3117 in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="3">High</gdacs:vulnerability>
+      <gdacs:iso3>MHL</gdacs:iso3>
+      <gdacs:country>Japan, Marshall Islands</gdacs:country>
       <gdacs:glide />
       <gdacs:mapimage />
       <gdacs:maplink />
@@ -668,7 +668,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 30 Oct 2026 12:51:51 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 30 Oct 2026 18:21:46 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -722,7 +722,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 30 Oct 2026 12:52:21 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 30 Oct 2026 18:22:05 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -992,7 +992,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 30 Oct 2026 12:51:32 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 30 Oct 2026 18:21:27 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -2713,4 +2713,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 10/30/2026 2:00:45 PM-->
+</rss><!--End 10/30/2026 7:31:00 PM-->
