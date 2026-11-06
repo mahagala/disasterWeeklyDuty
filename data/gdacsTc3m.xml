@@ -6,38 +6,92 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 51-->
-    <!--Start 11/6/2026 7:28:06 PM-->
-    <!--=Start 11/6/2026 7:28:06 PM-->
+    <!--Records number 52-->
+    <!--Start 11/7/2026 12:28:10 AM-->
+    <!--=Start 11/7/2026 12:28:10 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Fri, 06 Nov 2026 18:28:06 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 23:28:10 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Green notification for tropical cyclone THIRTYONE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 2127 .</title>
-      <description>From 06/11/2026 to 06/11/2026, a Tropical Depression (maximum wind speed of 185 km/h) THIRTYONE-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 2127 .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001347/1001347_2_tn.png" />
+      <title>Green notification for tropical cyclone PENA-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
+      <description>From 06/11/2026 to 06/11/2026, a Tropical Storm (maximum wind speed of 93 km/h) PENA-26 was active in CentralPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001348/1001348_1_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001348</link>
+      <pubDate>Fri, 06 Nov 2026 21:20:31 GMT</pubDate>
+      <gdacs:dateadded>Fri, 06 Nov 2026 21:20:31 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Fri, 06 Nov 2026 21:35:12 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 06 Nov 2026 21:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Fri, 06 Nov 2026 21:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC1</dc:subject>
+      <guid isPermaLink="false">TC1001348</guid>
+      <geo:Point>
+        <geo:lat>11.3</geo:lat>
+        <geo:long>-150.1</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-174.239011227422 -148.239011227422 -1.63032396086359 24.3696760391364</gdacs:bbox>
+      <georss:point>11.3 -150.1</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001348/cap_1001348.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname>PENA-26</gdacs:eventname>
+      <gdacs:eventid>1001348</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcycloneonly</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="92.592">Tropical Storm (maximum wind speed of 93 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3 />
+      <gdacs:country />
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001348/rss_1001348.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green notification for tropical cyclone THIRTYONE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 986 .</title>
+      <description>From 06/11/2026 to 06/11/2026, a Tropical Depression (maximum wind speed of 176 km/h) THIRTYONE-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 986 .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001347/1001347_3_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001347</link>
       <pubDate>Fri, 06 Nov 2026 07:50:41 GMT</pubDate>
       <gdacs:dateadded>Fri, 06 Nov 2026 07:50:41 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 06 Nov 2026 17:50:08 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 06 Nov 2026 20:20:08 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Fri, 06 Nov 2026 06:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Fri, 06 Nov 2026 12:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Fri, 06 Nov 2026 18:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001347</guid>
       <geo:Point>
-        <geo:lat>17.9</geo:lat>
-        <geo:long>147.5</geo:long>
+        <geo:lat>18.4</geo:lat>
+        <geo:long>145.8</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>128.599647145762 154.599647145762 11.0304550113455 37.0304550113455</gdacs:bbox>
-      <georss:point>17.9 147.5</georss:point>
+      <gdacs:bbox>130.608630480452 156.608630480452 13.276948739167 39.276948739167</gdacs:bbox>
+      <georss:point>18.4 145.8</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001347/cap_1001347.xml</gdacs:cap>
       <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>2</gdacs:version>
+      <gdacs:version>3</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
       <gdacs:alertscore>1</gdacs:alertscore>
@@ -45,10 +99,10 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>THIRTYONE-26</gdacs:eventname>
       <gdacs:eventid>1001347</gdacs:eventid>
-      <gdacs:episodeid>2</gdacs:episodeid>
+      <gdacs:episodeid>3</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="185.184">Tropical Depression (maximum wind speed of 185 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="2127">Population affected by Category 1 (120 km/h) wind speeds or higher is 2127 </gdacs:population>
+      <gdacs:severity unit="km/h" value="175.9248">Tropical Depression (maximum wind speed of 176 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="986">Population affected by Category 1 (120 km/h) wind speeds or higher is 986 </gdacs:population>
       <gdacs:vulnerability value="1">Low</gdacs:vulnerability>
       <gdacs:iso3>JPN</gdacs:iso3>
       <gdacs:country>Japan</gdacs:country>
@@ -776,7 +830,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 06 Nov 2026 18:20:38 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 06 Nov 2026 23:20:37 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -830,7 +884,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 06 Nov 2026 18:20:58 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 06 Nov 2026 23:20:58 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -1100,7 +1154,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Fri, 06 Nov 2026 18:20:12 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Fri, 06 Nov 2026 23:20:10 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -2767,4 +2821,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 11/6/2026 7:30:00 PM-->
+</rss><!--End 11/7/2026 12:30:14 AM-->
