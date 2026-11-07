@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T03:15:01.697438+00:00",
+  "generatedAt": "2026-11-07T10:27:14.827877+00:00",
   "feeds": {
     "gdacs7d": {
       "source": "gdacs",
       "file": "gdacs7d.xml",
-      "checkedAt": "2026-11-07T03:15:01.697438+00:00",
-      "lastSuccessAt": "2026-11-07T03:15:01.697438+00:00",
-      "count": 373,
-      "sha256": "df126e5631f8621b802ec932df13f8af030ac3a5023807f87d82de35e1e49108",
+      "checkedAt": "2026-11-07T10:27:14.827877+00:00",
+      "lastSuccessAt": "2026-11-07T10:27:14.827877+00:00",
+      "count": 374,
+      "sha256": "3b3ffa2533d8df0595ebde71f4f11fe4655b7a6abf75533b59686b729893c47b",
       "available": true,
       "status": "ok",
       "error": null
@@ -16,10 +16,10 @@
     "gdacsEq3m": {
       "source": "gdacs",
       "file": "gdacsEq3m.xml",
-      "checkedAt": "2026-11-07T03:15:01.697438+00:00",
-      "lastSuccessAt": "2026-11-07T03:15:01.697438+00:00",
+      "checkedAt": "2026-11-07T10:27:14.827877+00:00",
+      "lastSuccessAt": "2026-11-07T10:27:14.827877+00:00",
       "count": 6,
-      "sha256": "d011224bfb7f866ef535ce4c41aa430ef143150fad11546bb142206492b12d19",
+      "sha256": "133073edd1fd0ecbff2665c94cf201d19bb9aeb0cb5bb55ca0c13b434168dc23",
       "available": true,
       "status": "ok",
       "error": null
@@ -27,10 +27,10 @@
     "gdacsTc3m": {
       "source": "gdacs",
       "file": "gdacsTc3m.xml",
-      "checkedAt": "2026-11-07T03:15:01.697438+00:00",
-      "lastSuccessAt": "2026-11-07T03:15:01.697438+00:00",
-      "count": 52,
-      "sha256": "3deb18d43956f92bdb395c36380ee18e3347a99b22e249652d1d4d1ddb6f1b93",
+      "checkedAt": "2026-11-07T10:27:14.827877+00:00",
+      "lastSuccessAt": "2026-11-07T10:27:14.827877+00:00",
+      "count": 53,
+      "sha256": "9bc9b82868edeabdc2b73bf42364fc7b8e013e9381d7d471ce9f5e63da93dd79",
       "available": true,
       "status": "ok",
       "error": null
@@ -38,21 +38,21 @@
     "gdacsFl3m": {
       "source": "gdacs",
       "file": "gdacsFl3m.xml",
-      "checkedAt": "2026-11-07T03:15:01.697438+00:00",
-      "lastSuccessAt": "2026-11-06T23:32:42.264544+00:00",
-      "count": 198,
-      "sha256": "5e49882851aa6e0eacd09409b8cf773e9fa7d6764d59a3c5464fc4e865bde8c8",
+      "checkedAt": "2026-11-07T10:27:14.827877+00:00",
+      "lastSuccessAt": "2026-11-07T10:27:14.827877+00:00",
+      "count": 196,
+      "sha256": "5712d96e8bec5908efe6a1ba13ac58ce195992d13fb0a5aa1fc1c571969d4dee",
       "available": true,
-      "status": "stale",
-      "error": "資料下載或格式驗證失敗"
+      "status": "ok",
+      "error": null
     },
     "ercc": {
       "source": "ercc",
       "file": "ercc.xml",
-      "checkedAt": "2026-11-07T03:15:01.697438+00:00",
-      "lastSuccessAt": "2026-11-07T03:15:01.697438+00:00",
+      "checkedAt": "2026-11-07T10:27:14.827877+00:00",
+      "lastSuccessAt": "2026-11-07T10:27:14.827877+00:00",
       "count": 10,
-      "sha256": "082c02a4387cdd6bbd6aa8bdd8f514a92d68d7ac148e4563b6e8aee9dcdcf9b3",
+      "sha256": "3639b66eb6ab3467f95f24af71bbe1778747de4cd931b20f9e1f825bc186bc52",
       "available": true,
       "status": "ok",
       "error": null
@@ -60,10 +60,10 @@
     "usgs": {
       "source": "usgs",
       "file": "usgs.xml",
-      "checkedAt": "2026-11-07T03:15:01.697438+00:00",
-      "lastSuccessAt": "2026-11-07T03:15:01.697438+00:00",
-      "count": 717,
-      "sha256": "45ca1e64cebd3bbcc904541affa2416d0ffade873f8ef0767fb249c4463c2d50",
+      "checkedAt": "2026-11-07T10:27:14.827877+00:00",
+      "lastSuccessAt": "2026-11-07T10:27:14.827877+00:00",
+      "count": 715,
+      "sha256": "9daef67568b3a31e93d0c2ac12d303387f849c14688abbcc4c6d581f5bb9b0ad",
       "available": true,
       "status": "ok",
       "error": null
@@ -71,10 +71,10 @@
     "reliefweb": {
       "source": "reliefweb",
       "file": "reliefweb.json",
-      "checkedAt": "2026-11-07T03:15:01.697438+00:00",
-      "lastSuccessAt": "2026-11-07T03:15:01.697438+00:00",
+      "checkedAt": "2026-11-07T10:27:14.827877+00:00",
+      "lastSuccessAt": "2026-11-07T10:27:14.827877+00:00",
       "count": 150,
-      "sha256": "c32910bd40139606567c231a6118610cd34472c8d5b3589b1da090df200385f4",
+      "sha256": "6e578aabdf12c00e6aacaa85abaa83e30553f706910b82d3ec2ade432f41ee54",
       "available": true,
       "status": "ok",
       "error": null
