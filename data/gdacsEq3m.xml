@@ -6,11 +6,11 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 6-->
-    <!--Start 11/10/2026 4:37:24 AM-->
-    <!--=Start 11/10/2026 4:37:24 AM-->
+    <!--Records number 5-->
+    <!--Start 11/10/2026 12:47:38 PM-->
+    <!--=Start 11/10/2026 12:47:38 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Tue, 10 Nov 2026 03:37:24 GMT</pubDate>
+    <pubDate>Tue, 10 Nov 2026 11:47:38 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_eq_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Orange earthquake (Magnitude 7M, Depth:18km) in China 22/10/2026 14:33 UTC, 10 thousand (in MMI&gt;=VII).</title>
@@ -282,59 +282,5 @@
         </gdacs:resource>
       </gdacs:resources>
     </item>
-    <item>
-      <title>Red earthquake (Magnitude 7.4M, Depth:110.285km) in Colombia 10/08/2026 12:34 UTC, 5.4 million (in MMI&gt;=VII).</title>
-      <description>On 8/10/2026 12:34:28 PM, an earthquake occurred in Colombia potentially affecting 5.4 million (in MMI&gt;=VII). The earthquake had Magnitude 7.4M, Depth:110.285km.</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1724218_1.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1557236</link>
-      <pubDate>Mon, 10 Aug 2026 12:50:33 GMT</pubDate>
-      <gdacs:dateadded>Mon, 10 Aug 2026 12:50:33 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 30 Sep 2026 09:40:24 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Mon, 10 Aug 2026 12:34:28 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 10 Aug 2026 12:34:28 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>EQ3</dc:subject>
-      <guid isPermaLink="false">EQ1557236</guid>
-      <geo:Point>
-        <geo:lat>4.8436</geo:lat>
-        <geo:long>-76.2422</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-80.2422 -72.2422 0.8436 8.8436</gdacs:bbox>
-      <georss:point>4.8436 -76.2422</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1557236/cap_1557236.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Red/EQ.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>EQ</gdacs:eventtype>
-      <gdacs:alertlevel>Red</gdacs:alertlevel>
-      <gdacs:alertscore>2.27096883026439</gdacs:alertscore>
-      <gdacs:episodealertlevel>Red</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>3</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1557236</gdacs:eventid>
-      <gdacs:episodeid>1724218</gdacs:episodeid>
-      <gdacs:calculationtype>earthquakeonly</gdacs:calculationtype>
-      <gdacs:severity unit="M" value="7.4">Magnitude 7.4M, Depth:110.3km</gdacs:severity>
-      <gdacs:population unit="(in MMI&gt;=VII)" value="5395888">5.4 million (in MMI&gt;=VII)</gdacs:population>
-      <gdacs:vulnerability value="2.081044689573" />
-      <gdacs:iso3>COL</gdacs:iso3>
-      <gdacs:country>Colombia</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/EQ/1557236/rss_1557236.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
   </channel>
-</rss><!--End 11/10/2026 4:37:25 AM-->
+</rss><!--End 11/10/2026 12:47:39 PM-->
