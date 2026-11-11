@@ -6,12 +6,228 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 199-->
-    <!--Start 11/11/2026 8:07:36 AM-->
-    <!--=Start 11/11/2026 8:07:36 AM-->
+    <!--Records number 201-->
+    <!--Start 11/11/2026 4:17:49 PM-->
+    <!--=Start 11/11/2026 4:17:49 PM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Wed, 11 Nov 2026 07:07:36 GMT</pubDate>
+    <pubDate>Wed, 11 Nov 2026 15:17:49 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_fl_3m.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Green flood alert in Italy</title>
+      <description>On 07/10/2026, a flood started in Italy, lasting until 07/11/2026 (last update). The flood caused 0 deaths and 235 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104220.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104220</link>
+      <pubDate>Sat, 10 Oct 2026 07:04:44 GMT</pubDate>
+      <gdacs:dateadded>Sat, 10 Oct 2026 07:04:44 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:44:26 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Wed, 07 Oct 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 12 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>5</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104220</guid>
+      <geo:Point>
+        <geo:lat>43.9963569</geo:lat>
+        <geo:long>10.2885999</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>6.2885999 14.2885999 39.9963569 47.9963569</gdacs:bbox>
+      <georss:point>43.9963569 10.2885999</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104220/cap_1104220.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104220</gdacs:eventid>
+      <gdacs:episodeid>19</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths and 12 displaced </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>ITA</gdacs:iso3>
+      <gdacs:country>Italy</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104220/rss_1104220.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Portugal</title>
+      <description>On 07/11/2026, a flood started in Portugal, lasting until 09/11/2026 (last update). The flood caused 0 deaths and 7 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104276.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104276</link>
+      <pubDate>Mon, 09 Nov 2026 11:16:36 GMT</pubDate>
+      <gdacs:dateadded>Mon, 09 Nov 2026 11:16:36 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:53:24 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Thu, 12 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>1</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104276</guid>
+      <geo:Point>
+        <geo:lat>30.1462542</geo:lat>
+        <geo:long>-15.8668607</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-19.8668607 -11.8668607 26.1462542 34.1462542</gdacs:bbox>
+      <georss:point>30.1462542 -15.8668607</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104276/cap_1104276.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104276</gdacs:eventid>
+      <gdacs:episodeid>2</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>PRT</gdacs:iso3>
+      <gdacs:country>Portugal</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104276/rss_1104276.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Indonesia</title>
+      <description>On 24/10/2026, a flood started in Indonesia, lasting until 04/11/2026 (last update). The flood caused 2 deaths and 5041 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104253.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104253</link>
+      <pubDate>Thu, 29 Oct 2026 09:29:04 GMT</pubDate>
+      <gdacs:dateadded>Thu, 29 Oct 2026 09:29:04 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:50:04 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 24 Oct 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Wed, 11 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104253</guid>
+      <geo:Point>
+        <geo:lat>2.1923519</geo:lat>
+        <geo:long>99.3812201</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>95.3812201 103.3812201 -1.8076481 6.1923519</gdacs:bbox>
+      <georss:point>2.1923519 99.3812201</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104253/cap_1104253.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104253</gdacs:eventid>
+      <gdacs:episodeid>24</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>IDN</gdacs:iso3>
+      <gdacs:country>Indonesia</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104253/rss_1104253.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Democratic Republic of Congo</title>
+      <description>On 01/11/2026, a flood started in Democratic Republic of Congo, lasting until 03/11/2026 (last update). The flood caused 2 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104269.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104269</link>
+      <pubDate>Thu, 05 Nov 2026 10:23:17 GMT</pubDate>
+      <gdacs:dateadded>Thu, 05 Nov 2026 10:23:17 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:53:53 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 01 Nov 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Wed, 11 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>1</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104269</guid>
+      <geo:Point>
+        <geo:lat>3.0276731</geo:lat>
+        <geo:long>19.3657958</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>15.3657958 23.3657958 -0.9723269 7.0276731</gdacs:bbox>
+      <georss:point>3.0276731 19.3657958</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104269/cap_1104269.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104269</gdacs:eventid>
+      <gdacs:episodeid>3</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="2">2 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>COD</gdacs:iso3>
+      <gdacs:country>Democratic Republic of Congo</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104269/rss_1104269.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
     <item>
       <title>Green flood alert in Argentina</title>
       <description>On 08/11/2026, a flood started in Argentina, lasting until 10/11/2026 (last update). The flood caused 0 deaths and 18 displaced .</description>
@@ -59,6 +275,168 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104277/rss_1104277.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Vietnam</title>
+      <description>On 06/11/2026, a flood started in Vietnam, lasting until 08/11/2026 (last update). The flood caused 0 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104271.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104271</link>
+      <pubDate>Mon, 09 Nov 2026 07:36:30 GMT</pubDate>
+      <gdacs:dateadded>Mon, 09 Nov 2026 07:36:30 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 07:34:03 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 06 Nov 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Tue, 10 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>1</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104271</guid>
+      <geo:Point>
+        <geo:lat>19.9781573</geo:lat>
+        <geo:long>105.4816107</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>101.4816107 109.4816107 15.9781573 23.9781573</gdacs:bbox>
+      <georss:point>19.9781573 105.4816107</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104271/cap_1104271.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104271</gdacs:eventid>
+      <gdacs:episodeid>2</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths and 147 displaced </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>VNM</gdacs:iso3>
+      <gdacs:country>Vietnam</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104271/rss_1104271.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Venezuela</title>
+      <description>On 07/11/2026, a flood started in Venezuela, lasting until 09/11/2026 (last update). The flood caused 3 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104275.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104275</link>
+      <pubDate>Mon, 09 Nov 2026 09:58:32 GMT</pubDate>
+      <gdacs:dateadded>Mon, 09 Nov 2026 09:58:32 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 09 Nov 2026 09:58:31 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Mon, 09 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104275</guid>
+      <geo:Point>
+        <geo:lat>10.1755763</geo:lat>
+        <geo:long>-67.9194222</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-71.9194222 -63.9194222 6.1755763 14.1755763</gdacs:bbox>
+      <georss:point>10.1755763 -67.9194222</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104275/cap_1104275.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104275</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="3">3 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>VEN</gdacs:iso3>
+      <gdacs:country>Venezuela</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104275/rss_1104275.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Syria</title>
+      <description>On 07/11/2026, a flood started in Syria, lasting until 09/11/2026 (last update). The flood caused 1 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104274.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104274</link>
+      <pubDate>Mon, 09 Nov 2026 07:37:25 GMT</pubDate>
+      <gdacs:dateadded>Mon, 09 Nov 2026 07:37:25 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 09 Nov 2026 07:37:25 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Mon, 09 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104274</guid>
+      <geo:Point>
+        <geo:lat>34.4505521</geo:lat>
+        <geo:long>40.9170636</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>36.9170636 44.9170636 30.4505521 38.4505521</gdacs:bbox>
+      <georss:point>34.4505521 40.9170636</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104274/cap_1104274.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104274</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="1">1 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>SYR</gdacs:iso3>
+      <gdacs:country>Syria</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104274/rss_1104274.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -229,222 +607,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green flood alert in Portugal</title>
-      <description>On 07/11/2026, a flood started in Portugal, lasting until 09/11/2026 (last update). The flood caused 0 deaths and 7 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104276.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104276</link>
-      <pubDate>Mon, 09 Nov 2026 11:16:36 GMT</pubDate>
-      <gdacs:dateadded>Mon, 09 Nov 2026 11:16:36 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 09 Nov 2026 11:16:35 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 09 Nov 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104276</guid>
-      <geo:Point>
-        <geo:lat>32.6472599</geo:lat>
-        <geo:long>-16.889995</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-20.889995 -12.889995 28.6472599 36.6472599</gdacs:bbox>
-      <georss:point>32.6472599 -16.889995</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104276/cap_1104276.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104276</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths and 7 displaced </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>PRT</gdacs:iso3>
-      <gdacs:country>Portugal</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104276/rss_1104276.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green flood alert in Syria</title>
-      <description>On 07/11/2026, a flood started in Syria, lasting until 09/11/2026 (last update). The flood caused 1 deaths and 0 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104274.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104274</link>
-      <pubDate>Mon, 09 Nov 2026 07:37:25 GMT</pubDate>
-      <gdacs:dateadded>Mon, 09 Nov 2026 07:37:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 09 Nov 2026 07:37:25 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 09 Nov 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104274</guid>
-      <geo:Point>
-        <geo:lat>34.4505521</geo:lat>
-        <geo:long>40.9170636</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>36.9170636 44.9170636 30.4505521 38.4505521</gdacs:bbox>
-      <georss:point>34.4505521 40.9170636</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104274/cap_1104274.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104274</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="1">1 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>SYR</gdacs:iso3>
-      <gdacs:country>Syria</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104274/rss_1104274.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green flood alert in Venezuela</title>
-      <description>On 07/11/2026, a flood started in Venezuela, lasting until 09/11/2026 (last update). The flood caused 3 deaths and 0 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104275.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104275</link>
-      <pubDate>Mon, 09 Nov 2026 09:58:32 GMT</pubDate>
-      <gdacs:dateadded>Mon, 09 Nov 2026 09:58:32 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 09 Nov 2026 09:58:31 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 09 Nov 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104275</guid>
-      <geo:Point>
-        <geo:lat>10.1755763</geo:lat>
-        <geo:long>-67.9194222</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-71.9194222 -63.9194222 6.1755763 14.1755763</gdacs:bbox>
-      <georss:point>10.1755763 -67.9194222</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104275/cap_1104275.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104275</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="3">3 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>VEN</gdacs:iso3>
-      <gdacs:country>Venezuela</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104275/rss_1104275.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green flood alert in Vietnam</title>
-      <description>On 06/11/2026, a flood started in Vietnam, lasting until 08/11/2026 (last update). The flood caused 0 deaths and 0 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104271.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104271</link>
-      <pubDate>Mon, 09 Nov 2026 07:36:30 GMT</pubDate>
-      <gdacs:dateadded>Mon, 09 Nov 2026 07:36:30 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 09 Nov 2026 07:36:30 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
-      <gdacs:fromdate>Fri, 06 Nov 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Sun, 08 Nov 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104271</guid>
-      <geo:Point>
-        <geo:lat>22.5023175</geo:lat>
-        <geo:long>104.3067914</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>100.3067914 108.3067914 18.5023175 26.5023175</gdacs:bbox>
-      <georss:point>22.5023175 104.3067914</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104271/cap_1104271.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104271</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>VNM</gdacs:iso3>
-      <gdacs:country>Vietnam</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104271/rss_1104271.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green flood alert in Colombia</title>
       <description>On 26/09/2026, a flood started in Colombia, lasting until 08/11/2026 (last update). The flood caused 1 deaths and 47 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104200.png" />
@@ -499,6 +661,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green flood alert in Angola</title>
+      <description>On 04/11/2026, a flood started in Angola, lasting until 08/11/2026 (last update). The flood caused 0 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104278.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104278</link>
+      <pubDate>Wed, 11 Nov 2026 12:53:33 GMT</pubDate>
+      <gdacs:dateadded>Wed, 11 Nov 2026 12:53:33 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:53:33 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Wed, 04 Nov 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 08 Nov 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>1</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104278</guid>
+      <geo:Point>
+        <geo:lat>-8.8272699</geo:lat>
+        <geo:long>13.2439512</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>9.2439512 17.2439512 -12.8272699 -4.8272699</gdacs:bbox>
+      <georss:point>-8.8272699 13.2439512</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104278/cap_1104278.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104278</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>AGO</gdacs:iso3>
+      <gdacs:country>Angola</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104278/rss_1104278.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green flood alert in Ecuador</title>
       <description>On 15/09/2026, a flood started in Ecuador, lasting until 07/11/2026 (last update). The flood caused 9 deaths and 344 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104167.png" />
@@ -506,7 +722,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104167</link>
       <pubDate>Thu, 17 Sep 2026 10:54:34 GMT</pubDate>
       <gdacs:dateadded>Thu, 17 Sep 2026 10:54:34 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 11 Nov 2026 06:53:34 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:52:37 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 15 Sep 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:todate>
@@ -545,60 +761,6 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104167/rss_1104167.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green flood alert in Italy</title>
-      <description>On 07/10/2026, a flood started in Italy, lasting until 07/11/2026 (last update). The flood caused 0 deaths and 235 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104220.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104220</link>
-      <pubDate>Sat, 10 Oct 2026 07:04:44 GMT</pubDate>
-      <gdacs:dateadded>Sat, 10 Oct 2026 07:04:44 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 11 Nov 2026 06:53:55 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Wed, 07 Oct 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Sat, 07 Nov 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>4</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104220</guid>
-      <geo:Point>
-        <geo:lat>40.0615028</geo:lat>
-        <geo:long>9.0975894</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>5.0975894 13.0975894 36.0615028 44.0615028</gdacs:bbox>
-      <georss:point>40.0615028 9.0975894</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104220/cap_1104220.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104220</gdacs:eventid>
-      <gdacs:episodeid>18</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>ITA</gdacs:iso3>
-      <gdacs:country>Italy</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104220/rss_1104220.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -830,7 +992,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1103888</link>
       <pubDate>Thu, 21 May 2026 06:15:32 GMT</pubDate>
       <gdacs:dateadded>Thu, 21 May 2026 06:15:32 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 11 Nov 2026 06:52:59 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:52:10 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 19 May 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Fri, 06 Nov 2026 01:00:00 GMT</gdacs:todate>
@@ -931,60 +1093,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green flood alert in Indonesia</title>
-      <description>On 24/10/2026, a flood started in Indonesia, lasting until 04/11/2026 (last update). The flood caused 2 deaths and 5041 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104253.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104253</link>
-      <pubDate>Thu, 29 Oct 2026 09:29:04 GMT</pubDate>
-      <gdacs:dateadded>Thu, 29 Oct 2026 09:29:04 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 11 Nov 2026 06:50:16 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 24 Oct 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Wed, 04 Nov 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>1</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104253</guid>
-      <geo:Point>
-        <geo:lat>2.1923519</geo:lat>
-        <geo:long>99.3812201</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>95.3812201 103.3812201 -1.8076481 6.1923519</gdacs:bbox>
-      <georss:point>2.1923519 99.3812201</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104253/cap_1104253.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104253</gdacs:eventid>
-      <gdacs:episodeid>21</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>IDN</gdacs:iso3>
-      <gdacs:country>Indonesia</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104253/rss_1104253.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green flood alert in India</title>
       <description>On 20/10/2026, a flood started in India, lasting until 04/11/2026 (last update). The flood caused 2 deaths and 400 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104248.png" />
@@ -1039,29 +1147,29 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green flood alert in Democratic Republic of Congo</title>
-      <description>On 01/11/2026, a flood started in Democratic Republic of Congo, lasting until 03/11/2026 (last update). The flood caused 2 deaths and 0 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104269.png" />
+      <title>Green flood alert in Uganda</title>
+      <description>On 31/10/2026, a flood started in Uganda, lasting until 03/11/2026 (last update). The flood caused 0 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104279.png" />
       <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104269</link>
-      <pubDate>Thu, 05 Nov 2026 10:23:17 GMT</pubDate>
-      <gdacs:dateadded>Thu, 05 Nov 2026 10:23:17 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 05 Nov 2026 10:23:17 GMT</gdacs:datemodified>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104279</link>
+      <pubDate>Wed, 11 Nov 2026 12:54:00 GMT</pubDate>
+      <gdacs:dateadded>Wed, 11 Nov 2026 12:54:00 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:54:00 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 01 Nov 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:fromdate>Sat, 31 Oct 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Tue, 03 Nov 2026 01:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104269</guid>
+      <guid isPermaLink="false">FL1104279</guid>
       <geo:Point>
-        <geo:lat>-2.9493766</geo:lat>
-        <geo:long>25.9184499</geo:long>
+        <geo:lat>3.3662042</geo:lat>
+        <geo:long>31.7934151</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>21.9184499 29.9184499 -6.9493766 1.0506234</gdacs:bbox>
-      <georss:point>-2.9493766 25.9184499</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104269/cap_1104269.xml</gdacs:cap>
+      <gdacs:bbox>27.7934151 35.7934151 -0.6337958 7.3662042</gdacs:bbox>
+      <georss:point>3.3662042 31.7934151</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104279/cap_1104279.xml</gdacs:cap>
       <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
       <gdacs:version>1</gdacs:version>
       <gdacs:eventtype>FL</gdacs:eventtype>
@@ -1070,21 +1178,21 @@
       <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname />
-      <gdacs:eventid>1104269</gdacs:eventid>
+      <gdacs:eventid>1104279</gdacs:eventid>
       <gdacs:episodeid>1</gdacs:episodeid>
       <gdacs:calculationtype />
       <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="2">2 deaths </gdacs:population>
+      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
       <gdacs:vulnerability value="0" />
-      <gdacs:iso3>COD</gdacs:iso3>
-      <gdacs:country>Democratic Republic of Congo</gdacs:country>
+      <gdacs:iso3>UGA</gdacs:iso3>
+      <gdacs:country>Uganda</gdacs:country>
       <gdacs:glide />
       <gdacs:mapimage />
       <gdacs:maplink />
       <gdacs:gtsimage />
       <gdacs:gtslink />
       <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104269/rss_1104269.xml" type="rss">
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104279/rss_1104279.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -1741,6 +1849,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green flood alert in Uganda</title>
+      <description>On 11/10/2026, a flood started in Uganda, lasting until 12/10/2026 (last update). The flood caused 2 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104255.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104255</link>
+      <pubDate>Thu, 29 Oct 2026 09:37:54 GMT</pubDate>
+      <gdacs:dateadded>Thu, 29 Oct 2026 09:37:54 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:54:07 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 11 Oct 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Tue, 27 Oct 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104255</guid>
+      <geo:Point>
+        <geo:lat>0.1310412</geo:lat>
+        <geo:long>30.0047968</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>26.0047968 34.0047968 -3.8689588 4.1310412</gdacs:bbox>
+      <georss:point>0.1310412 30.0047968</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104255/cap_1104255.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104255</gdacs:eventid>
+      <gdacs:episodeid>3</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="1">1 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>UGA</gdacs:iso3>
+      <gdacs:country>Uganda</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104255/rss_1104255.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green flood alert in Nigeria</title>
       <description>On 21/09/2026, a flood started in Nigeria, lasting until 26/10/2026 (last update). The flood caused 8 deaths and 2400 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104186.png" />
@@ -1795,60 +1957,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green flood alert in Ireland</title>
-      <description>On 24/10/2026, a flood started in Ireland, lasting until 25/10/2026 (last update). The flood caused 0 deaths and 0 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104258.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104258</link>
-      <pubDate>Thu, 29 Oct 2026 09:43:21 GMT</pubDate>
-      <gdacs:dateadded>Thu, 29 Oct 2026 09:43:21 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 29 Oct 2026 09:43:21 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 24 Oct 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Sun, 25 Oct 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104258</guid>
-      <geo:Point>
-        <geo:lat>54.9207542</geo:lat>
-        <geo:long>-7.9523852</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-11.9523852 -3.9523852 50.9207542 58.9207542</gdacs:bbox>
-      <georss:point>54.9207542 -7.9523852</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104258/cap_1104258.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104258</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>IRL</gdacs:iso3>
-      <gdacs:country>Ireland</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104258/rss_1104258.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green flood alert in Islamic Republic of Iran</title>
       <description>On 23/10/2026, a flood started in Islamic Republic of Iran, lasting until 25/10/2026 (last update). The flood caused 3 deaths and 0 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104247.png" />
@@ -1895,6 +2003,60 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104247/rss_1104247.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Ireland</title>
+      <description>On 24/10/2026, a flood started in Ireland, lasting until 25/10/2026 (last update). The flood caused 0 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104258.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104258</link>
+      <pubDate>Thu, 29 Oct 2026 09:43:21 GMT</pubDate>
+      <gdacs:dateadded>Thu, 29 Oct 2026 09:43:21 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 29 Oct 2026 09:43:21 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 24 Oct 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 25 Oct 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104258</guid>
+      <geo:Point>
+        <geo:lat>54.9207542</geo:lat>
+        <geo:long>-7.9523852</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-11.9523852 -3.9523852 50.9207542 58.9207542</gdacs:bbox>
+      <georss:point>54.9207542 -7.9523852</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104258/cap_1104258.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104258</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>IRL</gdacs:iso3>
+      <gdacs:country>Ireland</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104258/rss_1104258.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -2664,9 +2826,9 @@
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104218.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104218</link>
-      <pubDate>Wed, 11 Nov 2026 06:42:08 GMT</pubDate>
-      <gdacs:dateadded>Wed, 11 Nov 2026 06:42:08 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 11 Nov 2026 06:43:08 GMT</gdacs:datemodified>
+      <pubDate>Wed, 11 Nov 2026 12:42:01 GMT</pubDate>
+      <gdacs:dateadded>Wed, 11 Nov 2026 12:42:01 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Wed, 11 Nov 2026 12:42:47 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 01:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Fri, 16 Oct 2026 01:00:00 GMT</gdacs:todate>
@@ -3083,60 +3245,6 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104232/rss_1104232.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green flood alert in Uganda</title>
-      <description>On 11/10/2026, a flood started in Uganda, lasting until 12/10/2026 (last update). The flood caused 2 deaths and 0 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104255.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104255</link>
-      <pubDate>Thu, 29 Oct 2026 09:37:54 GMT</pubDate>
-      <gdacs:dateadded>Thu, 29 Oct 2026 09:37:54 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 29 Oct 2026 09:37:54 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 11 Oct 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 12 Oct 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104255</guid>
-      <geo:Point>
-        <geo:lat>0.3177137</geo:lat>
-        <geo:long>32.5813539</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>28.5813539 36.5813539 -3.6822863 4.3177137</gdacs:bbox>
-      <georss:point>0.3177137 32.5813539</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104255/cap_1104255.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104255</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="2">2 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>UGA</gdacs:iso3>
-      <gdacs:country>Uganda</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104255/rss_1104255.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -4171,6 +4279,60 @@
       </gdacs:resources>
     </item>
     <item>
+      <title>Green flood alert in Philippines</title>
+      <description>On 18/09/2026, a flood started in Philippines, lasting until 04/10/2026 (last update). The flood caused 2 deaths and 0 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104176.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104176</link>
+      <pubDate>Sun, 20 Sep 2026 07:18:20 GMT</pubDate>
+      <gdacs:dateadded>Sun, 20 Sep 2026 07:18:20 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 05 Oct 2026 05:54:55 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Fri, 18 Sep 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Sun, 04 Oct 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>2</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104176</guid>
+      <geo:Point>
+        <geo:lat>13.811413</geo:lat>
+        <geo:long>121.1762791</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>117.1762791 125.1762791 9.811413 17.811413</gdacs:bbox>
+      <georss:point>13.811413 121.1762791</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104176/cap_1104176.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104176</gdacs:eventid>
+      <gdacs:episodeid>4</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="1">1 deaths </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>PHL</gdacs:iso3>
+      <gdacs:country>Philippines</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104176/rss_1104176.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
       <title>Green flood alert in Nicaragua</title>
       <description>On 02/10/2026, a flood started in Nicaragua, lasting until 04/10/2026 (last update). The flood caused 0 deaths and 1 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104210.png" />
@@ -4271,60 +4433,6 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104212/rss_1104212.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
-      <title>Green flood alert in Philippines</title>
-      <description>On 18/09/2026, a flood started in Philippines, lasting until 04/10/2026 (last update). The flood caused 2 deaths and 0 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104176.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104176</link>
-      <pubDate>Sun, 20 Sep 2026 07:18:20 GMT</pubDate>
-      <gdacs:dateadded>Sun, 20 Sep 2026 07:18:20 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 05 Oct 2026 05:54:55 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Fri, 18 Sep 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Sun, 04 Oct 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>2</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104176</guid>
-      <geo:Point>
-        <geo:lat>13.811413</geo:lat>
-        <geo:long>121.1762791</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>117.1762791 125.1762791 9.811413 17.811413</gdacs:bbox>
-      <georss:point>13.811413 121.1762791</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104176/cap_1104176.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104176</gdacs:eventid>
-      <gdacs:episodeid>4</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="1">1 deaths </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>PHL</gdacs:iso3>
-      <gdacs:country>Philippines</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104176/rss_1104176.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -5791,60 +5899,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green flood alert in Malaysia</title>
-      <description>On 20/09/2026, a flood started in Malaysia, lasting until 22/09/2026 (last update). The flood caused 0 deaths and 365 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104184.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104184</link>
-      <pubDate>Tue, 22 Sep 2026 07:36:54 GMT</pubDate>
-      <gdacs:dateadded>Tue, 22 Sep 2026 07:36:54 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Tue, 22 Sep 2026 07:36:40 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 20 Sep 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Tue, 22 Sep 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104184</guid>
-      <geo:Point>
-        <geo:lat>4.9002245</geo:lat>
-        <geo:long>101.7865448</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>97.7865448 105.7865448 0.9002245 8.9002245</gdacs:bbox>
-      <georss:point>4.9002245 101.7865448</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104184/cap_1104184.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104184</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths and 365 displaced </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>MYS</gdacs:iso3>
-      <gdacs:country>Malaysia</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104184/rss_1104184.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green flood alert in Japan</title>
       <description>On 20/09/2026, a flood started in Japan, lasting until 22/09/2026 (last update). The flood caused 0 deaths and 30 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104182.png" />
@@ -5891,6 +5945,60 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104182/rss_1104182.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Malaysia</title>
+      <description>On 20/09/2026, a flood started in Malaysia, lasting until 22/09/2026 (last update). The flood caused 0 deaths and 365 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104184.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104184</link>
+      <pubDate>Tue, 22 Sep 2026 07:36:54 GMT</pubDate>
+      <gdacs:dateadded>Tue, 22 Sep 2026 07:36:54 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Tue, 22 Sep 2026 07:36:40 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Sun, 20 Sep 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Tue, 22 Sep 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104184</guid>
+      <geo:Point>
+        <geo:lat>4.9002245</geo:lat>
+        <geo:long>101.7865448</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>97.7865448 105.7865448 0.9002245 8.9002245</gdacs:bbox>
+      <georss:point>4.9002245 101.7865448</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104184/cap_1104184.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104184</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths and 365 displaced </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>MYS</gdacs:iso3>
+      <gdacs:country>Malaysia</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104184/rss_1104184.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -7033,60 +7141,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green flood alert in Brazil</title>
-      <description>On 02/09/2026, a flood started in Brazil, lasting until 12/09/2026 (last update). The flood caused 0 deaths and 293 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104148.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104148</link>
-      <pubDate>Fri, 11 Sep 2026 04:08:35 GMT</pubDate>
-      <gdacs:dateadded>Fri, 11 Sep 2026 04:08:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 14 Sep 2026 05:14:21 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Wed, 02 Sep 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Sat, 12 Sep 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>1</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104148</guid>
-      <geo:Point>
-        <geo:lat>-22.945043</geo:lat>
-        <geo:long>-47.312182</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-51.312182 -43.312182 -26.945043 -18.945043</gdacs:bbox>
-      <georss:point>-22.945043 -47.312182</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104148/cap_1104148.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104148</gdacs:eventid>
-      <gdacs:episodeid>3</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths and 4 displaced </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>BRA</gdacs:iso3>
-      <gdacs:country>Brazil</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104148/rss_1104148.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green flood alert in Cameroon</title>
       <description>On 10/09/2026, a flood started in Cameroon, lasting until 12/09/2026 (last update). The flood caused 1 deaths and 0 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104165.png" />
@@ -7133,6 +7187,60 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104165/rss_1104165.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in Brazil</title>
+      <description>On 02/09/2026, a flood started in Brazil, lasting until 12/09/2026 (last update). The flood caused 0 deaths and 293 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104148.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104148</link>
+      <pubDate>Fri, 11 Sep 2026 04:08:35 GMT</pubDate>
+      <gdacs:dateadded>Fri, 11 Sep 2026 04:08:35 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Mon, 14 Sep 2026 05:14:21 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Wed, 02 Sep 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Sat, 12 Sep 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>1</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104148</guid>
+      <geo:Point>
+        <geo:lat>-22.945043</geo:lat>
+        <geo:long>-47.312182</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>-51.312182 -43.312182 -26.945043 -18.945043</gdacs:bbox>
+      <georss:point>-22.945043 -47.312182</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104148/cap_1104148.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104148</gdacs:eventid>
+      <gdacs:episodeid>3</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths and 4 displaced </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>BRA</gdacs:iso3>
+      <gdacs:country>Brazil</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104148/rss_1104148.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -9895,60 +10003,6 @@
       </gdacs:resources>
     </item>
     <item>
-      <title>Green flood alert in South Sudan</title>
-      <description>On 15/08/2026, a flood started in South Sudan, lasting until 17/08/2026 (last update). The flood caused 0 deaths and 380 displaced .</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104110.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104110</link>
-      <pubDate>Thu, 20 Aug 2026 10:54:01 GMT</pubDate>
-      <gdacs:dateadded>Thu, 20 Aug 2026 10:54:01 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 20 Aug 2026 10:54:00 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sat, 15 Aug 2026 01:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 17 Aug 2026 01:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>FL1</dc:subject>
-      <guid isPermaLink="false">FL1104110</guid>
-      <geo:Point>
-        <geo:lat>9</geo:lat>
-        <geo:long>33</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>29 37 5 13</gdacs:bbox>
-      <georss:point>9 33</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104110/cap_1104110.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>FL</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1104110</gdacs:eventid>
-      <gdacs:episodeid>1</gdacs:episodeid>
-      <gdacs:calculationtype />
-      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
-      <gdacs:population unit="Population Affected" value="0">0 deaths and 380 displaced </gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3>SSD</gdacs:iso3>
-      <gdacs:country>South Sudan</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104110/rss_1104110.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
-    <item>
       <title>Green flood alert in South Korea</title>
       <description>On 15/08/2026, a flood started in South Korea, lasting until 17/08/2026 (last update). The flood caused 0 deaths and 0 displaced .</description>
       <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104095.png" />
@@ -9995,6 +10049,60 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104095/rss_1104095.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Green flood alert in South Sudan</title>
+      <description>On 15/08/2026, a flood started in South Sudan, lasting until 17/08/2026 (last update). The flood caused 0 deaths and 380 displaced .</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/fl/dfo2026_1104110.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104110</link>
+      <pubDate>Thu, 20 Aug 2026 10:54:01 GMT</pubDate>
+      <gdacs:dateadded>Thu, 20 Aug 2026 10:54:01 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Thu, 20 Aug 2026 10:54:00 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
+      <gdacs:fromdate>Sat, 15 Aug 2026 01:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Mon, 17 Aug 2026 01:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>FL1</dc:subject>
+      <guid isPermaLink="false">FL1104110</guid>
+      <geo:Point>
+        <geo:lat>9</geo:lat>
+        <geo:long>33</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>29 37 5 13</gdacs:bbox>
+      <georss:point>9 33</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/FL/1104110/cap_1104110.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/FL.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>FL</gdacs:eventtype>
+      <gdacs:alertlevel>Green</gdacs:alertlevel>
+      <gdacs:alertscore>1</gdacs:alertscore>
+      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>1</gdacs:episodealertscore>
+      <gdacs:eventname />
+      <gdacs:eventid>1104110</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype />
+      <gdacs:severity unit="" value="0">Magnitude 0 </gdacs:severity>
+      <gdacs:population unit="Population Affected" value="0">0 deaths and 380 displaced </gdacs:population>
+      <gdacs:vulnerability value="0" />
+      <gdacs:iso3>SSD</gdacs:iso3>
+      <gdacs:country>South Sudan</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/FL/1104110/rss_1104110.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -10759,4 +10867,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 11/11/2026 8:08:25 AM-->
+</rss><!--End 11/11/2026 4:18:42 PM-->
