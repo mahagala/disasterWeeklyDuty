@@ -6,11 +6,11 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 5-->
-    <!--Start 11/14/2026 9:27:54 PM-->
-    <!--=Start 11/14/2026 9:27:54 PM-->
+    <!--Records number 4-->
+    <!--Start 11/15/2026 1:17:37 AM-->
+    <!--=Start 11/15/2026 1:17:37 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Sat, 14 Nov 2026 20:27:54 GMT</pubDate>
+    <pubDate>Sun, 15 Nov 2026 00:17:37 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_eq_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Orange earthquake (Magnitude 7M, Depth:18km) in China 22/10/2026 14:33 UTC, 10 thousand (in MMI&gt;=VII).</title>
@@ -228,59 +228,5 @@
         </gdacs:resource>
       </gdacs:resources>
     </item>
-    <item>
-      <title>Red earthquake (Magnitude 7.7M, Depth:10km) in Indonesia 14/08/2026 21:58 UTC, 870 thousand (in MMI&gt;=VII).</title>
-      <description>On 8/14/2026 9:58:21 PM, an earthquake occurred in Indonesia potentially affecting 870 thousand (in MMI&gt;=VII). The earthquake had Magnitude 7.7M, Depth:10km.</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/eq/eq1725109_1.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=EQ&amp;eventid=1558059</link>
-      <pubDate>Fri, 14 Aug 2026 22:21:19 GMT</pubDate>
-      <gdacs:dateadded>Fri, 14 Aug 2026 22:21:19 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Wed, 30 Sep 2026 09:40:22 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Fri, 14 Aug 2026 21:58:21 GMT</gdacs:fromdate>
-      <gdacs:todate>Fri, 14 Aug 2026 21:58:21 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>EQ3</dc:subject>
-      <guid isPermaLink="false">EQ1558059</guid>
-      <geo:Point>
-        <geo:lat>-8.3101</geo:lat>
-        <geo:long>121.3517</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>117.3517 125.3517 -12.3101 -4.3101</gdacs:bbox>
-      <georss:point>-8.3101 121.3517</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/EQ/1558059/cap_1558059.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Red/EQ.png</gdacs:icon>
-      <gdacs:version>1</gdacs:version>
-      <gdacs:eventtype>EQ</gdacs:eventtype>
-      <gdacs:alertlevel>Red</gdacs:alertlevel>
-      <gdacs:alertscore>2.14589742473401</gdacs:alertscore>
-      <gdacs:episodealertlevel>Red</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>3</gdacs:episodealertscore>
-      <gdacs:eventname />
-      <gdacs:eventid>1558059</gdacs:eventid>
-      <gdacs:episodeid>1725109</gdacs:episodeid>
-      <gdacs:calculationtype>tsunami</gdacs:calculationtype>
-      <gdacs:severity unit="M" value="7.7">Magnitude 7.7M, Depth:10km</gdacs:severity>
-      <gdacs:population unit="(in MMI&gt;=VII)" value="866959">870 thousand (in MMI&gt;=VII)</gdacs:population>
-      <gdacs:vulnerability value="1.62113293717696" />
-      <gdacs:iso3>IDN</gdacs:iso3>
-      <gdacs:country>Indonesia</gdacs:country>
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/EQ/1558059/rss_1558059.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
   </channel>
-</rss><!--End 11/14/2026 9:27:55 PM-->
+</rss><!--End 11/15/2026 1:17:38 AM-->
