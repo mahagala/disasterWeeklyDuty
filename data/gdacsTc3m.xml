@@ -6,38 +6,38 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 47-->
-    <!--Start 11/16/2026 6:18:09 PM-->
-    <!--=Start 11/16/2026 6:18:09 PM-->
+    <!--Records number 48-->
+    <!--Start 11/17/2026 1:58:11 AM-->
+    <!--=Start 11/17/2026 1:58:11 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Mon, 16 Nov 2026 17:18:09 GMT</pubDate>
+    <pubDate>Tue, 17 Nov 2026 00:58:11 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green notification for tropical cyclone XAVIER-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 15/11/2026 to 16/11/2026, a Tropical Storm (maximum wind speed of 176 km/h) XAVIER-26 was active in SEPacific. The cyclone affects these countries: Cook Islands (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001350/1001350_3_tn.png" />
+      <description>From 15/11/2026 to 16/11/2026, a Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 222 km/h) XAVIER-26 was active in SEPacific. The cyclone affects these countries: Cook Islands (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001350/1001350_4_tn.png" />
       <gdacs:temporary>false</gdacs:temporary>
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001350</link>
       <pubDate>Sun, 15 Nov 2026 08:51:43 GMT</pubDate>
       <gdacs:dateadded>Sun, 15 Nov 2026 08:51:43 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 16 Nov 2026 08:21:44 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Mon, 16 Nov 2026 20:35:58 GMT</gdacs:datemodified>
       <gdacs:iscurrent>true</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 15 Nov 2026 06:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Mon, 16 Nov 2026 06:00:00 GMT</gdacs:todate>
+      <gdacs:todate>Mon, 16 Nov 2026 18:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>0</gdacs:durationinweek>
       <gdacs:year>2026</gdacs:year>
       <dc:subject>TC1</dc:subject>
       <guid isPermaLink="false">TC1001350</guid>
       <geo:Point>
-        <geo:lat>-8.5</geo:lat>
-        <geo:long>-161</geo:long>
+        <geo:lat>-8.9</geo:lat>
+        <geo:long>-162.6</geo:long>
       </geo:Point>
       <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-174.78037996535 -148.78037996535 -22.4198583416205 3.58014165837949</gdacs:bbox>
-      <georss:point>-8.5 -161</georss:point>
+      <gdacs:bbox>-175.407515102879 -149.407515102879 -22.8739634476268 3.1260365523732</gdacs:bbox>
+      <georss:point>-8.9 -162.6</georss:point>
       <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001350/cap_1001350.xml</gdacs:cap>
       <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>3</gdacs:version>
+      <gdacs:version>4</gdacs:version>
       <gdacs:eventtype>TC</gdacs:eventtype>
       <gdacs:alertlevel>Green</gdacs:alertlevel>
       <gdacs:alertscore>1</gdacs:alertscore>
@@ -45,10 +45,10 @@
       <gdacs:episodealertscore>1</gdacs:episodealertscore>
       <gdacs:eventname>XAVIER-26</gdacs:eventname>
       <gdacs:eventid>1001350</gdacs:eventid>
-      <gdacs:episodeid>3</gdacs:episodeid>
+      <gdacs:episodeid>4</gdacs:episodeid>
       <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="175.9248">Tropical Storm (maximum wind speed of 176 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (368 in Tropical Storm)</gdacs:population>
+      <gdacs:severity unit="km/h" value="222.2208">Hurricane/Typhoon &gt; 74 mph (maximum wind speed of 222 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (847 in Tropical Storm)</gdacs:population>
       <gdacs:vulnerability value="2">Medium</gdacs:vulnerability>
       <gdacs:iso3>COK</gdacs:iso3>
       <gdacs:country>Cook Islands</gdacs:country>
@@ -59,6 +59,60 @@
       <gdacs:gtslink />
       <gdacs:resources>
         <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001350/rss_1001350.xml" type="rss">
+          <gdacs:title>Event in rss format</gdacs:title>
+          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
+          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
+          <gdacs:accesslevel>Public</gdacs:accesslevel>
+        </gdacs:resource>
+      </gdacs:resources>
+    </item>
+    <item>
+      <title>Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (20.826 million in Tropical Storm).</title>
+      <description>From 16/11/2026 to 16/11/2026, a Tropical Storm (maximum wind speed of 93 km/h) AKVAN-26 was active in NorthIndian. The cyclone affects these countries: India (vulnerability High). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (20.826 million in tropical storm).</description>
+      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001351/1001351_1_tn.png" />
+      <gdacs:temporary>false</gdacs:temporary>
+      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001351</link>
+      <pubDate>Mon, 16 Nov 2026 20:06:39 GMT</pubDate>
+      <gdacs:dateadded>Mon, 16 Nov 2026 20:06:39 GMT</gdacs:dateadded>
+      <gdacs:datemodified>Tue, 17 Nov 2026 00:05:40 GMT</gdacs:datemodified>
+      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:fromdate>Mon, 16 Nov 2026 18:00:00 GMT</gdacs:fromdate>
+      <gdacs:todate>Mon, 16 Nov 2026 18:00:00 GMT</gdacs:todate>
+      <gdacs:durationinweek>0</gdacs:durationinweek>
+      <gdacs:year>2026</gdacs:year>
+      <dc:subject>TC2</dc:subject>
+      <guid isPermaLink="false">TC1001351</guid>
+      <geo:Point>
+        <geo:lat>11.3</geo:lat>
+        <geo:long>86.7</geo:long>
+      </geo:Point>
+      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
+      <gdacs:bbox>71.9275679718557 97.9275679718557 0.404408693968898 26.4044086939689</gdacs:bbox>
+      <georss:point>11.3 86.7</georss:point>
+      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001351/cap_1001351.xml</gdacs:cap>
+      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Orange/TC.png</gdacs:icon>
+      <gdacs:version>1</gdacs:version>
+      <gdacs:eventtype>TC</gdacs:eventtype>
+      <gdacs:alertlevel>Orange</gdacs:alertlevel>
+      <gdacs:alertscore>2</gdacs:alertscore>
+      <gdacs:episodealertlevel>Orange</gdacs:episodealertlevel>
+      <gdacs:episodealertscore>2</gdacs:episodealertscore>
+      <gdacs:eventname>AKVAN-26</gdacs:eventname>
+      <gdacs:eventid>1001351</gdacs:eventid>
+      <gdacs:episodeid>1</gdacs:episodeid>
+      <gdacs:calculationtype>tropicalcycloneonly</gdacs:calculationtype>
+      <gdacs:severity unit="km/h" value="92.592">Tropical Storm (maximum wind speed of 93 km/h)</gdacs:severity>
+      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (29.254 million in Tropical Storm)</gdacs:population>
+      <gdacs:vulnerability value="3">High</gdacs:vulnerability>
+      <gdacs:iso3>IND</gdacs:iso3>
+      <gdacs:country>India</gdacs:country>
+      <gdacs:glide />
+      <gdacs:mapimage />
+      <gdacs:maplink />
+      <gdacs:gtsimage />
+      <gdacs:gtslink />
+      <gdacs:resources>
+        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001351/rss_1001351.xml" type="rss">
           <gdacs:title>Event in rss format</gdacs:title>
           <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
           <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
@@ -938,7 +992,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001329</link>
       <pubDate>Sun, 27 Sep 2026 09:24:05 GMT</pubDate>
       <gdacs:dateadded>Sun, 27 Sep 2026 09:24:05 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 16 Nov 2026 17:05:34 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Tue, 17 Nov 2026 00:50:54 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 27 Sep 2026 09:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -992,7 +1046,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001334</link>
       <pubDate>Tue, 06 Oct 2026 21:01:35 GMT</pubDate>
       <gdacs:dateadded>Tue, 06 Oct 2026 21:01:35 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 16 Nov 2026 17:05:51 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Tue, 17 Nov 2026 00:51:13 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Tue, 06 Oct 2026 21:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Sun, 11 Oct 2026 15:00:00 GMT</gdacs:todate>
@@ -1262,7 +1316,7 @@
       <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001327</link>
       <pubDate>Wed, 23 Sep 2026 08:23:25 GMT</pubDate>
       <gdacs:dateadded>Wed, 23 Sep 2026 08:23:25 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Mon, 16 Nov 2026 17:05:04 GMT</gdacs:datemodified>
+      <gdacs:datemodified>Tue, 17 Nov 2026 00:50:07 GMT</gdacs:datemodified>
       <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Wed, 23 Sep 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Wed, 30 Sep 2026 12:00:00 GMT</gdacs:todate>
@@ -2551,4 +2605,4 @@
       </gdacs:resources>
     </item>
   </channel>
-</rss><!--End 11/16/2026 6:19:58 PM-->
+</rss><!--End 11/17/2026 2:01:37 AM-->
