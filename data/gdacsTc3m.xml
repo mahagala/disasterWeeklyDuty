@@ -6,11 +6,11 @@
     <copyright>public domain</copyright>
     <description>Near real-time notification about natural disaster with a potential humanitarian impact</description>
     <managingEditor>stefano.paris@ext.ec.europa.eu</managingEditor>
-    <!--Records number 45-->
-    <!--Start 11/27/2026 12:08:17 AM-->
-    <!--=Start 11/27/2026 12:08:17 AM-->
+    <!--Records number 44-->
+    <!--Start 11/27/2026 6:17:54 AM-->
+    <!--=Start 11/27/2026 6:17:54 AM-->
     <webMaster>stefano.paris@ext.ec.europa.eu</webMaster>
-    <pubDate>Thu, 26 Nov 2026 23:08:17 GMT</pubDate>
+    <pubDate>Fri, 27 Nov 2026 05:17:54 GMT</pubDate>
     <atom:link href="http://www.gdacs.org/xml/rss_tc_3m.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Green notification for tropical cyclone 03-20262027-27. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
@@ -75,7 +75,7 @@
       <pubDate>Sun, 15 Nov 2026 08:51:43 GMT</pubDate>
       <gdacs:dateadded>Sun, 15 Nov 2026 08:51:43 GMT</gdacs:dateadded>
       <gdacs:datemodified>Mon, 23 Nov 2026 02:20:04 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>true</gdacs:iscurrent>
+      <gdacs:iscurrent>false</gdacs:iscurrent>
       <gdacs:fromdate>Sun, 15 Nov 2026 06:00:00 GMT</gdacs:fromdate>
       <gdacs:todate>Mon, 23 Nov 2026 00:00:00 GMT</gdacs:todate>
       <gdacs:durationinweek>1</gdacs:durationinweek>
@@ -2388,59 +2388,5 @@
         </gdacs:resource>
       </gdacs:resources>
     </item>
-    <item>
-      <title>Green notification for tropical cyclone ISELLE-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).</title>
-      <description>From 23/08/2026 to 27/08/2026, a Tropical Depression (maximum wind speed of 111 km/h) ISELLE-26 was active in EastPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).</description>
-      <enclosure type="image/png" length="1" url="https://www.gdacs.org/contentdata/resources/imgtemp/gdacs/tc/1001309/1001309_15_tn.png" />
-      <gdacs:temporary>false</gdacs:temporary>
-      <link>http://www.gdacs.org/report.aspx?eventtype=TC&amp;eventid=1001309</link>
-      <pubDate>Sun, 23 Aug 2026 15:12:58 GMT</pubDate>
-      <gdacs:dateadded>Sun, 23 Aug 2026 15:12:58 GMT</gdacs:dateadded>
-      <gdacs:datemodified>Thu, 27 Aug 2026 09:18:37 GMT</gdacs:datemodified>
-      <gdacs:iscurrent>false</gdacs:iscurrent>
-      <gdacs:fromdate>Sun, 23 Aug 2026 15:00:00 GMT</gdacs:fromdate>
-      <gdacs:todate>Thu, 27 Aug 2026 03:00:00 GMT</gdacs:todate>
-      <gdacs:durationinweek>0</gdacs:durationinweek>
-      <gdacs:year>2026</gdacs:year>
-      <dc:subject>TC1</dc:subject>
-      <guid isPermaLink="false">TC1001309</guid>
-      <geo:Point>
-        <geo:lat>23</geo:lat>
-        <geo:long>-125.9</geo:long>
-      </geo:Point>
-      <!--gdacs:bbox format = lonmin lonmax latmin latmax-->
-      <gdacs:bbox>-133.458790182556 -107.458790182555 7.27031467188742 33.2703146718874</gdacs:bbox>
-      <georss:point>23 -125.9</georss:point>
-      <gdacs:cap>https://www.gdacs.org/contentdata/resources/TC/1001309/cap_1001309.xml</gdacs:cap>
-      <gdacs:icon>http://www.gdacs.org/Images/gdacs_icons/alerts/Green/TC.png</gdacs:icon>
-      <gdacs:version>15</gdacs:version>
-      <gdacs:eventtype>TC</gdacs:eventtype>
-      <gdacs:alertlevel>Green</gdacs:alertlevel>
-      <gdacs:alertscore>1</gdacs:alertscore>
-      <gdacs:episodealertlevel>Green</gdacs:episodealertlevel>
-      <gdacs:episodealertscore>1</gdacs:episodealertscore>
-      <gdacs:eventname>ISELLE-26</gdacs:eventname>
-      <gdacs:eventid>1001309</gdacs:eventid>
-      <gdacs:episodeid>15</gdacs:episodeid>
-      <gdacs:calculationtype>tropicalcyclonewithstormsurge</gdacs:calculationtype>
-      <gdacs:severity unit="km/h" value="111.1104">Tropical Depression (maximum wind speed of 56 km/h)</gdacs:severity>
-      <gdacs:population unit="Pop74" value="0">Population affected by Category 1 (120 km/h) wind speeds or higher is 0 (0 in Tropical Storm)</gdacs:population>
-      <gdacs:vulnerability value="0" />
-      <gdacs:iso3 />
-      <gdacs:country />
-      <gdacs:glide />
-      <gdacs:mapimage />
-      <gdacs:maplink />
-      <gdacs:gtsimage />
-      <gdacs:gtslink />
-      <gdacs:resources>
-        <gdacs:resource id="event_rss" version="0" source="EC-JRC" url="http://www.gdacs.org//datareport/resources/TC/1001309/rss_1001309.xml" type="rss">
-          <gdacs:title>Event in rss format</gdacs:title>
-          <gdacs:description>Joint Research Center of the European Commission</gdacs:description>
-          <gdacs:acknowledgements>Copyright notice: European Union (CC BY 4.0), reuse is allowed, provided appropriate credit to GDACS is given.</gdacs:acknowledgements>
-          <gdacs:accesslevel>Public</gdacs:accesslevel>
-        </gdacs:resource>
-      </gdacs:resources>
-    </item>
   </channel>
-</rss><!--End 11/27/2026 12:10:45 AM-->
+</rss><!--End 11/27/2026 6:19:36 AM-->
